@@ -1,15 +1,17 @@
 cff-version: 1.2.0
-title: Constrained Reality Framework (CRF)
+title: "Constrained Reality Framework (CRF)"
 message: "If you use this work, please cite it as below."
 authors:
   - family-names: Jarittum
     given-names: Ougit
 date-released: 2026-03-12
 version: "1.0"
+doi: 10.5281/zenodo.18977059
+url: "https://github.com/ougit/Constrained-Reality-Framework-CRF-"
 abstract: >
   A framework deriving reality from a single primitive:
   distinction (delta). From delta emerge time, constraint,
   mind, suffering, and physical predictions including
   no-singularity black holes and a testable quantum
   measurement prediction.
-license: CC-BY-4.0
+license: CC-BY-NC-4.0
