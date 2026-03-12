@@ -1,2 +1,5 @@
 # Constrained-Reality-Framework-CRF-
-CRF (Constrained Reality Framework)  มองความจริงเป็นผลลัพธ์การคลี่คลายข้อมูลภายใต้เงื่อนไขจำกัด นำเสนอผ่าน 12 สัจพจน์ที่ครอบคลุมตั้งแต่ฟิสิกส์ จิต จนถึงความตื่นรู้ โดยมี "การจำแนกความต่าง" (Distinction) เป็นรากฐานสำคัญ พร้อมโครงสร้างคณิตศาสตร์รองรับและจุดเด่นด้านการวิมังสาตนเอง (Self-application) เพื่อเข้าถึงแก่นแท้ของมวลความเป็นไปได้ทั้งปวง 
+Constrained Reality Framework (CRF)
+Ougit Jarittum — March 2026
+A framework deriving reality from a single primitive: δ (distinction). From δ emerge time, constraint, mind, suffering, and physical predictions including no-singularity black holes and a testable quantum measurement prediction.
+Documents updated progressively. DOI via Zenodo.
