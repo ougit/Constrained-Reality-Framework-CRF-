@@ -50,13 +50,35 @@ These can be contrasted directly with standard quantum mechanics (no history dep
 ## Citation
 
 ```bibtex
-@misc{ougit2026crf,
-  author       = {Ougit Jarittum},
-  title        = {Constrained Reality Framework (CRF)},
-  year         = {2026},
-  howpublished = {\url{https://doi.org/10.5281/zenodo.18977059}},
-  note         = {Zenodo}
-}
+cff-version: 1.2.0
+title: "Constrained Reality Framework (CRF)"
+message: >-
+  If you use or reference this work in your research, please cite it using the preferred citation below. Thank you for your support!
+type: dataset  # หรือ software ถ้ามองเป็น framework ที่มี code/metadata ด้วย แต่ dataset เหมาะกับ collection ของ PDFs + docs
+authors:
+  - family-names: Jarittum
+    given-names: Ougit
+    affiliation: Independent Researcher  # optional แต่ใส่ได้ถ้าอยาก
+date-released: 2026-03-12
+version: "1.0"
+doi: 10.5281/zenodo.18977059
+url: "https://github.com/ougit/Constrained-Reality-Framework-CRF-"
+repository-code: "https://github.com/ougit/Constrained-Reality-Framework-CRF-"
+abstract: >
+  A foundational framework deriving physical and ontological reality from a single primitive: distinction (denoted as delta). From this emerge time, constraints, mind, suffering, and falsifiable physical predictions — including singularity-free black holes and a novel quantum measurement effect (P0 Hypothesis) testable via detector history dependence.
+license: CC-BY-NC-4.0
+
+preferred-citation:
+  type: article  # หรือ misc ถ้าไม่ใช่ paper จริง ๆ
+  authors:
+    - family-names: Jarittum
+      given-names: Ougit
+  title: "Constrained Reality Framework (CRF)"
+  year: 2026
+  doi: 10.5281/zenodo.18977059
+  url: "https://doi.org/10.5281/zenodo.18977059"
+  publisher:
+    name: Zenodo
 ```
 
 Preferred form:  
