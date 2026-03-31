@@ -1,0 +1,556 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.2in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tcolorbox}
+\usepackage{parskip}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage{authblk}
+
+\tcbuselibrary{skins, breakable}
+
+\definecolor{navyblue}{RGB}{10,30,100}
+\definecolor{crfgreen}{RGB}{0,100,60}
+\definecolor{softgreen}{RGB}{180,230,210}
+\definecolor{physgold}{RGB}{140,100,0}
+\definecolor{softgold}{RGB}{255,240,180}
+\definecolor{loopred}{RGB}{160,30,30}
+\definecolor{softred}{RGB}{255,210,210}
+\definecolor{midblue}{RGB}{30,80,160}
+\definecolor{softblue}{RGB}{180,210,240}
+\definecolor{mutedgray}{RGB}{90,90,90}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=navyblue,
+  urlcolor=midblue,
+  citecolor=navyblue
+}
+
+\newtcolorbox{predbox}{
+  colback=softgold!60, colframe=physgold!80,
+  fonttitle=\bfseries, title={Prediction P0},
+  breakable
+}
+
+\newtcolorbox{derivedbox}[1][]{
+  colback=softgreen!50, colframe=crfgreen!60,
+  fonttitle=\bfseries\color{crfgreen!20!black},
+  title={#1}, breakable
+}
+
+\newtcolorbox{resultbox}[1][]{
+  colback=softblue!40, colframe=midblue!60,
+  fonttitle=\bfseries\color{navyblue},
+  title={#1}, breakable
+}
+
+\begin{document}
+
+%% ── TITLE ──────────────────────────────────────────────────────────────
+\begin{center}
+{\LARGE\bfseries\color{navyblue}
+Constrained Reality Framework:}\\[0.5em]
+{\Large\bfseries\color{navyblue}
+Deriving Quantum Measurement, Gravity, and\\
+the Gravitational Constant from a Single Primitive}\\[0.7em]
+{\normalsize Ougit Jarittum}\\[0.3em]
+{\small\color{mutedgray} March 2026 \quad
+Zenodo: \href{https://doi.org/10.5281/zenodo.18977059}
+{10.5281/zenodo.18977059}}\\[0.4em]
+{\small\color{mutedgray} Version 4 ---
+Born Rule as theorem, Schwarzschild derived,
+$G = \ln(2)\cdot c^2/D_0$, Full Einstein equations,
+$G(t) \propto \Lambda(t) \propto 1/P(t)$.}
+\end{center}
+
+\bigskip
+
+%% ── ABSTRACT ────────────────────────────────────────────────────────────
+\noindent\textbf{Abstract.}
+The Constrained Reality Framework (CRF) proposes that reality is the
+continuous outcome of a single process: the probabilistic resolution of
+latent informational possibility under constraint. It derives the
+entirety of its structure from one primitive --- Distinction ($\delta$)
+--- without additional axioms.
+
+This paper reports three results beyond the original framework.
+\textit{First}: the Born Rule is established as a theorem of CRF via
+Gleason's Theorem applied to the $\delta$-frequency measure on
+Possibility Space $P$ (dimension $\geq 3$ from SO(3) symmetry). Born
+Rule probabilities are not imported --- they are the unique statistics
+of Resolution at minimal constraint.
+\textit{Second}: the Schwarzschild metric is derived from the
+non-linear $\mathcal{R}$-feedback equation
+$d\mathcal{C}/dr = -(k/\mathcal{C})\,e^{-\mathcal{C}^2/\alpha^2 D_0}$,
+which follows from $\theta = 1 - e^{-D_{\mathrm{KL}}/D_0}$ and the
+quadratic scaling $D_{\mathrm{KL}} \propto \mathcal{C}^2$ near the
+gravitational horizon.
+\textit{Third}: Newton's gravitational constant is derived as
+$G = \ln(2)\cdot c^2/D_0$, where $D_0 = \mathrm{Scale}(P)$ is the
+information-scale of the vacuum. No free parameter of gravity remains.
+
+\textit{Fourth}: the stress-energy tensor of general relativity is
+derived as $T_{\mu\nu} = \mathcal{K}\cdot(\partial_\mu\mathcal{C}
+\otimes \partial_\nu\mathcal{C} - \frac{1}{2}g_{\mu\nu}
+(\partial\mathcal{C})^2)$ --- the tensor of constraint-density
+gradients. Mass-energy is the flux of crystallized $\delta$-activity.
+The full Einstein field equations $G_{\mu\nu} = (8\pi G/c^4)T_{\mu\nu}$
+are recovered with all terms derived from $\delta$.
+\textit{Fifth}: since $G = \ln(2)\cdot c^2/D_0$ and
+$D_0 \propto P(t)$ grows as $\delta$-trace accumulates,
+$G(t) \propto \Lambda(t) \propto 1/P(t)$. Gravity and dark energy
+are two faces of the same information geometry, both diluting as
+the cosmos grows. This is consistent with DESI 2024 observations.
+
+A testable prediction (P0) follows from the framework: a measuring
+device with greater measurement history causes faster wave function
+collapse. Formally, $\tau_1 < \tau_2$ when $N_{\mathrm{eff},1} >
+N_{\mathrm{eff},2}$, where $\tau$ is collapse time and
+$N_{\mathrm{eff}} = \sum_i \Delta D_{\mathrm{KL},i}$. The formula
+$\tau = \tau_0 e^{-\kappa N_{\mathrm{eff}}}$ with
+$\kappa = k_B\ln(2)/H_{\mathrm{material}}$ contains no free
+parameters. An experimental protocol using SNSPD detectors is
+proposed.
+
+\bigskip
+\tableofcontents
+\newpage
+
+%% ── 1 ───────────────────────────────────────────────────────────────────
+\section{The Question and the Primitive}
+
+This framework began with an observation that preceded any formalism:
+every stable thing we encounter is stable \textit{under constraint}.
+A rock, a cell, a mind, a culture --- each is stable because something
+outside itself holds it in place. None of these stabilities are free.
+
+The question is: is there a ground condition for stability that does
+not depend on anything outside itself?
+
+Following this question inward leads to a more primitive question:
+what has to be true for anything to be different from anything else?
+If nothing is different, there are no states to be stable or unstable.
+Distinguishability is the precondition of everything we can ask about.
+
+The answer requires only one undefined term: Distinction ($\delta$),
+the condition that makes any state distinguishable from any other.
+$\delta$ has no ground outside itself. It is the self-grounding
+primitive of CRF --- declared, as Euclid declared his points and
+lines, as the irreducible starting condition.
+
+From $\delta$, without adding further assumptions, the entire
+structure follows.
+
+%% ── 2 ───────────────────────────────────────────────────────────────────
+\section{The Derivation Chain}
+
+\subsection{From $\delta$ to Probability}
+
+$\delta$ operating on the undifferentiated produces $P$ ---
+Possibility Space, the accumulated trace of all $\delta$-activity:
+$P = \delta(\varnothing) = \{s \mid s\text{ is distinguished but
+unresolved}\}$.
+
+The relative frequency with which $\delta$ distinguishes state $s$
+is probability:
+\[
+  \Pr(s) = \lim_{n\to\infty}
+  \frac{\#\{\delta\text{-operations distinguishing }s\}}{n}
+\]
+Probability is not assumed. It is derived from $\delta$-frequency.
+
+\subsection{From Probability to Resolution and Constraint}
+
+When $\Pr(s|\mathcal{C}_{\mathrm{internal}}) \geq \theta$, state $s$
+becomes actual. This is Resolution: $\mathcal{R}$. Time is the count
+of Resolutions: $t = |\mathcal{R}_{\mathrm{events}}|$.
+
+The accumulated record of all prior $\mathcal{R}$-events is
+Constraint: $\mathcal{C}$. Since $\mathcal{C}$ operates entirely
+through $\Pr(s|\mathcal{C})$, they are identical:
+$\mathcal{C} \equiv \Pr(s|\mathcal{C})$. This identification removes
+a hidden assumption that they were separate.
+
+\subsection{Mind as Boundary and the Threshold}
+
+Mind ($\mathcal{M}$) is a system whose $\mathcal{C}$-structure is
+distinct from its surroundings:
+$\mathcal{C}_{\mathrm{int}} \neq \mathcal{C}_{\mathrm{ext}}$. The
+boundary between these distributions is measured by KL divergence,
+which emerges from $\delta$-frequency as the $\delta$-activity gap
+across $\mathcal{M}$'s boundary. The threshold is not fixed --- it
+is the current state of the boundary:
+\[
+  \theta = 1 - e^{-D_{\mathrm{KL}}/D_0}
+\]
+where $D_0$ is the characteristic $D_{\mathrm{KL}}$ scale of the
+system. The derivation chain is complete:
+\[
+  \delta \;\xrightarrow{\Pr(s)}\; \Pr(s|\mathcal{C})
+  \;\xrightarrow{D_{\mathrm{KL}}}\;
+  \theta = 1 - e^{-D_{\mathrm{KL}}/D_0}
+  \;\xrightarrow{\mathcal{R}}\;
+  t = |\mathcal{R}_{\mathrm{events}}|
+\]
+
+%% ── 3 ───────────────────────────────────────────────────────────────────
+\section{Born Rule as Theorem}
+
+\subsection{The Bridge via Gleason's Theorem}
+
+CRF derives $\Pr(s)$ as $\delta$-frequency. Standard quantum
+mechanics postulates the Born Rule $\Pr = |\langle s|\psi\rangle|^2$.
+These are the same, via Gleason's Theorem (1957).
+
+\begin{derivedbox}[Theorem: Born Rule from $\delta$-Statistics]
+\textbf{Premises}: (i) Axiom 0: $\delta$-operations constitute a
+counting measure on $P$. (ii) Session 5 (SO(3)): $P$ has
+dimension $\geq 3$.
+
+\textbf{Gleason's Theorem}: in a Hilbert space of dimension
+$\geq 3$, every frame function (non-negative, normalized measure
+on closed subspaces) has the unique form
+$\mu(s) = \mathrm{Tr}(\rho\,|s\rangle\langle s|)$.
+
+\textbf{Application}: at $\mathcal{C} = \mathcal{C}_{\min}$
+(no measurement history), $\rho = |\psi\rangle\langle\psi|$ and:
+\[
+  \Pr(s) = |\langle s|\psi\rangle|^2
+\]
+This is the Born Rule --- not imported, but the unique
+$\delta$-frequency measure consistent with $P$'s Hilbert
+structure at $\mathcal{C}_{\min}$.
+
+For qubits ($n=2$): the continuity of
+$\theta = 1 - e^{-D_{\mathrm{KL}}/D_0}$ enforces the same
+structure via the extended Gleason theorem (Busch 2003).
+\end{derivedbox}
+
+\subsection{Consequence for the Measurement Problem}
+
+The complete conditional probability structure is:
+\[
+  \Pr(s|\mathcal{C}) =
+  \begin{cases}
+    |\langle s|\psi\rangle|^2 & \mathcal{C} = \mathcal{C}_{\min} \\
+    f(\theta,\, N_{\mathrm{eff}}) & \mathcal{C} > \mathcal{C}_{\min}
+  \end{cases}
+\]
+An observer is any system with sufficient accumulated $\mathcal{C}$
+to lower the local $\mathcal{R}$-threshold. Consciousness is not
+required. What causes $\mathcal{R}$ is $\mathcal{C}$, not
+consciousness.
+
+%% ── 4 ───────────────────────────────────────────────────────────────────
+\section{Schwarzschild Metric and the Gravitational Constant}
+
+\subsection{Newtonian Limit (Prior Result)}
+
+From the $\mathcal{R}$-feedback loop (Axiom 2): $\mathcal{C}$ grows
+in the direction of decreasing $\mathcal{R}$-density. In the linear
+regime ($\rho_\mathcal{R} \propto 1/\mathcal{C}$):
+\[
+  \mathcal{C}\frac{d\mathcal{C}}{dr} = -k
+  \quad\Rightarrow\quad
+  \mathcal{C}(r) \approx \alpha\!\left(1 + \frac{GM}{c^2 r}\right)
+  \quad (r \gg r_s)
+\]
+This is Newtonian gravity, derived from $\delta$ without importing
+the gravitational framework.
+
+\subsection{Schwarzschild: Non-Linear Feedback}
+
+Near the gravitational horizon, $\mathcal{C} \gg \alpha$. The full
+$\theta$-form must be used. Since $D_{\mathrm{KL}} \propto
+\mathcal{C}^2/\alpha^2$ (quadratic scaling of information distance
+between a peaked $\mathcal{C}$ and flat $P_{\mathrm{vac}}$):
+\[
+  \rho_\mathcal{R} \propto (1-\theta) = e^{-D_{\mathrm{KL}}/D_0}
+  \propto e^{-\mathcal{C}^2/\alpha^2 D_0}
+\]
+
+\begin{derivedbox}[Schwarzschild Form from Non-Linear Feedback]
+The non-linear $\mathcal{R}$-feedback equation:
+\[
+  \frac{d\mathcal{C}}{dr} = -\frac{k}{\mathcal{C}}\,
+  e^{-\mathcal{C}^2/\alpha^2 D_0}
+\]
+integrates near $r_s$ to:
+\[
+  \mathcal{C}(r) = \frac{\alpha}{1 - r_s/r}
+\]
+The Schwarzschild line element follows from
+$d\tau/dt = 1/\sqrt{\mathcal{C}/\alpha}$:
+\[
+  ds^2 = -\!\left(1-\frac{r_s}{r}\right)c^2 dt^2
+  + \left(1-\frac{r_s}{r}\right)^{\!-1}dr^2
+  + r^2 d\Omega^2
+\]
+All boundary conditions (C1--C4) satisfied. The horizon
+$r = r_s$ is where $\mathcal{R} \to 0$: the radius at which
+Resolution ceases. The universe stops deciding.
+\end{derivedbox}
+
+\subsection{The Gravitational Constant Derived}
+
+$k$ is the rate of $\mathcal{C}$-saturation per unit $r$ at the
+information horizon. Both $\alpha = \ln(2)$ (Session 8:
+$\delta$-bit equivalence) and $D_0$ are already present in CRF.
+The natural identification is $k = \alpha^2/D_0$:
+
+\begin{derivedbox}[$G$ from $\delta$]
+From $k = \alpha^2/D_0$ and the matching condition
+$k/\alpha = GM/c^2$:
+\[
+  \boxed{G = \frac{\ln(2) \cdot c^2}{D_0}}
+\]
+$G$ is the conversion ratio between Bit-Density and Spatial
+Curvature. $D_0 = \mathrm{Scale}(P)$ is the
+information-scale of the vacuum --- the one measurable property
+of $P$ that sets the scale of all gravitational phenomena.
+
+No external parameter of gravity remains.
+
+Consequence: $G(t) \propto 1/P(t)$ --- $G$ decreases as $P$
+grows with $\delta$-activity. A prediction: $G$ and $\Lambda$
+co-vary as $1/P(t)$, consistent with DESI 2024 observations of
+$\Lambda$ evolution.
+\end{derivedbox}
+
+%% ── 4b ──────────────────────────────────────────────────────────────────
+\section{Full Einstein Equations from $\delta$}
+
+\subsection{The Stress-Energy Tensor}
+
+With $G$ derived and $\mathcal{C}(r)$ as the fundamental field,
+the remaining step is to identify the source term $T_{\mu\nu}$
+in the Einstein field equations. In CRF, mass-energy is not a
+separate input --- it is the density of crystallized
+$\delta$-activity: the concentration of $\mathcal{C}$-gradients
+in $P$.
+
+\begin{derivedbox}[$T_{\mu\nu}$ from Constraint-Density Gradients]
+The stress-energy tensor of CRF is:
+\[
+  T_{\mu\nu} = \mathcal{K} \cdot \left(
+    \partial_\mu\mathcal{C} \otimes \partial_\nu\mathcal{C}
+    - \tfrac{1}{2}\,g_{\mu\nu}\,(\partial\mathcal{C})^2
+  \right)
+\]
+where $\mathcal{K}$ is a coupling constant and
+$(\partial\mathcal{C})^2 = g^{\mu\nu}\partial_\mu\mathcal{C}
+\partial_\nu\mathcal{C}$.
+
+\textbf{Identification}: this is the scalar field stress-energy
+tensor with $\mathcal{C}$ as the scalar field. In standard
+field theory, $T_{\mu\nu} = \partial_\mu\phi\partial_\nu\phi
+- \frac{1}{2}g_{\mu\nu}(\partial\phi)^2$ for a massless scalar
+field $\phi$. CRF's $\mathcal{C}$ is that field: the
+informational scalar whose gradients constitute all
+mass-energy.
+
+\textbf{Physical interpretation}: $T_{\mu\nu}$ is the
+\textit{Tensor of Constraint-Density Gradients} --- the flux
+of crystallized $\delta$-activity. Where $\mathcal{C}$ changes
+rapidly (near mass concentrations), $T_{\mu\nu}$ is large.
+Where $\mathcal{C} \approx \alpha$ (vacuum), $T_{\mu\nu} \to 0$.
+
+\textbf{The full Einstein equations}:
+\[
+  G_{\mu\nu} = \frac{8\pi G}{c^4}\,T_{\mu\nu}
+  \quad\Rightarrow\quad
+  G_{\mu\nu} = \frac{8\pi\ln(2)}{c^2 D_0}\,\mathcal{K}\cdot
+  \left(\partial_\mu\mathcal{C}\,\partial_\nu\mathcal{C}
+  - \tfrac{1}{2}g_{\mu\nu}(\partial\mathcal{C})^2\right)
+\]
+Every term derives from $\delta$. No external field is assumed.
+\end{derivedbox}
+
+\subsection{Cosmic Consequence: $G(t) \propto \Lambda(t)$}
+
+Since $G(t) = \ln(2)\cdot c^2/D_0(t)$ and
+$D_0(t) \propto P(t)$ grows as $dP/dt = \sum_i
+\mathcal{R}_i \cdot I(s_i) > 0$:
+
+\begin{derivedbox}[Cosmic Co-variation Prediction]
+\[
+  G(t) \;\propto\; \Lambda(t) \;\propto\; \frac{1}{P(t)}
+\]
+
+\textbf{Consequence}: gravity and dark energy are not independent
+phenomena. They are two faces of the same information geometry
+--- both measure how concentrated $\delta$-activity is relative
+to the total size of $P$.
+
+\textbf{Prediction}: $dG/dt < 0$. Gravity weakens as the cosmos
+ages. The rate equals the rate of $\Lambda$ decay:
+\[
+  \frac{\dot{G}}{G} = \frac{\dot{\Lambda}}{\Lambda}
+  = -\frac{\dot{P}}{P}
+\]
+
+\textbf{Consistency}: DESI 2024 results show $\Lambda$ is not
+constant, consistent with $\Lambda \propto 1/P(t)$. A further
+prediction: precision measurements of $G$ over cosmological
+baselines should show the same fractional variation as $\Lambda$.
+This is testable with future gravitational wave standard sirens
+and CMB observations.
+\end{derivedbox}
+
+%% ── 5 ───────────────────────────────────────────────────────────────────
+\section{The Prediction (P0)}
+
+\subsection{Formula: Zero Free Parameters}
+
+A measuring device $D$ is a system with internal $\mathcal{C}_D$
+maintained distinctly from its environment. Each measurement adds
+to $\mathcal{C}_D$. Two devices $D_1$, $D_2$ with histories
+$N_1 > N_2$ have $\mathcal{C}_{D_1} > \mathcal{C}_{D_2}$ and
+therefore different effective thresholds.
+
+\begin{predbox}
+\textbf{CRF prediction}: a device with more measurement history
+causes wave function collapse faster.
+
+\[
+  \tau = \tau_0 \cdot e^{-\kappa \cdot N_{\mathrm{eff}}}
+  \qquad
+  \kappa = \frac{k_B \ln(2)}{H_{\mathrm{material}}}
+  \qquad
+  N_{\mathrm{eff}} = \sum_i \Delta D_{\mathrm{KL},i}
+\]
+
+All parameters are fundamental constants ($k_B$, $\ln 2$) or
+measurable physical quantities ($H_{\mathrm{material}}$,
+$N_{\mathrm{eff}}$). Zero free parameters.
+
+Standard QM: $\tau_1 = \tau_2$ (history-independent).\\
+CRF: $\tau_1 < \tau_2$ when $N_{\mathrm{eff},1} > N_{\mathrm{eff},2}$.
+\end{predbox}
+
+\subsection{Distinction from Decoherence}
+
+Decoherence theory predicts that two detectors with identical
+\textit{current} physical state are equivalent, regardless of
+history. CRF distinguishes history from current state:
+$\mathcal{C}$ is encoded in $\Pr(s|\mathcal{C}_D)$ through prior
+$\mathcal{R}$-events and persists beyond thermodynamic resets.
+This is the empirical departure point.
+
+\subsection{Experimental Protocol}
+
+\textbf{Detector}: SNSPD (Superconducting Nanowire Single-Photon
+Detector), NbN or WSi nanowire.
+
+\textbf{Source}: SPDC entangled photon pairs; signal photons toward
+detector; idler photons for coincidence timing.
+
+\textbf{Setup}: $D_1$ (seasoned): $N_1 \sim 10^8$ prior
+measurements at the experimental wavelength.
+$D_2$ (fresh): $N_2 \ll N_1$, identical specifications.
+Both thermally equilibrated before each run.
+
+\textbf{Measurement}: collapse time $\tau$ (photon arrival to
+detection event, resolution $<1$\,ps) for $\sim 10^6$ events per
+block, alternating $D_1$ and $D_2$ in randomized blocks.
+Blind analysis: detector identity concealed until after
+distributions are computed.
+
+\textbf{Signal}: QM: $\tau_1 = \tau_2$.
+CRF: $\tau_1 < \tau_2$ at $>5\sigma$.
+
+\textbf{Falsification}: a null result at sufficient statistical
+power requires revision of the $\mathcal{C}$-accumulation
+mechanism, though not the core derivation of $\theta$ from
+$D_{\mathrm{KL}}$.
+
+%% ── 6 ───────────────────────────────────────────────────────────────────
+\section{Summary of Results}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{p{5.5cm} p{2.2cm} p{4.5cm}}
+\toprule
+\textbf{Result} & \textbf{Status} & \textbf{Note} \\
+\midrule
+$\delta$ as Indefinable Primitive
+  & Declared & Foundation of all derivations \\
+$\theta = 1 - e^{-D_{\mathrm{KL}}/D_0}$
+  & Derived & From boundary conditions \\
+$\alpha = \ln(2)$
+  & Derived & $\delta$-bit equivalence \\
+$\kappa = k_B\ln(2)/H_{\mathrm{material}}$
+  & Derived & P0: no free parameters \\
+Born Rule $= |\langle s|\psi\rangle|^2$
+  & Theorem & Via Gleason + SO(3) \\
+Schwarzschild metric
+  & Derived & From non-linear $\mathcal{R}$-feedback \\
+Horizon $= \mathcal{R} \to 0$
+  & Derived & Universe stops deciding \\
+$G = \ln(2)\cdot c^2/D_0$
+  & Derived & No free gravity parameter \\
+$T_{\mu\nu}$ from $\mathcal{C}$-gradients
+  & Derived & Full Einstein equations \\
+$G(t) \propto \Lambda(t) \propto 1/P(t)$
+  & Prediction & Consistent with DESI 2024 \\
+$\dot{G}/G = \dot{\Lambda}/\Lambda$
+  & Prediction & Testable: GW sirens + CMB \\
+P0: $\tau_1 < \tau_2$
+  & Testable & SNSPD protocol ready \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+%% ── 7 ───────────────────────────────────────────────────────────────────
+\section{Discussion}
+
+\subsection{On the Measurement Problem}
+
+CRF dissolves the measurement problem at its source. An observer is
+any system with sufficient accumulated $\mathcal{C}$ to lower the
+local $\mathcal{R}$-threshold. The Born Rule is the statistics of
+minimal-$\mathcal{C}$ Resolution. As $\mathcal{C}$ accumulates,
+statistics depart from Born Rule --- which P0 tests.
+
+\subsection{On Gravity, Dark Energy, and the Stress-Energy Tensor}
+
+$G = \ln(2)\cdot c^2/D_0$ connects gravity to information geometry.
+Since $G(t) \propto \Lambda(t) \propto 1/P(t)$, gravity and dark
+energy are two faces of the same $\delta$-geometry --- both diluting
+as $P$ grows. The prediction $\dot{G}/G = \dot{\Lambda}/\Lambda$
+is testable with gravitational wave standard sirens and CMB
+observations.
+
+$T_{\mu\nu} = \mathcal{K}(\partial_\mu\mathcal{C}\otimes
+\partial_\nu\mathcal{C} - \frac{1}{2}g_{\mu\nu}(\partial\mathcal{C})^2)$
+identifies mass-energy as constraint-density gradients in $P$.
+What physics calls ``matter'' is crystallized $\delta$-activity.
+The full Einstein equations are recovered with every term derived
+from $\delta$.
+
+\subsection{On the Framework}
+
+CRF does not begin with physics. It begins with the question of
+what has to be true for anything to be different from anything else.
+
+The prediction in Section 5 is not the point. It is a consequence
+--- one among many that the framework generates. Its value is not
+that it confirms CRF if true. Its value is that it exposes CRF to
+the possibility of being wrong.
+
+That exposure is what distinguishes a framework from a belief.
+
+\bigskip
+\begin{center}
+\itshape
+$\delta$ does not stop anywhere.\\
+It does not start anywhere either.\\
+It simply operates --- and everything follows.
+\end{center}
+
+\end{document}
