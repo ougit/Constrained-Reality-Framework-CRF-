@@ -1,24 +1,41 @@
 # Constrained Reality Framework (CRF)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18977059.svg)](https://doi.org/10.5281/zenodo.18977059)
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0009--4451--6811-A6CE39?logo=orcid)](https://orcid.org/0009-0009-4451-6811)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![GitHub](https://img.shields.io/badge/GitHub-ougit%2FCRF-blue?logo=github)](https://github.com/ougit/Constrained-Reality-Framework-CRF-)
 
-**Author:** Ougit Jarittum  
+**Author:** Ougit Jarittum ([ORCID: 0009-0009-4451-6811](https://orcid.org/0009-0009-4451-6811))  
 **Date:** March 2026  
-**Status:** Theory complete. Experiment ready.
+**Status:** Theory complete. Experiment ready.  
+**Latest Update:** April 2026 - Repository reorganized with comprehensive document mapping
 
 ---
 
-## What CRF Is
+## 🎯 What is CRF?
 
-The Constrained Reality Framework derives all of physical reality from a single primitive: **Distinction (δ)** — the condition that makes any state distinguishable from any other.
+The **Constrained Reality Framework** derives all of physical reality from a single primitive: **Distinction (δ)** — the condition that makes any state distinguishable from any other.
 
-From δ alone, without additional axioms:
+From δ alone, without additional axioms, CRF derives:
 
-| Derived | Expression |
-|---------|-----------|
-| Possibility Space | P = δ(∅) |
-| Probability | Pr(s) = δ-frequency |
+| Derived | Expression | Status |
+|---------|-----------|--------|
+| **Possibility Space** | P = δ(∅) | ✅ Proven |
+| **Probability** | Pr(s) = δ-frequency | ✅ Proven |
+| **Resolution** | ℛ: threshold crossing | ✅ Proven |
+| **Time** | t = \|ℛ_events\| | ✅ Proven |
+| **Constraint** | 𝒞 ≡ Pr(s\|𝒞) | ✅ Proven |
+| **Threshold** | θ = 1 − e^(−D_KL/D₀) | ✅ Proven |
+| **Born Rule** | \|⟨s\|ψ⟩\|² via Gleason's Theorem | ✅ Proven (Session 11) |
+| **Schwarzschild Metric** | from non-linear ℛ-feedback | ✅ Proven |
+| **Gravitational Constant** | G = ln(2)·c²/D₀ | ✅ Proven |
+| **Einstein Equations** | T_μν = 𝒦(∂_μ𝒞 ⊗ ∂_ν𝒞 − ½g_μν(∂𝒞)²) | ✅ Complete |
+
+---
+
+## 🔬 Key Testable Predictions
+
+### P0 Hypothesis: History-Dependent Collapse
 | Resolution | ℛ: threshold crossing |
 | Time | t = \|ℛ_events\| |
 | Constraint | 𝒞 ≡ Pr(s\|𝒞) |
