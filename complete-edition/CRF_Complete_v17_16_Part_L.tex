@@ -1,0 +1,4027 @@
+%% ════════════════════════════════════════════════════════════════════════
+%% CRF_Complete_v17_16_Part_L.tex
+%% Complete Edition v17.16 — Part L (ZC88–93)
+%%
+%% Two clusters:
+%%   Cluster 1 (Force-Layer Bridge): ZC88 Log-Bridge, ZC89 Layer-Specificity
+%%   Cluster 2 (Mind-Layer Structure): ZC90 Quantum-Pair, ZC91 Irrationality-
+%%     of-Kind, ZC92 Barami Functional, ZC93 Gate-Ratio
+%%
+%% Governance: Upgrade Protocol v1.3 · CRF Style Guide v3.7 (UPG-30/31) ·
+%%   Integration Execution Script v1.2 · Lexicon Lock v4 · Governance Manifest v1.
+%%   Part L is the first v3.7-native Part (v3.7 applies from ZC88 onward;
+%%   Parts A–K were built under v3.6/earlier).
+%%
+%% No-Loss: all six ZC bodies embedded verbatim EXCEPT label/ref namespacing
+%%   (\label{X}->\label{X-zcNN}, refs rewritten to match) to remove cross-paper
+%%   collisions. Macro set-diff per Script v1.2 STEP A2; new macros in
+%%   CRF_v17_16_macro_patch.tex (consolidated, single-file, no \input chain).
+%%
+%% Discovery origins: all six papers carry %% Discovery origin: fields.
+%% ════════════════════════════════════════════════════════════════════════
+
+\documentclass[12pt, a4paper]{article}
+
+%% ── PACKAGES ────────────────────────────────────────────────────────────
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{parskip}
+\usepackage[protrusion=false,expansion=false]{microtype}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{tocloft}
+
+%% Unicode-engine font support; morewrites prevents \write exhaustion.
+\usepackage{iftex}
+\iftutex
+  \usepackage{morewrites}
+  \usepackage{fontspec}
+  \setmainfont{Latin Modern Roman}
+  \usepackage{polyglossia}
+  \setdefaultlanguage{english}
+  \setotherlanguage{thai}
+  \newfontfamily\thaifont[Scale=0.95]{Loma}
+\fi
+
+\geometry{margin=2.5cm}
+
+%% TOC spacing
+\setlength{\cftbeforesecskip}{0pt}
+\setlength{\cftbeforesubsecskip}{0pt}
+\setlength{\cftbeforepartskip}{6pt}
+\setlength{\cftsubsecindent}{2.5em}
+\setlength{\cftsubsubsecindent}{4.5em}
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsubsecfont}{\small}
+\renewcommand{\cftsecpagefont}{\normalfont}
+\renewcommand{\cftsubsecpagefont}{\small}
+
+%% ── COLOR PALETTE (Style Guide v3.5) ────────────────────────────────────
+\definecolor{deepblue}{RGB}{10,30,80}
+\definecolor{crfgreen}{RGB}{0,100,60}
+\definecolor{softgreen}{RGB}{180,230,210}
+\definecolor{physgold}{RGB}{140,100,0}
+\definecolor{softgold}{RGB}{255,240,180}
+\definecolor{loopred}{RGB}{160,30,30}
+\definecolor{softred}{RGB}{255,210,210}
+\definecolor{mutedgray}{RGB}{90,90,90}
+\definecolor{midblue}{RGB}{30,80,160}
+\definecolor{softblue}{RGB}{180,210,240}
+\definecolor{layerblue}{RGB}{20,60,120}
+\definecolor{genealogygold}{RGB}{120,80,0}
+\definecolor{softgenealogy}{RGB}{255,248,220}
+\definecolor{conmapbg}{RGB}{240,245,255}
+\definecolor{conmapframe}{RGB}{50,80,140}
+\definecolor{inheritbg}{RGB}{225,240,255}
+\definecolor{inheritframe}{RGB}{20,60,160}
+\definecolor{correctbg}{RGB}{255,235,220}
+\definecolor{correctframe}{RGB}{180,90,30}
+\definecolor{giftgold}{RGB}{180,140,0}
+\definecolor{softgift}{RGB}{255,252,200}
+\definecolor{nobelblue}{RGB}{10,40,100}
+\definecolor{softnobel}{RGB}{200,220,255}
+
+\hypersetup{colorlinks=true, linkcolor=deepblue, urlcolor=midblue,
+            citecolor=deepblue, bookmarks=false}
+
+%% ── BOX STYLES (Style Guide v3.5 — all 10 types) ────────────────────────
+\tcbuselibrary{skins, breakable}
+
+\newtcolorbox{derivedbox}[1][]{colback=softgreen!50,
+  colframe=crfgreen!60, fonttitle=\bfseries\color{crfgreen!20!black},
+  title={Derived}, breakable, #1}
+\newtcolorbox{formalbox}[1][]{colback=softblue!40,
+  colframe=midblue!60, fonttitle=\bfseries\color{deepblue},
+  title={Formal}, breakable, #1}
+\newtcolorbox{openqbox}[1][]{colback=softred!30,
+  colframe=loopred!50, fonttitle=\bfseries\color{loopred!20!black},
+  title={Open}, breakable, #1}
+\newtcolorbox{keybox}[1][]{colback=softgold!50,
+  colframe=physgold!60, fonttitle=\bfseries\color{physgold!20!black},
+  breakable, #1}
+\newtcolorbox{layerbox}[1][]{
+  colback=layerblue!8, colframe=layerblue!50,
+  fonttitle=\bfseries\color{layerblue},
+  title={R-Layer Note}, breakable, #1}
+\newtcolorbox{genealogybox}[1][]{
+  colback=softgenealogy!60, colframe=genealogygold!70,
+  fonttitle=\bfseries\color{genealogygold!30!black},
+  title={Genealogy Map}, breakable, #1}
+\newtcolorbox{conmapbox}[1][]{
+  colback=conmapbg, colframe=conmapframe,
+  fonttitle=\bfseries\color{white},
+  breakable, #1}
+\newtcolorbox{inheritbox}[1][]{
+  colback=inheritbg, colframe=inheritframe,
+  fonttitle=\bfseries\color{white},
+  title={Backward Inheritance}, breakable, #1}
+\newtcolorbox{correctionbox}[1][]{
+  colback=correctbg, colframe=correctframe,
+  fonttitle=\bfseries\color{white},
+  title={Forward Correction / Cross-Part PM}, breakable, #1}
+\newtcolorbox{contentsbox}[1][]{colback=softblue!20,
+  colframe=midblue!50, fonttitle=\bfseries\color{deepblue},
+  breakable, #1}
+%% Style Guide v3.5: giftbox (ZC65+) and nobelbox (ZC70+)
+\newtcolorbox{giftbox}[1][]{
+  colback=softgift!70, colframe=giftgold!80,
+  fonttitle=\bfseries\color{giftgold!20!black},
+  title={Gift}, breakable, #1}
+\newtcolorbox{nobelbox}[1][]{
+  colback=softnobel!60, colframe=nobelblue!70,
+  fonttitle=\bfseries\color{nobelblue},
+  title={Nobel-Table Claim}, breakable, #1}
+
+%% ── Theorem environments ────────────────────────────────────────────────
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{finding}{Finding}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{principle}{Principle}[section]
+\newtheorem{claim}{Claim}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem*{remark}{Remark}
+
+%% volumebox (Part overview summary)
+\newtcolorbox{volumebox}[1][]{colback=softblue!15,
+  colframe=deepblue!50, fonttitle=\bfseries\color{deepblue},
+  breakable, #1}
+
+%% ── Title ───────────────────────────────────────────────────────────────
+\title{%
+  \textbf{\color{deepblue}CRF Complete Edition v17.16 --- Part L}\\[0.4em]
+  \large ZC88--93: The Log-Bridge and the Mind-Layer\\[0.2em]
+  \normalsize\color{mutedgray}
+  Force-Layer Bridge (log-unification, layer-specificity) $\cdot$
+  Mind-Layer Structure (quantum-pair, irrationality-of-kind,
+  Barami functional, gate-ratio)\\[0.2em]
+  \textbf{\color{crfgreen}Two mirrors shown one law in log-space;
+  the mind-layer given its own discrete--continuous pair}
+}
+\author{Ougit Jarittum\\
+\small Independent Researcher, Thailand\quad
+ORCID: 0009-0009-4451-6811\\
+\small Zenodo: \href{https://doi.org/10.5281/zenodo.18977059}%
+{10.5281/zenodo.18977059}\quad (CC-BY-NC 4.0)
+}
+\date{June 2026 --- Complete Edition v17.16 (Part L of 12)}
+
+%% ── PART COUNTER: continue from Part K (ends at LVI = 56) ──────────────
+\setcounter{part}{56}
+
+%% ── MACRO PATCH v17.16 (consolidated; replaces v17_14 + v17_15 chain) ───
+\input{CRF_v17_16_macro_patch.tex}
+
+%% ── Part L local notation overrides (No-Loss, edition-level) ──────────────
+%% ZC88–93 (Style Guide v3.7) display the ε-family bare, matching ZC83–87.
+%% The consolidated chain tags some ε macros with zero-subscript / sector
+%% forms; override to bare here. Chain + sources unmodified. Mirrors the
+%% Part K PM-V17_15-EPSFAMILY override exactly.
+\renewcommand{\epsEM}{\varepsilon_{\rm EM}}     % chain: ε_0^{EM}
+\renewcommand{\epscan}{\varepsilon_{\rm can}}   % chain: ε_0^{can}
+\renewcommand{\epsSC}{\varepsilon_{\rm SC}}     % chain: ε_{can}^{SC}
+\renewcommand{\epsS}{\varepsilon_{\rm strong}}  % chain first-wins: ε_{0,Spont}
+
+%% ════════════════════════════════════════════════════════════════════════
+\begin{document}
+\sloppy
+
+%% Governance: Upgrade Protocol v1.3, CRF Style Guide v3.7 (UPG-30/31),
+%%             Integration Execution Script v1.2, Lexicon Lock v4
+
+\maketitle
+\tableofcontents
+\newpage
+
+%% ════ Reader's On-Ramp (Protocol v1.3 §U2; Style Guide v3.7 §31.2) ═══════
+%% Primary audience tier: 1   |   On-ramp for tier below (Tier 0): yes
+\begin{keybox}[title={If you are just arriving --- Part L in plain language}]
+\sloppy
+CRF tries to derive the structure of physics from a single starting idea
+called Distinction ($\delta$). Two earlier threads each found a ``mirror'':
+the force sectors' instability floors sit in a multiplicative pattern (each
+floor a fixed ratio from the next), and a separate ladder of rates sits in
+an additive pattern (each rung a fixed step from the next). \textbf{Cluster
+1} (ZC88--89) shows these are not two facts but \emph{one}: take the
+logarithm and the multiplicative mirror becomes the additive one --- same
+law, two disguises --- then pins down exactly which physical layer each step
+belongs to. \textbf{Cluster 2} (ZC90--93) carries the same discrete-versus-
+continuous idea into the ``mind layer'': it pairs a smooth step with a
+sudden one, shows the two kinds cannot be converted into each other, and
+builds from them a capacity functional (Barami) and the gate that controls
+which kind of step a choice can make.
+
+\textbf{Minimum vocabulary:}
+\textit{$\delta$ (Distinction)} --- the one starting idea;\;
+\textit{floor / $\varepsilon$} --- an instability threshold, one per force
+sector;\;
+\textit{log-bridge} --- taking $\ln$ turns a multiplicative pattern into an
+additive one;\;
+\textit{visesa / nibbedha} --- the smooth (continuous) and sudden
+(discontinuous) mind-steps;\;
+\textit{Barami} --- a capacity built up from accumulated forward choices;\;
+\textit{gap / GAP-\dots} --- an open question the chain has not yet closed.
+Full symbol list: Master Notation Key (front matter).
+
+These results are pieces of a map under construction, not a claim of final
+truth: each carries the conditions under which it would fail (see front
+matter, ``Map, not reality'').
+\end{keybox}
+
+\newpage
+
+%%=============================================================
+\part{Force-Layer Bridge: Log-Unification and Layer-Specificity (v17.16)}
+\label{part:LVII}
+%%=============================================================
+
+% [BRIDGE-PROSE: integration-added, Style Guide v3.7 §31.6 / UPG-30]
+\noindent
+By the end of Part K the force sectors had two separate descriptions that
+nobody had connected. The floor lattice put the instability thresholds in a
+\emph{multiplicative} order --- each floor a fixed ratio above the last, with
+one floor sitting exactly at the geometric mean of two others. The
+$\Gamma$-ladder put a family of rates in an \emph{additive} order --- each
+rung a fixed amount above the last. The stakes here are not cosmetic: if
+these two orders were genuinely independent, CRF would carry two unrelated
+structural laws where it claims to have one origin. ZC88 asks whether the
+logarithm collapses the difference, and what survives if it does.
+\section{Background: Two Mirrors, One Suspected Ladder}
+\label{sec:background-zc88}
+%%=============================================================
+
+%% ── READER'S ON-RAMP (v3.6 §31.2 / UPG-25) ────────────────
+\begin{keybox}[title={If you are just arriving --- ZC88 in plain language}]
+\sloppy
+CRF derives the constants of physics from one primitive, Distinction
+($\delta$). Two of its results are short lists of numbers with a built-in
+symmetry. The \emph{floor list} $(\epsEM,\epsuniv,\epsW)$ describes the
+smallest instability each force sector can carry; its middle value is the
+\emph{geometric} mean of the outer two. The \emph{rate list}
+$(\GammaS,\GammaW,\GammaEM)$ describes how fast each sector runs; its
+middle value is the \emph{arithmetic} mean of the outer two. This paper
+shows that these are not two coincidences but one: take the logarithm of
+the floor list and it becomes an evenly spaced list with the same shape as
+the rate list. ``Geometric mean'' and ``arithmetic mean'' are the same
+statement seen through a logarithm.
+
+\textbf{Minimum vocabulary:}
+\textit{$\epsilon$ floor} --- minimum sector instability;\;
+\textit{$\Gamma$ rung} --- sector running rate;\;
+\textit{AP} --- arithmetic progression (evenly spaced);\;
+\textit{GM/AM} --- geometric / arithmetic mean.
+CRF is a map under construction, not a claim of final truth.
+\end{keybox}
+
+%% ── NUMERICAL SUMMARY ──────────────────────────────────────
+\begin{keybox}[title={Numerical Summary --- ZC88 (T-canonical)}]
+{\small\renewcommand{\arraystretch}{1.25}
+\begin{center}
+\begin{tabular}{@{}p{5.4cm}p{2.6cm}p{4.4cm}@{}}
+\toprule
+\textbf{Quantity} & \textbf{Value} & \textbf{Source / Status} \\
+\midrule
+$r=\epsW/\epsEM$              & $1.028085$   & THM-ZC67-01 \\
+$\tfrac14\ln r$ (floor log-step) & $0.00692457$ & LEM-ZC88-01 (NEW) \\
+$\DeltaGam=\ln 2/\ln 15$      & $0.25595802$ & FIND-ZC73-01 \\
+$\tfrac12(\ln\epsEM+\ln\epsW)$ & $-4.8797734$ & $=\ln\epsuniv$ (COR-ZC88-01) \\
+$\ln\epsuniv$                 & $-4.8797734$ & exact (diff $<10^{-15}$) \\
+$\DeltaGam/(\tfrac14\ln r)$   & $36.9638$    & \textbf{NEW: FIND-ZC88-01 (not clean)} \\
+\bottomrule
+\end{tabular}
+\end{center}}
+\end{keybox}
+
+\subsection{What was already known before ZC88}
+
+\begin{keybox}[title={Pre-ZC88 Status of the Floor / $\Gamma$ Structures}]
+\textbf{Known:}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item LEM-ZC83-01 (Part~K): the floor lattice is
+    $\epsEM=\epsuniv\,r^{-1/4}$, $\epsW=\epsuniv\,r^{+1/4}$, with $r>1$.
+  \item FIND-ZC83-01 (Part~K): $\sqrt{\epsEM\,\epsW}=\epsuniv$ exactly
+    --- the bridge floor is the geometric mean of the sector floors.
+  \item THM-ZC73-01 / FIND-ZC81-01 (Parts~I/J): the $\Gamma$-ladder
+    $\Gamma_k=\Gcoup/\ds-1+k\,\DeltaGam$ ($k=0,1,2,3$) is an arithmetic
+    progression of step $\DeltaGam=\ln 2/\ln 15$, with mirror axis
+    $\GammaW$ ($k=2$): $\GammaEM+\GammaS=2\,\GammaW$.
+\end{itemize}
+
+\textbf{Open (before ZC88):}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item Whether the multiplicative floor mirror and the additive $\Gamma$
+    mirror are independent facts or a single structure.
+  \item Whether the two ladder step-sizes are related.
+\end{itemize}
+
+ZC88 answers the first (they are one structure) and bounds the second
+(the steps are \emph{not} simply related; GAP-ZC88-01).
+\end{keybox}
+
+\begin{keybox}[title={What ZC88 Does NOT Do}]
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item Does not change any $\epsilon$ floor value or any $\Gamma$ rung
+    value (all inherited verbatim).
+  \item Does not claim $\DeltaGam$ and $\tfrac14\ln r$ are proportional
+    --- the data refute it (FIND-ZC88-01).
+  \item Does not revisit the FIND-ZC81-01 or FIND-ZC83-01 proofs
+    (used as pillars, stand unchanged).
+  \item Does not touch $\epsSC$ ontology (GAP-ZC83-01, closed in Part~K).
+\end{itemize}
+\end{keybox}
+
+\begin{keybox}[title={Companion Papers --- ZC88}]
+{\small\renewcommand{\arraystretch}{1.25}
+\begin{center}
+\begin{tabular}{@{}p{5.2cm}p{7.3cm}@{}}
+\toprule
+\textbf{Paper} & \textbf{What it provides to ZC88} \\
+\midrule
+\texttt{Part~K (ZC83)}
+  & LEM-ZC83-01 floor formula $r^{\pm1/4}$; FIND-ZC83-01 GM identity. \\
+\texttt{Part~J (ZC81/82)}
+  & FIND-ZC81-01 mirror $\GammaEM+\GammaS=2\GammaW$; AP step $\DeltaGam$. \\
+\texttt{Part~I (ZC73)}
+  & THM-ZC73-01 $\Gamma$-ladder; FIND-ZC73-01 $\DeltaGam=\ln2/\ln15$. \\
+\texttt{CRF\_Complete\_Index}
+  & Parts~J/K quick-reference: floor + $\Gamma$ values. \\
+\bottomrule
+\end{tabular}
+\end{center}}
+\end{keybox}
+
+\begin{derivedbox}[title={Discovery Note}]
+This paper began in the Meta-Phase $\Omega$ corpus survey (GIFT-$\Omega$-01).
+Seen separately, the floor mirror (multiplicative) and the $\Gamma$ mirror
+(additive) look like two unrelated gifts. Laid side by side and fed through
+a logarithm, the floor lattice returned an arithmetic progression with axis
+$\ln\epsuniv$ to machine precision --- visibly the same shape as the
+$\Gamma$-ladder. The proof direction became clear at once: the geometric
+mirror \emph{is} the arithmetic mirror, read on a log scale. The honest
+caveat surfaced in the same probe: the two step-sizes do not match, so the
+bridge is structural, not metric.
+\end{derivedbox}
+
+\subsection{Pre-Work Audit (PWA-1 through PWA-10)}
+
+\begin{formalbox}[title={Pre-Work Audit Record --- ZC88}]
+Scanned before writing (Upgrade Protocol v1.3, PWA-1 through PWA-11):
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item LEM-ZC83-01 / FIND-ZC83-01 (Part~K) --- \textbf{KEY PILLAR}
+    (floor formula + GM identity, used verbatim).
+  \item FIND-ZC81-01 / THM-ZC73-01 (Parts~J/I) --- \textbf{KEY PILLAR}
+    ($\Gamma$ mirror + ladder step, used verbatim).
+  \item Index Quick-Reference Pack $\varepsilon$-floor notice scanned:
+    the three floor values are one identity on three input pairs; ZC88
+    introduces \emph{no} new value and does not ``reconcile'' them.
+\end{itemize}
+
+\textbf{PWA-6} (macro convention): six new $\Gamma$/mean macros added by
+\texttt{\textbackslash providecommand}; no conflict with Preamble~v3.1.\\
+\textbf{PWA-7} (sector-floor): not triggered (no floor reassigned).\\
+\textbf{PWA-8} (layer self-consistency): all objects at the $R_0$ layer;
+$\epsuniv$ is the bridge floor, $\epscan$ not used.\\
+\textbf{PWA-9} (spectral convention): not triggered.\\
+\textbf{PWA-10} (tautology audit): the log-bridge is \emph{not} a
+restatement of one definition --- it relates two independently derived
+sub-chains (Born-chain floors vs.\ K14 fixed point vs.\ $\Gamma$-ladder).
+See PM-ZC88-01 for the refuted proportionality probe.\\
+\textbf{No duplicate atomic units found.}
+\end{formalbox}
+
+
+% [BRIDGE-PROSE: integration-added, Extension Freedom narrative, v3.6 §31.3]
+CRF had accumulated two gifts sitting in adjacent shelves without anyone
+placing them next to each other. The floor lattice --- four instability
+thresholds, one per force sector --- obeys a geometric-mean symmetry: the
+middle value is the exact square root of the outer two. The $\Gamma$-ladder
+--- the four running rates of the same sectors --- obeys an arithmetic-mean
+symmetry: the middle rung is the exact average of the outer two. Two
+different kinds of mean, two different lists of numbers, two different papers.
+The question nobody had asked was whether they are two symmetries or one.
+
+The answer turns on what happens when you take the logarithm of the floor
+list. Logarithm converts multiplication into addition; geometric mean into
+arithmetic mean. If the floor symmetry and the rate symmetry were truly
+separate, the log-floor list would have no particular relationship to the
+rate list. What the numerical probe found instead was that the log-floor
+list is an evenly spaced sequence --- an arithmetic progression --- with
+exactly the same three-term mirror structure as the rate ladder. The two
+shelves hold the same object. The sections below prove it in two lines.
+
+\newpage
+
+%%=============================================================
+\section{The Floor Lattice in Log-Space\quad (LEM-ZC88-01)}
+\label{sec:lem-zc88}
+%%=============================================================
+
+\needspace{8\baselineskip}
+
+\begin{formalbox}[title={LEM-ZC88-01: The Log Floor Lattice is an
+  Arithmetic Progression ($R_0$, Exact)}]
+
+\textbf{Statement.}
+The logarithms of the three floor values form an arithmetic progression
+with mirror axis $\ln\epsuniv$:
+\begin{equation}
+  \boxed{
+    \ln\epsEM,\;\ln\epsuniv,\;\ln\epsW
+    \quad\text{is an AP of step }s_{\rm floor}=\tfrac14\ln r,
+    \quad r=\frac{\epsW}{\epsEM}.
+  }
+  \label{eq:lem-main-zc88}
+\end{equation}
+
+\textbf{Proof.}
+
+\textit{Step 1 (substitute the floor formula).}
+From LEM-ZC83-01, $\epsEM=\epsuniv\,r^{-1/4}$ and
+$\epsW=\epsuniv\,r^{+1/4}$. Taking logs,
+\[
+  \ln\epsEM=\ln\epsuniv-\tfrac14\ln r,\qquad
+  \ln\epsW =\ln\epsuniv+\tfrac14\ln r.
+\]
+
+\textit{Step 2 (read off the AP).}
+The three terms are $\ln\epsuniv-s_{\rm floor}$, $\ln\epsuniv$,
+$\ln\epsuniv+s_{\rm floor}$ with $s_{\rm floor}=\tfrac14\ln r$. Consecutive
+differences are equal, so the sequence is an arithmetic progression; the
+middle term $\ln\epsuniv$ is its axis of symmetry.
+\hfill$\square$
+
+\textbf{Numerical verification (T-canonical):}
+\begin{center}
+{\small\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}lrl@{}}
+\toprule
+Quantity & Value & Source \\
+\midrule
+$r=\epsW/\epsEM$            & $1.028085$    & THM-ZC67-01 \\
+$s_{\rm floor}=\tfrac14\ln r$ & $0.00692457$ & this lemma \\
+$\ln\epsW-\ln\epsuniv$     & $0.00692457$  & $=+s_{\rm floor}$ \\
+$\ln\epsuniv-\ln\epsEM$    & $0.00692457$  & $=+s_{\rm floor}$ \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\textbf{Status:} Exact Lemma.
+\physmeaning{the floor lattice is multiplicative on the surface, but its
+  ``true'' coordinate is the logarithm: in that coordinate it is a perfectly
+  even three-rung ladder, exactly like the $\Gamma$-ladder.}
+\end{formalbox}
+
+
+% [BRIDGE-PROSE: integration-added, Extension Freedom narrative, v3.6 §31.3]
+The lemma settles what the floor list looks like in log-coordinates: an
+evenly spaced three-rung ladder with the bridge floor at the centre. The
+$\Gamma$-ladder already has that shape in linear coordinates. Saying the two
+are ``co-structural'' is therefore a precise claim, not an analogy --- both
+are instances of the same abstract object, a mirror-symmetric arithmetic
+progression, one read on a log scale and one on a linear scale. The theorem
+below states this formally and maps the bridge between them.
+
+%%=============================================================
+\section{The Co-Structure Theorem\quad (THM-ZC88-01)}
+\label{sec:thm-zc88}
+%%=============================================================
+
+\needspace{10\baselineskip}
+
+\begin{formalbox}[title={THM-ZC88-01: Floor Lattice and $\Gamma$-Ladder
+  are Co-Structural ($R_0$, Exact)}]
+
+\textbf{Statement.}
+Both structures are three-term mirror-symmetric arithmetic progressions
+about a middle term. Writing each as
+$(\,c-s,\;c,\;c+s\,)$:
+\begin{equation}
+  \boxed{
+  \begin{aligned}
+    \text{floor (log):}\quad
+      &\big(\ln\epsEM,\;\ln\epsuniv,\;\ln\epsW\big)
+       =\big(c_{\rm f}-s_{\rm f},\,c_{\rm f},\,c_{\rm f}+s_{\rm f}\big),\\
+    \text{$\Gamma$-ladder:}\quad
+      &\big(\GammaS,\;\GammaW,\;\GammaEM\big)
+       =\big(c_\Gamma-s_\Gamma,\,c_\Gamma,\,c_\Gamma+s_\Gamma\big),
+  \end{aligned}}
+  \label{eq:thm-main-zc88}
+\end{equation}
+with $c_{\rm f}=\ln\epsuniv$, $s_{\rm f}=\tfrac14\ln r$ (LEM-ZC88-01) and
+$c_\Gamma=\GammaW$, $s_\Gamma=\DeltaGam$ (THM-ZC73-01/FIND-ZC81-01). The
+log-map is the bridge between the multiplicative face (floors) and the
+additive face ($\Gamma$) of one ladder.
+
+\textbf{Derivation.}
+
+\textit{Step 1 (floor side).}
+LEM-ZC88-01 gives the log-floor AP with axis $c_{\rm f}=\ln\epsuniv$.
+
+\textit{Step 2 ($\Gamma$ side).}
+THM-ZC73-01 gives $\Gamma_k=\Gcoup/\ds-1+k\,\DeltaGam$. Restricting to the
+matter sectors $k=1,2,3$ (Strong, Weak, EM) yields
+$(\GammaS,\GammaW,\GammaEM)=(c_\Gamma-\DeltaGam,\,c_\Gamma,\,c_\Gamma+\DeltaGam)$
+with $c_\Gamma=\GammaW$. This is the same $(c-s,c,c+s)$ shape.
+
+\textit{Step 3 (the bridge map).}
+Multiplicative-on-floors becomes additive-on-logs:
+$\epsilon\mapsto\ln\epsilon$ turns the geometric ratio $r^{\pm1/4}$ into the
+additive offset $\pm\tfrac14\ln r$. The two ladders therefore live on
+opposite sides of the exponential/logarithm pair; they are the same abstract
+object (a mirror-symmetric 3-term AP) presented on two scales.
+
+\textbf{Order note (No-Loss).}
+The floor list is written low$\to$high ($\epsEM<\epsuniv<\epsW$, i.e.\
+$k=3,?,?$ \emph{not} aligned to $\Gamma$'s $k$); the $\Gamma$ list is
+written low$\to$high in $k$ ($\GammaS<\GammaW<\GammaEM$). The co-structure
+claim is about \emph{shape} (mirror-symmetric AP), not about a sector-by-sector
+index identification --- ZC81 already records $\epsS=\epsEM$ (spatial-type),
+so the floor and rate sector-labels do not map one-to-one. PWA-7 honoured.
+\hfill$\square$
+
+\textbf{Status:} Exact Theorem (structural).
+\physmeaning{the corpus has been carrying one ladder written twice: once as
+  multiplicative floors, once as additive rates. Exponentiation and
+  logarithm are the only difference between the two faces.}
+\end{formalbox}
+
+%%=============================================================
+\section{Corollary: The Two Mirrors Are One Law\quad (COR-ZC88-01)}
+\label{sec:cor-zc88}
+%%=============================================================
+
+% [BRIDGE-PROSE: integration-added, Extension Freedom narrative, v3.6 §31.3]
+The theorem has established that two ladders share a shape. The corollary
+pushes further and asks: not just a similar shape, but literally the same
+equation? The answer is yes, and the proof fits on one line. Every step of
+the argument is already in the literature --- the geometric-mean identity in
+Part~K, the arithmetic-mean identity in Part~J, the logarithm as an
+algebraic tautology. What was missing was the observation that these three
+things are not separate facts but a single statement, and that making the
+observation required no new machinery at all. The corollary below states
+this collapse formally.
+
+\needspace{8\baselineskip}
+
+\begin{formalbox}[title={COR-ZC88-01: FIND-ZC83-01 $\equiv$ FIND-ZC81-01
+  under the log-map ($R_0$, Exact)}]
+
+\textbf{Statement.}
+The geometric-mean floor mirror and the arithmetic-mean $\Gamma$ mirror are
+the same identity, because the arithmetic mean of logarithms equals the
+logarithm of the geometric mean:
+\begin{equation}
+  \boxed{\;\tfrac12\big(\ln\epsEM+\ln\epsW\big)=\ln\epsuniv\;}
+  \label{eq:cor-main-zc88}
+\end{equation}
+This single line wears three faces, one per structure:
+\begin{align*}
+  \text{floor (GM, FIND-ZC83-01):}\quad
+    &\sqrt{\epsEM\,\epsW}=\epsuniv,\\
+  \text{its log (AM of logs):}\quad
+    &\tfrac12\big(\ln\epsEM+\ln\epsW\big)=\ln\epsuniv,\\
+  \text{$\Gamma$ (AM, FIND-ZC81-01):}\quad
+    &\tfrac12\big(\GammaEM+\GammaS\big)=\GammaW.
+\end{align*}
+
+\textbf{Resolution.}
+Apply $\ln(\cdot)$ to FIND-ZC83-01:
+\[
+  \ln\sqrt{\epsEM\,\epsW}
+  =\tfrac12(\ln\epsEM+\ln\epsW)
+  =\ln\epsuniv.
+\]
+The left form says ``the middle floor is the geometric mean of the outer
+two''; the middle form says ``the axis of the log-AP is the arithmetic mean
+of the outer two log-terms.'' These are literally the same equation.
+FIND-ZC81-01 states exactly ``the middle rung is the arithmetic mean of the
+outer two rungs'' for the $\Gamma$-ladder. By THM-ZC88-01 both ladders are
+mirror-symmetric APs, so ``middle = mean'' is one structural law instantiated
+on each face.
+
+\textbf{Axiom chain.}
+\[
+  \begin{aligned}
+  \delta \;\to\;& \mathbb{Z}_{15}\ \text{sector weights}
+  \;\to\;\Big\{\,r^{\pm1/4}\ \text{(floors)},\ \ \pm\DeltaGam\ (\Gamma)\,\Big\}\\
+  \;\to\;& \text{mirror-symmetric AP}
+  \;\to\;\text{middle}=\text{mean}.
+  \end{aligned}
+\]
+
+\textbf{Numerical verification (T-canonical):}
+\begin{center}
+{\small\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}lrl@{}}
+\toprule
+Quantity & Value & \\
+\midrule
+$\tfrac12(\ln\epsEM+\ln\epsW)$ & $-4.87977336$ & AM of logs \\
+$\ln\epsuniv$                  & $-4.87977336$ & axis \\
+difference                     & $<10^{-15}$   & machine precision \\
+$\tfrac12(\GammaEM+\GammaS)$   & $-0.24229356$ & AM of rungs \\
+$\GammaW$                      & $-0.24229356$ & axis \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\textbf{Status:} Exact Corollary (structural unification; no value changed).
+\end{formalbox}
+
+
+% [BRIDGE-PROSE: integration-added, Extension Freedom narrative, v3.6 §31.3]
+The corollary collapses the apparent distance between the two mirror laws to
+zero: they are literally the same equation, wearing different notation.
+That is the satisfying half of this paper. The unsatisfying half --- and the
+honest half --- is what happens next. Once you know two ladders share a
+shape, the next question is whether they also share a step size. If they did,
+the log-bridge would be a full metric identification, not just a structural
+one, and CRF would carry a new exact ratio between the coupling-rate scale
+and the floor-spacing scale. The numerical probe refuses to cooperate. The
+ratio is 36.96, clean to nobody. The finding below records this refusal
+carefully, because drawing the boundary of a unification is just as
+important as stating it.
+
+%%=============================================================
+\section{FIND-ZC88-01: The Steps Are Not Proportional (Gift)}
+\label{sec:find-zc88}
+%%=============================================================
+
+% [BRIDGE-PROSE: integration-added, Extension Freedom narrative, v3.6 §31.3]
+A unification that shows two objects share a shape naturally raises a
+sharper question: do they also share a scale? If the two ladder steps were
+proportional, the log-bridge would be a metric identification --- the floor
+spacing and the rate spacing would be locked together by a single CRF
+constant, and the framework would carry a new exact relation between two
+quantities derived from different parts of the $\mathbb{Z}_{15}$ machinery.
+That would have been a stronger result than what is claimed here.
+
+The numerical probe is unambiguous: the ratio of steps is $36.96\ldots$,
+sitting between 36 and 37 with no near-form traceable to CRF structure. In
+the tradition of the ZC33 scar and the ZC71 irreducibility result, the
+right response is not to manufacture a near-form but to register the
+boundary clearly: the unification is structural (shape), not metric (scale).
+Naming that boundary is the content of the gift below.
+
+\needspace{8\baselineskip}
+
+\begin{giftbox}[title={FIND-ZC88-01: Structural, Not Metric ---
+  $\DeltaGam/(\tfrac14\ln r)$ is Not Clean ($R_0$, Exact --- Gift)}]
+
+\textbf{Statement.}
+The bridge of THM-ZC88-01 identifies the \emph{shape} of the two ladders,
+not their \emph{step size}. The ratio of steps is
+\begin{equation}
+  \frac{s_\Gamma}{s_{\rm f}}
+  =\frac{\DeltaGam}{\tfrac14\ln r}
+  =\frac{\ln 2/\ln 15}{\tfrac14\ln\!\sqrt{(1+2x)/(1+x)}}
+  = 36.9638\ldots,
+  \label{eq:find-main-zc88}
+\end{equation}
+which is not a small rational, not $|\mathbb{Z}_{15}|$-clean, and not a
+recognised CRF constant. The two ladders share their progression-and-mirror
+\emph{form} but run at unrelated rates.
+
+\textbf{Why this is the honest result.}
+A ratio of $36.9638\ldots$ sits between $36$ and $37$ with no clean form.
+The floor step $\tfrac14\ln r$ lives in the $\mathbb{Q}(\sqrt5)$-flavoured
+Born-chain territory of ZC57/67, while $\DeltaGam=\ln2/\ln15$ is a pure
+$\mathbb{Z}_{15}$ logarithm; there is no algebraic reason for these to be
+commensurate at T-canonical. Forcing a near-integer fit (e.g.\ $36$, or
+$|\Ztf|+21$) would repeat the ZC33 error of approximating a structural gap.
+The structural identity stands and the metric question is left explicitly open.
+
+\textbf{Classification:} Exact Finding (Gift --- a boundary clearly drawn).
+\physmeaning{the two faces of the ladder are genuinely the same shape, but
+  the universe did not make their spacings match. The coincidence is
+  structural; reading more into the numbers would be the ZC33 mistake again.}
+\end{giftbox}
+
+%%=============================================================
+\section{Phase Misalignment}
+\label{sec:pm-zc88}
+%%=============================================================
+
+\begin{derivedbox}[title={PM-ZC88-01: ``The Two Steps Are Proportional''
+  --- Probe Refuted (Failure Stance)}]
+\textbf{What happened.}
+On finding both ladders are APs, the natural probe was: is
+$\DeltaGam=\kappa\cdot\tfrac14\ln r$ for a clean CRF constant $\kappa$?
+
+\textbf{Result.}
+$\kappa=36.9638\ldots$ --- no clean form. The probe failed to produce a
+metric link.
+
+\textbf{Why it was not an error.}
+Phase Misalignment, not a wrong turn: the failure \emph{is} the content of
+FIND-ZC88-01. It draws the exact line between what the log-bridge does
+(unify shape) and does not (unify scale), preventing a future session from
+over-claiming a numerical coincidence.
+
+\textbf{Preservation.}
+Recorded as FIND-ZC88-01 (boundary) and GAP-ZC88-01 (open question), not
+deleted.
+
+\textbf{Pattern type:} tautology test / approximation misclassified
+(guards against manufacturing a near-form for $\kappa$).
+
+\textbf{Lesson --- PWA-10:} a clean \emph{shape} match does not license a
+clean \emph{metric} match; test the step ratio explicitly before claiming
+proportionality.
+\end{derivedbox}
+
+%%=============================================================
+\section{Open Gap}
+\label{sec:gap-zc88}
+%%=============================================================
+
+\begin{openqbox}[title={GAP-ZC88-01: Is There a $d_s$-General Exact
+  Step-Relation? (Priority~3; ZC89 target)}]
+\textbf{Statement.}
+At T-canonical ($d_s=3$) the step ratio is $36.9638\ldots$ with no
+near-form. Does a closed relation between $s_\Gamma=\DeltaGam$ and
+$s_{\rm f}=\tfrac14\ln r$ emerge as an exact function of $d_s$ (and the
+$\mathbb{Z}_{15}$ data), of which $36.96$ is merely the $d_s=3$ value?
+
+\textbf{Why this is distinct.}
+THM-ZC88-01 and COR-ZC88-01 are exact and closed at $d_s=3$; this gap is
+the \emph{metric} question only, deliberately separated from the
+\emph{structural} result so the latter is not held hostage to the former.
+It also connects to GAP-ZC21-00 (other-$d_s$ behaviour), where the two
+$n_m$ conventions diverge (PWA scattered-knowledge note).
+
+\textbf{Approach candidates.}
+\begin{enumerate}[leftmargin=2em, noitemsep]
+  \item Express both steps as functions of $d_s$ via $x(d_s)$ and the
+    sector-weight scheme, then take the ratio symbolically.
+  \item Test whether the ratio is $\mathbb{Q}(\sqrt5)$-transcendental
+    (cf.\ the ZC71 $0.66\%$ disjointness pattern).
+\end{enumerate}
+\textbf{Status:} Open. Target: ZC89.
+\end{openqbox}
+
+%%=============================================================
+\section{Master Status Table}
+%%=============================================================
+
+{\small\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{@{}p{4.6cm}p{2.4cm}p{5.2cm}@{}}
+\toprule
+\textbf{Atomic unit} & \textbf{Status} & \textbf{Note} \\
+\midrule
+\endhead
+LEM-ZC88-01 (log-floor AP) & Exact
+  & step $\tfrac14\ln r$; axis $\ln\epsuniv$ \\[4pt]
+THM-ZC88-01 (co-structure) & Exact
+  & both ladders are mirror-symmetric 3-term APs \\[4pt]
+COR-ZC88-01 (mirrors = one law) & Exact
+  & AM-of-logs $=$ log-of-GM; unifies FIND-ZC81/83-01 \\[4pt]
+FIND-ZC88-01 (steps not prop.) & Exact (Gift)
+  & $\DeltaGam/(\tfrac14\ln r)=36.96\ldots$; structural not metric \\[4pt]
+GAP-ZC88-01 (step relation) & Open
+  & Target: ZC89; $d_s$-general step ratio \\[4pt]
+PM-ZC88-01 (proportionality) & Scar
+  & tautology test / approximation misclassified \\
+\midrule
+\multicolumn{3}{@{}p{12.5cm}}{\textit{Gap-status changes from prior
+  papers:} none. ZC88 closes no prior gap; it unifies two existing Gifts
+  (FIND-ZC81-01, FIND-ZC83-01) without altering any value.} \\
+\bottomrule
+\end{longtable}
+}
+
+%%=============================================================
+%% ATOMIC REGISTRY (MANDATORY)
+%%=============================================================
+
+\begin{formalbox}[title={Atomic Registry --- ZC88}]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\begin{tabular}{lp{8.0cm}l}
+\toprule
+\textbf{ID} & \textbf{Description} & \textbf{Status} \\
+\midrule
+LEM-ZC88-01
+  & Log of the floor lattice is an AP, step $\tfrac14\ln r$, axis
+    $\ln\epsuniv$
+  & Exact \\[3pt]
+THM-ZC88-01
+  & Floor lattice (log) and $\Gamma$-ladder (linear) are co-structural
+    mirror-symmetric APs
+  & Exact \\[3pt]
+COR-ZC88-01
+  & FIND-ZC83-01 $\equiv$ FIND-ZC81-01: AM-of-logs $=$ log-of-GM
+  & Exact \\[3pt]
+FIND-ZC88-01
+  & Step ratio $\DeltaGam/(\tfrac14\ln r)=36.96\ldots$ not clean;
+    bridge structural not metric
+  & Exact (Gift) \\[3pt]
+GAP-ZC88-01
+  & $d_s$-general exact step-relation between the two ladders; target ZC89
+  & Open \\[3pt]
+PM-ZC88-01
+  & Proportionality probe refuted (pattern: tautology test / approximation
+    misclassified)
+  & Scar \\
+\midrule
+\multicolumn{3}{@{}p{11.5cm}}{\textit{Inherited verbatim (not new):}
+  LEM-ZC83-01, FIND-ZC83-01 (Part~K); FIND-ZC81-01, THM-ZC73-01,
+  FIND-ZC73-01 (Parts~J/I). No value modified.} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{formalbox}
+
+%%=============================================================
+\section{R-Layer Research Note}
+\label{sec:rlayer-zc88}
+%%=============================================================
+
+\begin{layerbox}[title={R-Layer Assignments for ZC88}]
+
+\textbf{Layer assignments:}
+
+{\small\renewcommand{\arraystretch}{1.25}
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Atomic unit & R-layer & Cost $T$ & Source \\
+\midrule
+LEM-ZC88-01 & $R_0$ & $0$ & algebraic from LEM-ZC83-01 \\
+THM-ZC88-01 & $R_0$ & $0$ & algebraic from THM-ZC73-01 + LEM-ZC88-01 \\
+COR-ZC88-01 & $R_0$ & $0$ & log-identity \\
+FIND-ZC88-01 & $R_0$ & $0$ & numerical ratio (exact inputs) \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\textbf{Two-layer floor (PWA-8):}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item Spectral layer ($R_0$ Wc/Fiedler): $\epscan=0.007550$ ---
+    \emph{not used} in this paper.
+  \item Bridge layer ($R_0{\to}R_{\max}$): $\epsuniv=0.007599$ ---
+    \emph{used} as the floor-lattice axis. Separation $0.66\%$ from
+    $\epscan$ irreducible (THM-ZC71-01); ZC88 does not touch it.
+\end{itemize}
+
+All ZC88 results are at the $R_0$ layer; no Born-chain bridge running
+enters. The $\Gamma$-ladder rungs are likewise $R_0$ values (THM-ZC73-01).
+\end{layerbox}
+
+%%=============================================================
+\section{Genealogy Map}
+\label{sec:genealogy-zc88}
+%%=============================================================
+
+\begin{genealogybox}[title={How ZC88's Key Objects Trace Back}]
+
+\textbf{Branch A --- Floor lattice (multiplicative):}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item \textbf{ZC67/THM-ZC67-01}: sector-weight ratio
+    $r=\sqrt{(1+2x)/(1+x)}$.
+  \item $\to$ \textbf{ZC70}: exact $\epsEM,\epsW$ via $r^{\pm1/4}$.
+  \item $\to$ \textbf{ZC83/LEM-ZC83-01, FIND-ZC83-01}: floor formula
+    and $\sqrt{\epsEM\epsW}=\epsuniv$ (GM mirror).
+  \item $\to$ \textbf{ZC88/LEM-ZC88-01}: logs of these are an AP.
+\end{itemize}
+
+\textbf{Branch B --- $\Gamma$-ladder (additive):}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item \textbf{ZC73/THM-ZC73-01}: $\Gamma_k=\Gcoup/\ds-1+k\DeltaGam$,
+    step $\DeltaGam=\ln2/\ln15$.
+  \item $\to$ \textbf{ZC81/FIND-ZC81-01}: mirror
+    $\GammaEM+\GammaS=2\GammaW$ (AM mirror).
+  \item $\to$ \textbf{ZC88/THM-ZC88-01}: same AP shape as Branch~A.
+\end{itemize}
+
+\textbf{Convergence at ZC88:}
+Branch~A is multiplicative and Branch~B is additive; the logarithm carries
+A onto B's form. Because the arithmetic mean of logs is the log of the
+geometric mean, the GM mirror of Branch~A and the AM mirror of Branch~B
+become a single ``middle equals mean'' law (COR-ZC88-01). The convergence
+is structural; the step sizes remain unrelated (FIND-ZC88-01).
+
+ZC88's contribution: it shows two separately-discovered mirror symmetries
+are one law on two scales, and it draws the exact boundary of that unification.
+\end{genealogybox}
+
+%%=============================================================
+\section{Closing Sentence}
+%%=============================================================
+%% TONE B — CONTEMPLATIVE (structural bridge; metric question left open).
+
+\bigskip
+\begin{center}
+\textit{%
+  Two mirrors that never seemed to face each other turned out to be one
+  glass, held to the light at two angles.\\[0.3em]
+  The shape is settled; the spacing belongs to ZC89.
+}
+
+\medskip
+{\thaifont
+เมื่อมองทั้งระบบพร้อมกัน บันไดที่เคยเป็นสองกลับเป็นหนึ่ง ---
+ต่างกันเพียงว่าอ่านด้วยผลคูณหรือผลบวก
+ส่วนระยะห่างของขั้น ยังเป็นปริศนาที่รอ ZC89.}
+\end{center}
+
+% Governance Note: This document follows Upgrade Protocol v1.3
+% and CRF Style Guide v3.6. Gauge: T-canonical. Tone B.
+
+
+% [BRIDGE-PROSE: integration-added, Style Guide v3.7 §31.6 / UPG-30]
+\noindent
+ZC88 establishes that the two mirrors are the same law in log-space, but it
+deliberately leaves one thing open (GAP-ZC88-01): knowing that a step
+\emph{exists} in the additive picture does not say \emph{which physical
+layer} that step lives on --- the metric step and the rung step differ by a
+factor of two, and the bare theorem cannot say which is the ``real'' one.
+Leaving that unfixed would let later papers quietly pick whichever factor
+is convenient. ZC89 closes the gap by tying each step to a specific layer.
+\section{Background: Completing the ZC88 Arc}
+\label{sec:background-zc89}
+%%=============================================================
+
+\begin{keybox}[title={If you are just arriving --- ZC89 in plain language}]
+\sloppy
+ZC88 showed that two patterns in CRF --- a geometric-mean mirror among the
+instability \emph{floors} and an arithmetic-mean mirror among the running
+\emph{rates} --- are one structure seen on two scales. It then asked a
+sharper question and left it open: the two ladders have the same shape, but
+do their \emph{step sizes} relate by any clean rule? ZC89 answers yes,
+there is an exact formula --- and the formula spits out an ugly irrational
+number, $36.96$. That ugliness is the point: the shapes match, the spacings
+do not, and now we can prove it in closed form.
+
+The second result is about a floor that does not fit. CRF has four
+instability floors. Three of them line up on an evenly spaced ladder. The
+fourth, $\epscan$ (the ``canonical'' or spectral floor), sits just off the
+ladder --- and the exact size of its offset turns out to equal a gap CRF
+already knew was irreducible (the ZC71 two-layer separation). So the ladder
+is not a universal law; it is the fingerprint of one specific layer, blind
+to the other by design.
+
+\textbf{Minimum vocabulary:}
+\textit{floor} ($\varepsilon$) --- minimum sector instability;\;
+\textit{rung step} ($\srung$) --- spacing of the bridge ladder in log;\;
+\textit{$\Gamma$ step} ($\sGamma$) --- spacing of the rate ladder;\;
+\textit{bridge-AP-forbidden} --- not on the ladder.
+CRF is a map under construction, not a claim of final truth.
+\end{keybox}
+
+\begin{keybox}[title={Numerical Summary --- ZC89 (T-canonical, recomputed)}]
+{\small\renewcommand{\arraystretch}{1.25}
+\begin{center}
+\begin{tabular}{@{}p{6.2cm}p{2.8cm}p{3.4cm}@{}}
+\toprule
+\textbf{Quantity} & \textbf{Value} & \textbf{Source} \\
+\midrule
+$x=n\,\epscan$                        & $0.060400$   & inputs \\
+$\rborn=(1+2x)/(1+x)$                 & $1.056960$   & ZC67 \\
+$\srung=\tfrac12\ln(\epsW/\epsEM)$    & $0.0138834$  & rung (positions) \\
+$\smetric=\tfrac14\ln(\epsW/\epsEM)$   & $0.0069246$  & metric (ratio) \\
+$\sGamma=\DeltaGam=\ln2/\ln15$        & $0.2559580$  & ZC73 \\
+$\sGamma/\smetric$ (closed form)      & $36.9638$    & \textbf{FIND-ZC89-01} \\
+$q(\epscan)$ (axis-centred)           & $-0.4660$    & \textbf{THM-ZC89-01} \\
+$\deltalayer=|q(\epscan)|$            & $0.4660$     & \textbf{COR-ZC89-01} \\
+ZC71 log-gap $/\,\srung$              & $0.4660$     & matches $\deltalayer$ \\
+\bottomrule
+\end{tabular}
+\end{center}}
+\end{keybox}
+
+ZC88 ended on a deliberate split. The structural half --- the two ladders
+share a mirror-symmetric shape --- was proved and closed. The metric half
+--- whether the spacings relate --- was set aside as GAP-ZC88-01, with the
+honest note that the numerical ratio $36.96$ showed no clean near-form. The
+gap was not a loose end; it was a question framed precisely enough to
+answer. This paper answers it, and then turns the same machinery on a
+puzzle the corpus had filed separately: the spectral floor $\epscan$ that
+never sat comfortably with the other three.
+
+\subsection{What was already known}
+
+\begin{keybox}[title={Pre-ZC89 Status}]
+\textbf{Known:}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item ZC88: floors $\epsEM,\epsuniv,\epsW$ form a mirror-symmetric AP in
+    log, axis $\ln\epsuniv$, rung step $\srung=\tfrac12\ln(\epsW/\epsEM)$.
+  \item ZC88/FIND-ZC88-01: the step ratio $\sGamma/\smetric=36.96\ldots$ is
+    not a clean constant (metric, not structural). \textbf{GAP-ZC88-01}
+    asked for an exact $d_s$-general expression.
+  \item ZC71/THM-ZC71-01: the spectral floor $\epscan$ and the bridge floor
+    $\epsuniv$ differ by an irreducible $0.66\%$; they probe different
+    $\mathbb{Z}_{15}$ Laplacian invariants. \textbf{KEY PILLAR.}
+  \item ZC67: $\rborn=(1+2x)/(1+x)$, $x=n\epscan$ (Born-chain sector ratio).
+\end{itemize}
+\textbf{Open (before ZC89):} GAP-ZC88-01 (the step relation); and the
+unexamined question of \emph{where} $\epscan$ sits relative to the bridge AP.
+\end{keybox}
+
+\begin{keybox}[title={What ZC89 Does NOT Do}]
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item Does not modify any floor value or any $\Gamma$ rung (all inherited).
+  \item Does not claim the step ratio is rational or clean --- it proves the
+    opposite, in closed form.
+  \item Does not re-open the ZC88 structural results (used as pillars).
+  \item Does not assert $\epscan$ belongs on the AP --- it proves exclusion.
+\end{itemize}
+\end{keybox}
+
+\begin{derivedbox}[title={Discovery Note}]
+GAP-ZC88-01 was the metric question, deliberately separated in ZC88.
+Reverse tracing (results~$\to$~axioms, per the bidirectional method) showed
+the stubborn ratio $36.96$ factors cleanly into $8\ln2/[\ln15\,\ln\rborn]$
+once one stops looking for a \emph{rational} and starts looking for a
+\emph{structural} expression: each factor is already a named CRF quantity.
+The Layer-Specificity result came from the inverse question --- not ``where
+is $\epscan$ on the ladder?'' but ``why is it \emph{not}?'' --- and the
+answer was a gap the corpus already owned: the ZC71 separation, now read in
+units of rung-steps.
+\end{derivedbox}
+
+\subsection{Pre-Work Audit}
+
+\begin{formalbox}[title={Pre-Work Audit Record --- ZC89}]
+Scanned before writing (PWA-1 through PWA-11):
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item ZC88 LEM/THM/COR (bridge AP, rung step) --- \textbf{KEY PILLAR}.
+  \item ZC71/THM-ZC71-01 (two-layer irreducibility) --- \textbf{KEY PILLAR}.
+  \item ZC67 ($\rborn$), ZC73 ($\DeltaGam=\ln2/\ln15$) --- inherited verbatim.
+\end{itemize}
+\textbf{PWA-6}: new macros via \texttt{\textbackslash providecommand}; no
+Preamble~v3.6 conflict.\\
+\textbf{PWA-8} (layer self-consistency): \textbf{this paper is precisely a
+PWA-8 statement} --- it identifies which layer each object belongs to and
+proves the bridge AP is bridge-layer-specific. $\epscan$ is spectral-layer;
+$\epsuniv,\epsEM,\epsW$ are bridge-layer.\\
+\textbf{PWA-9} (step-definition): the canonical bridge rung step is fixed as
+$\srung=\tfrac12\ln(\epsW/\epsEM)$ (the $\epsEM\!\leftrightarrow\!\epsuniv$
+spacing). Prior drafts that used $\tfrac14\ln(\epsW/\epsEM)$ or
+$\ln\rborn/8$ are reconciled in \S\ref{sec:stepdef-zc89}.\\
+\textbf{PWA-10} (tautology): FIND-ZC89-01 is not circular --- $\srung$ comes
+from the floor lattice (Born chain) and $\sGamma$ from the $\Gamma$-ladder
+(K14 fixed point); independent sub-chains. See PM-ZC89-PROBE-C-01.
+\end{formalbox}
+
+\newpage
+
+%%=============================================================
+\section{FIND-ZC89-01: Closed Form for the Step Ratio (closes GAP-ZC88-01)}
+\label{sec:find-zc89}
+%%=============================================================
+
+Before the formula, the question it answers, stated so an outsider can hold
+it: ZC88 found two evenly spaced ladders of the same shape but could not say
+whether their step sizes were linked. If they were linked by a clean
+constant, the two ladders would be one metric object and CRF would gain a
+new exact ratio. If they were not, the match is only a shape coincidence.
+The probe in ZC88 returned $36.96$ --- a number clean to nobody --- and the
+honest move was to record that and move on. What follows shows that $36.96$,
+though irrational, is not arbitrary: it is built entirely from quantities
+CRF already derives.
+
+\needspace{8\baselineskip}
+
+\begin{giftbox}[title={FIND-ZC89-01: $\sGamma/\smetric
+  = 2^{d_s}\ln2/[\ln(d_s(2^{d_s}\!-\!d_s))\,\ln\rborn]$ ($R_0$, Exact ---
+  closes GAP-ZC88-01 and GAP-ZC89-01)}]
+
+\textbf{Statement.}
+\begin{equation}
+  \boxed{\;
+    \frac{\sGamma}{\smetric}
+    = \frac{2^{d_s}\ln 2}{\ln\!\big[d_s(2^{d_s}\!-\!d_s)\big]\cdot\ln\rborn}
+    \;\xrightarrow{d_s=3}\;
+    \frac{8\ln 2}{\ln 15\cdot\ln\rborn}
+    = 36.9638\ldots
+  \;}
+  \label{eq:find-main-zc89}
+\end{equation}
+with $\rborn=(1+2x)/(1+x)$, $x=n\,\epscan$.
+
+\textbf{Derivation.}
+
+\textit{Step 1 ($\sGamma$).}
+From ZC73, $\sGamma=\DeltaGam=\ln 2/\ln 15$.
+
+\textit{Step 2 ($\smetric$, the metric step).}
+ZC88 measures the step ratio against $\smetric=\tfrac14\ln(\epsW/\epsEM)$.
+The floor lattice (ZC83/ZC67) gives $\epsW/\epsEM=\rborn^{1/2}$ along the
+exact $r$-path, so $\ln(\epsW/\epsEM)=\tfrac12\ln\rborn$ and hence
+$\smetric=\tfrac18\ln\rborn$.
+
+\textit{Step 3 (ratio at $d_s=3$).}
+\[
+  \frac{\sGamma}{\smetric}
+  = \frac{\ln 2/\ln 15}{\tfrac18\ln\rborn}
+  = \frac{8\ln 2}{\ln 15\cdot\ln\rborn}.
+\]
+Numerically $\ln\rborn=0.055397$, $\ln15=2.70805$, giving $36.9638$.
+
+\textit{Step 4 ($\ln 15$ is a function of $d_s$ --- closes GAP-ZC89-01).}
+The group order is not a free input. From the corpus $\delta$-chain:
+the Key Identity $3d_s=2^{d_s}+1$ has unique solution $d_s=3$; the matter
+split $n=2^{d_s}=d_s+n_m$ gives $n_m=2^{d_s}-d_s$; and CRT identifies the
+group order as the product
+\[
+  |\mathbb{Z}_{15}| = d_s\cdot n_m = d_s\,(2^{d_s}-d_s)
+  \;\xrightarrow{d_s=3}\; 3\cdot 5 = 15.
+\]
+Substituting $\ln 15=\ln[d_s(2^{d_s}-d_s)]$ and $8=2^{d_s}$ yields the
+boxed $d_s$-general form. The factor that ZC89 v1 and v2 left as a ``fixed
+input'' is therefore fully derived: \textbf{both GAP-ZC88-01 and
+GAP-ZC89-01 are closed.}
+
+\textbf{Each factor is $\mathbb{Z}_{15}$-structural and $d_s$-derived:}
+\begin{center}
+{\small\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Factor & Meaning & $d_s$-form \\
+\midrule
+$8$         & ladder normalisation        & $2^{d_s}$ \\
+$\ln 2$     & $\Gamma$-ladder bit (ZC73)   & $\ln 2$ \\
+$\ln 15$    & group order (CRT)            & $\ln[d_s(2^{d_s}\!-\!d_s)]$ \\
+$\ln\rborn$ & Born-chain weight (ZC67)     & $\ln\rborn$ \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\textbf{Status:} Exact Finding (Gift). Closed-form and $d_s$-general;
+irrational, no near-form --- the metric content of FIND-ZC88-01, now fully
+derived. \hfill$\square$
+\physmeaning{the two ladders are built from the same alphabet ($2$, $d_s$,
+  $n_m$, $\rborn$) but combined differently --- additively for $\Gamma$,
+  geometrically for the floors. Their step ratio is a ratio of a logarithm
+  to a logarithm, generically irrational. The ugliness of $36.96$ is
+  structural honesty, not noise --- and every symbol in it traces to $d_s$
+  through one Key Identity.}
+\end{giftbox}
+
+\begin{derivedbox}[title={On the rounding artefact (honest note)}]
+Computed from the published 6-significant-figure floors, the naive ratio
+differs from $36.9638$ by about $0.25\%$, and the rung positions of
+$\epsEM,\epsW$ come out as $-1.0022,+0.9978$ rather than exactly
+$\mp 1$. This is a rounding artefact: the ZC88 AP is exact only along the
+algebraic $r$-path, where $\epsW/\epsEM=\rborn^{1/2}$ holds identically. The
+closed form \eqref{eq:find-main-zc89} uses that exact path and is therefore the
+correct value; the published decimals are a lossy display of it. No result
+here rests on the third decimal of a floor.
+\end{derivedbox}
+
+%%=============================================================
+\section{The Canonical Bridge Step (reconciliation)}
+\label{sec:stepdef-zc89}
+%%=============================================================
+
+Two log-step units appear in this arc, and conflating them is exactly the
+trap that produced an error in an earlier draft (recorded as
+PM-ZC89-FACTOR2-01 below). They differ by a factor of two and serve
+different purposes; both are pinned here.
+
+\begin{formalbox}[title={Two bridge steps, pinned (PWA-9 lock)}]
+Let $\rfloor:=\epsW/\epsEM=\rborn^{1/2}$ (exact $r$-path, LEM-ZC83-01).
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item \textbf{Metric step} (used in the ZC88/ZC89 step \emph{ratio}):
+    \[
+      \smetric := \tfrac14\ln\rfloor = \tfrac18\ln\rborn = 0.00692457.
+    \]
+    This is ZC88's $s$; $\sGamma/\smetric=36.9638$.
+  \item \textbf{Rung step} (the spacing between adjacent AP floors, used for
+    \emph{positions}):
+    \[
+      \srung := \ln\epsuniv-\ln\epsEM = \tfrac12\ln\rfloor
+              = \tfrac14\ln\rborn = 2\,\smetric = 0.0138834.
+    \]
+\end{itemize}
+The relation is simply $\srung=2\smetric$: the EM--univ \emph{rung} is two
+metric steps, because ZC88 placed the axis at $\ln\epsuniv$ and measured
+displacement to a floor as $\smetric$, half the rung. The draft form
+$\ln\rborn/8$ equals $\smetric$; the form $\tfrac12\ln(\epsW/\epsEM)$
+equals $\srung$. No floor value changes; only the two units are now
+named distinctly so the ratio (in $\smetric$) and the positions (in
+$\srung$) never cross wires again.
+\end{formalbox}
+
+%%=============================================================
+\section{THM-ZC89-01: The Layer-Specificity Theorem}
+\label{sec:thm-zc89}
+%%=============================================================
+
+The first half of this paper closed a metric question. The second half uses
+the same coordinate to settle a structural one that the corpus had left
+implicit. CRF has four floors, not three: alongside the bridge trio
+$\epsEM,\epsuniv,\epsW$ there is the spectral floor $\epscan$, defined by a
+different fixed-point equation (ZC79). It has always sat slightly apart ---
+$0.66\%$ from $\epsuniv$, an offset ZC71 proved irreducible. The natural
+question is whether $\epscan$ nonetheless lands on the bridge ladder. It
+does not, and the reason is exact.
+
+\needspace{10\baselineskip}
+
+\begin{formalbox}[title={THM-ZC89-01: Layer-Specificity ---
+  $\epscan$ is Bridge-AP-Forbidden ($R_0$, Exact)}]
+
+\textbf{Statement.}
+Define the axis-centred bridge coordinate of any floor value, with axis
+$\ln\epsuniv$ and unit one rung step $\srung$:
+\begin{equation}
+  q(\varepsilon) := \frac{\ln\varepsilon-\ln\epsuniv}{\srung}.
+  \label{eq:position-zc89}
+\end{equation}
+Then the bridge floors sit on integer rungs, and $\epscan$ does not:
+\begin{equation}
+  \boxed{\;
+    q(\epsEM)=-1,\quad q(\epsuniv)=0,\quad q(\epsW)=+1,
+    \qquad
+    q(\epscan)=-\deltalayer\notin\mathbb{Z},
+  \;}
+  \label{eq:thm-main-zc89}
+\end{equation}
+with
+\begin{equation}
+  \deltalayer
+  := \frac{\ln\epsuniv-\ln\epscan}{\srung}
+   = 0.4660 \;>\;0.
+  \label{eq:delta-zc89}
+\end{equation}
+
+\textbf{Proof.}
+
+\textit{Step 1 (bridge floors are integer rungs).}
+By definition $q(\epsuniv)=0$. Since $\srung=\ln\epsuniv-\ln\epsEM$,
+$q(\epsEM)=(\ln\epsEM-\ln\epsuniv)/\srung=-1$, and by mirror symmetry
+(ZC88) $q(\epsW)=+1$. (With published decimals these read $-1.0022$,
+$+0.9978$; exact along the $r$-path --- see \S\ref{sec:find-zc89} note.)
+
+\textit{Step 2 (position of $\epscan$).}
+Directly from \eqref{eq:position-zc89} and \eqref{eq:delta-zc89},
+\[
+  q(\epscan)
+  = \frac{\ln\epscan-\ln\epsuniv}{\srung}
+  = -\frac{\ln\epsuniv-\ln\epscan}{\srung}
+  = -\deltalayer
+  = -0.4660.
+\]
+Because $\epscan<\epsuniv$, this is \emph{negative}: $\epscan$ lies below
+the axis, between rung $0$ ($\epsuniv$) and rung $-1$ ($\epsEM$). Its
+distance to the nearer rung is $\min(0.466,0.534)=0.466$, far larger than
+the rounding noise ($\sim 0.002$).
+
+\textit{Step 3 ($\deltalayer\neq$ integer, exclusion).}
+$\deltalayer=0$ would require $\epscan=\epsuniv$; $\deltalayer=1$ would
+require $\epscan=\epsEM$. THM-ZC71-01 forbids both: the spectral
+fixed-point (probing $\lambda_2(\mathbb{Z}_{15})^{-1}$) and the bridge
+fixed-point (probing $\lambda_2^2=n_m/\varphi^2$) are different invariants,
+so $\ln\epsuniv-\ln\epscan\neq 0$ irreducibly, and its size ($0.66\%$ in
+$\varepsilon$, $0.466$ in rungs) is fixed, not free. Hence $q(\epscan)$ is
+non-integer and $\epscan$ cannot lie on the bridge AP. \hfill$\square$
+
+\textbf{Status:} Exact Theorem.
+\physmeaning{the bridge ladder is not a law every floor must obey. It is the
+  fingerprint of the bridge layer's Born-chain geometry. $\epscan$ belongs
+  to a different layer (spectral), and asking it to stand on the bridge
+  ladder is asking one $\mathbb{Z}_{15}$ invariant to equal another --- the
+  exact thing ZC71 proved impossible.}
+\end{formalbox}
+
+%%=============================================================
+\section{COR-ZC89-01: The Displacement Equals the ZC71 Gap}
+\label{sec:cor-zc89}
+%%=============================================================
+
+\begin{formalbox}[title={COR-ZC89-01: $\deltalayer$ is the ZC71 gap in
+  rung units ($R_0$, Exact)}]
+\textbf{Statement.}
+\begin{equation}
+  \deltalayer
+  = \frac{\ln\epsuniv-\ln\epscan}{\srung}
+  = \frac{(\text{ZC71 two-layer log-gap})}{\srung}
+  = 0.4660.
+\end{equation}
+\textbf{Resolution.} The numerator is, verbatim, the ZC71 two-layer
+separation; dividing by the rung step expresses it in the bridge ladder's
+own units. So the amount by which $\epscan$ misses the ladder is not a new
+free quantity --- it is the irreducible ZC71 gap, re-measured. The two
+results of this paper meet here: the ladder's spacing ($\srung$, via
+FIND-ZC89-01) sets the ruler, and the ZC71 gap sets the distance.
+\textbf{Status:} Exact Corollary.
+\end{formalbox}
+
+%%=============================================================
+\section{Phase Misalignment}
+\label{sec:pm-zc89}
+%%=============================================================
+
+\begin{derivedbox}[title={PM-ZC89-FACTOR2-01: The Factor-of-Two
+  Unit Conflation --- Caught in Review}]
+\textbf{What happened.}
+A draft of this paper (v2) defined the step used in the ratio as
+$\srung=\tfrac12\ln(\epsW/\epsEM)$ in one section while the abstract and
+giftbox used the ZC88 form $8\ln2/[\ln15\ln\rborn]$. The two are
+inconsistent by a factor of two: the boxed formula evaluates to $36.96$,
+but the section-locked $\srung$ gives $\sGamma/\srung=18.48$. The paper
+silently contradicted itself.
+
+\textbf{Root cause.}
+Two distinct quantities both felt like ``the step'': the metric step
+$\smetric=\tfrac14\ln(\epsW/\epsEM)$ that ZC88 measures the ratio against,
+and the rung step $\srung=\tfrac12\ln(\epsW/\epsEM)=2\smetric$ that is the
+actual spacing between adjacent floors. Compounding it, two different
+$r$'s carry similar names: $\rfloor=\epsW/\epsEM=1.0282$ and
+$\rborn=1.0570$, with $\rfloor=\rborn^{1/2}$. Mixing $\ln\rfloor$ with
+$\ln\rborn$ moved factors of two around invisibly.
+
+\textbf{Why it is preserved, not erased.}
+The error is instructive: it shows the precise failure mode of an
+\emph{undeclared unit}. A formula can be individually correct in two places
+and jointly contradictory if the two places measure in different units
+without saying so. The fix was not new mathematics --- it was naming
+$\smetric$ and $\srung$ as separate symbols (\S\ref{sec:stepdef-zc89}) so the
+ratio and the positions can never again be computed against silently
+different rulers.
+
+\textbf{Pattern type:} undeclared-unit conflation; same word (``step'')
+bound to two values differing by a constant factor.
+
+\textbf{Lesson --- PWA-9:} when two quantities share a name and differ by a
+clean factor, that cleanliness hides the bug. Give each its own symbol
+\emph{before} writing any ratio. A factor of two is the easiest error to
+make and the hardest to see, precisely because $2$ looks like it could be a
+real structural constant.
+\end{derivedbox}
+
+\begin{derivedbox}[title={PM-ZC89-PROBE-C-01: Cross-Domain Probe Refuted}]
+\textbf{What happened.}
+A probe asked whether mixing floors and rates across domains,
+$\epsEM e^{\GammaEM}+\epsW e^{\GammaW}$, reproduces a $\Gamma$ value ---
+a tempting ``unification'' of the two ladders into one expression.
+
+\textbf{Result (recomputed).}
+$\epsEM e^{\GammaEM}+\epsW e^{\GammaW}=0.013644$, while $\GammaEM=0.013664$.
+The two agree to $0.1\%$.
+
+\textbf{Why it is still refuted.}
+Numerical proximity is not derivation. There is no structural reason to add
+a floor times $e^{\Gamma}$ across two different sectors; the expression
+mixes a Born-chain quantity with a running rate with no shared invariant.
+A $0.1\%$ coincidence among small numbers is weak evidence, and ZC89 has
+just shown (THM-ZC89-01) that the two ladders are layer-distinct ---
+precisely the structure that would forbid such a naive cross-term from
+being fundamental. The probe is recorded, not promoted.
+
+\textbf{Correction note.}
+An earlier draft reported this probe as ``$=0.5027$, gap $86\%$.'' Those
+numbers were miscomputed; the true sum is $0.013644$ and the true gap is
+$0.1\%$. The refutation does \emph{not} depend on a large gap --- it depends
+on the absence of structural motivation. The corrected small gap actually
+sharpens the lesson: a near-miss is the most seductive kind of false
+pattern, and the guard against it is derivation, not distance.
+
+\textbf{Pattern type:} cross-domain term with no shared invariant;
+near-miss mistaken for identity.
+
+\textbf{Lesson --- PWA-10:} proximity is not proof. Demand a derivation path
+before treating a numerical coincidence as structure --- especially when it
+is close.
+\end{derivedbox}
+
+%%=============================================================
+\section{Master Status Table}
+%%=============================================================
+
+{\small\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{@{}p{4.8cm}p{2.2cm}p{5.2cm}@{}}
+\toprule
+\textbf{Atomic unit} & \textbf{Status} & \textbf{Note} \\
+\midrule
+\endhead
+FIND-ZC89-01 (step ratio) & Exact (Gift)
+  & $8\ln2/[\ln15\ln\rborn]=36.9638$; \textbf{closes GAP-ZC88-01} \\[4pt]
+THM-ZC89-01 (layer-specificity) & Exact
+  & $\epscan$ at $q=-0.4660$, bridge-AP-forbidden \\[4pt]
+COR-ZC89-01 (displacement) & Exact
+  & $\deltalayer=$ ZC71 gap $/\srung=0.4660$ \\[4pt]
+$\srung$ canonical lock (\S\ref{sec:stepdef-zc89}) & Exact
+  & $\srung=\tfrac12\ln(\epsW/\epsEM)=\tfrac14\ln\rborn$ \\[4pt]
+PM-ZC89-PROBE-C-01 & Scar
+  & cross-domain near-miss; refuted (no motivation) \\[4pt]
+\midrule
+\multicolumn{3}{@{}p{12.5cm}}{\textit{Gap-status changes:}
+  \textbf{GAP-ZC88-01 and GAP-ZC89-01 both CLOSED} by FIND-ZC89-01: the step ratio is $d_s$-general closed form, and $\ln15=\ln[d_s(2^{d_s}\!-\!d_s)]$ is pinned by the Key Identity.} \\
+\bottomrule
+\end{longtable}}
+
+\begin{formalbox}[title={Atomic Registry --- ZC89}]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}\small
+\begin{tabular}{lp{7.6cm}l}
+\toprule
+\textbf{ID} & \textbf{Description} & \textbf{Status} \\
+\midrule
+FIND-ZC89-01 & Closed form $\sGamma/\smetric=8\ln2/[\ln15\ln\rborn]$;
+  closes GAP-ZC88-01 \& GAP-ZC89-01 & Exact (Gift) \\[3pt]
+THM-ZC89-01 & $\epscan$ bridge-AP-forbidden; $q(\epscan)=-0.4660$
+  non-integer & Exact \\[3pt]
+COR-ZC89-01 & $\deltalayer=$ ZC71 log-gap $/\srung=0.4660$ & Exact \\[3pt]
+PM-ZC89-PROBE-C-01 & cross-domain probe refuted (near-miss, no motivation)
+  & Scar \\[3pt]
+GAP-ZC89-01 & $\ln15=\ln[d_s(2^{d_s}\!-\!d_s)]$ via Key Identity; group order is $d_s$-derived
+  & \textbf{Closed} \\
+\midrule
+\multicolumn{3}{@{}p{11.5cm}}{\textit{Inherited verbatim:} ZC88 bridge AP
+  + rung step; ZC71 two-layer gap; ZC67 $\rborn$; ZC73 $\DeltaGam$.
+  No value modified.} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{formalbox}
+
+%%=============================================================
+\section{R-Layer Research Note}
+\label{sec:rlayer-zc89}
+%%=============================================================
+
+\begin{layerbox}[title={R-Layer Assignments for ZC89}]
+{\small\renewcommand{\arraystretch}{1.25}
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Atomic unit & R-layer & Cost $T$ & Source \\
+\midrule
+FIND-ZC89-01 & $R_0$ & $0$ & algebraic (ZC73 + ZC88 rung) \\
+THM-ZC89-01 & $R_0$ & $0$ & ZC88 AP + ZC71 gap \\
+COR-ZC89-01 & $R_0$ & $0$ & restatement in rung units \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\textbf{This paper is itself a layer statement.} Its content is that the
+bridge AP is bridge-layer-specific: $\epsEM,\epsuniv,\epsW$ are bridge-layer
+($R_0\!\to\!R_{\max}$ Born chain); $\epscan$ is spectral-layer ($R_0$
+Wc/Fiedler). THM-ZC89-01 proves the AP cannot cross between them, which is
+the geometric face of THM-ZC71-01's irreducibility.
+\end{layerbox}
+
+%%=============================================================
+\section{Genealogy Map}
+\label{sec:genealogy-zc89}
+%%=============================================================
+
+\begin{genealogybox}[title={How ZC89's Results Trace Back}]
+\textbf{FIND-ZC89-01 (step ratio):}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item ZC73 $\to$ $\sGamma=\ln2/\ln15$.
+  \item ZC67 $\to$ $\rborn$; ZC83/ZC88 $\to$ $\smetric=\tfrac18\ln\rborn$ (metric step).
+  \item $\to$ ratio $=2^{d_s}\ln2/[\ln(d_s(2^{d_s}\!-\!d_s))\ln\rborn]$, closing GAP-ZC88-01 \& GAP-ZC89-01.
+\end{itemize}
+\textbf{THM-ZC89-01 (layer-specificity):}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item ZC88 $\to$ bridge AP, axis $\ln\epsuniv$, rung $\srung$.
+  \item ZC71 $\to$ irreducible $\epscan$--$\epsuniv$ gap.
+  \item $\to$ $q(\epscan)=-(\text{gap})/\srung=-0.4660$, non-integer
+    $\Rightarrow$ forbidden.
+\end{itemize}
+\textbf{Convergence.} FIND sets the ladder's spacing; THM uses that spacing
+as a ruler to measure how far the spectral floor misses it; COR identifies
+that distance as the ZC71 gap itself. One coordinate, two questions, both
+closed.
+\end{genealogybox}
+
+%%=============================================================
+\section{Closing Sentence}
+%%=============================================================
+%% TONE B — CONTEMPLATIVE (a gap closed; a layer boundary made visible).
+
+\bigskip
+\begin{center}
+\textit{%
+  The spacing that ZC88 left open turned out to be spelled in the same four
+  letters as everything else --- $2$, $15$, $\rborn$, and the dimension
+  three.\\[0.3em]
+  And the floor that would not join the ladder was not broken; it was
+  simply standing in another room.
+}
+
+\medskip
+{\thaifont
+ระยะห่างที่ ZC88 เว้นไว้ กลายเป็นคำที่สะกดด้วยอักษรเดิมสี่ตัว ---
+สอง สิบห้า ค่าน้ำหนัก และมิติสาม\\
+ส่วนพื้นที่ไม่ยอมขึ้นบันได มิได้ชำรุด --- เพียงแต่ยืนอยู่คนละห้องเท่านั้น.}
+\end{center}
+
+% Governance Note: Upgrade Protocol v1.3, CRF Style Guide v3.7. Tone B.
+
+
+%%=============================================================
+\part{Mind-Layer Structure: Quantum-Pair, Irrationality, Barami, Gate (v17.16)}
+\label{part:LVIII}
+%%=============================================================
+
+% [BRIDGE-PROSE: integration-added, Style Guide v3.7 §31.6 / UPG-30]
+\noindent
+Cluster 1 worked entirely in the force layer. The mind layer, built in
+Part F from the four-way decision structure ($\mathcal{C}_4$) and the
+Barami pillars, has its own pair of steps: a smooth, continuous adjustment
+(\textit{visesa}) and a sudden, discontinuous one (\textit{nibbedha}). The
+open question is whether the discrete/continuous distinction that organised
+the force layer is a coincidence of that layer or a structural feature that
+repeats. ZC90 imports the pair explicitly and asks whether the two mind-steps
+form the same kind of quantum-pair object the force layer showed.
+\section{Background: Two Layers That Were Saying One Thing}
+\label{sec:background-zc90}
+%%=============================================================
+
+%% ── [v3.6 §31.2 / UPG-25] READER'S ON-RAMP ───────
+CRF is a single-primitive framework: from one undefined act of
+distinction ($\delta$) it reconstructs structures that, in many places,
+match the constants of physics. Two of those structures live on very
+different ``layers.'' One is the \emph{force layer}: the ladder of
+interaction strengths (electromagnetic, weak, and so on) that recent
+papers showed to be rungs of a single arithmetic ladder. The other is
+the \emph{mind layer}: the description of how a conscious agent moves,
+moment by moment, either toward or away from a stable ground. This paper
+makes a single observation that links them. On both layers, motion comes
+in exactly two flavours --- a small smooth step and a sudden decisive
+leap --- and on both layers those two flavours are provably impossible to
+express as multiples of each other. The technical sections below make
+this precise; the claim itself needs no equation to state: \emph{nature
+writes the same two-flavour rule once for forces and once for minds.}
+
+% [BRIDGE-PROSE: integration-added not required here — this is standalone-origin
+%  on-ramp prose per UPG-25; no marker needed for in-paper Background.]
+
+%% ── [NEW BLOCK 1] NUMERICAL SUMMARY ────────────────────────
+\begin{keybox}[title={Numerical Summary --- ZC90 (T-canonical)}]
+{\footnotesize\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{@{}p{5.2cm}p{3.0cm}p{4.0cm}@{}}
+\toprule
+\textbf{Quantity} & \textbf{Value} & \textbf{Source / Status} \\
+\midrule
+$\sGam/\srung$ (force ratio)
+  & $36.9638\ldots$
+  & FIND-ZC89-01 (irrational) \\
+$\srung=\tfrac12\ln(\epsW/\epsEM)$
+  & $0.01388338$
+  & ZC89 (bridge AP step) \\
+$\Delta\Gamma=\ln2/\ln15$
+  & $0.25595802$
+  & FIND-ZC73-01 \\
+$\dv$ continuous step (\emph{visesa})
+  & $>0$, mag.\ open
+  & EQ-MB01 (Part~F) \\
+$\db$ discont.\ step (\emph{nibbedha})
+  & $\db\gg\dv$
+  & EQ-MB01 / DEF-MB03 \\
+$\db/\dv$ (mind ratio)
+  & \textbf{undetermined}
+  & \textbf{GAP-ZC90-01 (new)} \\
+\bottomrule
+\end{tabular}
+\end{center}}
+\end{keybox}
+
+%% ── PHYSICS CONTEXT ─────────────────────────────────────────
+\subsection{What Each Layer Already Established}
+
+The force-layer fact is recent and sharp. ZC88 (the Log-Bridge Theorem)
+showed that the multiplicative floor lattice and the additive Gamma
+ladder are one arithmetic progression seen on two scales, joined by the
+logarithm. ZC88 left one honest gap: the two ladders are co-structural,
+but their \emph{steps} are not obviously proportional, and the measured
+ratio $36.9638\ldots$ did not look ``clean.'' ZC89 closed that gap by
+proving the ratio in closed form,
+\[
+  \frac{\sGam}{\srung}=\frac{8\ln 2}{\ln 15\cdot\ln\rborn}=36.9638\ldots,
+\]
+with every factor a $\Ztf$-structural quantity, and --- crucially ---
+proving the ratio \emph{irrational}. The force layer therefore carries
+two genuine, co-existing steps that cannot be collapsed into one.
+
+The mind-layer fact is old and was stated in words, not symbols. DEF-MB03
+(Part~F, Mind/Barami Companion) classifies the agentive choice into four
+movements. Two of them are \emph{forward} --- toward the independent
+ground $\Sind$: \emph{visesa-bhāgiya} (\textbf{วิเสสภาคิยะ}), an ordinary
+advance, and \emph{nibbedha-bhāgiya} (\textbf{นิพเพธภาคิยะ}), a
+penetrative breakthrough. DEF-MB03 states explicitly that the distinction
+between them ``is not a difference of magnitude but of kind,'' and that
+the four-way choice ``cannot be reduced to a continuous variable.''
+EQ-MB01 assigns them KL-divergence increments $-\dv$ and $-\db$ with
+$\db\gg\dv$. Read together, these say: one smooth forward step, one
+discontinuous forward step, of different kind. That is the same shape as
+the force layer --- which is the entire content of this paper.
+
+\subsection{What Was Already Known Before ZC90}
+
+\begin{keybox}[title={Pre-ZC90 Status}]
+\textbf{Known:}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item Force layer: $\sGam/\srung=36.9638\ldots$ is exact and
+    \emph{irrational} (FIND-ZC89-01, Part~K-adjacent standalone).
+  \item Force layer: continuous step $\srung$ and discontinuous
+    floor/Gamma step co-exist as a bridge AP (THM-ZC88-01).
+  \item Mind layer: \emph{visesa}/\emph{nibbedha} differ ``in kind not
+    magnitude''; $\mathcal{C}_4$ is irreducible to a continuous variable
+    (DEF-MB03).
+  \item Mind layer: Barami is defined only on
+    $\Cfourplus=\{\text{visesa},\text{nibbedha}\}$ (DEF-MB04).
+\end{itemize}
+
+\textbf{Open:}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item Whether the two layers' two-step structures are the \emph{same}
+    structure or merely a loose analogy.
+  \item What algebraic object the four-choice $\mathcal{C}_4$ actually is
+    (a probe had proposed Klein-four $\mathbb{Z}_2\times\mathbb{Z}_2$).
+\end{itemize}
+
+ZC90 answers the first by defining the shared signature (Q-pair) and
+proving both layers carry it; it answers the second negatively (the
+Klein-four reading fails, PM-ZC90-01) and extracts the correct object
+(FIND-ZC90-01). The numeric mind-layer ratio is deferred to GAP-ZC90-01.
+\end{keybox}
+
+%% ── [NEW BLOCK 2] SCOPE EXCLUSION ───────────────────────────
+\begin{keybox}[title={What ZC90 Does NOT Do}]
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item Does not assign a numeric value to $\db/\dv$ (GAP-ZC90-01);
+    no calibration of mind-layer step magnitudes exists yet.
+  \item Does not modify any $\varepsilon$ floor, $\Gamma$ rung, or any
+    ZC88/ZC89 result (used as pillars, unchanged).
+  \item Does not modify DEF-MB01--07 or EQ-MB01--04 (used verbatim).
+  \item Does not claim Barami is the \emph{same} charge as a force-sector
+    charge --- only that both carry the same \emph{structural} signature.
+  \item Does not revive the Klein-four reading (refuted; PM-ZC90-01).
+\end{itemize}
+\end{keybox}
+
+%% ── [NEW BLOCK 3] COMPANION PAPERS ─────────────────────────
+\begin{keybox}[title={Companion Papers --- ZC90}]
+{\footnotesize\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{@{}p{5.6cm}p{6.9cm}@{}}
+\toprule
+\textbf{Paper} & \textbf{What it provides to ZC90} \\
+\midrule
+\texttt{CRF\_ZC89\_LayerSpecificity\_v3.tex}
+  & FIND-ZC89-01: force-layer ratio $36.9638$, irrational; $\srung$
+    definition --- \textbf{KEY PILLAR (force layer)} \\
+\texttt{CRF\_ZC88\_LogBridge\_v2.tex}
+  & THM/LEM/COR-ZC88-01: the co-AP bridge with step $\srung$ \\
+\texttt{CRF\_Complete\_v17\_16\_Part\_F.tex}
+  & DEF-MB03/04, EQ-MB01: agentive $\mathcal{C}_4$, Barami ---
+    \textbf{KEY PILLAR (mind layer)} \\
+\texttt{CRF\_Complete\_Index\_v17\_16.tex}
+  & Part~F (Mind/Barami), Part~K (ZC83--87) context \\
+\bottomrule
+\end{tabular}
+\end{center}}
+\end{keybox}
+
+%% ── DISCOVERY NOTE (promoted: the origin was a refuted probe) ──
+\begin{derivedbox}[title={Discovery Note}]
+This paper began with a probe that asked whether the four-way agentive
+choice $\mathcal{C}_4$ was a Klein-four group $\mathbb{Z}_2\times\mathbb{Z}_2$. The
+probe was refuted against the corpus: the ``agency'' axis is 3-vs-1, not
+2-vs-2 (the \emph{ṭhiti} branch is a passive \emph{anicca} drift, not a
+directed choice), and DEF-MB04 singles out the forward pair, which no
+symmetric Klein subgroup does. The proof direction became clear only when
+the refutation was read the other way: the asymmetry that broke Klein was
+itself the signal. The two forward choices are not cosets --- they are a
+continuous and a discontinuous quantum of one conserved current, the same
+object ZC89 had just found at the force layer. The bottom-up refutation
+preceded the top-down theorem.
+\end{derivedbox}
+
+%% ── PRE-WORK AUDIT ──────────────────────────────────────────
+\subsection{Pre-Work Audit (PWA-1 through PWA-10)}
+
+\begin{formalbox}[title={Pre-Work Audit Record --- ZC90}]
+Scanned before writing (Upgrade Protocol v1.3, PWA-1 through PWA-10):
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item ZC89/FIND-ZC89-01: force-layer irrational ratio --- \textbf{KEY PILLAR}.
+  \item ZC88/THM-ZC88-01: co-AP bridge, step $\srung$ --- \textbf{KEY PILLAR}.
+  \item Part~F/DEF-MB03, DEF-MB04, EQ-MB01: agentive $\mathcal{C}_4$,
+    Barami --- \textbf{KEY PILLAR}. Read verbatim, not reconstructed.
+  \item Part~F/DEF-MB04: Barami defined on $\Cfourplus$ --- the fact that
+    refutes Klein-four and motivates FIND-ZC90-01.
+\end{itemize}
+
+\textbf{PWA-1} (adjacent-paper read): ZC88, ZC89, and the Part~F MB
+cluster read in full before writing; no machinery duplicated.\\
+\textbf{PWA-6} (macro convention): paper-specific macros
+($\srung,\sGam,\rborn,\dv,\db,\Cfourplus,\Qpair$) all
+\texttt{\textbackslash providecommand}; none collide with Preamble v3.1.\\
+\textbf{PWA-7} (sector-floor): not triggered (no R-layer bridge computed;
+$\epsEM,\epsW$ enter only inside the inherited ZC89 ratio).\\
+\textbf{PWA-8} (layer self-consistency): not triggered (no new
+$\varepsilon$ value introduced).\\
+\textbf{PWA-9} (spectral convention): not triggered.\\
+\textbf{PWA-10} (tautology audit): \emph{actively triggered and recorded}
+--- the Klein-four probe tested a definition, not physics; logged as
+PM-ZC90-01 (pattern: tautology test).\\
+\textbf{No duplicate atomic units found.}
+\end{formalbox}
+
+\newpage
+
+%%=============================================================
+%% ATOMIC UNITS — DEF → LEM → THM → COR → FIND → CONJ → GAP → PM
+%%=============================================================
+
+%%-------------------------------------------------------------
+\section{The Quantum-Pair Structure\quad(DEF-ZC90-01)}
+\label{sec:def-zc90}
+%%-------------------------------------------------------------
+
+% [BRIDGE-PROSE: stakes before the box, UPG-30 prose floor]
+Before stating either layer's case we need a single name for the thing
+both layers turn out to have. The temptation is to reach for a group ---
+a $\mathbb{Z}_2$ grading, a cyclic ladder --- but a group is the wrong tool,
+because the defining feature here is precisely that the two pieces
+\emph{cannot} be composed into a third of the same kind. What we need is
+weaker than a group and sharper than an analogy: an ordered direction
+along which two generators act, one continuously and one discontinuously,
+with the explicit demand that no integer or rational relation ties them
+together. We call it a Quantum-Pair.
+
+\needspace{8\baselineskip}
+\begin{formalbox}[title={DEF-ZC90-01: Quantum-Pair (Q-pair) ($R_0$, Definition)}]
+
+\textbf{Statement.}
+A \emph{Quantum-Pair} $\Qpair=(\mathcal{D};\,g_c,g_d)$ consists of
+\begin{enumerate}[leftmargin=2em, noitemsep]
+  \item a \emph{conserved direction} $\mathcal{D}$: a signed axis along
+    which a quantity accumulates monotonically under the pair's action;
+  \item a \emph{continuous generator} $g_c$ producing increments of
+    arbitrarily small magnitude $\mu_c>0$ along $\mathcal{D}$;
+  \item a \emph{discontinuous generator} $g_d$ producing a fixed increment
+    of magnitude $\mu_d$ along the same $\mathcal{D}$, with $\mu_d\gg\mu_c$;
+\end{enumerate}
+subject to the \textbf{non-commensurability condition}
+\begin{equation}
+  \boxed{\;\frac{\mu_d}{\mu_c}\notin\mathbb{Q}\quad\text{(or, weakly:
+  no rational relation realises $g_d$ as a finite iterate of $g_c$).}\;}
+  \label{eq:qpair-zc90}
+\end{equation}
+
+\textbf{Remark (why not a group).} A Q-pair is deliberately \emph{not}
+closed: $g_c$ and $g_d$ do not generate a third generator of comparable
+status, and there is no inverse demanded. The pair is \emph{pointed} (the
+direction $\mathcal{D}$ is oriented) and \emph{graded by kind}
+(continuous vs discontinuous), not by magnitude. This is exactly the
+content DEF-MB03 expresses as ``of kind, not of magnitude.''
+
+\textbf{Status:} Definition.
+\end{formalbox}
+
+%%-------------------------------------------------------------
+\section{The Force Layer Is a Q-Pair\quad(LEM-ZC90-01)}
+\label{sec:lem01-zc90}
+%%-------------------------------------------------------------
+
+% [BRIDGE-PROSE: stakes before the box]
+The force layer supplies the cleaner of the two instantiations, because
+ZC89 already did the hard work: it not only exhibited the two steps but
+proved their ratio irrational. All that remains is to read ZC89's result
+in the language of Definition~\ref{sec:def-zc90} and confirm each clause holds.
+
+\needspace{8\baselineskip}
+\begin{formalbox}[title={LEM-ZC90-01: The Force-Layer Pair Is a Q-Pair
+  ($R_0$, Exact)}]
+
+\textbf{Statement.} The pair $(\,\mathcal{D}_{\rm force};\,\srung,\sGam)$
+is a Q-pair, where $\mathcal{D}_{\rm force}$ is the log-bridge axis of
+THM-ZC88-01, $\srung$ the continuous bridge-AP step, and $\sGam$ the
+Gamma-ladder step.
+
+\textbf{Derivation.}
+
+\textit{Step 1 (conserved direction).}
+THM-ZC88-01 places the floor lattice and the Gamma ladder on one
+arithmetic progression under the log-map; the shared axis (oriented
+toward increasing $\Gamma$) is the conserved direction $\mathcal{D}_{\rm
+force}$. Both steps accumulate monotonically along it.
+
+\textit{Step 2 (two generators of different kind).}
+$\srung=\tfrac12\ln(\epsW/\epsEM)=0.01388338$ is the small continuous
+step of the bridge AP; $\sGam=\Delta\Gamma$-scale Gamma step is the large
+step. Numerically $\sGam/\srung=36.9638$, so $\mu_d\gg\mu_c$ holds.
+
+\textit{Step 3 (non-commensurability).}
+FIND-ZC89-01 proved
+$\sGam/\srung=8\ln2/[\ln15\cdot\ln\rborn]$ is \emph{irrational}. Hence
+$\mu_d/\mu_c\notin\mathbb{Q}$ exactly, and condition~\eqref{eq:qpair-zc90}
+holds in its strong form.
+
+\hfill$\square$
+
+\textbf{Numerical verification (T-canonical):}
+\begin{center}
+{\small\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}lrl@{}}
+\toprule
+Quantity & Value & Source \\
+\midrule
+$\srung$ ($\mu_c$)        & $0.01388338$ & ZC89 \\
+$\sGam/\srung$ ($\mu_d/\mu_c$) & $36.9638$ & FIND-ZC89-01 (irrational) \\
+$8\ln2/[\ln15\cdot\ln\rborn]$  & $36.9638$ & closed form, ZC89 \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\textbf{Status:} Exact Lemma (inherits FIND-ZC89-01).
+\end{formalbox}
+
+%%-------------------------------------------------------------
+\section{The Mind Layer Is a Q-Pair\quad(LEM-ZC90-02)}
+\label{sec:lem02-zc90}
+%%-------------------------------------------------------------
+
+% [BRIDGE-PROSE: stakes before the box]
+The mind layer is the harder instantiation, not because its structure is
+unclear but because its magnitudes are uncalibrated. DEF-MB03 gives us
+the \emph{kind} distinction in plain language and EQ-MB01 gives us the
+signs and the inequality $\db\gg\dv$, but no paper has ever fixed the
+\emph{number} $\db/\dv$. The lemma below therefore establishes the Q-pair
+\emph{structure} on the mind layer while being honest that its
+non-commensurability is asserted by the corpus (``of kind, not
+magnitude'') rather than proved numerically --- a distinction we carry
+forward openly as GAP-ZC90-01.
+
+\needspace{8\baselineskip}
+\begin{formalbox}[title={LEM-ZC90-02: The Mind-Layer Pair Is a Q-Pair
+  ($R_0$, Near-Formal)}]
+
+\textbf{Statement.} The pair
+$(\,\mathcal{D}_{\rm mind};\,\text{visesa},\text{nibbedha})$ is a Q-pair,
+where $\mathcal{D}_{\rm mind}$ is the Barami current (the forward
+direction toward $\Sind$ in $D_{\rm KL}$), \emph{visesa} the continuous
+generator, and \emph{nibbedha} the discontinuous generator.
+
+\textbf{Derivation.}
+
+\textit{Step 1 (conserved direction).}
+By EQ-MB01, both \emph{visesa} ($-\dv$) and \emph{nibbedha} ($-\db$)
+decrease $D_{\rm KL}(\tau_n)$ --- they move in the same forward sense
+toward $\Sind$. DEF-MB04 defines Barami precisely as the accumulation
+over this forward subset $\Cfourplus=\{\text{visesa},\text{nibbedha}\}$.
+The Barami current is the conserved direction $\mathcal{D}_{\rm mind}$.
+
+\textit{Step 2 (two generators of different kind).}
+EQ-MB01: \emph{visesa} produces an ordinary forward increment $-\dv$;
+\emph{nibbedha} produces a \emph{discontinuous} forward increment $-\db$
+with $\db\gg\dv$. DEF-MB03 states the distinction is ``of kind, not of
+magnitude'' --- i.e.\ \emph{nibbedha} is not a large \emph{visesa} but a
+generator of a different type. This is clause~(2)--(3) of DEF-ZC90-01.
+
+\textit{Step 3 (non-commensurability --- corpus-asserted).}
+DEF-MB03 states $\mathcal{C}_4$ ``cannot be reduced to a continuous
+variable.'' In Q-pair terms: \emph{nibbedha} is not realisable as a
+finite iterate of \emph{visesa}, which is the weak form of
+condition~\eqref{eq:qpair-zc90}. The \emph{numeric} ratio $\db/\dv$ that would
+establish the strong (irrational) form is not fixed by any current paper;
+this is the only clause not proved here, and it is recorded as
+GAP-ZC90-01.
+
+\hfill (Near-Formal: structure exact; numeric ratio open.)
+
+\textbf{Status:} Near-Formal Lemma. Structure inherited verbatim from
+DEF-MB03/04 + EQ-MB01; non-commensurability holds in weak form, strong
+form open (GAP-ZC90-01).
+\end{formalbox}
+
+%%-------------------------------------------------------------
+\section{The Cross-Layer Quantum-Pair Theorem\quad(THM-ZC90-01)}
+\label{sec:thm-zc90}
+%%-------------------------------------------------------------
+
+% [BRIDGE-PROSE: the "so what", outsider-readable, UPG-30]
+With both layers shown to be Q-pairs, the theorem is almost a tautology
+--- and that is the point. The value of ZC90 is not a new computation but
+a recognition: a feature that looked like a quirk of the force ladder
+(``why is that ratio irrational rather than a clean integer?'') and a
+feature that looked like a quirk of contemplative psychology (``why are
+there two forward moves instead of one graded one?'') are the same
+feature. The framework was stating one law twice without noticing. For an
+outsider the upshot is this: CRF predicts that wherever it builds a
+conserved direction, motion along it will come in exactly two
+irreducible kinds --- a smooth quantum and a jump quantum --- and this is
+now a stated, in-principle-falsifiable pattern rather than a coincidence.
+
+\needspace{10\baselineskip}
+\begin{formalbox}[title={THM-ZC90-01: Cross-Layer Quantum-Pair Theorem
+  ($R_0$, Exact in structure)}]
+
+\textbf{Statement.} The force-layer pair (LEM-ZC90-01) and the mind-layer
+pair (LEM-ZC90-02) are instances of the \emph{same} structure
+DEF-ZC90-01. Consequently the force-layer property ``$\sGam/\srung$ is
+irrational'' and the mind-layer property ``\emph{visesa} and
+\emph{nibbedha} differ in kind not magnitude'' are two readings of a
+single structural statement:
+\begin{equation}
+  \boxed{\;
+  \text{Q-pair}(\mathcal{D};g_c,g_d)\ \text{holds}\ \Longleftrightarrow\
+  \frac{\mu_d}{\mu_c}\ \text{is non-commensurate}
+  \;}
+  \label{eq:thm-zc90}
+\end{equation}
+realised at the force layer by $(\srung,\sGam)$ with
+$\mu_d/\mu_c=36.9638\notin\mathbb{Q}$, and at the mind layer by
+$(\text{visesa},\text{nibbedha})$ with $\db/\dv$ non-commensurate
+(strong form open, GAP-ZC90-01).
+
+\textbf{Proof.}
+
+\textit{Step 1 (both are Q-pairs).}
+LEM-ZC90-01 and LEM-ZC90-02 verify every clause of DEF-ZC90-01 for the
+force and mind layers respectively.
+
+\textit{Step 2 (the defining property is the shared one).}
+The single discriminating clause of DEF-ZC90-01 is the
+non-commensurability condition~\eqref{eq:qpair-zc90}. At the force layer it is
+proved (irrational ratio); at the mind layer it is the corpus statement
+``of kind, not magnitude / cannot be reduced to a continuous variable.''
+These are the same predicate applied on two layers.
+
+\textit{Step 3 (no stronger identification claimed).}
+The theorem identifies the \emph{structure}, not the
+\emph{generators}: it does not assert $\srung=\dv$ or any numeric
+equality across layers. Cross-layer numeric identity is neither needed
+nor claimed (see Scope).
+
+\hfill$\square$
+
+\physmeaning{Forces and minds are built by CRF from the same primitive;
+this theorem says they also \emph{move} by the same rule --- one smooth
+step and one leap, never reducible to each other.}
+
+\textbf{Status:} Exact in structure (the structural identification is
+exact; the mind-layer numeric ratio remains open, GAP-ZC90-01).
+\end{formalbox}
+
+%%-------------------------------------------------------------
+\section{The Gift: Barami as a Conserved Charge\quad(FIND-ZC90-01)}
+\label{sec:find-zc90}
+%%-------------------------------------------------------------
+
+% [BRIDGE-PROSE: stakes before the box]
+The theorem above came at the cost of a discarded hypothesis, and the
+discard left a gift. Once we stop trying to read the four choices as a
+group and instead read the two forward choices as quanta of a current,
+DEF-MB04 stops being a mere definition and starts looking like a
+conservation law: Barami is literally the accumulated count, weighted by
+step size, of forward quanta emitted along the mind's history.
+
+\needspace{8\baselineskip}
+\begin{giftbox}[title={FIND-ZC90-01: Barami Is a Conserved Charge on the
+  Forward 2-Set (Gift)}]
+
+\textbf{Statement.} Barami (DEF-MB04) is the conserved charge of the
+mind-layer Q-pair: the monotone accumulation along $\mathcal{D}_{\rm
+mind}$ of quanta emitted by the two forward generators,
+\[
+  \mathrm{Barami}(\mathcal{M},\tau_N)
+  =\big|\{n\le N: c_n\in\Cfourplus\}\big|\cdot
+   \langle\dv,\db\rangle_{n\le N},
+\]
+exactly DEF-MB04, now \emph{interpreted}: the integer factor counts
+quanta; the average-magnitude factor weights continuous and discontinuous
+quanta of the one current.
+
+\textbf{Why this is a gift (and why Klein-four failed).}
+A Klein-four reading $\mathbb{Z}_2\times\mathbb{Z}_2$ treats all three order-2
+subgroups symmetrically; nothing privileges any 2-element subset. But
+DEF-MB04 \emph{does} privilege $\Cfourplus=\{\text{visesa},\text{nibbedha}\}$
+--- it is the only subset on which Barami is defined. A symmetric group
+cannot express a privileged direction; a conserved current can. The
+asymmetry that breaks the group is exactly the orientation that defines
+the charge. \emph{The refutation was the discovery.}
+
+\physmeaning{What a mind accumulates over a life --- its Barami --- is the
+total forward ``charge'' it has emitted, counting both its steady small
+advances and its rare breakthroughs.}
+
+\textbf{Status:} Near-Formal Finding (Gift-class --- a structural
+reinterpretation of an existing definition; introduces no new number).
+\end{giftbox}
+
+%%-------------------------------------------------------------
+\section{Conjecture and Open Gap\quad(CONJ/GAP-ZC90-01)}
+\label{sec:conjgap-zc90}
+%%-------------------------------------------------------------
+
+% [BRIDGE-PROSE: stakes before the box]
+The one thing the force layer has and the mind layer lacks is a number.
+At the force layer the non-commensurability is not merely asserted but
+computed: $36.9638=8\ln2/[\ln15\ln\rborn]$, every factor a $\Ztf$
+quantity. It is natural to ask whether the mind layer hides an analogous
+closed form. We state this as a conjecture, carefully labelled a
+candidate, and register the missing number as the paper's open gap.
+
+\begin{derivedbox}[title={CONJ-ZC90-01: The Mind Ratio Is a
+  $\Ztf$-Structural Irrational (Candidate)}]
+\textbf{Statement.} The mind-layer ratio $\db/\dv$ is, like the
+force-layer $36.9638$, an irrational number expressible through
+$\Ztf$-structural quantities ($\ln2$, $\ln15$, $d_s$, and a Born-chain
+weight).
+
+\textbf{Caution.} This is a \emph{candidate}, motivated only by
+cross-layer analogy (THM-ZC90-01) and the shared $\Ztf$ substrate. No
+derivation and no numeric estimate is offered. It must not be cited as
+support for any prediction until GAP-ZC90-01 is closed.
+
+\textbf{Status:} Candidate (conjecture).
+\end{derivedbox}
+
+\begin{openqbox}[title={GAP-ZC90-01: The Mind-Layer Step Ratio Is
+  Undetermined}]
+\textbf{Open item.} The numeric value of $\db/\dv$ (equivalently, the
+strong-form non-commensurability of the mind-layer Q-pair) is not fixed
+by any current CRF paper. EQ-MB01 fixes only $\db\gg\dv$ and the signs.
+
+\textbf{What closing it would require.} A calibration of the agentive-mode
+step magnitudes --- presumably from a Free-Energy / $D_{\rm KL}$ model of
+the agentive trajectory (EQ-MB02, the $\Sigma$-Lagrange-constraint form)
+--- yielding $\db/\dv$ in closed form, testing CONJ-ZC90-01.
+
+\textbf{Target:} ZC91.
+\end{openqbox}
+
+%%-------------------------------------------------------------
+\section{PM-ZC90-01: The Klein-Four Reading (Productive Scar)}
+\label{sec:pm-zc90}
+%%-------------------------------------------------------------
+
+\begin{derivedbox}[title={PM-ZC90-01: $\mathcal{C}_4$ as Klein-Four
+  $\mathbb{Z}_2\times\mathbb{Z}_2$ (Failure Stance)}]
+\textbf{What happened.} A probe assigned the four choices to
+$\mathbb{Z}_2\times\mathbb{Z}_2$ via two binary axes (direction; continuous vs
+discontinuous), and reported a clean bijection onto the four cosets.
+
+\textbf{Why it was not an error.} Phase Misalignment: the probe forced
+\emph{ṭhiti} into a ``backward'' cell, but the corpus (DEF-MB03) makes
+\emph{ṭhiti} a passive \emph{anicca} drift ($+\epsilon_t$), not a directed
+choice --- so the second axis is 3-vs-1, not 2-vs-2, and Klein-four
+cannot hold. The decisive fact is DEF-MB04: Barami privileges the forward
+pair, which a symmetric Klein group cannot represent.
+
+\textbf{Preservation.} Kept as a productive scar: refuting the group
+reading is what exposed the conserved-current reading (FIND-ZC90-01) and
+the cross-layer theorem (THM-ZC90-01).
+
+\textbf{Pattern type:} tautology test (the probe tested a proposed
+algebraic definition, not a physical claim).
+
+\textbf{Lesson --- PWA-10:} when a probe proposes an algebraic structure,
+audit it against the corpus's \emph{distinguished} objects (here Barami)
+before accepting the symmetry; a privileged subset refutes a symmetric
+group.
+\end{derivedbox}
+
+%%=============================================================
+%% ATOMIC REGISTRY (MANDATORY)
+%%=============================================================
+\begin{formalbox}[title={Atomic Registry --- ZC90}]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\begin{tabular}{lp{8.0cm}l}
+\toprule
+\textbf{ID} & \textbf{Description} & \textbf{Status} \\
+\midrule
+DEF-ZC90-01
+  & Quantum-Pair: conserved direction + continuous + discontinuous
+    generator, non-commensurate
+  & Definition \\[3pt]
+LEM-ZC90-01
+  & Force-layer pair $(\srung,\sGam)$ is a Q-pair (irrational ratio)
+  & Exact \\[3pt]
+LEM-ZC90-02
+  & Mind-layer pair (visesa, nibbedha) is a Q-pair on the Barami current
+  & Near-Formal \\[3pt]
+THM-ZC90-01
+  & Cross-Layer Quantum-Pair Theorem: both layers, one signature
+  & Exact (structure) \\[3pt]
+FIND-ZC90-01
+  & Barami is the conserved charge of the mind-layer Q-pair
+  & Near-Formal (Gift) \\[3pt]
+CONJ-ZC90-01
+  & $\db/\dv$ is a $\Ztf$-structural irrational
+  & Candidate \\[3pt]
+GAP-ZC90-01
+  & Numeric value of $\db/\dv$ undetermined; target ZC91
+  & Open \\[3pt]
+PM-ZC90-01
+  & $\mathcal{C}_4$-as-Klein-four refuted (pattern: tautology test)
+  & Scar \\[3pt]
+\midrule
+\multicolumn{3}{l}{\emph{Gap-status changes from prior papers:} none ---
+  no prior gap closed (structural bridge paper).} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{formalbox}
+
+%%  REFRAME MARKER (used — a genuine proof-direction change occurred)
+%% UPG-23: the paper's key move was "we thought Klein-four → it turned out
+%% conserved current", which changed the proof route. Qualifies (cf. ZC71).
+\begin{derivedbox}[title={Reframe: $\mathcal{C}_4$ as a group
+  $\to$ $\mathcal{C}_4^{+}$ as a conserved current}]
+\textbf{Before this paper:} We expected the four-choice $\mathcal{C}_4$ to
+carry a finite group structure (Klein-four candidate).
+
+\textbf{After this paper:} The correct framing is a \emph{pointed
+conserved current} on the forward pair $\Cfourplus$; the two forward
+choices are quanta, not cosets.
+
+\textbf{Proof route opened:} the Q-pair definition and the cross-layer
+identification with the force layer (THM-ZC90-01).
+
+\textbf{Proof route closed:} the dead end of seeking a group
+homomorphism / Cayley structure for $\mathcal{C}_4$ (PM-ZC90-01).
+\end{derivedbox}
+
+%%=============================================================
+\section{R-Layer Research Note}
+\label{sec:rlayer-zc90}
+%%=============================================================
+\begin{layerbox}[title={R-Layer Assignments for ZC90}]
+
+\textbf{Layer assignments:}
+
+{\small\renewcommand{\arraystretch}{1.25}
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Atomic unit & R-layer & Cost $T$ & Source \\
+\midrule
+DEF-ZC90-01 & $R_0$ & $0$ & structural definition \\
+LEM-ZC90-01 & $R_0$ & $0$ & algebraic from FIND-ZC89-01 \\
+LEM-ZC90-02 & $R_0$ & $0$ & structural from DEF-MB03/04 \\
+THM-ZC90-01 & $R_0$ & $0$ & structural identification \\
+GAP-ZC90-01 & $R_0$ & --- & magnitude calibration (not a bridge cost) \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\textbf{Two-layer floor (PWA-8):}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item Spectral layer ($R_0$): $\epscan=0.007550$ --- not used here.
+  \item Bridge layer ($R_0{\to}R_{\max}$): $\epsuniv=0.007599$ --- enters
+    only \emph{inside} the inherited ZC89 ratio (via $\epsEM,\epsW$ in
+    $\srung$); ZC90 introduces no new floor. Separation $0.66\%$
+    irreducible (THM-ZC71-01).
+\end{itemize}
+
+\textbf{Key R-layer remark.} All ZC90 results are at $R_0$ and purely
+structural; no Born-chain bridge cost is computed in this paper. The only
+R-layer content is inherited intact from ZC89.
+\end{layerbox}
+
+%%=============================================================
+\section{Genealogy Map}
+\label{sec:genealogy-zc90}
+%%=============================================================
+\begin{genealogybox}[title={How ZC90's Key Objects Trace Back}]
+
+\textbf{Branch A --- Force-layer step structure:}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item \textbf{Part~B / TLS floor $\epscan$}: the instability floor.
+  \item $\to$ \textbf{ZC73 / FIND-ZC73-01}: the Gamma ladder, step
+    $\ln2/\ln15$.
+  \item $\to$ \textbf{ZC88 / THM-ZC88-01}: floor lattice and Gamma ladder
+    are one co-AP under the log-map, step $\srung$.
+  \item $\to$ \textbf{ZC89 / FIND-ZC89-01}: the two steps' ratio
+    $36.9638$ is irrational --- a continuous/discontinuous pair.
+  \item $\to$ \textbf{ZC90 / LEM-ZC90-01}: this pair is a Q-pair.
+\end{itemize}
+
+\textbf{Branch B --- Mind-layer choice structure:}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item \textbf{Part~F / DEF-MB02}: $\delta$ in Agentive Mode.
+  \item $\to$ \textbf{Part~F / DEF-MB03}: the four-way choice
+    $\mathcal{C}_4$; \emph{visesa}/\emph{nibbedha} ``of kind not magnitude.''
+  \item $\to$ \textbf{Part~F / DEF-MB04}: Barami defined on the forward
+    pair $\Cfourplus$.
+  \item $\to$ \textbf{ZC90 / LEM-ZC90-02, FIND-ZC90-01}: the forward pair
+    is a Q-pair; Barami is its conserved charge.
+\end{itemize}
+
+\textbf{Convergence at ZC90:}
+Branch~A reached a continuous/discontinuous non-commensurate pair by
+\emph{proof} (irrational ratio); Branch~B carried the same pair by
+\emph{definition} (``kind not magnitude'') since Part~F. DEF-ZC90-01
+names the common structure and THM-ZC90-01 identifies the two as one.
+
+ZC90's contribution: it shows that a force-layer theorem (ZC89) and a
+mind-layer definition (DEF-MB03) are the same structural statement, and
+extracts Barami-as-conserved-charge (FIND-ZC90-01) from the refutation of
+a group reading --- a unification no prior paper made.
+\end{genealogybox}
+
+%%=============================================================
+\section{Closing Sentence}
+%%=============================================================
+%% UPG-22 — TONE B (Contemplative): this is a structural bridge paper;
+%% it identifies a shared structure and opens GAP-ZC90-01. Tone B selected
+%% (declared in header). Precedents: ZC72, ZC75.
+
+\bigskip
+\begin{center}
+\textit{%
+  We came hunting a group and found a current: two forward movements,
+  one a steady advance, one a sudden breaking-through, sharing a single
+  direction yet measuring each other by no common rule --- the same law
+  the forces obey in the irrational $36.9638$.\\[0.3em]
+  The structure is one; the mind's number belongs to ZC91.
+}
+\end{center}
+
+% Governance Note: This document follows Upgrade Protocol v1.3
+% and CRF Style Guide v3.7.
+
+
+% [BRIDGE-PROSE: integration-added, Style Guide v3.7 §31.6 / UPG-30]
+\noindent
+ZC90 pairs the two mind-steps but leaves open (GAP-ZC90-01) whether they are
+truly distinct kinds or just two sizes of one kind --- a question with a
+conjecture (CONJ-90-01) attached. If they collapsed into one kind, the whole
+mind-layer structure would reduce to a rescaling of the force layer. ZC91
+settles it: the two steps are irrational-of-kind, retiring the conjecture and
+showing the mind layer is structurally its own thing.
+\section{Background: The Question That Dissolved}
+\label{sec:background-zc91}
+%%=============================================================
+
+%% ── [v3.6 §31.2 / UPG-25] READER'S ON-RAMP ───────
+CRF describes a conscious agent as choosing, at each moment, among four
+mental movements; two of them move ``forward'' toward a stable inner
+ground. One is an ordinary advance (\emph{visesa}), the other a sudden
+breakthrough (\emph{nibbedha}). A previous paper (ZC90) showed these two
+play the same structural role that two interaction steps play in the
+physics sector, and asked the obvious next question: how much bigger is
+the breakthrough than the ordinary step --- what is the number
+$\db/\dv$? This paper answers that the number does not exist as a fixed
+constant, and that this is not a failure but the point: the framework's
+own definition of the breakthrough \emph{forbids} it from being a clean
+multiple of the ordinary step. ``A different kind, not a bigger size'' is
+exactly the statement that no fixed ratio can capture the difference. The
+sections below turn that plain observation into a proof.
+
+%% ── [NEW BLOCK 1] NUMERICAL SUMMARY ────────────────────────
+\begin{keybox}[title={Numerical Summary --- ZC91 (T-canonical)}]
+{\footnotesize\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{@{}p{5.4cm}p{3.2cm}p{3.6cm}@{}}
+\toprule
+\textbf{Quantity} & \textbf{Value} & \textbf{Source / Status} \\
+\midrule
+$\Nstar=\db/\dv$ (mind ratio)
+  & irrational; \emph{no constant}
+  & \textbf{THM/COR-ZC91 (new)} \\
+force-layer analogue $\sGam/\srung$
+  & $36.9638\ldots$ (irrational)
+  & ZC89 (FIND-ZC89-01) \\
+$\lim_{\Barami\to\infty}(\dv,\db)$
+  & $\to 0$ (both)
+  & EQ-MB03 (Part~F) \\
+ratio limit $\lim\Nstar$
+  & open
+  & GAP-ZC91-01 (new) \\
+\bottomrule
+\end{tabular}
+\end{center}}
+\end{keybox}
+
+%% ── PHYSICS / FRAMEWORK CONTEXT ─────────────────────────────
+\subsection{What ZC90 Left Open, and What the Corpus Actually Fixes}
+
+ZC90 established that the forward pair $(\text{visesa},\text{nibbedha})$
+is a Quantum-Pair (DEF-ZC90-01): a conserved direction carrying a
+continuous and a discontinuous generator. It proved the strong
+non-commensurability only at the force layer (the irrational
+$\sGam/\srung=36.9638$, FIND-ZC89-01) and left the mind-layer strong form
+open as GAP-ZC90-01, conjecturing (CONJ-ZC90-01) that $\Nstar$ might be a
+specific $\Ztf$-structural irrational, by analogy.
+
+Tracing upstream into the Mind/Barami corpus (the rule of ZC81: go to
+where a quantity is \emph{defined}, not where it is used) shows what is
+and is not pinned. EQ-MB01 fixes the signs and the ordering $\db\gg\dv$.
+EQ-MB03 fixes the asymptotic limit: both $\dv$ and $\db$ tend to zero as
+Barami grows without bound, recovering gradient flow (P-MB04). And P-MB02
+states something decisive: $\dv$ at a given moment is a \emph{function of
+accumulated Barami}, so two minds in identical present states have
+different step magnitudes. The corpus therefore fixes ordering and limit
+but supplies no numerical anchor, and --- crucially --- makes the ratio a
+property of a mind's history, not a universal constant. The object
+CONJ-ZC90-01 went looking for may not exist.
+
+\subsection{What Was Already Known Before ZC91}
+
+\begin{keybox}[title={Pre-ZC91 Status}]
+\textbf{Known:}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item Force layer: $\sGam/\srung=36.9638$ is exact and irrational
+    (FIND-ZC89-01).
+  \item Mind layer: $(\text{visesa},\text{nibbedha})$ is a Q-pair; strong
+    non-commensurability open (GAP-ZC90-01).
+  \item Mind layer: \emph{visesa}/\emph{nibbedha} ``of kind, not
+    magnitude''; $\mathcal{C}_4$ irreducible to a continuous variable
+    (DEF-MB03).
+  \item Mind layer: $\db\gg\dv>0$ (EQ-MB01); both $\to0$ as
+    $\Barami\to\infty$ (EQ-MB03); $\dv$ is Barami-history-dependent
+    (P-MB02).
+\end{itemize}
+
+\textbf{Open:}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item Strong-form non-commensurability of the mind-layer Q-pair
+    (GAP-ZC90-01).
+  \item Whether $\Nstar=\db/\dv$ has a $\Ztf$-structural closed form
+    (CONJ-ZC90-01).
+\end{itemize}
+
+ZC91 closes GAP-ZC90-01 (THM-ZC91-01) and resolves CONJ-ZC90-01
+negatively (COR-ZC91-02). What it cannot close --- the Barami-history
+functional --- it re-opens precisely as GAP-ZC91-01.
+\end{keybox}
+
+%% ── [NEW BLOCK 2] SCOPE EXCLUSION ───────────────────────────
+\begin{keybox}[title={What ZC91 Does NOT Do}]
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item Does not compute a numeric value for $\Nstar$ (no constant value
+    exists; COR-ZC91-02).
+  \item Does not modify DEF-MB01--07 or EQ-MB01--04 (used verbatim).
+  \item Does not modify ZC89/ZC90 or any force-layer result.
+  \item Does not derive the Barami-history functional (GAP-ZC91-01).
+  \item Does not claim the mind-layer and force-layer irrationals are
+    equal or related in value --- only that both are \emph{forced}
+    irrational.
+\end{itemize}
+\end{keybox}
+
+%% ── [NEW BLOCK 3] COMPANION PAPERS ─────────────────────────
+\begin{keybox}[title={Companion Papers --- ZC91}]
+{\footnotesize\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{@{}p{6.1cm}p{6.4cm}@{}}
+\toprule
+\textbf{Paper} & \textbf{What it provides to ZC91} \\
+\midrule
+\texttt{CRF\_ZC90\_CrossLayerQuantumPair\_v1.tex}
+  & DEF-ZC90-01 (Q-pair); GAP-ZC90-01, CONJ-ZC90-01 ---
+    \textbf{the items this paper resolves} \\
+\texttt{CRF\_ZC89\_LayerSpecificity\_v3.tex}
+  & FIND-ZC89-01: the force-layer irrational, the independent analogue \\
+\texttt{CRF\_Complete\_v17\_16\_Part\_F.tex}
+  & DEF-MB03, EQ-MB01/02/03, P-MB02/04 --- \textbf{KEY PILLARS} \\
+\texttt{CRF\_Complete\_Index\_v17\_16.tex}
+  & Part~F (Mind/Barami) context \\
+\bottomrule
+\end{tabular}
+\end{center}}
+\end{keybox}
+
+%% ── DISCOVERY NOTE (promoted) ──
+\begin{derivedbox}[title={Discovery Note}]
+This paper was commissioned to \emph{find} the closed form of $\Nstar$. A
+bidirectional probe --- forward from the MB axioms, backward from the
+ZC89 force-layer analogue --- found the reverse. Forward: the corpus
+pins only ordering and limit, and P-MB02 makes the ratio
+history-dependent. Backward: trying to write $\db=\Nstar\dv$ with
+$\Nstar$ a clean number \emph{is} a magnitude statement, which DEF-MB03
+forbids. The closed form we sought could not exist, and the reason it
+could not exist is the theorem. The proof direction inverted mid-session;
+see the Reframe Marker.
+\end{derivedbox}
+
+%% ── PRE-WORK AUDIT ──────────────────────────────────────────
+\subsection{Pre-Work Audit (PWA-1 through PWA-10)}
+
+\begin{formalbox}[title={Pre-Work Audit Record --- ZC91}]
+Scanned before writing (Upgrade Protocol v1.3, PWA-1 through PWA-10):
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item ZC90/DEF-ZC90-01, GAP-ZC90-01, CONJ-ZC90-01 --- the items resolved.
+  \item Part~F/DEF-MB03 --- \textbf{KEY PILLAR} (the kind/magnitude clause).
+  \item Part~F/EQ-MB01, EQ-MB03, P-MB02, P-MB04 --- the upstream constraints,
+    read verbatim (not reconstructed).
+  \item ZC89/FIND-ZC89-01 --- the independent force-layer analogue.
+\end{itemize}
+
+\textbf{PWA-DOWNSTREAM} (ZC81 rule): traced $\dv,\db$ to their definition
+(EQ-MB01) and their dynamics (EQ-MB03, P-MB02) \emph{before} proposing any
+value --- which is what revealed that a constant is the wrong object. No
+value was forced onto a history-dependent quantity.\\
+\textbf{PWA-6} (macro convention): paper macros all
+\texttt{\textbackslash providecommand}; no Preamble collision.\\
+\textbf{PWA-7/8/9}: not triggered (no R-layer bridge, no new floor, no
+spectral convention).\\
+\textbf{PWA-10} (tautology audit): THM-ZC91-01 reads a consequence
+\emph{out of} a definition (DEF-MB03). This is flagged and addressed
+head-on in the theorem's Remark --- it is an equivalence, made explicit,
+not a hidden tautology dressed as physics.\\
+\textbf{No duplicate atomic units found.}
+\end{formalbox}
+
+\newpage
+
+%%=============================================================
+%% ATOMIC UNITS — THM → COR → FIND → GAP → OBS
+%%=============================================================
+
+%%-------------------------------------------------------------
+\section{The Irrationality-of-Kind Theorem\quad(THM-ZC91-01)}
+\label{sec:thm-zc91}
+%%-------------------------------------------------------------
+
+% [BRIDGE-PROSE: stakes before the box, UPG-30]
+The whole paper turns on a single move, and it is worth stating in plain
+words before any symbols. To say ``the breakthrough is the same kind of
+thing as an ordinary step, only $\Nstar$ times bigger'' is to say the two
+differ in magnitude. DEF-MB03 explicitly denies this: the difference is
+of kind. The only way a quantitative ratio can encode a difference that
+is \emph{not} of magnitude is for that ratio to be unreachable by any
+finite counting of the smaller unit --- that is, irrational. The theorem
+is the careful version of this sentence, and its one delicate point,
+which we do not hide, is that it draws a quantitative conclusion out of a
+qualitative definition. We argue that this is legitimate precisely
+because DEF-MB03's clause is itself a claim about quantity (it denies
+one).
+
+\needspace{6\baselineskip}
+\begin{formalbox}[title={THM-ZC91-01: Irrationality-of-Kind ($R_0$, Exact)}]
+
+\textbf{Statement.} Let $\dv,\db>0$ be the \emph{visesa} and
+\emph{nibbedha} step magnitudes of EQ-MB01 at any fixed moment, and
+$\Nstar=\db/\dv$. Then DEF-MB03's clause --- that \emph{visesa} and
+\emph{nibbedha} differ ``of kind, not of magnitude'', equivalently that
+$\mathcal{C}_4$ ``cannot be reduced to a continuous variable'' --- is
+equivalent to
+\begin{equation}
+  \boxed{\;\Nstar=\frac{\db}{\dv}\notin\mathbb{Q}.\;}
+  \label{eq:thm-zc91}
+\end{equation}
+
+\textbf{Proof.}
+
+\textit{Step 1 ($\Nstar\in\mathbb{Q}\Rightarrow$ magnitude difference).}
+Suppose $\Nstar=p/q$ with $p,q\in\mathbb{N}$ coprime. Then
+$q\,\db=p\,\dv$: a whole number $q$ of \emph{nibbedha} increments equals a
+whole number $p$ of \emph{visesa} increments along the same conserved
+direction $\mathcal{D}_{\rm mind}$ (LEM-ZC90-02). A breakthrough is then
+exactly $p/q$ ordinary steps; \emph{nibbedha} is reducible to a counted
+multiple of \emph{visesa}. This is a difference of \emph{magnitude} only
+--- precisely what DEF-MB03 denies.
+
+\textit{Step 2 ($\Nstar\in\mathbb{Q}\Rightarrow$ continuous-variable
+reduction).} If $q\,\db=p\,\dv$, the two generators lie on one rational
+lattice $\{k\,\dv/q : k\in\mathbb{Z}\}$, a single graded one-parameter
+family. The four-way choice then \emph{is} reducible to position on a
+continuous (here, finely discretised) variable --- contradicting the
+explicit DEF-MB03 clause that it is not.
+
+\textit{Step 3 (contrapositive and converse).} By Steps 1--2, the
+DEF-MB03 clause implies $\Nstar\notin\mathbb{Q}$. Conversely, if
+$\Nstar\notin\mathbb{Q}$, no finite $p,q$ satisfy $q\,\db=p\,\dv$, so
+\emph{nibbedha} is not any finite multiple of \emph{visesa}: the two are
+incommensurable and the distinction is necessarily one of kind, not
+magnitude. The equivalence~\eqref{eq:thm-zc91} holds.
+
+\hfill$\square$
+
+\textbf{Remark (the PWA-10 point, addressed openly).} This theorem
+extracts a numerical property (irrationality) from a definitional clause
+(``kind, not magnitude''). That is admissible here because the clause is
+\emph{already} a quantitative assertion --- it denies the existence of a
+finite ratio. We are not smuggling physics out of a tautology; we are
+making explicit the arithmetic content that DEF-MB03 stated in words. The
+force layer reaches the same conclusion by entirely different means
+(ZC89's ladder arithmetic), which is the independent check (FIND-ZC91-01).
+
+\physmeaning{A breakthrough is not a big ordinary step. No matter how many
+ordinary steps you take, you never exactly equal one breakthrough --- and
+that ``never exactly'' is what irrational means here.}
+
+\textbf{Status:} Exact Theorem.
+\end{formalbox}
+
+%%-------------------------------------------------------------
+\section{Corollaries\quad(COR-ZC91-01, COR-ZC91-02)}
+\label{sec:cor-zc91}
+%%-------------------------------------------------------------
+
+% [BRIDGE-PROSE]
+Two consequences follow immediately, one positive and one negative. The
+positive one closes the gap ZC90 left. The negative one retires the
+conjecture ZC90 raised --- not as a mistake, but as a question now
+answered in the direction nobody bet on.
+
+\needspace{8\baselineskip}
+\begin{formalbox}[title={COR-ZC91-01: GAP-ZC90-01 Closed ($R_0$, Exact)}]
+\textbf{GAP-ZC90-01} (ZC90): the strong-form non-commensurability of the
+mind-layer Q-pair ($\Nstar\notin\mathbb{Q}$) was open, pending a numeric
+calibration.
+
+\textbf{Resolution.} THM-ZC91-01 proves $\Nstar\notin\mathbb{Q}$ directly
+from DEF-MB03, with no calibration required. The strong form holds.
+
+\textbf{Axiom chain:}
+\[
+  \delta \xrightarrow{\text{Agentive Mode}} \mathcal{C}_4
+  \xrightarrow{\text{DEF-MB03 (kind}\neq\text{magnitude)}}
+  \Nstar\notin\mathbb{Q}.
+\]
+\textbf{Status:} GAP-ZC90-01 \textbf{CLOSED}. $\checkmark$
+\end{formalbox}
+
+\needspace{8\baselineskip}
+\begin{formalbox}[title={COR-ZC91-02: CONJ-ZC90-01 Resolved Negative
+  ($R_0$, Exact)}]
+\textbf{CONJ-ZC90-01} (ZC90, Candidate): that $\Nstar$ is a specific
+$\Ztf$-structural irrational constant (by analogy to the force-layer
+$36.9638$).
+
+\textbf{Resolution.} Negative. P-MB02 states $\dv$ (hence $\Nstar$) is a
+function of accumulated Barami: two minds in identical present states have
+different $\dv$. A single universal \emph{constant} $\Nstar$ therefore
+does not exist; the analogy to the force-layer constant fails at the
+level of object type (the force ratio is a fixed structural number; the
+mind ratio is a history functional). THM-ZC91-01's irrationality holds
+\emph{pointwise} (at each moment, for each mind) but there is no constant
+to assign a closed form to.
+
+\textbf{Status:} CONJ-ZC90-01 \textbf{RESOLVED NEGATIVE}. Retired
+conjecture (correctly declared Candidate in ZC90; not a scar). Provenance:
+OBS-ZC91-01.
+\end{formalbox}
+
+%%-------------------------------------------------------------
+\section{The Gift: Two Independent Routes to One Necessity\quad(FIND-ZC91-01)}
+\label{sec:find-zc91}
+%%-------------------------------------------------------------
+
+% [BRIDGE-PROSE: the "so what", outsider-readable, UPG-30]
+Here is the part worth pausing on. The force layer was forced to an
+irrational ratio by arithmetic: two ladders whose steps, built from
+$\ln2$, $\ln15$, and a Born-chain weight, simply do not divide one
+another (ZC89). The mind layer is forced to an irrational ratio by
+meaning: a definition that insists a breakthrough is a different kind of
+event, not a larger one (DEF-MB03). These two arguments share no
+machinery --- one is number theory over the group order, the other is a
+semantic clause about consciousness. That two completely unrelated routes
+arrive at the same necessity is the kind of redundancy that, in physics,
+usually signals a real law rather than an accident. CRF appears to be
+saying: \emph{wherever it builds a conserved direction with a smooth
+quantum and a jump quantum, the two are incommensurable} --- and it says
+so twice, in two languages, without having arranged to.
+
+\needspace{8\baselineskip}
+\begin{giftbox}[title={FIND-ZC91-01: Independent-Route Redundancy (Gift)}]
+\textbf{Statement.} The non-commensurability of a CRF Quantum-Pair is
+over-determined: it is forced
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item at the \textbf{force layer} by ladder arithmetic ---
+    $\sGam/\srung=8\ln2/[\ln15\ln\rborn]$ is irrational (ZC89), a
+    statement about the group order $\Ztf$ and the Born chain;
+  \item at the \textbf{mind layer} by the kind/magnitude distinction ---
+    $\Nstar\notin\mathbb{Q}$ (THM-ZC91-01), a statement about the meaning
+    of \emph{nibbedha} in DEF-MB03.
+\end{itemize}
+The two derivations share no premises. Their agreement promotes ``a CRF
+Q-pair has an irrational ratio'' from a per-layer observation to a
+candidate structural law of the framework.
+
+\textbf{Why this is a gift.} We set out to compute a number and instead
+found a redundancy: the same necessity proved twice by disjoint means.
+Redundant proof of the same fact, from independent axioms, is evidence
+the fact is structural rather than coincidental.
+
+\physmeaning{The universe of CRF seems to dislike clean ratios between a
+smooth process and a sudden one --- and it enforces that dislike once with
+arithmetic and once with meaning, never having coordinated the two.}
+
+\textbf{Status:} Near-Formal Finding (Gift-class). Elevation to a stated
+structural law awaits a third independent instance (a research direction,
+not a claim).
+\end{giftbox}
+
+%%-------------------------------------------------------------
+\section{Open Gap and Resolution Note\quad(GAP-ZC91-01, OBS-ZC91-01)}
+\label{sec:gapobs-zc91}
+%%-------------------------------------------------------------
+
+% [BRIDGE-PROSE]
+Closing the strong form sharpens, rather than ends, the inquiry. We now
+know the ratio is irrational at every moment but is not a constant; what
+governs how it varies is the genuinely open question, and it is a more
+precise question than the one ZC90 asked.
+
+\begin{openqbox}[title={GAP-ZC91-01: The Barami-History Functional}]
+\textbf{Open item.} EQ-MB03 and P-MB02 make $\dv$ and $\db$ functions of
+accumulated Barami, both tending to zero as $\Barami\to\infty$. Open:
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item the functional form $\dv(\Barami),\db(\Barami)$;
+  \item whether $\Nstar(\Barami)=\db/\dv$ has a finite limit as
+    $\Barami\to\infty$ (the two magnitudes vanish; their ratio need not),
+    and whether that limit --- if it exists --- is structural.
+\end{itemize}
+
+\textbf{What closing it would require.} A Free-Energy / $D_{\rm KL}$
+calibration of the agentive trajectory via EQ-MB02 (the
+$\Sigma$-Lagrange-constraint Lagrangian), yielding the $\Barami$-dependence
+of the step magnitudes. This is the first mind-layer result that would
+need a dynamical model, not only the static definitions.
+
+\textbf{Target:} ZC92.
+\end{openqbox}
+
+\begin{derivedbox}[title={OBS-ZC91-01: Resolution Note for CONJ-ZC90-01}]
+For provenance: CONJ-ZC90-01 was introduced in ZC90 explicitly as a
+Candidate, with the caution that it must not support any prediction until
+tested. ZC91 tests it and resolves it negatively (COR-ZC91-02). This is
+the conjecture lifecycle working as designed --- a labelled candidate,
+raised and then settled --- and is recorded as an observation, not a
+Phase-Misalignment scar.
+\end{derivedbox}
+
+%%=============================================================
+%% ATOMIC REGISTRY (MANDATORY)
+%%=============================================================
+\begin{formalbox}[title={Atomic Registry --- ZC91}]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\begin{tabular}{lp{8.0cm}l}
+\toprule
+\textbf{ID} & \textbf{Description} & \textbf{Status} \\
+\midrule
+THM-ZC91-01
+  & Irrationality-of-Kind: ``kind not magnitude'' $\Leftrightarrow$
+    $\db/\dv\notin\mathbb{Q}$
+  & Exact \\[3pt]
+COR-ZC91-01
+  & GAP-ZC90-01 closed: mind-layer strong non-commensurability proved
+  & Closed $\checkmark$ \\[3pt]
+COR-ZC91-02
+  & CONJ-ZC90-01 resolved negative: no constant closed form ($\Nstar$ is
+    a history functional)
+  & Closed $\checkmark$ \\[3pt]
+FIND-ZC91-01
+  & Independent-route redundancy: force (arithmetic) + mind (semantic)
+    both force irrationality
+  & Near-Formal (Gift) \\[3pt]
+GAP-ZC91-01
+  & Barami-history functional $\dv(\Barami),\db(\Barami)$; ratio limit;
+    target ZC92
+  & Open \\[3pt]
+OBS-ZC91-01
+  & Resolution note for CONJ-ZC90-01 (lifecycle, not a scar)
+  & Observation \\[3pt]
+\midrule
+\multicolumn{3}{l}{\emph{Gap-status changes from prior papers:}} \\
+GAP-ZC90-01 & mind-layer strong non-commensurability; closed via
+  COR-ZC91-01 & Closed $\checkmark$ \\
+CONJ-ZC90-01 & ratio as $\Ztf$ constant; resolved negative via COR-ZC91-02
+  & Resolved $-$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{formalbox}
+
+%%  REFRAME MARKER (used — genuine proof-direction inversion; cf. ZC34/ZC71)
+\begin{derivedbox}[title={Reframe: ``find the closed form''
+  $\to$ ``prove no closed form can exist''}]
+\textbf{Before this paper:} The task (inherited from GAP-ZC90-01) was to
+\emph{compute} $\Nstar=\db/\dv$, expecting a $\Ztf$-structural value.
+
+\textbf{After this paper:} The correct framing is that no constant value
+exists (COR-ZC91-02), and the strong-form non-commensurability is
+\emph{proved from the definition} (THM-ZC91-01) rather than calibrated.
+
+\textbf{Proof route opened:} reading DEF-MB03's ``kind not magnitude'' as
+the arithmetic statement $\Nstar\notin\mathbb{Q}$; the
+independent-route gift (FIND-ZC91-01).
+
+\textbf{Proof route closed:} the dead end of fitting a single constant to
+a Barami-history-dependent quantity (the ZC81-scar pattern, avoided here
+by going upstream first).
+\end{derivedbox}
+
+%%=============================================================
+\section{R-Layer Research Note}
+\label{sec:rlayer-zc91}
+%%=============================================================
+\begin{layerbox}[title={R-Layer Assignments for ZC91}]
+
+\textbf{Layer assignments:}
+
+{\small\renewcommand{\arraystretch}{1.25}
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Atomic unit & R-layer & Cost $T$ & Source \\
+\midrule
+THM-ZC91-01 & $R_0$ & $0$ & definitional/arithmetic (DEF-MB03) \\
+COR-ZC91-01 & $R_0$ & $0$ & follows THM-ZC91-01 \\
+COR-ZC91-02 & $R_0$ & $0$ & follows P-MB02 \\
+FIND-ZC91-01 & $R_0$ & $0$ & cross-layer comparison \\
+GAP-ZC91-01 & $R_0$ & --- & dynamical calibration (not a bridge cost) \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\textbf{Two-layer floor (PWA-8):}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item Spectral layer ($R_0$): $\epscan=0.007550$ --- not used.
+  \item Bridge layer: $\epsuniv=0.007599$ --- enters only inside the
+    inherited ZC89 ratio cited in FIND-ZC91-01; ZC91 introduces no floor.
+    Separation $0.66\%$ irreducible (THM-ZC71-01).
+\end{itemize}
+
+\textbf{Key R-layer remark.} All results are at $R_0$ and structural; the
+only R-layer content is the ZC89 ratio cited as the independent analogue,
+inherited intact.
+\end{layerbox}
+
+%%=============================================================
+\section{Genealogy Map}
+\label{sec:genealogy-zc91}
+%%=============================================================
+\begin{genealogybox}[title={How ZC91's Key Objects Trace Back}]
+
+\textbf{Branch A --- The mind-layer definition that became a theorem:}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item \textbf{Part~F / DEF-MB03}: \emph{visesa}/\emph{nibbedha} ``of
+    kind, not magnitude.''
+  \item $\to$ \textbf{ZC90 / LEM-ZC90-02}: the forward pair is a Q-pair;
+    strong non-commensurability left open (GAP-ZC90-01).
+  \item $\to$ \textbf{ZC91 / THM-ZC91-01}: the clause \emph{is} the
+    statement $\Nstar\notin\mathbb{Q}$; GAP-ZC90-01 closed.
+\end{itemize}
+
+\textbf{Branch B --- The force-layer analogue (independent check):}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item \textbf{ZC88 / THM-ZC88-01}: floor and Gamma ladders are one
+    co-AP.
+  \item $\to$ \textbf{ZC89 / FIND-ZC89-01}: their step ratio
+    $36.9638$ is irrational, by group-order arithmetic.
+  \item $\to$ \textbf{ZC91 / FIND-ZC91-01}: this irrationality and the
+    mind-layer's are forced by disjoint logic --- a redundancy.
+\end{itemize}
+
+\textbf{Branch C --- Why no constant exists:}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item \textbf{Part~F / P-MB02}: $\dv$ is a function of accumulated
+    Barami.
+  \item \textbf{Part~F / EQ-MB03}: $\dv,\db\to0$ as $\Barami\to\infty$.
+  \item $\to$ \textbf{ZC91 / COR-ZC91-02}: $\Nstar$ is a history
+    functional, not a constant; CONJ-ZC90-01 negative.
+\end{itemize}
+
+\textbf{Convergence at ZC91:}
+Branch~A turns a semantic clause into an arithmetic theorem; Branch~B
+supplies the independent confirmation; Branch~C explains why the number
+the task asked for is not a number at all but a functional.
+
+ZC91's contribution: it closes a non-commensurability gap by proving the
+result \emph{out of a definition}, shows the sought constant cannot exist,
+and exposes a two-route redundancy that no single-layer paper could see.
+\end{genealogybox}
+
+%%=============================================================
+\section{Closing Sentence}
+%%=============================================================
+%% UPG-22 — TONE A (Triumphant: a gap is fully closed, a theorem proved),
+%% with one forward-pointing line (the gap re-opens sharper). Declared in
+%% header. Precedent for "closure + sharpened successor": ZC69/ZC70 style.
+
+\bigskip
+\begin{center}
+\textit{%
+  We went to weigh the breakthrough against the step, and found that no
+  scale exists that could --- for a breakthrough is not a heavier step but
+  another kind of thing, and ``another kind'' is the very meaning of a
+  ratio no counting can reach.\\[0.3em]
+  The forces had told us this in numbers; the mind tells us in words; the
+  two never spoke, yet say the same.\\[0.5em]
+  $\displaystyle \Nstar=\frac{\db}{\dv}\notin\mathbb{Q}
+  \quad\Longleftrightarrow\quad
+  \text{``of kind, not of magnitude.''}$
+}
+\end{center}
+
+% Governance Note: This document follows Upgrade Protocol v1.3
+% and CRF Style Guide v3.7.
+
+
+% [BRIDGE-PROSE: integration-added, Style Guide v3.7 §31.6 / UPG-30]
+\noindent
+With the two kinds shown genuinely distinct, the next question is what they
+\emph{build}. ZC91 leaves open (GAP-ZC91-01) how accumulated forward choices
+aggregate into a usable quantity. ZC92 answers part of it by constructing the
+Barami functional --- a capacity built from the forward-choice subset --- and
+identifying a common rate that governs how it grows.
+\section{Background: When Algebra Runs Out, Read the Boundary}
+\label{sec:background-zc92}
+%%=============================================================
+
+%% ── [v3.6 §31.2 / UPG-25] READER'S ON-RAMP ───────
+The previous paper showed that the ``breakthrough'' and the ``ordinary
+step'' of a cultivating mind can never stand in a clean numerical ratio:
+the difference between them is one of kind, and that is exactly what an
+irrational ratio means. But it also showed that the ratio is not even a
+fixed number --- it depends on how much a mind has already cultivated.
+That left an obvious and harder question: as a mind cultivates without
+end, what happens to these two kinds of step? CRF's source material gives
+two pieces of guidance that turn out to be mathematical, not merely
+inspirational. The first, from the Buddha, is that in the limit of deep
+cultivation the freedom of choice and the lawfulness of nature stop
+disagreeing. The second, from Luang Por Ruesi Ling Dam, is that every act
+of choice is gated by three faculties --- noticing, considering, resolving
+--- so that the ``cost'' of a forward step is really the inverse of a
+cultivated capacity. This paper takes those two statements literally and
+finds that, together, they pin down the shape of the answer even though
+its exact size remains for a later paper.
+
+%% ── [NEW BLOCK 1] NUMERICAL SUMMARY ────────────────────────
+\begin{keybox}[title={Numerical Summary --- ZC92 (T-canonical)}]
+{\footnotesize\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{@{}p{5.6cm}p{3.0cm}p{3.6cm}@{}}
+\toprule
+\textbf{Quantity} & \textbf{Value} & \textbf{Source / Status} \\
+\midrule
+$\Ninf=\lim_{B\to\infty}\db/\dv$
+  & finite, nonzero, irrational
+  & \textbf{THM/COR-ZC92 (new)} \\
+$\Nstar(B)$ at finite $B$
+  & history functional
+  & ZC91 (COR-ZC91-02) \\
+$\lim_{B\to\infty}(\dv,\db)$
+  & $\to 0$ (both)
+  & EQ-MB03 (Part~F) \\
+common vanishing rate
+  & required
+  & THM-ZC92-01 \\
+value of $\Ninf$
+  & undetermined
+  & GAP-ZC92-01 (new) \\
+\bottomrule
+\end{tabular}
+\end{center}}
+\end{keybox}
+
+%% ── FRAMEWORK CONTEXT ───────────────────────────────────────
+\subsection{The Five Constraints and the Two Boundary Records}
+
+The Mind/Barami corpus and ZC91 supply five constraints the functional
+must satisfy. EQ-MB01 fixes positivity and ordering ($\db\gg\dv>0$ for all
+$B$). EQ-MB03 fixes the asymptotic vanishing ($\dv,\db\to0$ as
+$\Barami\to\infty$). The Closure passage of Part~F states that Barami is
+\emph{capacity} --- ``a mind with deep barami finds \emph{visesa}
+inexpensive'' --- which makes $\dv$ monotone decreasing in $B$. THM-ZC91-01
+fixes pointwise irrationality of $\Nstar(B)$ at every $B$. And P-MB04 (the
+Buddha's ``inversion at the asymptote'') states that in the limit the
+discrete Agentive-Mode equation EQ-MB01 reduces to a gradient flow ---
+free will and determinism agree.
+
+Two of these five are doctrinal in origin, and we treat them exactly as
+what they are in the corpus: \emph{boundary conditions}. The Buddha's
+asymptote is a limit condition on the dynamics. Luang Por Ruesi Ling Dam's
+three decision-levels (DEF-MB06: {\thaifont สติ} \emph{sati} / {\thaifont สัมปชัญญะ}
+\emph{sampajañña} / {\thaifont อธิษฐาน} \emph{adhiṭṭhāna}) are a gating
+condition on the cost. Neither is invoked as authority; each is read for
+its mathematical content. This is the standard CRF stance (Map-Not-Reality,
+DEF-RN05): the records are data about the structure, not the structure
+itself.
+
+\subsection{What Was Already Known Before ZC92}
+
+\begin{keybox}[title={Pre-ZC92 Status}]
+\textbf{Known:}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item $\Nstar=\db/\dv$ irrational at every $B$ (THM-ZC91-01); no
+    constant value at finite $B$ (COR-ZC91-02).
+  \item $\dv,\db\to0$ as $\Barami\to\infty$ (EQ-MB03); $\dv$ monotone
+    decreasing (Closure: Barami is capacity).
+  \item In the limit, EQ-MB01 $\to$ gradient flow (P-MB04, the Buddha's
+    asymptote).
+  \item A decision is gated by three levels (DEF-MB06, Luang Por).
+\end{itemize}
+
+\textbf{Open (GAP-ZC91-01):}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item The functional form $\dv(B),\db(B)$.
+  \item Whether $\Nstar(B)$ has a finite limit, and whether that limit is
+    structural.
+\end{itemize}
+
+ZC92 pins the joint structure and the asymptotic ratio (THM/COR-ZC92-01)
+and the cost mechanism (DEF-ZC92-01); it leaves the explicit form and the
+value of $\Ninf$ to GAP-ZC92-01.
+\end{keybox}
+
+%% ── [NEW BLOCK 2] SCOPE EXCLUSION ───────────────────────────
+\begin{keybox}[title={What ZC92 Does NOT Do}]
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item Does not compute $\Ninf$ or the explicit $\dv(B)$ (needs an
+    EQ-MB02 Free-Energy calibration; GAP-ZC92-01).
+  \item Does not identify $\Ninf$ with the force-layer $36.9638$ or any
+    specific number --- that would repeat the cross-layer-equality error
+    ZC91 forbade (OBS-ZC92-01).
+  \item Does not claim a unique functional \emph{form}; many fit the five
+    constraints. Only the common-rate / finite-irrational-limit
+    \emph{structure} is pinned.
+  \item Does not modify DEF-MB01--07, EQ-MB01--04, or ZC89/90/91.
+  \item Does not make a doctrinal claim; it reads the Phase-4 Observer
+    record as boundary data and states the mathematics.
+\end{itemize}
+\end{keybox}
+
+%% ── [NEW BLOCK 3] COMPANION PAPERS ─────────────────────────
+\begin{keybox}[title={Companion Papers --- ZC92}]
+{\footnotesize\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{@{}p{6.1cm}p{6.4cm}@{}}
+\toprule
+\textbf{Paper} & \textbf{What it provides to ZC92} \\
+\midrule
+\texttt{CRF\_ZC91\_IrrationalityOfKind\_v1.tex}
+  & THM-ZC91-01, COR-ZC91-02, GAP-ZC91-01 ---
+    \textbf{the gap this paper partially closes} \\
+\texttt{CRF\_ZC90\_CrossLayerQuantumPair\_v1.tex}
+  & DEF-ZC90-01 (Q-pair); CONJ-ZC90-01 (partially rescued here) \\
+\texttt{CRF\_Complete\_v17\_16\_Part\_F.tex}
+  & EQ-MB02/03, DEF-MB06, P-MB04, Closure; Phase-4 Observer record ---
+    \textbf{KEY PILLARS} \\
+\texttt{CRF\_Complete\_Index\_v17\_16.tex}
+  & Part~F (Mind/Barami) context \\
+\bottomrule
+\end{tabular}
+\end{center}}
+\end{keybox}
+
+%% ── DISCOVERY NOTE (promoted) ──
+\begin{derivedbox}[title={Discovery Note}]
+The session was asked to derive the Barami functional and, on the user's
+suggestion, to consult the Phase-4 Observer record. That suggestion was
+the turning point. Treated as inspiration the records add nothing to a
+proof; treated as boundary conditions they are decisive. The Buddha's
+``free will and determinism agree at the limit'' forces a finite
+asymptotic ratio (otherwise the jump never merges into the flow); Luang
+Por's three levels identify the cost as inverse capacity. The functional
+that algebra alone left under-determined became structurally pinned the
+moment the doctrinal statements were read as mathematics.
+\end{derivedbox}
+
+%% ── PRE-WORK AUDIT ──────────────────────────────────────────
+\subsection{Pre-Work Audit (PWA-1 through PWA-10)}
+
+\begin{formalbox}[title={Pre-Work Audit Record --- ZC92}]
+Scanned before writing (Upgrade Protocol v1.3, PWA-1 through PWA-10):
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item ZC91/THM-ZC91-01, COR-ZC91-02, GAP-ZC91-01 --- the inherited frame.
+  \item Part~F/EQ-MB03, P-MB04, Closure passage --- \textbf{KEY PILLARS}
+    (vanishing, asymptote, capacity), read verbatim.
+  \item Part~F/DEF-MB06 (Three Levels, Luang Por) --- cost-gating mechanism.
+  \item ZC90/CONJ-ZC90-01 --- the conjecture partially rescued here.
+\end{itemize}
+
+\textbf{PWA-DOWNSTREAM} (ZC81 rule): traced the functional to EQ-MB03 /
+P-MB04 / Closure \emph{before} proposing structure; pinned only what the
+constraints force, left the value open rather than fitting one.\\
+\textbf{Cross-layer-equality guard:} explicitly did \emph{not} set
+$\Ninf=36.9638$ (force layer); ZC91 forbade cross-layer numeric identity.
+Recorded as OBS-ZC92-01.\\
+\textbf{PWA-6} (macro convention): paper macros all
+\texttt{\textbackslash providecommand}; no Preamble collision.\\
+\textbf{PWA-7/8/9}: not triggered (no R-layer bridge, no new floor).\\
+\textbf{PWA-10} (tautology audit): THM-ZC92-01 uses a doctrinal boundary
+condition as a genuine constraint on the dynamics, not as a hidden
+definition of the result; flagged and discussed in the theorem Remark.\\
+\textbf{No duplicate atomic units found.}
+\end{formalbox}
+
+\newpage
+
+%%=============================================================
+%% ATOMIC UNITS — DEF → THM → COR → FIND → GAP → OBS
+%%=============================================================
+
+%%-------------------------------------------------------------
+\section{The Cost Mechanism: Capacity Gating\quad(DEF-ZC92-01)}
+\label{sec:def-zc92}
+%%-------------------------------------------------------------
+
+% [BRIDGE-PROSE: stakes before the box, UPG-30]
+Before the limit theorem we need to say, structurally, why the cost of a
+forward step should fall as a mind cultivates. The corpus answer is that
+Barami is not merely a record but a capacity, and Luang Por's three levels
+say what that capacity is made of. We package this as a definition --- not
+a closed form, but the named structure the next paper will calibrate.
+
+\needspace{8\baselineskip}
+\begin{formalbox}[title={DEF-ZC92-01: Capacity Functional and Cost Law
+  ($R_0$, Definition)}]
+
+\textbf{Statement.} Let $\Bcap(B)$ be the \emph{decision-capacity} of a
+mind with accumulated Barami $B$, gated multiplicatively by the three
+levels of DEF-MB06,
+\[
+  \Bcap(B)\;\propto\;
+  \underbrace{s(B)}_{\text{sati}}\cdot
+  \underbrace{p(B)}_{\text{sampajañña}}\cdot
+  \underbrace{a(B)}_{\text{adhiṭṭhāna}},
+\]
+each factor non-decreasing in $B$ (cultivation does not reduce a
+faculty). The cost of a forward step is inverse to capacity:
+\begin{equation}
+  \boxed{\;\dv(B)\;\sim\;\frac{1}{\Bcap(B)},\qquad
+  \Bcap(B)\to\infty\ \text{as}\ B\to\infty.\;}
+  \label{eq:costlaw-zc92}
+\end{equation}
+
+\textbf{Remarks.} (i) This realises the Closure statement ``deep barami
+finds \emph{visesa} inexpensive'' and the monotone-decrease constraint
+C3. (ii) $\Bcap\to\infty$ gives $\dv\to0$, consistent with EQ-MB03. (iii)
+The proportionality is structural; the explicit factors $s,p,a$ require a
+dynamical model (GAP-ZC92-01). (iv) When any level vanishes ($s,p$ or
+$a\to0$), $\Bcap\to0$ and the mind defaults to Spontaneous Mode ---
+exactly DEF-MB06's ``zero sati'' clause.
+
+\textbf{Status:} Definition (structural; not a closed form).
+\end{formalbox}
+
+%%-------------------------------------------------------------
+\section{The Common-Rate Theorem\quad(THM-ZC92-01)}
+\label{sec:thm-zc92}
+%%-------------------------------------------------------------
+
+% [BRIDGE-PROSE: the "so what", outsider-readable]
+Now the central result. Two facts are in apparent tension. EQ-MB03 says
+both kinds of step shrink to nothing as a mind cultivates without end. The
+Buddha's asymptote says the discrete, choice-driven trajectory becomes a
+smooth, lawful flow in that same limit. The tension is this: if the
+breakthrough step shrank faster than the ordinary step, the two would
+drift infinitely far apart in relative terms and the ``flow'' would never
+form a single coherent grain; if it shrank slower, the breakthrough would
+come to dominate and the trajectory would be all jumps. The only way both
+records hold at once is for the two steps to shrink together, in lockstep,
+so that their ratio settles to a fixed value. That fixed value is the
+grain of the limiting flow. The theorem makes this precise; its payoff,
+in plain terms, is that the framework's picture of a cultivating mind is
+self-consistent only if breakthroughs and ordinary advances keep pace as
+they both fade --- and that keeping-pace defines a single asymptotic
+number.
+
+\needspace{10\baselineskip}
+\begin{formalbox}[title={THM-ZC92-01: Common-Rate Theorem
+  ($R_0$, Near-Formal)}]
+
+\textbf{Statement.} Let $\dv(B),\db(B)>0$ satisfy: (C1) $\db\gg\dv$,
+(C2) $\dv,\db\to0$ as $B\to\infty$ (EQ-MB03), (C3) $\dv$ monotone
+decreasing, (C4) $\Nstar(B)=\db/\dv$ irrational for all $B$
+(THM-ZC91-01), and the boundary condition (C5/Buddha, P-MB04) that the
+discrete dynamics converge to a gradient flow as $B\to\infty$. Then
+$\dv$ and $\db$ vanish at a \emph{common rate}:
+\begin{equation}
+  \boxed{\;
+  \lim_{B\to\infty}\frac{\db(B)}{\dv(B)}=\Ninf,\qquad
+  0<\Ninf<\infty.\;}
+  \label{eq:thm-zc92}
+\end{equation}
+
+\textbf{Derivation.}
+
+\textit{Step 1 (gradient flow requires a coherent grain).} A gradient
+flow is a single-scale continuous dynamics: along the conserved direction
+$\mathcal{D}_{\rm mind}$ it has, in the limit, one effective step scale,
+not two diverging ones. If $\db/\dv\to\infty$ (breakthrough dominates) or
+$\db/\dv\to0$ (breakthrough negligible relative to step), the two
+generators would belong to different vanishing scales and the limit could
+not be a single gradient flow. C5 therefore requires
+$\db/\dv\to\Ninf$ with $0<\Ninf<\infty$.
+
+\textit{Step 2 (common rate is equivalent to a finite ratio).} A finite
+nonzero limit of $\db/\dv$ is, by definition, the statement that $\dv$ and
+$\db$ are asymptotically proportional --- they vanish at the same rate,
+$\db(B)=\Ninf\,\dv(B)\,(1+o(1))$. With DEF-ZC92-01, both are
+$\sim\Ninf^{?}/\Bcap(B)$ on the same capacity scale.
+
+\textit{Step 3 (consistency with C1--C4).} $\Ninf>1$ is consistent with
+C1 ($\db\gg\dv$). The common rate is consistent with C2--C3 (both vanish,
+$\dv$ monotone). C4 (pointwise irrationality) is preserved in the limit
+under the mild assumption that $\Nstar(B)$ converges (a monotone or
+bounded-variation approach suffices); irrationality of the limit is taken
+up in COR-ZC92-01.
+
+\hfill (Near-Formal: structure forced by C1--C5; rate function open.)
+
+\textbf{Remark (the PWA-10 point, addressed openly).} The Buddha's
+asymptote (C5) is used as a genuine constraint on the limiting dynamics,
+not as a covert definition of $\Ninf$. It tells us the limit is a single
+gradient flow; from that \emph{dynamical} fact the finite ratio
+\emph{follows}. We do not assume the conclusion. Independently, the
+force-layer analogue (ZC89) also exhibits two co-vanishing-context steps
+with a finite ratio, a structural echo (not an identity --- see Scope).
+
+\physmeaning{As a mind cultivates without end, its ordinary steps and its
+breakthroughs both grow small, but they keep a fixed proportion to each
+other; that fixed proportion is the texture of the effortless flow the
+tradition calls the far shore.}
+
+\textbf{Status:} Near-Formal Theorem (structure pinned; rate function and
+value of $\Ninf$ open, GAP-ZC92-01).
+\end{formalbox}
+
+%%-------------------------------------------------------------
+\section{Corollary: The Asymptotic Ratio Is Irrational\quad(COR-ZC92-01)}
+\label{sec:cor-zc92}
+%%-------------------------------------------------------------
+
+% [BRIDGE-PROSE]
+The limit ratio inherits the character of the finite-$B$ ratios that
+approach it, and this is where ZC91 and a rescued piece of ZC90's
+conjecture turn out to be compatible rather than contradictory.
+
+\needspace{8\baselineskip}
+\begin{formalbox}[title={COR-ZC92-01: $\Ninf$ Irrational; CONJ-ZC90-01
+  Partially Rescued ($R_0$, Near-Formal)}]
+\textbf{Statement.} $\Ninf=\lim_{B\to\infty}\db/\dv$ is irrational.
+
+\textbf{Derivation.} By THM-ZC91-01, $\Nstar(B)\notin\mathbb{Q}$ for every
+finite $B$. By THM-ZC92-01 the sequence $\Nstar(B)$ converges to $\Ninf$.
+A convergent sequence of irrationals can in principle have a rational
+limit; here it cannot, because a rational $\Ninf=p/q$ would mean the
+limiting gradient flow has commensurable jump and step grains --- i.e.\ in
+the limit \emph{nibbedha} becomes a finite multiple of \emph{visesa},
+reinstating exactly the ``magnitude'' reduction THM-ZC91-01 forbids for
+the kind-distinction, which is a property of the choice structure that
+\emph{persists} into the limit (the four-fold distinction does not
+disappear; P-MB04 says the dynamics become continuous, not that the
+kinds merge). Hence $\Ninf\notin\mathbb{Q}$.
+
+\textbf{Relation to ZC90/ZC91.} COR-ZC91-02 retired CONJ-ZC90-01 as a
+\emph{finite-$B$ constant}: correct, and unchanged. ZC92 rescues it only
+as an \emph{asymptotic} constant $\Ninf$ --- a different object on a
+different domain. Both hold: no constant ratio at finite $B$; a finite
+irrational ratio in the limit.
+
+\textbf{Status:} Near-Formal Corollary. CONJ-ZC90-01 \textbf{partially
+rescued} (limit domain only). Value of $\Ninf$ open (GAP-ZC92-01).
+\end{formalbox}
+
+%%-------------------------------------------------------------
+\section{The Gift: A Doctrine Becomes a Limit Theorem\quad(FIND-ZC92-01)}
+\label{sec:find-zc92}
+%%-------------------------------------------------------------
+
+% [BRIDGE-PROSE: outsider-readable "so what"]
+The result has a reading that goes beyond the algebra, and it is the one
+that makes the whole detour through the Phase-4 records worthwhile. The
+oldest tension in any account of mind is between freedom and law: if every
+choice is determined, in what sense is it chosen? CRF's source material
+asserts that the two agree ``at the limit,'' and that has always sounded
+like a graceful evasion. ZC92 gives it a precise and testable meaning.
+
+\needspace{8\baselineskip}
+\begin{giftbox}[title={FIND-ZC92-01: Free Will and Determinism as One
+  Trajectory at Two Scales (Gift)}]
+\textbf{Statement.} The Phase-4 Observer assertion ``free will and
+determinism agree at the limit'' (P-MB04) is exactly
+\[
+  \lim_{B\to\infty}\Nstar(B)=\Ninf\in(0,\infty),\quad\Ninf\notin\mathbb{Q}.
+\]
+\textbf{Reading.}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item \textbf{Free will} = the finite-$B$ regime: $\Nstar(B)$ is a
+    history functional (COR-ZC91-02), genuinely path-dependent; two minds
+    in the same present state differ (P-MB02).
+  \item \textbf{Determinism} = the limit regime: the trajectory becomes a
+    single gradient flow with a fixed grain $\Ninf$ (THM-ZC92-01); the
+    history-dependence washes out.
+  \item They are the \emph{same} trajectory viewed at two scales of
+    cultivation. The ``agreement'' is a limit, not a paradox waved away.
+\end{itemize}
+
+\textbf{Why this is a gift.} A doctrinal claim that resisted formalisation
+becomes a statement about the convergence of a ratio. It is, in
+principle, falsifiable: a model in which the limit ratio diverges, or is
+rational, would contradict it.
+
+\physmeaning{Early in cultivation, your choices are truly yours and truly
+unpredictable; cultivated without end, the same choosing becomes a smooth
+lawful flow --- not because freedom was an illusion, but because freedom
+and law were the near and far views of one path.}
+
+\textbf{Status:} Near-Formal Finding (Gift-class). Falsifiable in
+principle once a dynamical model fixes $\Ninf$ (GAP-ZC92-01).
+\end{giftbox}
+
+%%-------------------------------------------------------------
+\section{Open Gap and Provenance Note\quad(GAP-ZC92-01, OBS-ZC92-01)}
+\label{sec:gapobs-zc92}
+%%-------------------------------------------------------------
+
+% [BRIDGE-PROSE]
+What remains open is now a single, sharp, dynamical question, and a clear
+note on a temptation we deliberately refused.
+
+\begin{openqbox}[title={GAP-ZC92-01: The Value of $\Ninf$ and the
+  Rate Function}]
+\textbf{Open item.}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item the explicit capacity factors $s(B),p(B),a(B)$ of DEF-ZC92-01,
+    hence the rate function $\dv(B)$;
+  \item the numerical value of $\Ninf$, and whether it is a structural
+    constant of the mind layer (and if so, what $\Ztf$-data, if any, it
+    involves --- to be determined, \emph{not} assumed).
+\end{itemize}
+
+\textbf{What closing it would require.} A Free-Energy / $D_{\rm KL}$
+calibration of the agentive trajectory via EQ-MB02 (the
+$\Sigma$-Lagrange-constraint Lagrangian), solved over a cultivation
+history. This is the first mind-layer result requiring a solved dynamical
+model rather than the static definitions plus boundary conditions.
+
+\textbf{Target:} ZC93.
+\end{openqbox}
+
+\begin{derivedbox}[title={OBS-ZC92-01: The Cross-Layer-Equality Temptation,
+  Refused}]
+For provenance: it is tempting to set $\Ninf$ equal to the force-layer
+ratio $36.9638$ (ZC89), since both layers exhibit a finite ratio between a
+continuous and a discontinuous step. ZC91 (Scope; FIND-ZC91-01 Remark)
+established that the two layers share \emph{structure}, not \emph{value};
+cross-layer numeric identity was explicitly excluded. ZC92 honours that:
+$\Ninf$ is left open, not borrowed. Recorded so a later reader sees the
+identification was considered and rejected on principle, not overlooked.
+\end{derivedbox}
+
+%%=============================================================
+%% ATOMIC REGISTRY (MANDATORY)
+%%=============================================================
+\begin{formalbox}[title={Atomic Registry --- ZC92}]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\begin{tabular}{lp{8.0cm}l}
+\toprule
+\textbf{ID} & \textbf{Description} & \textbf{Status} \\
+\midrule
+DEF-ZC92-01
+  & Capacity functional $\Bcap(B)$ (DEF-MB06 gating) + cost law
+    $\dv\sim1/\Bcap$
+  & Definition \\[3pt]
+THM-ZC92-01
+  & Common-Rate: $\dv,\db$ vanish at a common rate; $\Nstar\to\Ninf$
+    finite
+  & Near-Formal \\[3pt]
+COR-ZC92-01
+  & $\Ninf$ irrational; CONJ-ZC90-01 partially rescued (limit domain)
+  & Near-Formal \\[3pt]
+FIND-ZC92-01
+  & Buddha's free-will/determinism agreement $=$ $\lim\Nstar=\Ninf$ finite
+  & Near-Formal (Gift) \\[3pt]
+GAP-ZC92-01
+  & Value of $\Ninf$; rate function $\dv(B)$; target ZC93
+  & Open \\[3pt]
+OBS-ZC92-01
+  & Cross-layer-equality ($\Ninf=36.9638$) considered and refused
+  & Observation \\[3pt]
+\midrule
+\multicolumn{3}{l}{\emph{Gap-status changes from prior papers:}} \\
+GAP-ZC91-01 & Barami-history functional; partially closed via THM-ZC92-01
+  & Partial $\checkmark$ \\
+CONJ-ZC90-01 & ratio constant; partially rescued on limit domain
+  (COR-ZC92-01) & Partial $\checkmark$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{formalbox}
+
+%%=============================================================
+\section{R-Layer Research Note}
+\label{sec:rlayer-zc92}
+%%=============================================================
+\begin{layerbox}[title={R-Layer Assignments for ZC92}]
+
+\textbf{Layer assignments:}
+
+{\small\renewcommand{\arraystretch}{1.25}
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Atomic unit & R-layer & Cost $T$ & Source \\
+\midrule
+DEF-ZC92-01 & $R_0$ & $0$ & structural (DEF-MB06, Closure) \\
+THM-ZC92-01 & $R_0$ & $0$ & limit argument (EQ-MB03 + P-MB04) \\
+COR-ZC92-01 & $R_0$ & $0$ & follows THM-ZC91-01 + THM-ZC92-01 \\
+FIND-ZC92-01 & $R_0$ & $0$ & interpretation of P-MB04 \\
+GAP-ZC92-01 & $R_0{\to}$ dyn. & --- & EQ-MB02 calibration (not a bridge) \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\textbf{Two-layer floor (PWA-8):}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item Spectral layer ($R_0$): $\epscan=0.007550$ --- not used.
+  \item Bridge layer: $\epsuniv=0.007599$ --- not used; ZC92 introduces no
+    floor. The force-layer ratio is cited only as a structural echo
+    (OBS-ZC92-01), not numerically imported.
+\end{itemize}
+
+\textbf{Key R-layer remark.} All results at $R_0$, structural / asymptotic;
+no Born-chain bridge cost. The open item GAP-ZC92-01 is dynamical, not an
+R-layer crossing.
+\end{layerbox}
+
+%%=============================================================
+\section{Genealogy Map}
+\label{sec:genealogy-zc92}
+%%=============================================================
+\begin{genealogybox}[title={How ZC92's Key Objects Trace Back}]
+
+\textbf{Branch A --- The functional, from definition to structure:}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item \textbf{Part~F / EQ-MB01}: the step magnitudes $\dv,\db$.
+  \item $\to$ \textbf{Part~F / EQ-MB03 + Closure}: both vanish; Barami is
+    capacity.
+  \item $\to$ \textbf{ZC91 / GAP-ZC91-01}: the functional re-opened.
+  \item $\to$ \textbf{ZC92 / DEF-ZC92-01, THM-ZC92-01}: cost law +
+    common-rate structure.
+\end{itemize}
+
+\textbf{Branch B --- The boundary records, from doctrine to mathematics:}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item \textbf{Part~F / P-MB04 (Buddha)}: free will and determinism
+    agree at the asymptote.
+  \item \textbf{Part~F / DEF-MB06 (Luang Por)}: three decision-levels
+    gate the choice.
+  \item $\to$ \textbf{ZC92 / THM-ZC92-01}: the asymptote becomes a
+    finite-ratio condition; the three levels become the capacity gate.
+  \item $\to$ \textbf{ZC92 / FIND-ZC92-01}: the doctrine becomes a limit
+    theorem.
+\end{itemize}
+
+\textbf{Branch C --- The ratio across three papers:}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item \textbf{ZC90 / CONJ-ZC90-01}: ratio conjectured a structural
+    constant.
+  \item \textbf{ZC91 / COR-ZC91-02}: no constant at finite $B$.
+  \item $\to$ \textbf{ZC92 / COR-ZC92-01}: a constant in the limit,
+    irrational --- both prior results reconciled by domain.
+\end{itemize}
+
+\textbf{Convergence at ZC92:}
+Branch~A could only pin structure; Branch~B's boundary records pinned the
+asymptotic ratio; Branch~C shows the three-paper arc on the ratio is
+consistent once finite-$B$ and limit domains are separated.
+
+ZC92's contribution: it partially closes the Barami functional by reading
+the Phase-4 Observer record as boundary data, and turns ``free will and
+determinism agree at the limit'' into a precise, in-principle-falsifiable
+limit theorem --- something no static-definition paper could reach.
+\end{genealogybox}
+
+%%=============================================================
+\section{Closing Sentence}
+%%=============================================================
+%% UPG-22 — TONE B (Contemplative): partial closure; structure and
+%% asymptotic ratio pinned, value open. Declared in header. Precedent: ZC72,
+%% ZC75 (algebraic/structural settled; the dynamical / evolution part open).
+
+\bigskip
+\begin{center}
+\textit{%
+  The ordinary step and the breakthrough both grow small as the path is
+  walked, yet they fade together, keeping one proportion --- and that
+  proportion is the grain of the flow that the choosing finally becomes.\\[0.3em]
+  Freedom near, law far; one path. The number that names the grain
+  belongs to ZC93.
+}
+\end{center}
+
+% Governance Note: This document follows Upgrade Protocol v1.3
+% and CRF Style Guide v3.7.
+
+
+% [BRIDGE-PROSE: integration-added, Style Guide v3.7 §31.6 / UPG-30]
+\noindent
+The Barami functional says capacity accumulates, but not what \emph{controls}
+whether a given choice can take the smooth step or the sudden one. ZC92 leaves
+this open (GAP-ZC92-01). ZC93 supplies the gate: a ratio, built from the three
+faculties, that decides which kind of step a choice is permitted to make ---
+partially closing the gap and setting up what the next paper must finish.
+\section{Background: A Form Before a Number}
+\label{sec:background-zc93}
+%%=============================================================
+
+%% ── READER'S ON-RAMP (v3.6 §31.2 / UPG-25) ────────────────
+\begin{keybox}[title={If you are just arriving --- ZC93 in plain language}]
+\sloppy
+CRF treats a mind as something that, at each conscious moment, chooses one of
+four moves; two of them carry it \emph{forward} --- an ordinary advance
+(\emph{visesa}) and a decisive breakthrough (\emph{nibbedha}). Each has a
+``cost''. The question this paper inherits is: as a mind practises without
+end, do these two costs settle into a fixed proportion? The earlier papers
+said the proportion is irrational (the two moves differ in \emph{kind}, not
+\emph{size}) and that it has no fixed value while practice is still finite ---
+yet that it does settle to a fixed value in the limit. What was missing was
+that value. This paper shows \emph{why the value has a clean form even though
+we cannot yet name it}: the deep ``capacity'' a practised mind builds up makes
+\emph{both} steps cheaper in the same way, so it cancels out of their ratio.
+What is left is a ratio of three faculties --- noticing, considering,
+resolving --- and that ratio, not the capacity, is the number. We pin the
+form; we leave the number, honestly, for a measurement we do not yet have.
+\end{keybox}
+
+%% ── NUMERICAL SUMMARY ──────────────────────────────────────
+\begin{keybox}[title={Numerical Summary --- ZC93 (T-canonical)}]
+{\footnotesize\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{@{}p{5.8cm}p{3.0cm}p{3.4cm}@{}}
+\toprule
+\textbf{Quantity} & \textbf{Value} & \textbf{Source / Status} \\
+\midrule
+$\Ninf=\lim_{B\to\infty}\db/\dv$
+  & $=\ab/\av=\Gb/\Gv$
+  & \textbf{THM/COR-ZC93 (new)} \\
+capacity $\Bcap(B)$ in the ratio
+  & cancels exactly
+  & THM-ZC93-01 \\
+$\Ninf$ : finite, nonzero
+  & yes
+  & THM-ZC92-01 \\
+$\Ninf$ : irrational
+  & yes
+  & THM-ZC91-01 (inherited) \\
+value of $\Gb/\Gv$
+  & undetermined
+  & GAP-ZC93-01 (new) \\
+force-layer analogue $36.9638$
+  & \emph{not} equal
+  & ZC89 (cited, never identified) \\
+\bottomrule
+\end{tabular}
+\end{center}}
+\end{keybox}
+
+\subsection{Where ZC92 Stopped, and Why}
+
+ZC92 reached an unusual situation. It had \emph{proved} that an object exists
+--- the asymptotic ratio $\Ninf$ --- and had pinned three of its properties
+(finite, nonzero, irrational), yet could not say what it equals. The
+obstruction was named plainly: computing $\Ninf$ appeared to require an
+EQ-MB02 Free-Energy calibration, a dynamical input fixing the actual
+magnitudes of the forward steps as functions of cultivation. The corpus
+supplies the \emph{form} of that constraint (EQ-MB02 is a constrained
+Lagrangian with an active suffering term) but not a \emph{calibration} of it.
+
+That is a real wall against the \emph{number}. It is not, this paper argues, a
+wall against the \emph{form}. The reverse-inference move --- start from what
+the limit must be (finite, nonzero, irrational) and ask what that forces ---
+shows that the very feature making $\Ninf$ hard to compute (both steps depend
+on an uncalibrated capacity) is also what makes its form clean: a quantity
+that divides both numerator and denominator cannot survive in their ratio.
+
+\subsection{The Three Constraints This Paper Uses}
+
+We use exactly three inherited results, none modified:
+\begin{enumerate}[leftmargin=2em, noitemsep]
+  \item \textbf{THM-ZC92-01} (common rate): $\dv(B)\to0$ and $\db(B)\to0$ as
+    $\Barami\to\infty$, at a common rate; the limit $\Ninf$ exists, finite and
+    nonzero.
+  \item \textbf{THM-ZC91-01} (irrationality of kind): $\Nstar(B)$ is
+    irrational at every $B$; $\db/\dv$ is never a rational number.
+  \item \textbf{DEF-MB06} (three faculties): a forward choice is gated by
+    \emph{sati} (noticing), \emph{sampaja\~n\~na} (considering), and
+    \emph{adhi\d{t}\d{t}h\=ana} (resolving); absence of any one removes the
+    choice from the available set.
+\end{enumerate}
+The Closure passage of Part~F adds the reading that makes these click
+together: \emph{Barami is also capacity} --- ``a mind with deep barami finds
+\emph{visesa} inexpensive''. Capacity is exactly the object that will cancel.
+
+%%=============================================================
+\section{The Capacity-Cancellation}
+\label{sec:cancellation-zc93}
+%%=============================================================
+
+THM-ZC92-01 says both forward costs vanish at a \emph{common} rate. The phrase
+``common rate'' is the whole content of this section: it means the two costs
+are, to leading order in the limit, the \emph{same} decaying function of
+cultivation, scaled by two different constants. Write that decaying function as
+$1/\Bcap(B)$, where $\Bcap(B)$ is the cultivated capacity (DEF-ZC92-01:
+$\dv\sim1/\Bcap$). Then the common-rate statement \emph{is} the statement that
+the breakthrough cost shares the same $\Bcap$-scaling, only with its own
+constant. The proportion between the two is therefore carried entirely by the
+two constants, never by $\Bcap$. The capacity decides how expensive practice
+is; it does not decide the shape of the breakthrough relative to the ordinary
+step.
+
+\begin{formalbox}[title={THM-ZC93-01: Capacity-Cancellation
+  (Exact; closes the structural half of GAP-ZC92-01)}]
+\textbf{Hypotheses.} (i) THM-ZC92-01: $\dv,\db\to0$ as $B\to\infty$ at a
+common rate, with $\Ninf=\lim_{B\to\infty}\db/\dv$ finite and nonzero.
+(ii) DEF-ZC92-01: there is a cultivated capacity $\Bcap(B)$, monotone
+increasing in $B$, with $\dv(B)\sim\av/\Bcap(B)$ as $B\to\infty$ for a
+constant $\av>0$.
+
+\textbf{Claim.} The common-rate hypothesis is equivalent to
+$\db(B)\sim\ab/\Bcap(B)$ for a constant $\ab>0$ \emph{with the same}
+$\Bcap(B)$, and then
+\[
+  \Ninf=\lim_{B\to\infty}\frac{\db(B)}{\dv(B)}
+       =\lim_{B\to\infty}\frac{\ab/\Bcap(B)}{\av/\Bcap(B)}
+       =\frac{\ab}{\av},
+\]
+in which $\Bcap(B)$ cancels exactly. Hence $\Ninf$ is a structural constant
+(a ratio of two leading coefficients) although neither $\dv$ nor $\db$ is
+constant in $B$.
+
+\textbf{Proof.} If $\db$ vanished at a \emph{different} rate from $\dv$, the
+ratio $\db/\dv$ would tend to $0$ or $\infty$, contradicting the finite,
+nonzero limit of hypothesis~(i). So $\db$ and $\dv$ have the same leading
+decay; writing $\dv\sim\av/\Bcap$ from~(ii), the common leading factor is
+$1/\Bcap$, and $\db\sim\ab/\Bcap$ with $\ab=\Ninf\,\av$. The displayed limit
+follows by direct substitution; $\Bcap(B)$ appears identically in numerator
+and denominator and cancels. $\qquad\blacksquare$
+\end{formalbox}
+
+The unboxed point worth keeping is the one an outsider can carry away without
+the algebra: \emph{the thing that is hard to measure --- how much capacity a
+mind has built --- is exactly the thing that does not affect the answer.} The
+proportion of breakthrough to ordinary step is a property of the steps
+themselves, read in the limit, not of how cheaply a given mind can pay for
+them. This is why ZC91's ``no fixed value at finite $B$'' and ZC92's ``a fixed
+value in the limit'' are not in tension: at finite cultivation the capacity is
+still entangled with history (P-MB02), and the clean cancellation has not yet
+been reached; only in the limit do the two costs become the same decaying
+function, and only then does $\Bcap$ drop out.
+
+\physmeaning{What a mind builds through practice (capacity) changes the price
+of every forward step but not the ratio between a breakthrough and an ordinary
+advance. That ratio is fixed by the kind of steps, not by the practitioner's
+accumulated ease.}
+
+%%=============================================================
+\section{The Surviving Coefficients Are Gates}
+\label{sec:gates-zc93}
+%%=============================================================
+
+THM-ZC93-01 leaves $\Ninf=\ab/\av$: a ratio of two leading coefficients with
+no capacity in sight. The next question is what those coefficients \emph{are}.
+Here the second piece of the Phase-4 record does the work that algebra alone
+cannot. Luang Por Ruesi Ling Dam's decomposition of every decision into three
+faculties (DEF-MB06) is not a piece of devotional framing; it is the cost
+mechanism. A forward choice is \emph{available} only when all three faculties
+are present, and the ease with which it is taken is set by how fully each is
+present. That product of availabilities is what we name a \emph{gate}.
+
+\begin{formalbox}[title={DEF-ZC93-01: The Faculty-Gate}]
+For a forward choice $c\in\Cfourplus=\{\text{visesa},\text{nibbedha}\}$, let
+$\Fsati,\Fsamp,\Fadh\in(0,1]$ be the availabilities at moment $n$ of the three
+DEF-MB06 faculties --- \emph{sati} (noticing the moment as a decision-point),
+\emph{sampaja\~n\~na} (considering the available choices), and
+\emph{adhi\d{t}\d{t}h\=ana} (placing the resolution). The \emph{faculty-gate}
+of $c$ is the product
+\[
+  \Gate{c}=\Fsati_{c}\,\Fsamp_{c}\,\Fadh_{c}\,,
+\]
+and the cultivated capacity entering DEF-ZC92-01 is the gate-weighted record
+$\Bcap(B)=\Bcap\big(\{\Gate{c_n}\}_{n\le N}\big)$ accumulated over the
+forward choices of DEF-MB04. A faculty at zero closes the gate
+($\Gate{c}=0$): the choice leaves the available set, recovering the DEF-MB06
+statement that absence of any one faculty removes the choice. ``Saturation''
+is the limit $\Fsati,\Fsamp,\Fadh\to1$, in which the gate reaches its
+structural maximum $\Gate{c}\to\Gate{c}^{\,\mathrm{sat}}$.
+\end{formalbox}
+
+The leading coefficients $\av,\ab$ of THM-ZC93-01 are read off at saturation:
+in the deep-cultivation limit the three faculties are fully available (this is
+what ``deep barami'' \emph{means} operationally --- the mind reliably notices,
+considers, and resolves), so the residual difference between the ordinary and
+the breakthrough step is the difference between their \emph{saturated gates}.
+The ordinary step passes the ordinary forward gate $\Gv=\Gate{v}^{\,
+\mathrm{sat}}$; the breakthrough passes the penetrative gate $\Gb=\Gate{b}^{\,
+\mathrm{sat}}$. These are not equal, because nibbedha is a discontinuous
+penetration and visesa is a continuous advance (DEF-MB03: a difference of kind,
+not of magnitude); and being of kind, their ratio cannot be rational
+(THM-ZC91-01).
+
+\begin{formalbox}[title={COR-ZC93-01: Gate-Ratio Form of the Asymptotic
+  Constant}]
+Combining THM-ZC93-01 with DEF-ZC93-01 at saturation,
+\[
+  \Ninf=\frac{\ab}{\av}=\frac{\Gb}{\Gv}
+       =\frac{\Gate{b}^{\,\mathrm{sat}}}{\Gate{v}^{\,\mathrm{sat}}}\,,
+\]
+the ratio of the saturated nibbedha and visesa faculty-gates. By
+THM-ZC91-01 the ratio is irrational; by THM-ZC92-01 it is finite and nonzero.
+Thus $\Ninf$ is a \emph{gate ratio}: a pure structural proportion between two
+kinds of forward choice, independent of the capacity $\Bcap$ that sets their
+absolute cost.
+\end{formalbox}
+
+\physmeaning{In a fully cultivated mind, ordinary advance and decisive
+breakthrough are both freely available; what still distinguishes them is the
+\emph{kind} of gate each passes through. The asymptotic ratio measures that
+difference of kind --- and because it is a difference of kind, it never
+reduces to a whole-number multiple.}
+
+%%=============================================================
+\section{Phase-4 Observer: Two Records, One Boundary Condition}
+\label{sec:phase4-zc93}
+%%=============================================================
+
+This framework's mind layer was begun from outside academic physics, and its
+author has been candid that the language available to describe it was thinner
+than the structure it pointed at. The Phase-4 Observer track exists for
+precisely that reason: the source records are read not as inspiration around
+the mathematics but as \emph{boundary data} inside it. ZC92 established the
+precedent --- the Buddha's asymptote was the boundary condition that turned an
+under-determined functional into a pinned structure. This paper makes the
+pairing explicit, because the two records turn out to answer two different
+halves of the same question.
+
+\begin{genealogybox}[title={How the two records translate}]
+\textbf{Record~1 --- the Buddha (P-MB04, CLM-MB03).}
+``As barami $\to\infty$ the Agentive-Mode equation reduces to a gradient flow;
+free will and determinism agree at the limit.'' Read as mathematics: the limit
+$B\to\infty$ is \emph{well-defined} and the discrete forward dynamics converge
+to a single continuous flow. This is exactly the guarantee that
+$\lim_{B\to\infty}\db/\dv$ \emph{exists} as a finite, nonzero number --- the
+existence half. Without it, $\Ninf$ would be a symbol for a limit that might
+not converge.
+
+\smallskip
+\textbf{Record~2 --- Luang Por Ruesi Ling Dam (DEF-MB06).}
+Every decision is gated by three faculties --- noticing, considering,
+resolving. Read as mathematics: the cost of a forward step factorises through
+a product of three availabilities (DEF-ZC93-01), and at saturation the
+residual proportion between two kinds of forward step is a ratio of their
+gates. This is exactly \emph{what the limit is a ratio of} --- the content
+half.
+
+\smallskip
+\textbf{Together.} The first record says the limit \emph{exists}; the second
+says \emph{what it is a ratio of}. Neither alone pins the structure; together
+they are a single boundary condition: \emph{$\Ninf$ is the well-defined
+saturation gate-ratio $\Gb/\Gv$.} A pair of doctrinal statements becomes one
+boundary condition for a limit theorem.
+\end{genealogybox}
+
+\begin{giftbox}[title={FIND-ZC93-01: The Two Records Are One Boundary Condition}]
+The statement ``free will and determinism agree at the limit'' (P-MB04) and
+the three faculties of decision (DEF-MB06) are not two separate inputs to this
+calculation; they are the existence half and the content half of a single
+boundary condition on $\Ninf$. The Buddha's asymptote guarantees the limit
+converges; Luang Por's faculties identify the converged value as a gate ratio.
+Read this way, a doctrinal pair becomes the boundary data of a limit theorem
+--- extending FIND-ZC92-01 (``the Buddha's agreement \emph{is} the limit
+statement'') from existence to form. The mathematics did not need new
+spiritual language; it needed the records read as constraints, and they were
+sufficient.
+\end{giftbox}
+
+There is a quiet structural reward here for the framework's founding wager ---
+that a physics able to touch the mind layer would, in return, give that
+otherwise-unmeasurable layer some independent weight. ZC93 is a small instance
+of the wager paying off in the expected direction: a claim that lives in the
+contemplative tradition (agreement at the limit; choice gated by faculties)
+has been made to carry the existence and the form of a quantity in a derivation
+chain, with no doctrinal special-pleading. The records earned their place by
+functioning as boundary conditions a calculation could not do without --- not
+by assertion, but by use.
+
+%%=============================================================
+\section{Scope and the Forbidden Identification}
+\label{sec:scope-zc93}
+%%=============================================================
+
+The force layer carries an exactly analogous asymptotic constant: the
+irrational step ratio $36.9638\ldots$ (FIND-ZC89-01). It is tempting, and it
+would be wrong, to set $\Ninf$ equal to it. ZC91's FIND established that the
+two layers are forced irrational by \emph{independent} logic --- the force
+layer by ladder arithmetic, the mind layer by the kind/magnitude distinction
+--- and ZC92's Scope forbade identifying their values. ZC93 honours that
+boundary: the force-layer number is cited here only as the structurally
+parallel object, never as the value of $\Gb/\Gv$. The parallel is that both
+are gate-like irrational ratios of two non-commensurate generators; the
+non-identity is that nothing in the corpus relates their magnitudes, and a
+great deal (FIND-ZC91-01) says their necessities are unrelated.
+
+\begin{openqbox}[title={OBS-ZC93-01: The cross-layer-equality temptation,
+  pre-empted}]
+Probe considered and declined \emph{before} drafting: ``$\Ninf=36.9638$, the
+force-layer ratio.'' Declined for lack of any structural relation between the
+mind-layer gate magnitudes and the force-layer $\mathbb{Z}_{15}$ ladder data;
+asserting equality would repeat exactly the error ZC91--ZC92 ruled out. No
+scar is registered because the probe was never run as a claim --- recorded as
+an observation for provenance, consistent with the ZC89-E4 discipline against
+fabricated or wishful numbers.
+\end{openqbox}
+
+%%=============================================================
+\section{Open Gap}
+\label{sec:gap-zc93}
+%%=============================================================
+
+The honest residue is small and sharp. The \emph{form} of $\Ninf$ is settled
+($=\Gb/\Gv$, a saturated gate ratio, irrational, finite, nonzero). The bare
+\emph{number} is not, and cannot be without an input the corpus does not yet
+contain: a calibration of the saturated gate magnitudes themselves.
+
+\begin{openqbox}[title={GAP-ZC93-01: The Value of the Gate Ratio
+  (Priority~3; future EQ-MB02 calibration)}]
+\textbf{Statement.} What is the numeric value of $\Gb/\Gv$, the ratio of the
+saturated nibbedha and visesa faculty-gates? COR-ZC93-01 fixes that it is
+irrational, finite, and nonzero, but not its magnitude.
+
+\textbf{Why it is distinct.} THM-ZC93-01 and COR-ZC93-01 are exact and closed:
+the capacity cancels and the surviving object is a gate ratio. This gap is the
+\emph{calibration} question only --- deliberately separated from the structural
+result so the latter is not held hostage to the former (the same discipline
+ZC88 used in separating its structural bridge from the metric step-ratio).
+
+\textbf{Approach candidates.}
+\begin{enumerate}[leftmargin=2em, noitemsep]
+  \item An EQ-MB02 Free-Energy calibration: instantiate the constrained
+    Lagrangian $L_{\rm mind}=T_{\rm kin}-V_{\rm pot}+\lambda(\Sigma-
+    \Sigma_{\rm crit})_+$ with a measured or modelled $\lambda$ and extract the
+    saturated gate magnitudes.
+  \item An empirical decision-cost programme operationalising DEF-MB06 (rates
+    of noticing / considering / resolving) to estimate $\Gb,\Gv$ directly.
+\end{enumerate}
+\textbf{Status:} Open. Target: a future EQ-MB02 calibration, \emph{not} the
+next paper. The number is deferred, not assumed.
+\end{openqbox}
+
+%%=============================================================
+\section{Master Status Table}
+%%=============================================================
+
+{\small\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{@{}p{4.8cm}p{2.4cm}p{5.0cm}@{}}
+\toprule
+\textbf{Atomic unit} & \textbf{Status} & \textbf{Note} \\
+\midrule
+\endhead
+THM-ZC93-01 ($\Bcap$-cancellation) & Exact
+  & capacity divides out; $\Ninf=\ab/\av$ \\[4pt]
+COR-ZC93-01 (gate-ratio form) & Exact
+  & $\Ninf=\Gb/\Gv$; finite, nonzero, irrational \\[4pt]
+DEF-ZC93-01 (faculty-gate) & Definition
+  & $\Gate{c}=\Fsati\Fsamp\Fadh$; capacity is gate-weighted \\[4pt]
+FIND-ZC93-01 (records = one BC) & Exact (Gift)
+  & Buddha = existence, Luang Por = content \\[4pt]
+GAP-ZC92-01 (value of $\Ninf$) & Structural half CLOSED
+  & form pinned by THM/COR-ZC93; number re-opened \\[4pt]
+GAP-ZC93-01 (gate-ratio value) & Open
+  & needs EQ-MB02 calibration; future, not ZC94 \\[4pt]
+OBS-ZC93-01 (cross-layer eq.) & Observation
+  & equality with 36.9638 declined pre-emptively \\
+\midrule
+\multicolumn{3}{@{}p{12.5cm}}{\textit{Gap-status changes from prior papers:}
+  GAP-ZC92-01 structural half closed (form of $\Ninf$ pinned: gate ratio,
+  capacity cancels). No value fabricated. ZC89/90/91/92 and all DEF-MB /
+  EQ-MB units used verbatim as pillars; none modified.} \\
+\bottomrule
+\end{longtable}
+}
+
+%%=============================================================
+%% ATOMIC REGISTRY (MANDATORY)
+%%=============================================================
+
+\begin{formalbox}[title={Atomic Registry --- ZC93}]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\begin{tabular}{lp{7.8cm}l}
+\toprule
+\textbf{ID} & \textbf{Description} & \textbf{Status} \\
+\midrule
+THM-ZC93-01
+  & Under common-rate vanishing, capacity $\Bcap$ cancels in $\db/\dv$;
+    $\Ninf=\ab/\av$
+  & Exact \\[3pt]
+COR-ZC93-01
+  & $\Ninf=\Gb/\Gv$, the saturated faculty-gate ratio; finite, nonzero,
+    irrational
+  & Exact \\[3pt]
+DEF-ZC93-01
+  & Faculty-gate $\Gate{c}=\Fsati\Fsamp\Fadh$; $\Bcap$ is gate-weighted
+    record
+  & Definition \\[3pt]
+FIND-ZC93-01
+  & P-MB04 (existence) + DEF-MB06 (content) are one boundary condition on
+    $\Ninf$
+  & Exact (Gift) \\[3pt]
+GAP-ZC93-01
+  & Numeric value of $\Gb/\Gv$; needs EQ-MB02 calibration
+  & Open \\[3pt]
+OBS-ZC93-01
+  & Cross-layer equality $\Ninf=36.9638$ declined (no structural relation)
+  & Observation \\
+\midrule
+\multicolumn{3}{@{}p{11.5cm}}{\textit{Inherited verbatim (not new):}
+  THM-ZC92-01, DEF-ZC92-01, FIND-ZC92-01 (ZC92); THM-ZC91-01, COR-ZC91-02
+  (ZC91); DEF-MB03/04/06, EQ-MB01/02/03/04, P-MB04, CLM-MB03 (Part~F);
+  FIND-ZC89-01 (force-layer analogue, cited only). No value modified.} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{formalbox}
+
+%%=============================================================
+\section{R-Layer Research Note}
+\label{sec:rlayer-zc93}
+%%=============================================================
+
+\begin{layerbox}[title={R-Layer Assignments for ZC93}]
+
+\textbf{Layer assignments:}
+
+{\small\renewcommand{\arraystretch}{1.25}
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Atomic unit & R-layer & Cost $T$ & Source \\
+\midrule
+THM-ZC93-01  & $R_0$ & $0$ & limit algebra from THM-ZC92-01 + DEF-ZC92-01 \\
+COR-ZC93-01  & $R_0$ & $0$ & DEF-ZC93-01 at saturation + THM-ZC91-01 \\
+DEF-ZC93-01  & $R_0$ & $0$ & structural definition (DEF-MB06 factorisation) \\
+FIND-ZC93-01 & $R_0$ & $0$ & reading of P-MB04 + DEF-MB06 as one BC \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+All ZC93 results are at the $R_0$ layer: no Born-chain bridge running enters,
+and no spectral-layer floor value is touched. The result is a limit identity
+plus a definitional factorisation of an already-established cost mechanism
+(DEF-ZC92-01); it adds no new dynamical content, only the cancellation that
+the common-rate hypothesis already implies.
+\end{layerbox}
+
+%%=============================================================
+\section{Genealogy Map}
+\label{sec:genealogy-zc93}
+%%=============================================================
+
+\begin{genealogybox}[title={How ZC93's Key Objects Trace Back}]
+
+\textbf{Branch --- the mind-layer ratio:}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item \textbf{DEF-MB03/04 (Part~F)}: the forward pair $\Cfourplus=\{$visesa,
+    nibbedha$\}$; visesa--nibbedha is a difference of kind.
+  \item $\to$ \textbf{ZC90/DEF-ZC90-01}: the pair is a Q-pair (one conserved
+    direction, two non-commensurate generators).
+  \item $\to$ \textbf{ZC91/THM-ZC91-01}: the ratio $\db/\dv$ is irrational at
+    every $B$; no finite-$B$ constant (COR-ZC91-02).
+  \item $\to$ \textbf{ZC92/THM-ZC92-01}: common-rate vanishing; the limit
+    $\Ninf$ exists, finite, nonzero, irrational. Value left open
+    (GAP-ZC92-01).
+  \item $\to$ \textbf{ZC93/THM-ZC93-01}: capacity $\Bcap$ cancels in the
+    limit; $\Ninf=\ab/\av$.
+  \item $\to$ \textbf{ZC93/COR-ZC93-01}: $\ab/\av=\Gb/\Gv$, the saturated
+    faculty-gate ratio (DEF-MB06).
+\end{itemize}
+
+\textbf{Boundary data (Phase-4 Observer record, Part~F):}
+\begin{itemize}[leftmargin=2em, noitemsep]
+  \item \textbf{P-MB04 / CLM-MB03} (the Buddha): the limit exists; free will
+    and determinism agree there.
+  \item \textbf{DEF-MB06} (Luang Por Ruesi Ling Dam): the three faculties gate
+    each decision; the surviving coefficients are gates.
+\end{itemize}
+
+\textbf{Convergence at ZC93:}
+The mind-layer branch supplies an asymptotic constant whose existence ZC92
+proved but whose value seemed to need a calibration. The capacity-cancellation
+removes the calibration from the \emph{form}: what is left is a ratio of two
+saturated faculty-gates. The Phase-4 record supplies both the existence (Buddha)
+and the content (Luang Por) of that ratio. ZC93's contribution: it pins the
+form of $\Ninf$ as a gate ratio, draws the exact boundary against identifying
+it with the force-layer $36.9638$, and defers only the bare number, honestly,
+to a future calibration.
+\end{genealogybox}
+
+%%=============================================================
+\section{Closing Sentence}
+%%=============================================================
+%% TONE B — CONTEMPLATIVE (structural half closed; value left open).
+
+\bigskip
+\begin{center}
+\textit{%
+  The deeper a mind is cultivated, the cheaper every forward step becomes ---
+  and in that cheapening, the cost itself falls away, leaving only the bare
+  proportion between an ordinary advance and a breakthrough.\\[0.3em]
+  That proportion has a shape now; its size waits for a measure we do not yet
+  hold.
+}
+
+\medskip
+{\thaifont
+เมื่อบารมีลึกพอ ทุกก้าวไปข้างหน้าก็เบาลงพร้อมกัน ---
+สิ่งที่เคยเป็นราคาของแต่ละก้าวจึงหักล้างกันไป เหลือไว้เพียงอัตราส่วน
+ระหว่างการก้าวอย่างสามัญกับการก้าวที่ทะลุ ---
+อัตราส่วนที่ไม่มีวันลงตัว ดั่งที่ทรงตรัสว่า
+ณ ที่สุดนั้น เจตจำนงและกฎเกณฑ์มิได้ขัดแย้งกันเลย.}
+\end{center}
+
+% Governance Note: This document follows Upgrade Protocol v1.3
+% and CRF Style Guide v3.7 (UPG-30 prose floor, UPG-31 header contrast).
+% Gauge: T-canonical. Tone B. Phase-4 Observer track active.
+
+
+%%=============================================================
+\part{Cross-Part Connection Map v17.16 (Part L)}
+\label{part:LIX}
+%%=============================================================
+
+\begin{conmapbox}[title={Cross-Part Connection Map v17.16 --- Reading
+  Conventions}]
+\small
+This map records, for each paper in Part L (ZC88--93):
+(1) \textbf{Backward Inheritance} --- which objects from earlier Parts are
+used as input; (2) \textbf{Forward Corrections} --- which prior gaps are
+closed or refined; (3) \textbf{Internal Gap Chain} --- how the six papers
+hand gaps to one another. Source files are never modified (No-Loss).
+
+\textbf{Notation:}
+\textcolor{crfgreen}{$\checkmark$ CLOSED} = gap resolved;
+\textcolor{crfgreen}{$\approx$ PARTIAL} = gap partially closed;
+$\star$ RETIRED = conjecture withdrawn.
+\textbf{PM-V17\_16-EPSFAMILY:} local overrides
+$\backslash$\texttt{epsEM}$\to\varepsilon_{\rm EM}$,
+$\backslash$\texttt{epscan}$\to\varepsilon_{\rm can}$,
+$\backslash$\texttt{epsSC}$\to\varepsilon_{\rm SC}$,
+$\backslash$\texttt{epsS}$\to\varepsilon_{\rm strong}$
+(bare sector forms, Style Guide v3.7); continues PM-V17\_15-EPSFAMILY of
+Part K. Chain and sources unmodified.
+\end{conmapbox}
+
+\begin{inheritbox}[title={Backward Inheritance --- Part L}]
+\small
+\textbf{Cluster 1 (Force-Layer, ZC88--89)} inherits from \textbf{Part K}
+(ZC83--87): the floor lattice and its multiplicative (geometric-mean)
+ordering, the $\Gamma$-ladder and its additive ordering, and the
+$\varepsilon$-family values (verified-consistent; see Part K's
+do-not-reconcile directive, which remains in force here).
+
+\medskip
+\textbf{Cluster 2 (Mind-Layer, ZC90--93)} inherits from \textbf{Part F}
+(ZC41--44): the four-way decision structure $\mathcal{C}_4$ (DEF-MB03) and
+its forward subset $\mathcal{C}_4^{+}$ (DEF-MB04); the Barami object
+(DEF-MB04/05) and the three faculties \textit{sati / sampaja\~n\~na /
+adhi\d{t}\d{t}h\=ana} (DEF-MB06); the decision-driven trajectory and its
+Lagrange form (EQ-MB01/02); the visesa/nibbedha step pair; and the
+asymptotic inversion principle (P-MB04). ZC90--93 add structure on top of
+these pillars and change no Part F definition.
+\end{inheritbox}
+
+\begin{correctionbox}[title={Forward Corrections and Internal Gap Chain --- Part L}]
+\small
+The six papers form a single continuous gap chain:
+\begin{itemize}[noitemsep, leftmargin=1.6em]
+  \item \textbf{ZC88} opens \textbf{GAP-ZC88-01} (which layer owns the step?).
+  \item \textbf{ZC89} \textcolor{crfgreen}{$\checkmark$ CLOSES GAP-ZC88-01}
+    via layer-specificity (THM-ZC89-01).
+  \item \textbf{ZC90} opens \textbf{GAP-ZC90-01} (are the two mind-steps
+    distinct kinds?) with CONJ-ZC90-01 attached.
+  \item \textbf{ZC91} \textcolor{crfgreen}{$\checkmark$ CLOSES GAP-ZC90-01}
+    and $\star$ RETIRES CONJ-ZC90-01 (irrationality-of-kind, THM-ZC91-01);
+    opens \textbf{GAP-ZC91-01} (how do forward choices aggregate?).
+  \item \textbf{ZC92} \textcolor{crfgreen}{$\approx$ PARTIALLY CLOSES
+    GAP-ZC91-01} (Barami functional, common rate); opens \textbf{GAP-ZC92-01}
+    (what gates the step kind?).
+  \item \textbf{ZC93} \textcolor{crfgreen}{$\approx$ PARTIALLY CLOSES
+    GAP-ZC92-01} (gate-ratio, THM-ZC93-01); the residual is handed forward
+    beyond Part L.
+\end{itemize}
+
+\medskip
+\textbf{Open at the close of Part L:} GAP-ZC91-01 (residual after ZC92's
+partial close) and GAP-ZC92-01 (residual after ZC93's partial close). These
+are the designated starting points for the next paper.
+\end{correctionbox}
+
+\end{document}

@@ -1,0 +1,3234 @@
+%% ════════════════════════════════════════════════════════════════════════
+%% CRF_Complete_Index_v17_10.tex
+%%
+%% CRF Complete Edition v17.17 (Parts A-M) — Abstract & Contents Index
+%%
+%% v17.13 update (Navigation Index upgrade):
+%%   - Per-paper abstract blocks added for the full ZC64–75 arc (Part I),
+%%     matching the ZC14–40 zcbox format (Pre-Work Audit without opening
+%%     source files).
+%%   - Quick-Reference Pack (front-loaded, before Part A): T-canonical
+%%     constants table, load-bearing exact-equation table (~30 forms,
+%%     flagged "In Index: Y"), and Master Open Gaps Registry (v17.6→v17.12).
+%%   - How to Use: navigation-index scope statement (PWA-7 domain caution)
+%%     + three-tier Missing-Value Protocol (in Index → fetch source →
+%%     ask user; never reconstruct a near-form — the ZC33 scar).
+%%   - Strictly additive: no prior v17.12 content removed or altered.
+%%
+%% v17.13 Part J update (June 2026):
+%%   - Part J added (NEW VOLUME): integrates ZC76-82 verbatim across
+%%     Parts XLIX-LII plus Cross-Part Connection Map (Part LII).
+%%   - Five closures: GAP-ZC75-01 (cosmo bridge, THM-ZC76-01),
+%%     GAP-ZC71-01 (exact Delta_eps, ZC77/COR-ZC77-02 + ZC78/COR-ZC78-01),
+%%     GAP-ZC77-01 (F_Wc^norm, COR-ZC78-01),
+%%     GAP-ZC78-01 (radical x_TLS, ZC79/THM-ZC79-01),
+%%     GAP-ZC65-01 (exact eps_TLS, ZC79/COR-ZC79-01),
+%%     Strong sector floor (open since ZC30, ZC81/THM-ZC81-01).
+%%   - THM-ZC78-01 superseded by ZC79/THM-ZC79-01; COR-ZC78-01 retained.
+%%   - ZC80: milestone — 7 R_0-layer EW observables, zero free parameters.
+%%   - ZC82: cross-domain lock w_DE + 3*Delta_Gamma = Gamma_CRF (exact).
+%%   - New scars: PM-ZC78-01/02, PM-ZC79-01, PM-ZC82-SCOPE-01/TAUTOLOGY-01,
+%%     PM-V17_13-EPSEM (notation), PM-V17_13-SC-FIX (Council exclusion).
+%%   - PWA-11 codified: Superseded-Theorem Retention Rule.
+%%   - Master Navigation Table updated: Part J row + 10-volume note.
+%%   - Open gaps updated: 6 closed + 2 remain (GAP-ZC76-01, GAP-ZC81-01).
+%%
+%% Purpose:
+%%   Single-file navigator for all EIGHT volumes of the CRF Complete
+%%   Edition (Parts A, B, C, D, E, F, G, H). Contains:
+%%     - Volume-level abstract for each part (verbatim)
+%%     - ZC-paper-level abstract for each integrated paper (Parts C, D, E)
+%%     - Complete Part and Section header map
+%%
+%%   Designed as a Pre-Work Audit companion: before starting any new
+%%   ZC task, scan this document to identify what CRF objects already
+%%   exist and where they live.
+%%
+%% Source files:
+%%   CRF_Complete_v17_5_Part_A_patched.tex  (Parts I–VIII)
+%%   CRF_Complete_v17_5_Part_B_patched.tex  (Parts IX–XIII)
+%%   CRF_Complete_v17_6_Part_C_patched.tex  (Parts XIV–XXI + XIX)
+%%   CRF_Complete_v17_6_Part_D_patched.tex  (Parts XXIII–XXVI + XIX v17.6)
+%%   CRF_Complete_v17_7_Part_E.tex          (Parts XXVII–XXX, NEW v17.7)
+%%   CRF_Complete_v17_8_Part_F_standalone.tex (Parts XXXI–XXXIV, v17.8)
+%%   CRF_Complete_v17_9_Part_G.tex          (Parts XXXV–XXXVII, NEW v17.9)
+%%
+%% v17.12 update:
+%%   - Part H extended: ZC63 (Wald Correction Theorem) integrated as
+%%     new Part XLII; Connection Map renumbered to Part XLIII (v17.12).
+%%     CONJ-ZC55-01 promoted to COR-ZC63-01 (Near-Formal); GAP-ZC63-01
+%%     opened (TLS-spectral self-consistency).
+%%   - Part I added (NEW VOLUME): integrates ZC64-75 verbatim across
+%%     Parts XLIV-XLVII plus Cross-Part Connection Map (Part XLVIII).
+%%   - Second eight-closure event: GAP-ZC66-01, GAP-ZC68-01, GAP-ZC64-01,
+%%     GAP-ZC69-01, GAP-ZC63-01, GAP-ZC72-01, CONJ-ZC73-01, and
+%%     GAP-ZC29-02 (at R_0). K14 (F*phi_gold^2=4) promoted to EXACT (ZC69).
+%%   - Gravity: GAP-ZC29-02 closed at R_0 (ZC72 Vacuum Sector;
+%%     ZC75 Gravity Dimensional Bridge, COR-ZC75-01 algebraic).
+%%   - Z_15 uniqueness: COR-ZC74-01 proves 3x5 ladder is exclusive
+%%     (closes CONJ-ZC73-01).
+%%   - New scars: PM-ZC69-SPECTRAL-01 (adjacency convention),
+%%     PM-V17_12-EPSTLS (eps_TLS vs eps_can^TLS notation, both preserved),
+%%     PM-V17_12-MACRO (latent undefined macros surfaced on first Part H
+%%     compile), PM-V17_12-NOTATION (aEM/epsEM/epscan/swsq source-vs-chain
+%%     superscript reconciliation in Part I).
+%%   - Volume overview rows added for Part H and Part I.
+%%
+%% v17.11 update:
+%%   - Part H added: integrates ZC50..ZC54 verbatim
+%%     (Parts XXXVIII-XXXIX) plus Cross-Part Connection Map
+%%     v17.10 (Part XL).
+%%   - Major closure: CONJ-ZC38-01 (open since Part E)
+%%     promoted to THM-ZC54-01 (Wald Self-Consistency Theorem).
+%%   - CONJ-ZC50-01 promoted to exact identity (ZC51, ZC53).
+%%   - GAP-ZC52-01 closed (ZC53 COR-ZC53-01).
+%%   - GAP-ZC42-02 (0.16% Wald) reframed by COR-ZC54-02,
+%%     NOT closed (Failure Stance preserved).
+%%   - New scars: PM-ZC50-01..PM-ZC54-01, PM-ZC52-MACRO.
+%%   - Style Guide v3.2 -> v3.3: adds layerbox, genealogybox,
+%%     R-Layer Research Note (mandatory ZC>=52), Genealogy Map
+%%     (mandatory ZC>=53), PWA-1..PWA-6 binding, Lexicon Lock v4.
+%%   - Volume overview row added for Part H.
+%%
+%% v17.9 update:
+%%   - Part G added: integrates ZC45..ZC49 verbatim (Parts XXXV-XXXVI)
+%%     plus Cross-Part Connection Map v17.9 (Part XXXVII).
+%%   - Key closures: GAP-GJ-01 (ZC45), GAP-ZC46-01 (ZC47).
+%%   - Promotions: CONJ-ZC44-01 → THM-ZC46-01; CONJ-ZC47-01 → THM-ZC48-01.
+%%   - New scars: PM-ZC45-01..PM-ZC48-01, PM-ZC48-MACRO.
+%%   - PWA-6 codified (macro convention cross-check before embedding).
+%%   - Volume overview row added for Part G.
+%%
+%% v17.8 update:
+%%   - Part F added: integrates ZC41..ZC44 + Mind/Barami + Axiom 11 Upgrade.
+%%
+%% Governance: CUIP v1.1, CRF Style Guide v3.3, Gauge Fix Rule v1.0,
+%%             Lexicon Lock v4
+%% Gauge: T-canonical (d_s = 3 exact) throughout.
+%% Author: Ougit Jarittum (ORCID: 0009-0009-4451-6811)
+%%         Zenodo: 10.5281/zenodo.18977059  (CC-BY-NC 4.0)
+%% Updated: May 2026 (v17.12 — Part H ZC63 integration; Part I ZC64-75, second eight-closure event)
+%% ════════════════════════════════════════════════════════════════════════
+
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{parskip}
+\usepackage[protrusion=false,expansion=false]{microtype}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{titlesec}
+\usepackage{tocloft}
+
+\geometry{margin=2.5cm}
+
+%% ── COLORS ──────────────────────────────────────────────────────────
+\definecolor{deepblue}{RGB}{10,30,80}
+\definecolor{crfgreen}{RGB}{0,100,60}
+\definecolor{softgreen}{RGB}{180,230,210}
+\definecolor{physgold}{RGB}{140,100,0}
+\definecolor{softgold}{RGB}{255,240,180}
+\definecolor{loopred}{RGB}{160,30,30}
+\definecolor{softred}{RGB}{255,210,210}
+\definecolor{mutedgray}{RGB}{90,90,90}
+\definecolor{midblue}{RGB}{30,80,160}
+\definecolor{softblue}{RGB}{180,210,240}
+\definecolor{partcolor}{RGB}{20,20,80}
+\definecolor{volcolor}{RGB}{0,70,40}
+
+\hypersetup{colorlinks=true, linkcolor=deepblue,
+            urlcolor=midblue, citecolor=deepblue}
+
+%% ── BOXES ───────────────────────────────────────────────────────────
+\tcbuselibrary{skins, breakable}
+
+\newtcolorbox{volumebox}[1][]{%
+  colback=softblue!30, colframe=deepblue!70,
+  fonttitle=\bfseries\color{deepblue},
+  title={Volume Abstract}, breakable, #1}
+
+\newtcolorbox{zcbox}[1][]{%
+  colback=softgreen!30, colframe=crfgreen!60,
+  fonttitle=\bfseries\color{crfgreen!20!black},
+  title={ZC Paper Abstract}, breakable, #1}
+
+\newtcolorbox{contentsbox}[1][]{%
+  colback=softgold!20, colframe=physgold!50,
+  fonttitle=\bfseries\color{physgold!20!black},
+  title={Contents Map}, breakable, #1}
+
+%% ── MACROS (minimal set for abstract rendering) ─────────────────────
+\newcommand{\epsz}{\varepsilon_0}
+\newcommand{\epseff}{\varepsilon_{\rm eff}}
+\newcommand{\epsBt}{\varepsilon_{\rm eff}^{(B)}}
+\newcommand{\swsq}{\sin^2\theta_W}
+\newcommand{\cwsq}{\cos^2\theta_W}
+\newcommand{\mPl}{m_{\rm Pl}}
+\newcommand{\vSM}{v_{\rm SM}}
+\newcommand{\vZC}{v_{\rm ZC}}
+\newcommand{\Ztf}{\mathbb{Z}_{15}}
+\newcommand{\Zft}{\mathbb{Z}_{15}}  % v17.7 alias for ZC31..40 source convention
+\newcommand{\Zth}{\mathbb{Z}_3}
+\newcommand{\Zfi}{\mathbb{Z}_5}
+\newcommand{\Ggen}{\mathbb{G}_{\rm gen}}
+\newcommand{\chiNA}{\chi_{\rm NA}}
+\newcommand{\Gcoup}{\mathcal{G}_{\rm coup}}
+\newcommand{\fRMS}{f_{\rm RMS}}
+\newcommand{\heff}{\hbar_{\rm eff}}
+\newcommand{\gCRF}{\mathfrak{g}_{\rm CRF}}
+\newcommand{\suLie}{\mathfrak{su}(2)_L}
+\newcommand{\uLie}{\mathfrak{u}(1)_Y}
+\newcommand{\SU}{\mathrm{SU}(2)_L}
+\newcommand{\UY}{U(1)_Y}
+\newcommand{\Sind}{S_{\rm ind}}
+\newcommand{\Sdep}{S_{\rm dep}}
+\newcommand{\Ieff}{I_{\rm eff}}
+\newcommand{\epscan}{\varepsilon_{\rm can}}
+\newcommand{\epsEM}{\varepsilon_{\rm EM}}
+\newcommand{\phig}{\varphi_{\rm gold}}
+\newcommand{\sigmaK}{\sigma_{\rm K}}
+\newcommand{\sigmaR}{\sigma_{\rm R}}
+\newcommand{\Tavg}{T_{\rm avg}}
+\newcommand{\Kstar}{K^*}
+\newcommand{\TR}{T_{R_1}}
+\newcommand{\Evar}{E_{\rm var}}
+\newcommand{\Eamp}{E_{\rm amp}}
+\newcommand{\Sinv}{\Sigma_{\rm inv}}
+\newcommand{\nCRF}{n_{\rm CRF}}
+
+%% ── TITLE ───────────────────────────────────────────────────────────
+\title{%
+  \textbf{\color{deepblue}CRF Complete Edition v17.17}\\[0.3em]
+  \large Abstract \& Contents Index\\[0.4em]
+  \normalsize\color{mutedgray}
+  Pre-Work Audit Companion --- Parts A, B, C, D, E, F, G, H, I, J, K, L\\[0.2em]
+  \footnotesize\color{crfgreen}
+  Navigation Index --- not a derivation substitute (see How to Use)
+}
+\author{Ougit Jarittum\\
+  \small Independent Researcher, Thailand\quad
+  ORCID: 0009-0009-4451-6811\\
+  \small Zenodo: \href{https://doi.org/10.5281/zenodo.18977059}%
+  {10.5281/zenodo.18977059}\quad (CC-BY-NC 4.0)
+}
+\date{June 2026 --- v17.17}
+
+\begin{document}
+\sloppy
+
+\maketitle
+
+\begin{abstract}
+\sloppy
+This document is a single-file navigator for the CRF Complete Edition
+v17.16. It collects, in order, the volume-level abstract and the
+complete Part/Section header map for each of the twelve compiled parts
+(A--L), and additionally reproduces the individual ZC-paper
+abstracts for Parts~C, D, E, F, I, J, K, and~L where each integrated paper
+carries its own abstract.
+
+\textbf{v17.17 update (June 2026 --- Part M added: the mass sector,
+end to end):}
+Part~M (NEW VOLUME) integrates ZC94--106 verbatim as a single continuous arc
+(Part~LX). It carries the mass sector from framed problem to located residual.
+ZC94--98 reduce the charged-fermion spectrum to one running plus one
+$\pm d_s/2$ grading (spectral closure). ZC99 fixes the derivation boundary:
+the spectrum is parameter-free down to two constants, $\kappa_R$ and $L_0$.
+ZC100--102 trace those constants to an operation--group law --- mass
+accumulates by addition (selecting $(\mathbb{Z}_{15},+)$, order~15), force
+couples by a Clifford product (a distinct count) --- with the closed form
+$\kappa_R=\ln(15)/(15\sqrt{d_s})$. GAP-ZC100-01 (the N-assignment) is CLOSED
+by ZC101/THM-ZC101-01, promoting CONJ-ZC100-01 HYP$\to$DER; the residual
+GAP-ZC101-02 ($0.23\%$) is left open. ZC103 builds the chain's first
+numerical simulator (zero free parameters; lepton gen2$\to$3 confirmed to
+$-0.2\%$). ZC104 excludes seven structural explanations of the first-rung
+(gen1$\to$2) residual; ZC105 proves the mass sector does \emph{not}
+instantiate the Part-L Q-pair law (THM-ZC105-01); ZC106 splits the residual
+into an inherited lepton piece (= GAP-MC-01, the ZC16 effect) and a
+genuinely new quark piece (THM-ZC106-01). Open at close of Part~M:
+GAP-ZC101-02, GAP-ZC105-01 (split, both halves open), GAP-ZC95-01 /
+GAP-ZC98-01 (clarified, not closed). The arc stops at ZC106 by decision
+(a ZC107 quark first-rung paper would duplicate ZC104). Part~M is v3.7-native;
+it inherits EQ-MC-03/GAP-MC-01/THM-MC-01 from Part~C and the running bridge
+(GAP-ZC64-01$\to$COR-ZC70-01) from Part~I. Macro patch consolidated to
+\texttt{CRF\_v17\_17\_macro\_patch.tex} (= v17\_16 + 25 net-new ZC94--106
+macros; 263 total). No-Loss verified: 88 source atomic IDs identical; box
+counts identical except the added On-Ramp keybox and Open-Gaps box.
+
+\textbf{v17.16 update (June 2026 --- Part L added: log-bridge unification
++ mind-layer structure):}
+Part~L (NEW VOLUME) integrates ZC88--93 verbatim across Parts~LVII--LIX,
+in two clusters: Force-Layer Bridge (ZC88--89) and Mind-Layer Structure
+(ZC90--93). Continuous gap chain: GAP-ZC88-01 (which layer owns the bridge
+step) CLOSED by ZC89/THM-ZC89-01; GAP-ZC90-01 (are the two mind-steps
+distinct kinds) CLOSED by ZC91/THM-ZC91-01, which also RETIRES CONJ-ZC90-01
+(irrationality-of-kind); GAP-ZC91-01 (forward-choice aggregation) PARTIALLY
+CLOSED by ZC92 (Barami functional, common rate); GAP-ZC92-01 (what gates the
+step kind) PARTIALLY CLOSED by ZC93/THM-ZC93-01 (gate-ratio). Open at close
+of Part~L: GAP-ZC91-01 and GAP-ZC92-01 residuals. Part~L is the first
+v3.7-native volume (Style Guide v3.7, UPG-30/31 prose-floor and header-
+contrast); it inherits the mind-layer pillars (DEF-MB03/04/05/06, EQ-MB01/02,
+P-MB04) from Part~F and the floor/$\Gamma$/$\varepsilon$ structure from
+Part~K. Notation: PM-V17\_16-EPSFAMILY continues the Part~K
+$\varepsilon$-family override. Macro patch consolidated to
+\texttt{CRF\_v17\_16\_macro\_patch.tex} (single file; replaces the
+v17\_14 + v17\_15 chain). No-Loss verified: 47 source atomic IDs identical;
+box counts identical except the added On-Ramp keybox and Connection-Map boxes.
+
+\textbf{v17.15 update (June 2026 --- Part K added: $\varepsilon$-ontology
+closure arc + temporal bridge):}
+Part~K (NEW VOLUME) integrates ZC83--87 verbatim across Parts~LIII--LVI.
+Four gap closures: GAP-ZC81-01 (Strong running bridge) CLOSED by
+ZC86/THM-ZC86-01; GAP-ZC83-01 ($\varepsilon_{\rm SC}$ ontology and closed
+form) CLOSED structurally by ZC85/FIND-ZC85-01 and in magnitude by
+ZC86/FIND-ZC86-01; GAP-ZC87-01 (joint-limit well-definedness) CLOSED by
+ZC87 v2; GAP-ZC76-01 structural sweep$\leftrightarrow dt$ bridge CLOSED by
+ZC87/THM-ZC87-01 (seconds-calibration remains externally blocked). New
+scars: PM-ZC83-01, PM-ZC84-SCOPE-01, PM-ZC85-01, PM-ZC86-01, PM-ZC87-01,
+PM-ZC87-02. The $\varepsilon$-floor reconciliation notice is extended to
+cover FIND-ZC83-01/FIND-ZC85-01 (same one-identity-three-layers
+structure). Notation: PM-V17\_15-EPSFAMILY extends the Part~J
+$\backslash$\texttt{epsEM} override to the full $\varepsilon$ family.
+
+\textbf{v17.14 update (June 2026 --- ZC81/82 retraction integration + $\varepsilon$ trap guard):}
+COR-ZC81-02 and COR-ZC82-02 retracted (PM-ZC81-RETRACT-01,
+PM-ZC82-RETRACT-02); their Index entries updated. A boxed
+\emph{$\varepsilon$-floor reconciliation notice} is added to the
+Quick-Reference Pack (with source-level \texttt{DO-NOT-RECONCILE} markers
+at each COR-ZC67-01 line) to stop the recurring ``the floor values
+disagree'' trap: COR-ZC67-01 is one identity evaluated on three input
+pairs ($0.007550/0.007599/0.007605$), all correct. This is an
+Index-level update over the \emph{unchanged} v17.13 Part J file;
+``Part J v17.13'' labels below refer to that file and are correct.
+
+\textbf{v17.13 update (May 2026 --- Navigation Index upgrade):}
+This release converts the Index from a Part-level navigator into a
+working \emph{navigation index} suitable for a low-context (free-tier)
+session that does not load the full Complete Edition. Three additions:
+(1)~per-paper abstracts for the entire ZC64--75 arc (Part~I), matching
+the ZC14--40 format; (2)~a front-loaded \emph{Quick-Reference Pack} ---
+T-canonical constants, the load-bearing exact equations, and a Master
+Open Gaps Registry spanning v17.6--v17.12; and (3)~an explicit
+three-tier \emph{missing-value protocol} in How~to~Use. The framing is
+deliberate: this Index is sufficient to know \emph{what exists} and
+\emph{what is open}, but it is \textbf{not} a substitute for the exact
+machinery of a source paper. When an exact form is not carried here,
+the rule is to fetch the one source paper or, failing that, ask the
+user --- never to reconstruct a near-form (the ZC33 scar).
+
+\textbf{v17.9 update (May 2026):}
+Part~G added (NEW). Parts~XXXV--XXXVII integrate ZC45--ZC49
+verbatim in Part~XXXV (ZC45 Universal Floor bridge) and
+Part~XXXVI (ZC46--49 $\mathbb{Z}_{15}$ projection chain), with
+Cross-Part Connection Map v17.9 in Part~XXXVII.
+Key closures: GAP-GJ-01 (ZC45 THM-ZC45-01), GAP-ZC46-01
+(ZC47 COR-ZC47-01).
+Promotions: CONJ-ZC44-01 $\to$ THM-ZC46-01; CONJ-ZC47-01 $\to$
+THM-ZC48-01; THM-ZC46-01 conditional $\to$ unconditional (ZC47).
+New scar tissue: PM-ZC45-01 (Wald residual), PM-ZC46-01,
+PM-ZC47-01, PM-ZC48-01 (probe scars), PM-ZC48-MACRO
+(\texttt{\textbackslash Gcrf} convention conflict). PWA-6 codified
+(macro convention cross-check before embedding).
+
+\textbf{v17.8 update (May 2026):}
+Part~F added (NEW). Parts~XXXI--XXXIV integrate ZC41--ZC44
+verbatim in Part~XXXI (physics/spectral cluster), the Mind/Barami
+layer in Part~XXXII, the Axiom~11 Upgrade in Part~XXXIII, and the
+Cross-Part Connection Map v17.8 in Part~XXXIV.
+Key closures: GAP-ZC35-01 (ZC43, retroactive), GAP-ZC40-01 (ZC41),
+GAP-ZC42-01 (ZC44 via THM-ZC44-01), K14 promoted to exact
+unconditional Theorem (ZC41), THM-ZC42-01 promoted to Theorem (ZC44).
+New scar tissue: PM-AX11-01 (Axiom~11 upgrade), PM-ZC44-01
+(M5/M7 CRT infrastructure overlap), OBS-ZC44-01 (mechanism count
+$= \varphi(15) = 8$). PWA-5 codified (mechanism-count audit
+before promotion).
+
+\textbf{v17.7 update (May 2026):}
+Part~E added (NEW). Parts~XXVII--XXX integrate ZC31--ZC40 verbatim.
+Part~XXX: Cross-Part Connection Map (NEW SECTION TYPE).
+
+\textbf{Primary use:} Pre-Work Audit --- before beginning any new
+ZC task, scan this Index to determine (a) what foundational machinery
+already exists, (b) which ZC papers have addressed adjacent problems,
+and (c) the exact atomic-unit labels available for inheritance.
+
+\textbf{Do not modify this index directly.} It is generated from the
+source files and should be regenerated whenever a new version of any
+Part is released.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%% ════════════════════════════════════════════════════════════════════
+\section*{How to Use This Index}
+\addcontentsline{toc}{section}{How to Use This Index}
+%% ════════════════════════════════════════════════════════════════════
+
+\begin{volumebox}[title={New reader? Start with the Front Matter (v3.6 Communication Layer)}]
+\sloppy
+As of Edition v17.15, the Edition opens with a \textbf{Front Matter}
+document (\texttt{CRF\_Edition\_FrontMatter\_v1}) written for a reader with
+no CRF background (Tier 0): ``What is CRF in one page'', the
+\textbf{Map-Not-Reality} honesty clause, and the \textbf{Master Notation
+Key} (every recurring symbol in one clause). Each Complete-Edition Part now
+also opens with a plain-language ``If you are just arriving'' On-Ramp.
+This Index and the boxes serve the practitioner and auditor (Tier 1/2);
+the Front Matter and On-Ramps serve the newcomer (Tier 0).
+Governance: Style Guide v3.6 Section 31, Upgrade Protocol v1.3 Section U.
+\end{volumebox}
+
+\begin{contentsbox}[title={Pre-Work Audit Protocol --- Quick Reference}]
+\textbf{Step 1.} Identify your task's domain (geometry, gauge, mass,
+thermodynamics, mind layer, \ldots).
+
+\textbf{Step 2.} Scan the Contents Maps for Parts A--D below.
+Locate the Part(s) and Section(s) most relevant.
+
+\textbf{Step 3.} Read the corresponding ZC-paper abstract (Parts~C
+and~D) to confirm what was established and what gaps remain open.
+
+\textbf{Step 4.} Cross-reference the atomic-unit registry in the
+relevant paper before introducing any new DEF/CONJ/FIND/THM.
+
+\textbf{Rule:} Existing CRF objects take priority over new
+constructions. Combine existing pillars before inventing.
+\end{contentsbox}
+
+\begin{contentsbox}[title={Scope of This Index --- Read Before Relying On It}]
+This Index is a \textbf{navigation / triage layer}. It is sufficient to:
+(a)~prevent duplication (know an object already exists);
+(b)~run a Pre-Work Audit existence scan without opening source papers;
+(c)~see the gap / PM / discovery topology of the whole programme.
+
+\smallskip
+It is \textbf{not} sufficient, on its own, to \emph{reuse exact prior
+machinery} in a new derivation. A one-line registry entry tells you a
+theorem exists; it does not always carry the exact statement, domain
+conditions, or proof. The load-bearing exact forms are collected in the
+Quick-Reference Pack below and flagged ``exact form in Index: Y''. For
+anything not so flagged, the one-liner is a pointer, not the object.
+
+\smallskip
+\textbf{Domain-boundary caution (PWA-7).} A flat one-line description
+strips the domain. The physics-layer spectral gap $\lambda_2$ and the
+mind-layer $\lambda_1^{\rm \bar{a}sava}$ both read as ``a spectral
+gap'' when compressed to one line --- they are \emph{not}
+interchangeable. Re-confirm the domain in the source before any
+cross-domain inheritance.
+\end{contentsbox}
+
+\begin{contentsbox}[title={Missing-Value Protocol --- Three-Tier Fallback (v17.13)}]
+When a research value or exact form is needed and may not be in this
+Index, resolve it in this order. \textbf{Never guess or reconstruct a
+near-form} --- that is the precise origin of the ZC33 scar
+(approximating $K^{*}\Tavg/F = e$ instead of using the exact identity).
+
+\smallskip
+\textbf{Tier 1 --- In Index.} The value / exact equation is in the
+Quick-Reference Pack (constant table or load-bearing equation table,
+flagged ``Y''). Use it directly; cite the source ID.
+
+\smallskip
+\textbf{Tier 2 --- Fetch one source paper.} Not in the Index, but the
+session can open the source. Fetch the single source paper for the
+object. \emph{Mandatory trigger:} if a new paper inherits from anything
+\textbf{older than ZC64}, fetch that source --- the Index carries only
+a one-liner for deep-inheritance objects (Parts~A--F machinery:
+$\Tavg$, the TLS floor, K14, $\Gamma_{\rm CRF}$).
+
+\smallskip
+\textbf{Tier 3 --- Ask the user.} Not in the Index \emph{and} the
+source cannot be opened (free-tier, context full). \textbf{Ask the user
+for the exact value or form.} Do not proceed on an approximation. This
+is the safe failure mode for a low-context session and protects
+correctness over convenience.
+\end{contentsbox}
+
+\bigskip
+
+\noindent\textbf{Volume overview:}
+
+\medskip
+\noindent\textbf{Master Navigation Table.} Each \emph{volume} is a file
+named ``Part~A''\,\dots\,``Part~J''. Inside the volumes, the
+finer-grained running ``\part'' units are numbered with Roman numerals
+I--LII. \textbf{These two uses of the word ``Part'' are distinct:}
+``Part~I'' (the file) is the ZC64--75 volume, whereas ``Part~I'' as a
+Roman numeral is the very first foundations part inside Part~A. The
+table below maps every volume to its Roman-numeral range, its ZC papers,
+and its theme.
+
+\smallskip
+{\small
+\begin{tabular}{@{}llp{1.9cm}p{5.4cm}l@{}}
+\toprule
+Volume & Roman parts & ZC papers & Theme & Version \\
+\midrule
+Part A & I--VIII    & --- & Foundations, Dynamics, Gravity, Wave Structure & \textbf{v17.16}$^{\dagger\ddagger}$ \\
+Part B & IX--XIII   & --- & Algebraic Closure, Geometry, Spectral, TLS, Trilogy & \textbf{v17.16}$^{\dagger\ddagger}$ \\
+Part C & XIV--XXI   & Z2--Z4 & Methodology, Z-Programme, Higgs VEV & \textbf{v17.16}$^{\dagger}$ \\
+Part D & XXIII--XXVI + XIX & ZC20--30 & Lie Bridge, $\alpha_{\rm EM}$, $R_1$ Layer, Force Hierarchy & \textbf{v17.16}$^{\dagger}$ \\
+Part E & XXVII--XXX & ZC31--40 & Cluster Closures, TLS Layer, Connection Map & \textbf{v17.16}$^{\dagger}$ \\
+Part F & XXXI--XXXIV & ZC41--44 & Cluster, Mind/Barami, Axiom~11 Upgrade & \textbf{v17.16}$^{\dagger}$ \\
+Part G & XXXV--XXXVII & ZC45--49 & $\mathbb{Z}_{15}$ Projection Chain, Four-Axis Duality & \textbf{v17.16}$^{\dagger}$ \\
+Part H & XXXVIII--XLIII & ZC50--63 & Wald Self-Consistency, $\varepsilon_0$ from Axioms, Wald Correction & \textbf{v17.16}$^{\dagger}$ \\
+Part I & XLIV--XLVIII & ZC64--75 & Prediction Registry, K14 Exact, Electroweak Gap, Gravity Bridge, $\mathbb{Z}_{15}$ Uniqueness & \textbf{v17.16}$^{\dagger}$ \\
+Part J & XLIX--LII & ZC76--82 & Cosmological Bridge, Coupling Symbol, W$_c$ Floor, TLS Quadratic, Electroweak Completeness, Strong Floor, Cosmo-Ladder & \textbf{v17.16}$^{\dagger}$ \\
+Part K & LIII--LVI & ZC83--87 & Floor-Lattice Ordering, Complete Sector Synthesis, Observed-Bridge Bracket, Strong Running Bridge, Temporal Continuum Bridge & \textbf{v17.15} \\
+Part L & LVII--LIX & ZC88--93 & Log-Bridge (multiplicative$\leftrightarrow$additive unification), Layer-Specificity, Cross-Layer Quantum-Pair, Irrationality-of-Kind, Barami Functional, Gate-Ratio & \textbf{v17.16}$^{\S}$ \\
+Part M & LX & ZC94--106 & Mass-Hierarchy Registry, Mass Running Bridge, Tower Obstruction \& Center Law, Spectral Closure, Derivation Boundary, Accumulation Integral, Operation--Group Law, Closure Discriminant, Mass-Sector Simulator, First-Rung Exclusion \& Split & \textbf{v17.17}$^{\S}$ \\
+\bottomrule
+\end{tabular}
+}
+
+\smallskip
+\noindent\textit{Reading order is alphabetical by volume (A through L);
+the section bodies in this index follow the same order.}
+
+\smallskip
+\noindent{\small $^{\dagger}$\textbf{Parts C--J (v17.16)} carry the full v3.6
+Communication Layer: Reader's On-Ramp, Bridge Prose at every ZC embed seam, one
+\texttt{\textbackslash physmeaning} line, and a Map-Not-Reality pointer, added to
+the v17.6 Parts C/D, v17.7 Part E, v17.8 Part F, v17.9 Part G, v17.12 Parts H/I,
+and v17.13 Part J. With the Part~K pilot, all nine Parts C--K now carry the
+layer. All boxes, atomic IDs, proofs, and numerics are unchanged from their
+source versions (No-Loss; body atomic-ID multisets verified identical). Per-Part
+notes: Part~H required one pagination-only \texttt{\textbackslash clearpage};
+Parts~D and~I had stale copy-paste headers corrected; Parts~C, D, E, F had macro
+lines repointed from absent per-version patches to the recovered/consolidated
+set (Part~F also keeping its inline \texttt{\textbackslash providecommand}
+blocks); Parts~C and~D each preserve one labelled placeholder for a simulator
+figure that never existed as a real artifact (No-Silent-Deletion). Only the prose
+layer outside the boxes was added.\\[0.3em]
+$^{\ddagger}$\textbf{Parts A and B (v17.16)} are the foundations narrative and the
+algebraic-core narrative. They are prose-led \texttt{\textbackslash part}-level
+volumes with no verbatim ZC embed seams, so per Style Guide v3.6 §31.7 they carry
+the \emph{minimal} Communication Layer --- Reader's On-Ramp and audience-tier
+declaration only, no Bridge Prose or \texttt{\textbackslash physmeaning} (there is
+no seam to attach them to, and the Parts already read as continuous prose). Both
+are self-contained (own macros; no external patch). No-Loss verified: body
+atomic-ID multisets identical, box counts identical except the one added On-Ramp
+keybox.\\[0.3em]
+$^{\S}$\textbf{Part L (v17.16)} is the first \emph{v3.7-native} volume: its
+Communication Layer (Reader's On-Ramp, six Bridge-Prose seams, Connection Map)
+was authored under Style Guide v3.7 (UPG-30 prose-floor, UPG-31 header-contrast),
+not retrofitted. The six ZC88--93 sources already carry their own v3.7 in-paper
+bridge prose, embedded verbatim. All embedded \texttt{\textbackslash label}s are
+namespaced \texttt{-zcNN} (with refs rewritten) to remove cross-paper collisions;
+no atomic ID, box, proof, or numeric is otherwise altered (No-Loss; 47-ID
+multiset verified identical, 0 multiply-defined, 0 undefined references).}
+
+\newpage
+
+%% ════════════════════════════════════════════════════════════════════
+\section{Quick-Reference Pack (v17.13 Part J)}
+\addcontentsline{toc}{section}{Quick-Reference Pack (v17.13 Part J)}
+%% ════════════════════════════════════════════════════════════════════
+
+\begin{contentsbox}[title={What This Pack Is For}]
+The three tables below are the high-reuse core: the constants needed
+every session, the exact equations that other papers inherit, and the
+full open-gaps map. Everything flagged ``In Index: Y'' is safe to use
+directly (Tier~1 of the Missing-Value Protocol). Anything not here ---
+or carried only as a one-line pointer in the per-paper abstracts ---
+follows Tier~2/3 (fetch source, or ask user).
+\end{contentsbox}
+
+\subsection*{T-Canonical Constants}
+\addcontentsline{toc}{subsection}{T-Canonical Constants (Quick Ref)}
+
+All values at T-canonical gauge $d_s = 3$ (exact), $n_m = 5$ (exact),
+$n = \varphi(15) = 8$, $|\Ztf| = 15$.
+
+\smallskip
+{\small
+\begin{longtable}{p{3.0cm} p{3.4cm} p{6.6cm}}
+\toprule
+Symbol & Value & Closed form / source \\
+\midrule
+\endhead
+$d_s$ & $3$ (exact) & spatial dimension, gauge fix \\
+$n_m$ & $5$ (exact) & matter modes, gauge fix \\
+$n = \varphi(15)$ & $8$ & Key Identity $3d_s = 2^{d_s}+1$ (ZC72 FIND-ZC72-03) \\
+$|\Ztf|$ & $15$ & group order $\Zth\times\Zfi$ \\
+$\Kstar$ & $0.11750310$ & $1 - e^{-1/n}$ (LEM-ZC54-01) \\
+$x \equiv n\epscan$ & $0.0604$ & canonical instability argument \\
+$\phig$ & $1.6180339887$ & golden ratio, $\phig^2=\phig+1$ \\
+$\swsq$ & $0.23213$ & $1 - \ln 8/\ln 15$ (PRED-ZC64-01) \\
+$\cwsq$ & $0.76787$ & $\ln 8/\ln 15$ \\
+$\Delta_\Gamma$ (spectral step) & $0.255958$ & $\cwsq/d_s = \ln 2/\ln 15$ (FIND-ZC73-01) \\
+$\epscan$ (TLS floor) & $0.007550$ & spectral self-consistency fixed point (ZC71) \\
+$\varepsilon_{\rm univ}$ & $0.007599$ & bridge fixed point; exact form COR-ZC69-02 \\
+$\varepsilon_{\rm EM}$ & $0.007494$ (exact) & $\varepsilon_{\rm univ}(C_{\rm EM}/C_{\rm W})^{1/4}$ (ZC70) \\
+$\varepsilon_{\rm W}$ & $0.007703$ (exact) & $\varepsilon_{\rm univ}(C_{\rm W}/C_{\rm EM})^{1/4}$ (ZC70) \\
+$\varepsilon_{\rm W}/\varepsilon_{\rm EM}$ & $1.02809$ & $\sqrt{(1+2x)/(1+x)}$ (THM-ZC67-01) \\
+$\delta\alpha/\alpha$ & $0.001322$ & $(d_s/2)\,\varepsilon_{\rm EM}\Kstar$ (LEM-ZC70-01) \\
+$\delta(\swsq)$ & $0.000906$ & $\varepsilon_{\rm W}\Kstar$ (CONJ-ZC66-01) \\
+$\alpha_{\rm EM}^{R_0}$ & $1/137.22$ & $(n/15)\,\Gamma_{\rm CRF}$ (PRED-ZC64-02) \\
+$\alpha_{\rm grav}/\alpha_{\rm EM}$ & $1/8 = 1/n$ & exact (FIND-ZC72-01) \\
+$\Gamma_{\rm CRF}$ & $\ln 2/D_0$ & $= G^{R_0}/c^2$; $\alpha_{\rm grav}^{R_0}|\Ztf|=\Gamma_{\rm CRF}$ (ZC75) \\
+\bottomrule
+\end{longtable}
+}
+
+\begin{contentsbox}[title={$\varepsilon$ FLOOR VALUES --- VERIFIED CONSISTENT --- DO NOT ``RECONCILE'' (read before editing any $\varepsilon$ value)}]
+\small
+If you (human or AI) see the near-equal floor values
+$0.007550$, $0.007599$, $0.007605$ appearing alongside
+\textbf{COR-ZC67-01} and conclude they contradict --- \textbf{they do
+not.} Audited line-by-line across ZC66--87; this is the single most
+common trap in the corpus and has cost multiple sessions.
+
+\smallskip
+\textbf{COR-ZC67-01 (and FIND-ZC83-01, FIND-ZC85-01) is ONE exact identity},
+$\sqrt{\varepsilon_{\rm EM}\cdot\varepsilon_W}=\varepsilon_{\rm base}$,
+evaluated on a \emph{different input pair at each layer}:
+$\bullet$ ZC66/67 defined pair ($\varepsilon_{\rm can}$ base)
+$\to 0.007550=\varepsilon_{\rm can}$;\;
+$\bullet$ ZC70/81/82/83 defined pair ($\varepsilon_{\rm univ}$ base)
+$\to 0.007599=\varepsilon_{\rm univ}$ ($R_0$-layer GM, FIND-ZC83-01);\;
+$\bullet$ observed pair ($R_{\max}$ layer) $\to 0.007605=\varepsilon_{\rm SC}$
+(ZC68; ``$0.007605=$ COR-ZC67-01, identical''; FIND-ZC85-01 shows it is
+the GM of the two FIND-ZC65-02 bridge floors; $+0.08\%$ above
+$\varepsilon_{\rm univ}$, the ZC71 two-layer separation, with magnitude
+released by GAP-ZC81-01 closure in ZC86).
+These three are \emph{intentionally distinct} (different input pairs at
+different $R$-layers), not rounding drift and not a contradiction.
+ZC83--87 add the layer reading and change \emph{no} value.
+
+\smallskip
+\textbf{DIRECTIVE.} Do not change any $\varepsilon$ value, do not
+``reconcile'' them, do not open an audit, do not edit COR-ZC67-01 lines
+or the ZC81/82 retraction scars. More broadly, minor display spreads in
+floor values across papers (e.g.\ $\varepsilon_W$ shown as $0.007703$
+here vs $0.007705$ in some papers) are rounding/precision differences
+of the \emph{same} quantity --- verified, do \emph{not} ``fix'' them.
+If a conflict still seems present, you are reading one identity as if
+it were several values: re-read this box, not the papers. (ZC66--69
+audited and correct; ZC81/82 correct.)
+\end{contentsbox}
+
+\subsection*{Load-Bearing Exact Equations}
+\addcontentsline{toc}{subsection}{Load-Bearing Exact Equations (Quick Ref)}
+
+The forms most often inherited by downstream papers, carried verbatim so
+a derivation need not open the source for the \emph{statement} (the
+\emph{proof} still lives in the source). ``In Index: Y'' = exact form
+present here.
+
+\smallskip
+{\small
+\begin{longtable}{p{2.7cm} p{7.6cm} p{2.0cm} c}
+\toprule
+ID & Exact form & Source & In Idx \\
+\midrule
+\endhead
+THM-ZC20-01 & $\swsq = 1 - \ln 8/\ln 15$ & ZC20 & Y \\
+THM-ZC29-01 & $\alpha_i = \varphi(d_i)/15 \cdot \Gamma_{\rm CRF}$ & ZC29 & Y \\
+DEF-ZC29-04 & $R_{{\rm destroy},i} = 1 - \ln\varphi(d_i)/\ln 15$ & ZC31 & Y \\
+FIND-ZC31-01 & $\Gamma_i = \Gcoup/d_s - 1 + \ln\varphi(d_i)/\ln 15$ & ZC31 & Y \\
+THM-ZC73-01 & $\Gamma_k = G/d_s - 1 + k(\cwsq/d_s),\ k=0,1,2,3$ & ZC73 & Y \\
+FIND-ZC73-01 & $\Delta_\Gamma = \cwsq/d_s = \ln 2/\ln 15$ & ZC73 & Y \\
+COR-ZC73-01 & $\Gamma_{\rm EM} - \Gamma_{\rm vac} = \cwsq$ & ZC73 & Y \\
+FIND-ZC73-03 & $\sum_{d_i\mid 15}\varphi(d_i) = 1{+}2{+}4{+}8 = 15$ & ZC73 & Y \\
+THM-ZC41-01 (K14) & $F\,\phig^{2} = 4$ (exact) & ZC69 & Y \\
+LEM-ZC60-01 & $F = 4\,\lambda_2(\Zfi)^2/n_m$ & ZC60 & Y \\
+LEM-ZC56-01 & $\cos(2\pi/5) = 1/(2\phig)$ & ZC56 & Y \\
+LEM-ZC69-01 & $\lambda_2(\Zfi)^2 = 5/\phig^2$ & ZC69 & Y \\
+THM-ZC42-01 & $\lambda_2 = (1+x)/[n_m(1+2x)]$ & ZC42 & Y \\
+COR-ZC62-02 & $\Tavg = eF/\Kstar = 2n\Kstar/[(n-1)\varepsilon_0]$ & ZC62 & Y \\
+LEM-ZC62-01 & $e = (1-\Kstar)^{-n}$ (exact) & ZC62 & Y \\
+LEM-ZC63-01 & $W_c = 2n^2\Kstar(1+x)/[n_m(n-1)x(1+2x)]$ & ZC63 & Y \\
+THM-ZC57-01 & two-sector correction $(1+x)/(1+2x)$ & ZC57 & Y \\
+THM-ZC67-01 & $\varepsilon_{\rm W}/\varepsilon_{\rm EM} = \sqrt{(1+2x)/(1+x)}$ & ZC67 & Y \\
+% [DO-NOT-RECONCILE] COR-ZC67-01 = ONE identity on three input pairs: 0.007550 (eps_can, ZC66/67) / 0.007599 (eps_univ) / 0.007605 (eps_SC, observed). All correct; see the eps-notice box in the Quick-Reference Pack. Do NOT edit to "fix" a perceived conflict.
+COR-ZC67-01 & $\sqrt{\varepsilon_{\rm EM}\varepsilon_{\rm W}} = \epscan$ & ZC67 & Y \\
+COR-ZC69-02 & $\varepsilon_{\rm univ} = n(\Kstar)^2\phig^2/[2(n-1)e]$ & ZC69 & Y \\
+LEM-ZC68-01 & $\varepsilon_{\rm can}^{\rm SC\,2} = \dfrac{\delta\alpha/\alpha\cdot\delta(\swsq)}{(d_s/2)(\Kstar)^2}$ & ZC68 & Y \\
+FIND-ZC65-01 & $\delta\alpha/\alpha = (d_s/2)\,\varepsilon_0\Kstar$ & ZC65 & Y \\
+THM-ZC65-01 & $\alpha(R_{\max}) = \alpha(R_0)[1+(d_s/2)\varepsilon_0\Kstar]$ & ZC65 & Y \\
+LEM-ZC70-01 & $\dfrac{\delta\alpha/\alpha}{\delta(\swsq)} = \dfrac{d_s}{2}\sqrt{\dfrac{1+x}{1+2x}}$ & ZC70 & Y \\
+THM-ZC72-01 & $\alpha_{\rm grav}^{R_0} = \Gamma_{\rm CRF}/15 = \alpha_{\rm EM}^{R_0}/n$ & ZC72 & Y \\
+THM-ZC75-01 & $\alpha_{\rm grav}^{R_0}|\Ztf| = G^{R_0} = \ln 2/D_0 = \Gamma_{\rm CRF}$ & ZC75 & Y \\
+FIND-ZC75-02 & $\ln(\alpha_{\rm EM}^{R_0}/\alpha_{\rm grav}^{R_0}) = d_s\ln 2 = \ln n$ & ZC75 & Y \\
+PRED-ZC64-02 & $\alpha_{\rm EM}^{R_0} = (n/15)\,\Gamma_{\rm CRF}$ & ZC64 & Y \\
+Key Identity & $3d_s = 2^{d_s}+1$ ($d_s{=}3\Rightarrow n{=}8$) & ZC72 & Y \\
+LEM-ZC74-01 & $\Ztf$ unique squarefree semiprime, $\varphi$-set $\{1,2,4,8\}$ & ZC74 & Y \\
+LEM-ZC76-02 & $w_{\rm DE} = \mathcal{G}/d_s - 1 = -0.7542$ & ZC76 & Y \\
+THM-ZC76-01 & $P(t_{\rm now})/P(0) = \mathcal{G}/d_s$ & ZC76 & Y \\
+THM-ZC77-01 & $\mathcal{G} = d_s(\Gamma_{\rm CRF}^{\rm EM} + \sin^2\theta_W)$ & ZC77 & Y \\
+THM-ZC79-01 & $\varepsilon_{\rm TLS} = 0.007550$ (quadratic root; exact) & ZC79 & Y \\
+THM-ZC80-01 & $\delta\to$ 7 EW observables; zero free params ($R_0$) & ZC80 & Y \\
+THM-ZC81-01 & $\varepsilon_{\rm strong} = \varepsilon_{\rm EM} = 0.007494$ & ZC81 & Y \\
+THM-ZC82-01 & $w_{\rm DE} + 3\Delta_\Gamma = \Gamma_{\rm CRF}^{\rm EM}$ & ZC82 & Y \\
+FIND-ZC82-01 & $\Delta_\Gamma = \log_{15}2$ (ladder bit) & ZC82 & Y \\
+THM-ZC83-01 & floor lattice $\varepsilon_{\rm EM}<\varepsilon_{\rm can}<\varepsilon_{\rm univ}<\varepsilon_{\rm W}$ forced & ZC83 & Y \\
+FIND-ZC83-01 & $\sqrt{\varepsilon_{\rm EM}\varepsilon_{\rm W}}=\varepsilon_{\rm univ}$ ($R_0$ GM; exact) & ZC83 & Y \\
+THM-ZC84-01 & eight-fold sector synthesis from $\delta$ alone & ZC84 & Y \\
+FIND-ZC85-01 & $\varepsilon_{\rm SC}=\sqrt{\varepsilon_0^{\alpha}\varepsilon_0^{\rm sw}}$ ($R_{\max}$ GM; exact) & ZC85 & Y \\
+THM-ZC86-01 & Strong runs as EM; confinement in $\Gamma$ not $\alpha$ & ZC86 & Y \\
+THM-ZC87-01 & continuum $dt$ = dense $\delta$-sweep tick & ZC87 & Y \\
+THM-ZC88-01 & log-bridge: multiplicative GP $\leftrightarrow$ additive AP, one law & ZC88 & Y \\
+FIND-ZC88-01 & bridge is structural, not metric (steps not proportional) & ZC88 & Y \\
+THM-ZC89-01 & layer-specificity fixes the bridge step to its layer & ZC89 & Y \\
+THM-ZC91-01 & visesa/nibbedha irrational-of-kind (distinct, retires CONJ-ZC90-01) & ZC91 & Y \\
+THM-ZC93-01 & gate-ratio governs which step-kind a choice may take & ZC93 & Y \\
+\bottomrule
+\end{longtable}
+}
+
+\subsection*{Master Open Gaps Registry (v17.6 $\to$ v17.16)}
+\addcontentsline{toc}{subsection}{Master Open Gaps Registry (Quick Ref)}
+
+Consolidated gap topology. ``Opened'' = paper that registered the gap;
+``Successor/Target'' = the gap it became or the planned closing paper.
+Priority is shown only where the source paper states it (otherwise
+``---''). Gaps closed in v17.13 (Part J) are marked \textbf{Closed (J)};
+gaps closed in v17.15 (Part K) are marked \textbf{Closed (K)};
+gaps closed or partially closed in v17.16 (Part L) are marked
+\textbf{Closed (L)} / \textbf{Partial (L)}; gaps closed, split, or
+re-seen in v17.17 (Part M) are marked \textbf{Closed (M)} /
+\textbf{Split (M)} / \textbf{Re-seen (M)}.
+
+\smallskip
+{\small
+\begin{longtable}{p{2.6cm} p{4.6cm} p{1.6cm} p{2.6cm} p{2.4cm}}
+\toprule
+Gap ID & Description & Opened & Status (v17.12) & Successor/Target \\
+\midrule
+\endhead
+GAP-ZC63-01 & TLS--spectral self-consistency ($0.66\%$ separation) & ZC63 & \textbf{Closed} (COR-ZC71-02); separation structural/irreducible & --- \\
+GAP-ZC64-01 & R-layer running bridge $\alpha_{\rm EM}$ $R_0{\to}R_{\max}$ & ZC64 & \textbf{Closed} (COR-ZC70-01) & --- \\
+GAP-ZC65-01 & Exact $\varepsilon_{\rm TLS}$ from axioms & ZC65 & \textbf{Closed (J)} (ZC79/COR-ZC79-01) & --- \\
+GAP-ZC66-01 & Algebraic origin of $\varepsilon_{\rm W}/\varepsilon_{\rm EM}=1.0280$ & ZC66 & \textbf{Closed} Near-Formal (COR-ZC67-02) & --- \\
+GAP-ZC67-01 & Exact $\epscan$ from axioms & ZC67 & Inherited $\to$ partially resolved (ZC68) & GAP-ZC68-01 \\
+GAP-ZC68-01 & Exact $\varepsilon_{\rm univ}$ (needs K14 exact) & ZC68 & \textbf{Closed} (COR-ZC69-01; K14 exact THM-ZC69-01) & --- \\
+GAP-ZC69-01 & Numerical verify exact $\varepsilon_{\rm univ}$ both bridges & ZC69 & \textbf{Closed} (COR-ZC70-02) & --- \\
+GAP-ZC70-01 & Observational precision (CODATA/PDG) upgrade & ZC70 & \textbf{Open} (external) & ZC76+ \\
+GAP-ZC71-01 & Exact $\Delta\varepsilon$ formula to all orders & ZC71 & \textbf{Closed (J)} (ZC77/COR-ZC77-02 + ZC78/COR-ZC78-01) & --- \\
+GAP-ZC29-02 & Gravity sector identification from vacuum & ZC29 & \textbf{Partially closed} at $R_0$ (COR-ZC72-01) & GAP-ZC72-01 \\
+GAP-ZC72-01 & Cosmological bridge $\alpha_{\rm grav}^{R_0}\to G_N(t)$ & ZC72 & \textbf{Partially closed} algebraic (COR-ZC75-01) & GAP-ZC75-01 \\
+GAP-ZC75-01 & Cosmological evolution $P(t_{\rm now})$ & ZC75 & \textbf{Closed (J)} (ZC76/THM-ZC76-01) & --- \\
+CONJ-ZC73-01 & $\Ztf$ uniqueness ($\varphi$-set $\{1,2,4,8\}$) & ZC73 & \textbf{Closed} (COR-ZC74-01; $3\times5$ exclusive) & --- \\
+GAP-MC-01 & Residual $10$--$17\%$ in lepton mass ratios & ZC16 & \textbf{Re-seen (M)}: split by ZC106/THM-ZC106-01 into lepton piece (= this gap, $+18\%$) and new quark piece & GAP-ZC105-01 \\
+GAP-ZC21-00 & Continuous Lie group from discrete $\Ztf$, $N{\to}\infty$ & ZC21 & \textbf{Open} & ZC22-ext \\
+GAP-ZC36-02 & Route A vs Route C structural gap ($0.21\%$) & ZC36 & \textbf{Open} & --- \\
+GAP-ZC77-01 & $F_{\rm Wc}^{\rm norm}$ closed form & ZC77 & \textbf{Closed (J)} (ZC78/COR-ZC78-01) & --- \\
+GAP-ZC78-01 & Radical form of $x_{\rm TLS}$ & ZC78 & \textbf{Closed (J)} (ZC79/THM-ZC79-01) & --- \\
+GAP-ZC76-01 & $\tau_{\rm sweep} = t_{\rm Planck}$ & ZC76 & \textbf{Closed (K)} structural (ZC87/THM-ZC87-01); seconds-calibration externally blocked & --- \\
+GAP-ZC81-01 & Strong sector $R_0{\to}R_{\max}$ running bridge & ZC81 & \textbf{Closed (K)} (ZC86/THM-ZC86-01; confinement in $\Gamma$ not $\alpha$) & --- \\
+GAP-ZC83-01 & $\varepsilon_{\rm SC}$ ontology and closed form & ZC83 & \textbf{Closed (K)}: ontology ZC85/FIND-ZC85-01; magnitude ZC86/FIND-ZC86-01 & --- \\
+GAP-ZC87-01 & Joint-limit well-definedness ($\tau_{\rm sweep}$ fixed) & ZC87 & \textbf{Closed (K)} in v2 (ZC87/THM-ZC87-01) & --- \\
+Strong floor & $\varepsilon_{\rm strong}$ floor (open since ZC30) & ZC30/81 & \textbf{Closed (J)} (ZC81/THM-ZC81-01) & --- \\
+GAP-ZC88-01 & Which physical layer owns the log-bridge step & ZC88 & \textbf{Closed (L)} (ZC89/THM-ZC89-01; layer-specificity) & --- \\
+GAP-ZC90-01 & Are the two mind-steps distinct kinds & ZC90 & \textbf{Closed (L)} (ZC91/THM-ZC91-01; retires CONJ-ZC90-01) & --- \\
+GAP-ZC91-01 & How forward choices aggregate into capacity & ZC91 & \textbf{Partial (L)} (ZC92; Barami functional, common rate) & residual open \\
+GAP-ZC92-01 & What gates the step kind of a choice & ZC92 & \textbf{Partial (L)} (ZC93/THM-ZC93-01; gate-ratio) & residual open \\
+GAP-ZC100-01 & N-assignment ($\Ztf$ for mass-running vs.\ Clifford count for force) & ZC100 & \textbf{Closed (M)} (ZC101/THM-ZC101-01; promotes CONJ-ZC100-01 HYP$\to$DER) & --- \\
+GAP-ZC101-02 & $0.23\%$ residual on $\kappa_R=\ln(15)/(15\sqrt{d_s})$ & ZC101 & \textbf{Open} & --- \\
+GAP-ZC105-01 & First-rung residual (split: lepton = GAP-MC-01; quark new) & ZC105 & \textbf{Split (M)} (ZC106/THM-ZC106-01) & both halves open \\
+GAP-ZC95-01 & Quark common-scale running slope & ZC95 & \textbf{Open} (clarified, not closed) & --- \\
+GAP-ZC98-01 & Pin $L_0,\kappa$ from structure & ZC98 & \textbf{Open} (restated, sharpened) & --- \\
+\bottomrule
+\end{longtable}
+}
+
+\newpage
+
+%% ════════════════════════════════════════════════════════════════════
+\section{Part A --- Foundations through Wave Structure (Parts I--VIII)}
+%% ════════════════════════════════════════════════════════════════════
+
+\subsection*{Volume Abstract}
+\addcontentsline{toc}{subsection}{Volume Abstract}
+
+\begin{volumebox}[title={Part A --- CRF Complete Edition v17.5 (Parts I--VIII)}]
+\sloppy
+The Constrained Reality Framework (CRF) proposes that all of physical and experiential
+reality is the continuous outcome of a single irreducible process: the probabilistic resolution
+of latent informational possibility under constraint. The entire structure derives from one
+Indefinable Primitive --- Distinction ($\delta$) --- declared, as Euclid declared his points
+and lines, as the ground of all possibility.
+
+This Complete Edition (v12) integrates all results through Paper v5, Sessions 1--21,
+Track A, the Wave Structure session, the Deep Structure session, Node Lifecycle v3,
+P0-H empirical work (7 runs, 3 subjects), and all auxiliary documents. Five results from v10 stand: (1) the Born Rule as a
+theorem via Gleason's Theorem; (2) the Schwarzschild metric derived from non-linear
+$\mathcal{R}$-feedback; (3) the gravitational constant $G = \ln(2)\cdot c^2/D_0$ with no
+free parameters; (4) the full Einstein field equations with $T_{\mu\nu}$ derived from
+$\mathcal{C}$-gradients; (5) the cosmic co-variation $G(t)\propto\Lambda(t)\propto 1/P(t)$.
+
+\textbf{New in v12--v16:} Three deep identities ($D_0 = 1-n\varepsilon_0$;
+$\theta(K^*)=K^*$; $\beta = n\varepsilon_0 T_{\rm avg}$); Law of Exchange
+$|\beta| = d_s/(2\ln 2)$ (Instability~\#21 closed at 0.67\%); Resolution Scale
+($R_0$, $R_1$, $R_{\max}$) derived; Kerr metric, Cosmic rate
+$|\dot{G}/G| = 0.737 H_0$, K35 identity, Mind-Layer Bridge.
+Algebraic closure (Part~IX): $\beta = d_s\mathcal{G}$, Clifford ${\rm Cl}(3,0)$,
+three-phase universe, $\theta$-tower, matter split $n=3+5$, K35--K38 cluster,
+$\mathcal{K}$ coupling derived.
+Geometry crystallisation, spectral modes H1--H3, Grand Synthesis (Parts~X--XI).
+TLS architecture, phase-ordered identities, bracket derivation, honest audit (Part~XII).
+Foundational Trilogy + Methodology Programme (Parts~XIII--XIV).
+
+\textbf{Pre-Work Audit note:} Part~A contains the foundational
+machinery: $T_{\rm avg}$, Jaynes identity $K^*T_{\rm avg}/F = e$,
+$\lambda_2$, $\beta$-chain, Resolution Scale ($R_0$/$R_1$/$R_{\max}$).
+These objects must be checked before constructing any new thermodynamic
+or timing-based quantity in ZC papers.
+\end{volumebox}
+
+\subsection*{Contents Map}
+\addcontentsline{toc}{subsection}{Contents Map}
+
+\begin{contentsbox}[title={Part A --- Part and Section Headers}]
+\textbf{Part I: Foundations: Possibility, Resolution, and Constraint}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Introduction
+  \item Axiomatic Foundations
+  \item Mathematical Structure
+  \item The CRF Grand Equation
+  \item The Dual-State Information Cascade
+  \item Self-Application of CRF
+  \item Summary of Part I
+\end{itemize}
+
+\textbf{Part II: Dynamics: Resolution Cascade, Derived Laws, and Emergence}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item The Resolution Cascade
+  \item Nine Derived Laws
+  \item The Emergence Hierarchy
+  \item Mind, Suffering, Awareness, and Meta-Resolution
+  \item The EIC Toy Model: Computational Evidence
+  \item The Grand Equation v9.0 and Unified Dynamics
+  \item Summary of Part II
+\end{itemize}
+
+\textbf{Part III: Quantum Mechanics, Gravity, and Physical Constants from $\delta$}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Born Rule as Theorem (Sessions 5, 10, 11)
+  \item Spatial Geometry from SO(3) --- Instability \#16 Closed (Sessions 5, 21)
+  \item Gravity from $\delta$ (Paper v4)
+  \item Physical Constants from $\delta$ (Track A)
+  \item Connections to Existing Frameworks
+  \item Testable Predictions
+  \item CRF Self-Analysis
+  \item CRF Maturity Assessment (v11 Baseline)
+  \item Philosophical Interpretation
+  \item Summary of Part III and the Complete CRF Series
+\end{itemize}
+
+\textbf{Part IV: Informational Mechanics, Resonance, and Collective Dynamics}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item P Expansion and Cosmic Consequence (Sessions 6, 8)
+  \item Structural Resonance: Energy Without Annihilation (Session 6)
+  \item Informational Mass and Resonance (Sessions 7--9)
+  \item Three Derived Lemmas (Session 9)
+  \item Synchronicity, Inevitability, and Transparency (Sessions 6.12--6.14, 11)
+  \item Co-creation: The Third Feedback Loop (Session 9)
+  \item Levels of Mind and Liberation (CRF\_Nirvana, Session 5)
+\end{itemize}
+
+\textbf{Part V: Implications: Physics, Predictions, and Self-Analysis}\\
+(see Part III section list above; Part V headers overlap)
+
+\textbf{Part VI: The Law of Exchange and the Resolution Scale (Sessions 12--21)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Node Lifecycle and Lossy Crystallisation (V20.3)
+  \item Entropy Dynamics from First Principles (Session 21)
+  \item Derivation Chain for $|\beta| = d_s/(2\ln 2)$ (Instability \#21 --- Closed)
+  \item The Resolution Scale (Session 21 --- Derived)
+  \item Summary of Part IV
+\end{itemize}
+
+\textbf{Part VII: Wave Structure, Node Lifecycle, and P0-H Empirical Contact}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Three Deep Identities (Wave Session --- New in v12)
+  \item Wave Structure: Three-Tier Resolution
+  \item Node Lifecycle v3: Five Sub-Hypotheses
+  \item $n = 2^{d_s}$ Integrity Check --- Hypothesis Refuted
+  \item P0-H: Human Sensitivity as $R_0$ Detection
+  \item CRF Maturity Assessment (v12 --- Preserved Snapshot)
+\end{itemize}
+
+\textbf{Part VIII: Kerr Metric, Cosmic Rate, Constant Lattice, and Mind-Layer Bridge (v13)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Kerr Metric from the $\delta$-Chain
+  \item Cosmic Variation Rate: $|\dot{G}/G| = 0.737\,H_0$ from the $\delta$-Chain
+  \item Identity K35: $G = \sqrt{n(n+1)\,\varepsilon_0}$
+  \item Mind-Layer Bridge: BOXSET and the $\delta$-Chain
+  \item CRF Maturity Assessment (v13)
+  \item Summary of Part VIII
+\end{itemize}
+\end{contentsbox}
+
+\newpage
+
+%% ════════════════════════════════════════════════════════════════════
+\section{Part B --- Algebraic Core through Foundational Trilogy (Parts IX--XIII)}
+%% ════════════════════════════════════════════════════════════════════
+
+\subsection*{Volume Abstract}
+\addcontentsline{toc}{subsection}{Volume Abstract}
+
+\begin{volumebox}[title={Part B --- CRF Complete Edition v17.5 (Parts IX--XIII)}]
+This is Part B of the CRF Complete Edition v17.5, containing Parts IX--XIII
+(Algebraic Closure, Geometry Crystallisation, Spectral Structure, TLS Architecture,
+Foundational Trilogy). Continues from Part A; preserves all v17.4 content verbatim.
+
+\medskip
+\textbf{Pre-Work Audit note:} Part~B is the primary source for:
+$T_{\rm avg}$ derivation (Part~XI), Jaynes $K^*T_{\rm avg}/F = e$ identity (Part~XI),
+$\lambda_2 = (n-1)/T_{\rm avg}$ (Part~XI), $\beta$-chain three derivation paths (Part~XII),
+R-layer DEF-RN02 (Part~XII), K-cluster identities K14/K35--K38 (Parts~IX,~XI),
+TLS architecture and dual-$d_s$ lock (Part~XII), Foundational Trilogy
+$S_{\rm dep}/S_{\rm ind}$/Barami (Part~XIII), Noether $\mathbb{Z}_{15}$ workstream
+setup (Part~XIII).
+\end{volumebox}
+
+\subsection*{Contents Map}
+\addcontentsline{toc}{subsection}{Contents Map}
+
+\begin{contentsbox}[title={Part B --- Part and Section Headers}]
+\textbf{Part IX: Algebraic Closure: Three-Phase Universe, $\theta$-Tower, Clifford Structure (v14)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item The $\beta\mathcal{G}$-Identity: $\beta = d_s \cdot \mathcal{G}$
+  \item Clifford Algebra Structure of CRF
+  \item Form Structure and Why $d_s = 3$
+  \item The Three-Phase Universe
+  \item The $\theta$-Tower: Evolutionary Sequence of the Universe
+  \item The Matter Split: $n = d_s + n_{\rm m} = 3 + 5$
+  \item K35--K38: A Closed Algebraic Cluster
+  \item The Coupling Constant $\mathcal{K}$ Derived: Last Free Parameter Closed
+  \item CRF Maturity Assessment (v14)
+  \item Summary of Part IX
+  \item Master Status Table
+  \item The Complete Chain: Sessions 1--21+, Wave Structure, v13--v15
+  \item Session Addenda
+\end{itemize}
+
+\textbf{Part X: Geometry Crystallisation, Spectral Dimension, and Emergent 3D (v15)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Two Levels of Crystallisation and the Shot-Noise Formula
+  \item Multi-$N$ Scaling: Geometry Crystallisation v3 and v4
+  \item $d_s$ Measurement and Estimator Convergence Hypothesis
+  \item Isotropic 8D Emergence: $d_s=3$ Without 3D Bias
+  \item Three-Graph Test and Where Is the 3D?
+  \item Controlled Geometry Experiments: Attractor Tests (v17.5)
+  \item Status Table: Geometry Crystallisation (v15)
+\end{itemize}
+
+\textbf{Part XI: Spectral Structure, Grand Synthesis, and the Master System (v15)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item CRF Spectral Modes: H1--H3 Universally Confirmed
+  \item New Identity: $\lambda_2 = (n-1)/T_{\rm avg}$
+  \item Derivation Boundary: Why SBM Fails
+  \item Grand Synthesis: Complete Derivation Chain
+  \item The Complete Master System: All Constants from $\ln(n)/D_0$
+  \item Complete Master System Status (v15)
+  \item CRF Maturity Assessment (v15)
+  \item Summary of Parts X--XI
+\end{itemize}
+
+\textbf{Part XII: TLS Architecture, Phase Ordering, Bracket Derivation, and Honest Audit (v16)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Thermodynamic Limit Simulator (TLS): Motivation and Architecture
+  \item Dual-$d_s$ Lock: Physical Meaning of the Critical Window
+  \item Two-Timescale Phase Ordering (TLS v2 --- Confirmed)
+  \item TLS v3: WaveChain Integration and K14 Update
+  \item Phase-Ordered Algebraic Identities at the Critical Window (V21.2, V21.3)
+  \item $\beta$-Chain Algebraic Structure: Three Derivation Paths (Noether Workstream)
+  \item Bracket Identity Derivation from First Principles (CRF\_Bracket\_Derivation)
+  \item K14 Honest Assessment: Hypothesis Status Confirmed
+  \item Bracket Correction Audit: Three-Part Honest Review
+  \item V20.5: HN-04 and Geometry Crystallisation
+  \item Canonical Constants (TLS v2/v3 State Summary)
+  \item Updated Master Status Table: New Results (v16)
+  \item Phase-Ordered Diagnosis as a Universal Failure Signature
+  \item Summary of Part XII
+\end{itemize}
+
+\textbf{Part XIII: The Foundational Trilogy: Pre-Primitive Condition, $S_{\rm dep}$/$S_{\rm ind}$, Barami (v17.0)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Trilogy Overview: One Question, Three Vantages
+  \item Dependent Stability and the Necessity of Distinction --- Paper 1 of the Trilogy
+  \item The Three Frameworks as One Structure --- Paper 2 of the Trilogy
+  \item The Ground of Resolution --- Paper 3 of the Trilogy
+  \item Trilogy Synthesis: The One Line
+  \item Noether $\mathbb{Z}_{15}$ --- Paper 4 of the Extended Trilogy (v17.1)
+\end{itemize}
+\end{contentsbox}
+
+\newpage
+
+%% ════════════════════════════════════════════════════════════════════
+\section{Part C --- Methodology through Higgs VEV Candidates (Parts XIV--XXI)}
+%% ════════════════════════════════════════════════════════════════════
+
+\subsection*{Volume Abstract}
+\addcontentsline{toc}{subsection}{Volume Abstract}
+
+\begin{volumebox}[title={Part C --- CRF Complete Edition v17.6 (Parts XIV--XXI)}]
+\sloppy
+This is \textbf{Part C} of the CRF Complete Edition v17.5, the third
+of three sequential files comprising one continuous volume on the
+$\delta$-mechanism. Parts A and B (separately compiled) cover the
+foundations (Parts I--VIII) and the algebraic core (Parts IX--XIII)
+respectively.
+
+Part C contains \textbf{Parts XIV--XIX}, presenting the methodology layer,
+the self-applying framework, the closure of the Z-Programme, and the
+master status that locks the framework's notation and companion documents.
+
+\textbf{Preserved from v17.4:} Part XIV (Methodology Programme),
+Part XV (Self-Applying Framework), Part XVI (Z2 Programme Closure).
+
+\textbf{New in v17.5:} Part XVII (Z3+Z4 Programme Closure) ---
+THM-Z301, THM-HG01, THM-Z4a, THM-Z4b-$\alpha$/$\beta$, PRED-Z4M01.
+Part XVIII (Bridge: Spontaneous to Agentive) --- DEF-LX01 (Lexical
+Necessity), PRED-Z401 ($H_{\rm emp} = 3.901 \pm 0.001$ bits, gap
+$0.138\%$ from $\log_2 15$), THM-TC01 ($\chi$-map identification),
+THM-PPP-01/02 and COR-PPP-01 ($S_{\rm ind}$ as PPP fixed point).
+Part XIX (Master Status, Notation Lock, Companion Embeds) ---
+Master Z-Programme Status Table v17.5, Conflict Resolution Log,
+Symbol Registry v1.0 (Appendix A), Reality Not Simulation v3 (Appendix B).
+
+\textbf{New in v17.6 (Part C extension):}
+Part XX (PPP Direct, Generations, Mass from Constraint) --- ZC14, ZC15, ZC16.
+Part XXI (Higgs VEV from the $\delta$-Chain) --- ZC17, ZC18-A, ZC18-B, ZC19.
+\end{volumebox}
+
+\subsection*{Contents Map}
+\addcontentsline{toc}{subsection}{Contents Map}
+
+\begin{contentsbox}[title={Part C --- Part and Section Headers}]
+\textbf{Part XIV: Methodology Programme: Convention Audit, Gauge Fix Rule, and PoD Enrichment (v17)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Convention Audit (Step B): Why Gauge Fix Was Needed
+  \item The CRF Gauge Fix Rule v1.0 (T-Canonical Declaration)
+  \item Identity Classification: Four Gauge Classes
+  \item PoD Enrichment: The Gauge Axis
+  \item New Failure Modes (CUIP v1.1 Extension)
+  \item K35 Format Drift Correction
+  \item Implications for the Foundational Trilogy
+  \item Implications for the Noether Z15 Workstream
+  \item Notational Note: $\beta_T$ Precision Truncation (FIND-AM01)
+  \item Notational Note: $\varepsilon_0$ Overload in K35 (FIND-AM02)
+  \item Notational Note: Simulator Estimator Scaling (FIND-AM03)
+  \item CLM-AM03: Numerical Integrity as Part of CUIP STEP~6
+  \item Summary of Part XIV
+\end{itemize}
+
+\textbf{Part XV: The Self-Applying Framework: Phase Misalignment as a Universal Pattern (v17.3)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Foreword: Not Errors, but Phase Misalignments
+  \item The Operator $\delta$ in Spontaneous Mode (Physics Restriction)
+  \item The Meta-Gap Decomposition
+  \item The Eight Failure Modes as Phase Misalignments
+  \item Six Episodes Re-Read as Phase Misalignments
+  \item Integration Pointer to Mind $\otimes$ Barami Companion
+  \item The Meta-Pattern: $\delta$ as Self-Applying Generator
+  \item Predictions
+  \item Open Items as Visible Scar Tissue
+  \item Closure of Part XV
+\end{itemize}
+
+\textbf{Part XVI: Z2 Programme Closure: Conserved Charge, Anomaly Cancellation, Spectral Confirmation (v17.4)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Foreword: From Actionable to Closed in Six Stages
+  \item Source Trace and Atomic Registry Overview
+  \item The Z2 Question and the Three Beta Gaps
+  \item The Closure Path: TASK-ZC01 Decision Window and TASK-ZC02 Stress Test
+  \item TASK-ZC03a/b: Anomaly Cancellation in Both Sectors
+  \item TASK-ZC04: Dynamic CRT and the Lagrangian Factorisation
+  \item TASK-ZC05: Axiom Verification Audit (A1 Refined to A1')
+  \item TASK-ZC06: Spectral-Graph Sector Orthogonality (ENG-AA01)
+  \item Simulator Trail: Visual Record of the V20/V21/TLS Lineage
+  \item The Master Theorem THM-Z201 and Z2 Programme Closure
+  \item Master Loss Audit and Reconstruction Test (CUIP STEP 6 + 7)
+  \item Closing Sentence (v17.4)
+\end{itemize}
+
+\textbf{Part XVII: Z3+Z4 Programme Closure (v17.5)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Overview of Part XVII
+  \item Z3 GravSymLink: Pseudoscalar Carries the Symmetry Order
+  \item H-grade Analysis: Information-Theoretic Uniqueness of $d_s = 3$
+  \item Z4a Two Independent Chains: $|\mathbb{Z}_{15}| = |\mathcal{F}_{\rm SM}|$ by Necessity
+  \item Z4b Anomaly Minimality: Species Count vs Weyl Count
+  \item Pontryagin Duality and the Triple Equality
+  \item Master Audit: Diophantine Enumeration and CRF's Predictive Advantage (NEW v17.5)
+  \item Closing Sentence --- Part XVII
+\end{itemize}
+
+\textbf{Part XVIII: The Bridge: Where Spontaneous Becomes Agentive}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Overview of Part XVIII
+  \item Lexical Necessity: The Naming Problem
+  \item PRED-Z401: Empirical Entropy Confirmation
+  \item $\chi$-map $\leftrightarrow$ SM Interactions: THM-TC01
+  \item The Possibility Preservation Principle (PPP)
+\end{itemize}
+
+\textbf{Part XX: PPP Direct, Generations, and Mass from Constraint (v17.6)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Overview of Part XX
+  \item ZC14: PPP from $\delta$-Symmetry Directly
+  \item ZC15: Three Generations from the Subgroup Lattice
+  \item ZC16: Mass from Constraint Cost --- Partial Closure of GAP-GEN-01
+  \item Closing of Part XX
+\end{itemize}
+
+\textbf{Part XXI: Higgs VEV from the $\delta$-Chain --- Numerical Candidate Layer (v17.6)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Overview of Part XXI
+  \item ZC17: Higgs VEV from the $\delta$-Chain (Initial Structural Attempt)
+  \item ZC18-A: TLS $\varepsilon_0$ Self-Consistency Sweep --- Phase Misalignment Layer
+  \item ZC18-B: $\mathbb{Z}_{15}$ Sector Correction --- The Group-Theoretic Mechanism
+  \item ZC19: The Weinberg Angle Candidate --- Closing GAP-ZC17-03
+  \item Closing of Part XXI
+  \item Forward Reference to Part~D
+\end{itemize}
+\end{contentsbox}
+
+%% ── ZC-Paper Abstracts for Part C ───────────────────────────────────
+\subsection{ZC14 --- PPP from $\delta$-Symmetry Directly (Part XX)}
+
+\begin{zcbox}[title={ZC14: Closing GAP-PPP-01}]
+\sloppy
+GAP-PPP-01 (TASK-ZC13) asked whether the Possibility Preservation
+Principle (PPP) can be derived directly from the CRF $\delta$-chain
+axioms, without passing through the assembled Z-Programme results.
+ZC13 identified a candidate derivation chain
+$\delta \to d_s=3 \to \gcd(3,5)=1 \to \text{irreducibility} \to \text{PPP}$
+but left the gap open, observing that the chain required treating
+the Key Identity as a first-principles result and that no axiom
+\emph{explicitly} declared ``$\delta$ has no preferred mode.''
+
+This paper closes GAP-PPP-01 completely. We show that the required
+property --- \emph{$\delta$-Symmetry}: $\delta$ commutes with all
+permutations of the modes of $\mathcal{P}$ --- is not a new axiom
+but a \emph{corollary of Axiom~0 and Axiom~6 already in the CRF
+system}.
+
+From $\delta$-Symmetry, the Maximum Entropy principle
+(Jaynes 1957) immediately forces the $\delta$-prior over
+$\mathcal{P}$ to be uniform. Combined with
+THM-ZC11-01 (irreducibility of the $\chi$-map Markov chain on
+$\widehat{\mathbb{Z}}_{15}$), this yields
+$\pi_{\rm stat} = \text{uniform}$, hence
+$\mathcal{V}_P = 15$, hence PPP.
+
+\textbf{Main result.} THM-PD-01: GAP-PPP-01 is CLOSED. PPP is a
+theorem of Axiom~0 and Axiom~6 alone, modulo the Z-Programme
+middle structure. No new axiom is added to CRF.
+\end{zcbox}
+
+\subsection{ZC15 --- Three Generations from the Subgroup Lattice (Part XX)}
+
+\begin{zcbox}[title={ZC15: Generations from $\mathbb{Z}_{15}$}]
+\sloppy
+CONJ-Z405 (TASK-ZC10, ZC13) proposed that the three non-trivial
+subgroups of $\mathbb{Z}_{15}$ correspond to the three observed SM
+fermion generations. This paper separates CONJ-Z405 into two parts
+with different provability status and treats each precisely.
+
+\textbf{Part~1 (THM-GEN-01, CLOSED).}
+The \emph{count} of three generations is derivable from the CRF
+$\delta$-chain alone, without any physics input beyond the
+Z-Programme. The derivation uses the number-theoretic
+$\omega$-function:
+$\delta \xRightarrow{\text{Key Identity}} d_s = 3,\; n_m = 5
+\xRightarrow{\text{CRT}} |\mathbb{Z}_{15}| = 15 = 3 \times 5
+\xRightarrow{\omega(15)=2} 2^{\omega(15)} - 1 = 3.$
+New identity: $\phi(15) = \phi(3)\phi(5) = 8 = n = |\mathcal{P}|$
+(COR-GEN-02).
+
+\textbf{Part~2 (GAP-GEN-01, REMAINS OPEN).}
+Why each successive generation is heavier requires a dynamical
+$\mathcal{V}_P$-to-mass map. GAP-GEN-01 records this precisely.
+Falsifiable prediction PRED-ZC15-01 derived.
+\end{zcbox}
+
+\subsection{ZC16 --- Mass from Constraint Cost (Part XX)}
+
+\begin{zcbox}[title={ZC16: Closing GAP-GEN-01 via Axiom~3}]
+\sloppy
+GAP-GEN-01 (TASK-ZC15) asked for a derivation of the Possibility
+Volume-to-mass map $f: \mathcal{V}_P \mapsto m$ from within CRF,
+without introducing free parameters.
+
+This paper provides that derivation via Axiom~3.
+When a generation occupies subgroup $H \leq \widehat{\mathbb{Z}}_{15}$
+with $\mathcal{V}_P = |H|$, each Resolution event pays a KL divergence
+cost $D_{\rm KL}(\text{uniform}_H \| \text{uniform}_{\mathbb{Z}_{15}})
+= \log(15/|H|) =: \log R$.
+This cost is paid independently by each of the $n_m = 5$ matter modes.
+Result: $m_H \propto e^{M_H} = R^{n_m} = (15/|H|)^5$.
+Zero free parameters.
+
+Verification: Gen~2: $3^5=243$ vs SM $207$ (+17\%);
+Gen~3: $5^5=3125$ vs SM $3477$ ($-10\%$). GAP-MC-01 documents the residual.
+
+COR-MC-03: $S_{\rm ind}$ has zero accumulated constraint --- the massless
+ground state of the framework.
+\end{zcbox}
+
+\subsection{ZC17 --- Higgs VEV from the $\delta$-Chain (Part XXI)}
+
+\begin{zcbox}[title={ZC17: Information Ladder and Higgs VEV}]
+\sloppy
+This paper reports a three-phase investigation of whether the
+CRF $\delta$-chain can derive $v = 246.22\,\mathrm{GeV}$ without external input.
+
+\textbf{Phase 1 (ZC17-Prelim):} Three open gaps identified.
+GAP-ZC17-02: EW gauge group $\mathrm{SU}(2)_L\times U(1)_Y$ absent from
+$\delta$-chain. GAP-ZC17-03: hierarchy $v/m_{\rm Pl}\sim 10^{-17}$ unexplained.
+
+\textbf{Phase 3 (ZC17-Verify):} Positive result is the
+\textbf{Information Ladder} (CONJ-ZC17-03): the hierarchy arises from
+$n=8$ multiplicative suppressions of $\varepsilon_0$.
+$n\cdot\ln(1/\varepsilon_0)\approx\ln(m_{\rm Pl}/v)$ at $1.68\%$ (OBS-ZC17-02).
+The target $\varepsilon_{\rm eff} = (v_{\rm SM}/m_{\rm Pl})^{1/n} = 0.008186$
+lies $+8.4\%$ above canonical $\varepsilon_0$. Registered as open problem
+for ZC18. All failures registered as Phase Misalignments.
+\end{zcbox}
+
+\subsection{ZC18-A --- TLS $\varepsilon_0$ Self-Consistency Sweep (Part XXI)}
+
+\begin{zcbox}[title={ZC18 Track A: PRED-ZC18-01 Falsified}]
+\sloppy
+PRED-ZC18-01 conjectured that $\varepsilon_{\rm eff}$ emerges as the
+$N\to\infty$ self-consistent fixed point of $\varepsilon_0$.
+
+This paper reports a complete investigation. Four self-consistency
+equations (SC1--SC4) of the TLS are derived and solved.
+All four are incompatible with $\varepsilon_{\rm eff}$:
+SC3 yields $0.007843$ (WaveChain constraint $F\cdot\varphi^2=4$).
+
+\textbf{Core finding:} $\varepsilon_0 = 0.00755$ is fixed by definition
+via $I_{\rm eff} = 0.7007$, not by finite-$N$ convergence.
+PRED-ZC18-01 is \textbf{falsified} (Phase Misalignment).
+
+Structural bridge identified: $\varepsilon_0^{\rm canon}$ and $\varepsilon_{\rm eff}$
+bracket the WaveChain target $F\cdot\varphi^2=4$ from opposite sides ($-0.133\%$ and $+0.158\%$).
+Primary clue for Route~B (EW sector coefficient derivation).
+\end{zcbox}
+
+\subsection{ZC18-B --- $\mathbb{Z}_{15}$ Sector Correction (Part XXI)}
+
+\begin{zcbox}[title={ZC18 Track B: THM-ZC18-B01}]
+\sloppy
+Track~A established that the gap $\varepsilon_{\rm eff}/\varepsilon_0 = 1.0838$
+is structural. This paper derives the correction from first principles.
+
+Key observation: $\varphi(|\Ztf|) = \varphi(15) = 8 = n$.
+Candidate theorem: $\varepsilon_{\rm eff}^{(B)} = \varepsilon_0\cdot(15/8)^{1/8}$,
+with $\varepsilon_{\rm eff}^{(B)} = 0.008170$ lying $-0.19\%$ from exact target.
+
+The corrected Information Ladder:
+$n\cdot\ln(1/\varepsilon_0) - \ln(15/8) \approx \ln(m_{\rm Pl}/v_{\rm SM})$
+at $+0.04\%$. Higgs VEV prediction improves from $-47.5\%$ (ZC17) to $-1.54\%$.
+THM-ZC18-B01 promoted. CONJ-ZC18-B01 registered (residual $-1.54\%$ attributed
+to Weinberg angle; deferred to ZC19).
+\end{zcbox}
+
+\subsection{ZC19 --- The Weinberg Angle Candidate (Part XXI)}
+
+\begin{zcbox}[title={ZC19: FIND-ZC19-A01 and CONJ-ZC19-01}]
+\sloppy
+ZC18-B established THM-ZC18-B01 and registered residual $-1.54\%$
+as attributed to the Weinberg angle (GAP-ZC17-02).
+
+\textbf{Central result} (FIND-ZC19-A01, Candidate):
+$\sin^2\theta_W \stackrel{?}{=} 1 - \ln n/\ln|\Ztf|
+= 1 - \ln 8/\ln 15 \approx 0.2321$,
+lying $+0.39\%$ from measured $\sin^2\theta_W(M_Z) = 0.2312$.
+When applied as correction coefficient, VEV prediction becomes
+$v_{\rm ZC} = 246.25\,\mathrm{GeV}$ (gap $+0.01\%$ from $v_{\rm SM}$).
+GAP-ZC17-03 effectively closed.
+
+Formal derivation from DEF-Z205 ($\chi$-map) registered as
+CONJ-ZC19-01 and deferred to ZC20 (Part~D).
+\end{zcbox}
+
+\newpage
+
+%% ════════════════════════════════════════════════════════════════════
+\section{Part D --- Lie Bridge through Force Hierarchy (Parts XXIII--XXVI + XIX)}
+%% ════════════════════════════════════════════════════════════════════
+
+\subsection*{Volume Abstract}
+\addcontentsline{toc}{subsection}{Volume Abstract}
+
+\begin{volumebox}[title={Part D --- CRF Complete Edition v17.6 (Parts XXIII--XXVI + XIX)}]
+\sloppy
+This is \textbf{Part~D} of the CRF Complete Edition v17.6, the fourth
+of four sequential files comprising one continuous volume on the
+$\delta$-mechanism.
+
+Part~D contains \textbf{Parts XXIII--XXVI} (the continuous-Lie and
+$R_0$/$R_1$ layer dynamics) and the relocated \textbf{Part~XIX}
+(Master Status, Symbol Registry, Reality Not Simulation), expanded
+to reflect the v17.6 closures.
+
+\textbf{Part XXIII (Lie Bridge):} ZC20 derives
+$\sin^2\theta_W = 1 - \ln n/\ln|\mathbb{Z}_{15}|$ formally
+(THM-ZC20-01, closing GAP-ZC17-02 at mixing-angle level). ZC21-v2
+introduces CRF Thermodynamic Lie Algebra with $\hbar_{\rm eff}=1/N$.
+ZC22-v2 verifies $(\mathbb{Z}_{15})^\times \cong \mathbb{Z}_2 \times \mathbb{Z}_4$
+with sector identification to $\mathfrak{su}(2)_L \oplus \mathfrak{u}(1)_Y$
+(THM-ZC22-01).
+
+\textbf{Part XXIV ($\alpha_{\rm EM}$ Chain):} ZC23 establishes
+non-abelian $\chi_{\rm NA}$ partition. ZC24 identifies
+$\alpha_{\rm EM}^{R_0} = (8/15)\Gamma_{\rm CRF}$ (gap $+0.132\%$).
+ZC28-v3 closes $\Gamma_{\rm CRF}$ construction
+(THM-ZC28-01: $\Gamma_{\rm CRF} = \mathcal{G}/d_s - \sin^2\theta_W$).
+
+\textbf{Part XXV ($R_1$ Crossing Layer):} ZC25-v2 propagator-weight
+identification. ZC26 back-calculates $R_1$-layer cost target
+$T(R_1)_{\rm EM} = 3.421\times 10^{-5}$. ZC27 derives via
+DEF-RN02 + $\varphi$-cancellation (THM-ZC27-01:
+$\delta_{\rm DKL}^{R_1} = (d_s/n_m)\varepsilon_0^2$, gap $0.025\%$).
+
+\textbf{Part XXVI (Force Hierarchy \& Sector Crossing):} ZC29 proves
+THM-ZC29-01: $\alpha_i^{R_0} = (\varphi(d_i)/15)\Gamma_{\rm CRF}$.
+ZC30 closes GAP-ZC29-01 for Weak and Strong sectors with
+$\varphi$-universality (FIND-ZC30-01).
+
+\textbf{Part XIX (relocated, expanded):} Master Z-Programme Status
+Table v17.6, Phase Misalignment Registry v17.6, Symbol Registry v1.0
+(Appendix A), Reality Not Simulation v3 (Appendix B).
+\end{volumebox}
+
+\subsection*{Contents Map}
+\addcontentsline{toc}{subsection}{Contents Map}
+
+\begin{contentsbox}[title={Part D --- Part and Section Headers}]
+\textbf{Part XXIII: The Lie Bridge --- From Discrete $\mathbb{Z}_{15}$ to Continuous $\mathrm{SU}(2)_L \times U(1)_Y$ (v17.6)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Overview of Part XXIII
+  \item ZC20: Formal Derivation of $\sin^2\theta_W$ from the $\chi$-Map
+  \item ZC21-v2: The Thermodynamic Lie Bridge
+  \item ZC22-v2: Lie Bridge Verification --- Sector Identification and the Tensor Product Discovery
+  \item Closing of Part XXIII
+\end{itemize}
+
+\textbf{Part XXIV: The $\alpha_{\rm EM}$ Chain --- From $G$-Partition to the Chi-Map Coupling Rate (v17.6)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Overview of Part XXIV
+  \item ZC23: G-Partition and the Non-Abelian $\chi$-Map
+  \item ZC24: $\alpha_{\rm EM}^{R_0} = (8/15)\Gamma_{\rm CRF}$ --- The Fine Structure Constant from the $\delta$-Chain
+  \item ZC28-v3: The Chi-Map Coupling Rate $\Gamma_{\rm CRF}$ --- Near-Formal Closure
+  \item Closing of Part XXIV
+\end{itemize}
+
+\textbf{Part XXV: The $R_1$ Crossing Layer --- Propagator Weight, Wave Crossing, and Channel Dynamics (v17.6)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Overview of Part XXV
+  \item ZC25-v2: Propagator Weight and the Force Hierarchy Conjecture
+  \item ZC26: $R_1$ Wave Crossing --- Back-Calculation of $\varepsilon_0$
+  \item ZC27: $R_1$ Channel Dynamics --- THM-ZC27-01 via $\varphi$-Cancellation
+  \item Closing of Part XXV
+\end{itemize}
+
+\textbf{Part XXVI: Force Hierarchy and Sector Crossing --- The Universal $\varphi$-Cancellation (v17.6)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Overview of Part XXVI
+  \item ZC29: Force Hierarchy --- THM-ZC29-01 Promotes the Hierarchy Conjecture
+  \item ZC30: Sector Crossing Costs --- Universal $\varphi$-Cancellation
+  \item Closing of Part XXVI
+\end{itemize}
+
+\textbf{Part XIX: Master Z-Programme Status, Notation Lock, and Companion Embeds (v17.5/v17.6)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Overview of Part XIX
+  \item Master Z-Programme Status Table v17.5
+  \item Conflict Resolution Log (v17.5)
+  \item Cross-Reference Index for Part C v17.5
+  \item Closing Sentence --- Part XIX
+  \item Appendix A: Symbol Registry v1.0 (Full Verbatim Embed)
+  \item Appendix B: Reality Not Simulation v3 (Full Verbatim Embed)
+  \item \textbf{Master Z-Programme Status Table v17.6 (NEW v17.6)}
+  \item \textbf{Cross-Reference Index v17.6 (NEW v17.6)}
+  \item \textbf{Phase Misalignment Registry v17.6 (NEW v17.6)}
+  \item \textbf{Forward References to Parts A, B, C (NEW v17.6)}
+  \item Closing of Part XIX (v17.6)
+\end{itemize}
+\end{contentsbox}
+
+%% ── ZC-Paper Abstracts for Part D ───────────────────────────────────
+\subsection{ZC20 --- Formal Derivation of $\sin^2\theta_W$ (Part XXIII)}
+
+\begin{zcbox}[title={ZC20: THM-ZC20-01 --- GAP-ZC17-02 Closed}]
+\sloppy
+TASK-ZC19 identified the candidate formula
+$\swsq = 1 - \ln n/\ln|\Ztf| \approx 0.2321$
+($+0.39\%$ from measured) and registered CONJ-ZC19-01.
+This paper completes all three sub-tasks and closes CONJ-ZC19-01.
+
+\textbf{Central result} (THM-ZC20-01):
+\emph{The Weinberg angle is determined by the generator partition
+of the CRF charge group $\Ztf$:}
+$\cwsq = \ln\varphi(|\Ztf|)/\ln|\Ztf| = \ln n/\ln|\Ztf|$,
+where $\varphi(|\Ztf|) = n$ is structural identity ID-B01.
+
+Derivation chain: $\delta \to \mathbb{Z}_{15} \to \varphi(15) = n
+\to \Ggen \to \cwsq = \ln n/\ln|\Ztf|$.
+GAP-ZC17-02 (EW gauge group from the $\delta$-chain) is closed.
+\end{zcbox}
+
+\subsection{ZC21-v2 --- The Thermodynamic Lie Bridge (Part XXIII)}
+
+\begin{zcbox}[title={ZC21: CONJ-ZC21-01 --- Candidate}]
+\sloppy
+GAP-ZC21-00 (inherited): derivation of the continuous Lie group structure
+$\SU \times \UY$ from the discrete $\Ztf$ in the thermodynamic limit.
+
+\textbf{Central result} (CONJ-ZC21-01, Candidate):
+$\lim_{N\to\infty} \gCRF(N) \cong \suLie \oplus \uLie$,
+where $\gCRF(N)$ is the CRF Thermodynamic Lie Algebra (DEF-ZC21-01)
+on $\Ggen \cong (\Ztf)^\times \cong \mathbb{Z}_2 \times \mathbb{Z}_4$
+with deformation parameter $\heff = 1/N$.
+Sector identification: $\mathbb{Z}_4 \leftrightarrow \suLie$;
+$\mathbb{Z}_2 \leftrightarrow \uLie$.
+
+Supporting lemmas: LEM-ZC21-01 (complex doubling, $H_\sigma = 2$ bits);
+LEM-ZC21-02 (dimensional counting: $\dim_\mathbb{R}(\suLie\oplus\uLie) = n/2$).
+Observer interpretation: FIND-ZC21-O01 identifies $N\to\infty$ with $\Sind$
+at gauge-symmetry level.
+\end{zcbox}
+
+\subsection{ZC22-v2 --- Lie Bridge Verification (Part XXIII)}
+
+\begin{zcbox}[title={ZC22: THM-ZC22-01 and Tensor Product Discovery}]
+\sloppy
+CONJ-ZC21-01 opened three sub-tasks for verification.
+
+\textbf{Sub-task (ii) confirmed} (THM-ZC22-01):
+$(\Ztf)^\times \cong \mathbb{Z}_2 \times \mathbb{Z}_4$
+with explicit generators $g=2$ (order~4) and $g=11$ (order~2),
+and CRT sector identification
+$(\mathbb{Z}_5)^\times \cong \mathbb{Z}_4 \leftrightarrow \suLie$;
+$(\mathbb{Z}_3)^\times \cong \mathbb{Z}_2 \leftrightarrow \uLie$.
+
+Sub-tasks (i) and (iii) produce Phase Misalignments (PM-ZC22-S01, PM-ZC22-III-01).
+LEM-ZC22-01: $C^l_{jk} = 0$ identically (additive bracket fails for abelian group).
+
+\textbf{Architectural discovery} (FIND-ZC22-S01): $\suLie\oplus\uLie$ structure
+constants require tensor product interaction
+$(\mathbb{Z}_3)^\times \otimes (\mathbb{Z}_5)^\times$.
+CONJ-ZC21-01 remains Candidate pending ZC22-ext.
+\end{zcbox}
+
+\subsection{ZC23 --- G-Partition and the Non-Abelian $\chi$-Map (Part XXIV)}
+
+\begin{zcbox}[title={ZC23: DEF-ZC23-01 and CONJ-ZC23-01}]
+\sloppy
+Following the tensor product discovery of ZC22, this paper formalises
+the G-Partition Non-Abelian Chi-Map $\chiNA$ (DEF-ZC23-01), which assigns
+each $\delta$-event to the $\mathrm{SU}(2)$ channel with probability
+$\Gcoup = \ln 2/D_0 \approx 0.7374$.
+
+Observable $f_{\rm RMS}(N)$ converges to plateau $\sqrt{3}\approx 1.732$
+as $N\to\infty$ with power-law exponent $\alpha = 0.001\pm 0.004$
+(simulator V22.3, T-canonical gauge).
+
+Six Phase Misalignments registered (PM-ZC23-01..06) as scar tissue.
+CONJ-ZC23-01 placed on firm candidate status.
+FIND-ZC23-01: $1+w_{\rm DE} = \mathcal{G}/d_s \approx 0.246$.
+\end{zcbox}
+
+\subsection{ZC24 --- Fine Structure Constant from the $\delta$-Chain (Part XXIV)}
+
+\begin{zcbox}[title={ZC24: $\alpha_{\rm EM}^{R_0} = (8/15)\Gamma_{\rm CRF}$}]
+\sloppy
+TASK-ZC23 established $1+w_{\rm DE} = \mathcal{G}/d_s$ and
+TASK-ZC20 established $\cos^2\theta_W = \ln n/\ln|Z_{15}|$.
+Their sum $\cos^2\theta_W + (1+w_{\rm DE}) = 1.01367$ falls $1.37\%$
+short of exact complementarity.
+
+\textbf{Main discovery:} Defining
+$\Gamma_{\rm CRF} := \mathcal{G}/d_s - \sin^2\theta_W = 0.013664$,
+the relation
+$\alpha_{\rm EM} \approx (\varphi(15)/15)\,\Gamma_{\rm CRF} = (8/15)\,\Gamma_{\rm CRF}$
+holds at gap $+0.132\%$.
+
+Complementarity gap $1.37\%$ decomposes into three layers:
+algebraic shortfall $\sim 1.29\%$ (algebraic independence of $\ln 2, \ln 3, \ln 5$);
+$D_0$ convention term $0.048\%$; residual $0.035\%$.
+Gap $1.37\%$ is the cost of integer quantization, not an error.
+\end{zcbox}
+
+\subsection{ZC28-v3 --- Chi-Map Coupling Rate $\Gamma_{\rm CRF}$ (Part XXIV)}
+
+\begin{zcbox}[title={ZC28-v3: THM-ZC28-01 --- Near-Formal Closure}]
+\sloppy
+This is the registry-completed revision of TASK-ZC28 v2.
+v3 fixes: COR-ZC28-01 given explicit \texttt{corollary} environment;
+ratio values in FIND-ZC28-03 corrected; Summary item~5 clarified.
+
+\textbf{THM-ZC28-01:}
+$\Gamma_{\rm CRF} = \mathcal{G}/d_s - \sin^2\theta_W$
+(near-formal closure of the full parameter-free $\alpha_{\rm EM}$ chain).
+GAP-ZC28-01 opened: $3.49\%$ $\varepsilon_0$ reconciliation gap,
+target for ZC29+.
+\end{zcbox}
+
+\subsection{ZC25-v2 --- Propagator Weight and Force Hierarchy Conjecture (Part XXV)}
+
+\begin{zcbox}[title={ZC25-v2: $R_0$-layer Identification and GAP-ZC25-03}]
+\sloppy
+TASK-ZC24 established $\alpha_{\rm EM} \approx (8/15)\Gamma_{\rm CRF}$
+at gap $+0.132\%$.
+
+\textbf{Direction B:} Argument for $8/15$ decomposes into B1 (uniform
+distribution, proved by THM-TC01) and B2 (EM-active $= \mathbb{G}_{gen}$,
+near-formal from coprimality). Force hierarchy
+$\alpha_i = (|S_i|/15)\Gamma_{\rm CRF}$ as conditional prediction (CONJ-ZC25-B02).
+
+\textbf{R-layer analysis (v2):} All Z-Programme quantities --- $D_0$,
+$\mathcal{G}$, $\cos^2\theta_W$, $w_{\rm DE}$, $\Gamma_{\rm CRF}$ --- are
+$R_0$-layer (receiver-independent, pre-resolution) quantities.
+Gap $0.132\%$ decomposes into: $\theta$-nonlinearity term
+($-2.65\times 10^{-5}$) and $R_1$-wave shift ($+3.42\times 10^{-5}$).
+The $R_1$-wave shift $= 0.600\varepsilon_0^2$ is the precise target for ZC26.
+\end{zcbox}
+
+\subsection{ZC26 --- $R_1$ Wave Crossing: Back-Calculation of $\varepsilon_0$ (Part XXV)}
+
+\begin{zcbox}[title={ZC26: DEF-ZC26-RS01 and GAP-ZC26-01}]
+\sloppy
+TASK-ZC25 v2 showed gap $0.132\%$ is a layer-crossing cost and opened
+GAP-ZC25-03 (the $R_1$-wave shift $0.600\varepsilon_0^2$).
+
+\textbf{Part A:} Systematic probe finds $0.600$ has no clean form in
+current CRF. GAP-ZC26-01 registers the need for a formal theory of EM
+photon propagation through $\mathbb{G}_{gen}$ channels in the $R_1$ layer.
+
+\textbf{Part B (Resolution-Scale Protocol):}
+DEF-ZC26-RS01 formalises a five-item checklist that must be applied
+before any quantity is claimed to ``match'' or ``gap from'' experiment.
+This is a governance-level output addressing PM-ZC26-01 and predecessors.
+\end{zcbox}
+
+\subsection{ZC27 --- $R_1$ Channel Dynamics via $\varphi$-Cancellation (Part XXV)}
+
+\begin{zcbox}[title={ZC27: THM-ZC27-01 --- CONJ-ZC26-01 Promoted}]
+\sloppy
+TASK-ZC26 established the target $\delta_{\rm DKL}^{R_1} = 3.421\times 10^{-5}
+= 0.600\varepsilon_0^2 = (d_s/n_m)\varepsilon_0^2$ (CONJ-ZC26-01)
+and registered GAP-ZC26-01.
+
+This paper closes GAP-ZC26-01.
+Using DEF-RN02 ($T(R_1) = \varepsilon_0^2\,\Sigma_{\rm inv}\,dt$)
+and CRT applied to $\mathbb{G}_{gen} = (\mathbb{Z}/15\mathbb{Z})^*$:
+$\Sigma_{\rm inv}^{\rm EM} = d_s/\varphi(15)$ and
+$dt^{\rm EM} = \varphi(15)/n_m$.
+Product: $\Sigma_{\rm inv}^{\rm EM}\cdot dt^{\rm EM} = d_s/n_m$ exactly
+($\varphi(15)$ cancels).
+
+\textbf{THM-ZC27-01:} $\delta_{\rm DKL}^{R_1} = (d_s/n_m)\varepsilon_0^2$
+(numerical gap $0.025\%$). CONJ-ZC26-01 promoted.
+Only the prime factorisation $15 = d_s \cdot n_m$ matters.
+\end{zcbox}
+
+\subsection{ZC29 --- Force Hierarchy Theorem (Part XXVI)}
+
+\begin{zcbox}[title={ZC29: THM-ZC29-01 --- Universal Coupling Rule}]
+\sloppy
+TASK-ZC24 established $\alpha_{\rm EM}^{R_0} = (8/15)\Gamma_{\rm CRF}$
+and CONJ-ZC25-B02 conjectured the rule extends to all three forces.
+This paper proves that conjecture.
+
+$\mathbb{Z}_{15}$ generator partition: $\Ggen$ ($|8|$, EM), $G_5$ ($|4|$, Weak),
+$G_3$ ($|2|$, Strong), $\{0\}$ (Vacuum).
+
+\textbf{THM-ZC29-01:} For sector $S_i \subset \mathbb{Z}_{15}$ of order $d_i$:
+$\alpha_i^{R_0} = (\varphi(d_i)/15)\Gamma_{\rm CRF}$.
+Exact ratios: $\alpha_{\rm Weak}/\alpha_{\rm EM} = 1/2$;
+$\alpha_{\rm Strong}/\alpha_{\rm EM} = 1/4$.
+
+\textbf{FIND-ZC29-03:} For confined sectors ($d_i < 15$), net rate
+$\Gamma_i < 0$ --- the CRF signature of confinement.
+Open gaps: GAP-ZC29-01 ($R_0\to R_{\max}$ running coupling crossing cost);
+GAP-ZC29-02 (gravity sector from vacuum element).
+\end{zcbox}
+
+\subsection{ZC30 --- Sector Crossing Costs: Universal $\varphi$-Cancellation (Part XXVI)}
+
+\begin{zcbox}[title={ZC30: THM-ZC30-01/02 --- GAP-ZC29-01 Closed}]
+\sloppy
+TASK-ZC27 derived $T(R_1)_{\rm EM} = (d_s/n_m)\varepsilon_0^2$
+by $\varphi(15)$-cancellation.
+This paper closes GAP-ZC29-01 for Weak and Strong sectors.
+
+\textbf{THM-ZC30-01:} Weak sector ($G_5 \subset \Zfi$):
+$T(R_1)_{\rm Weak} = (n_m/d_s)\varepsilon_0^2$.
+
+\textbf{THM-ZC30-02:} Strong sector ($G_3 \subset \Zth$):
+$T(R_1)_{\rm Strong} = (d_s/n_m)\varepsilon_0^2$.
+
+\textbf{FIND-ZC30-01} ($\varphi$-universality): $\varphi(d_i)$ cancels
+in $T(R_1)_i$ for \emph{every} sector. Crossing cost depends only on the
+ratio of generator modes to receiver modes.
+
+\textbf{FIND-ZC30-02:} Two classes --- Spatial-type (EM, Strong):
+$T(R_1) = (d_s/n_m)\varepsilon_0^2$ (massless bosons);
+Matter-type (Weak): $T(R_1) = (n_m/d_s)\varepsilon_0^2$ (massive bosons).
+Ratio: $T(R_1)_{\rm Weak}/T(R_1)_{\rm EM} = (n_m/d_s)^2 = 25/9$ (exact).
+\end{zcbox}
+
+\newpage
+
+%% ════════════════════════════════════════════════════════════════════
+\section*{Quick-Access Reference: Open Gaps as of v17.6}
+\addcontentsline{toc}{section}{Quick-Access Reference: Open Gaps as of v17.6}
+%% ════════════════════════════════════════════════════════════════════
+
+\begin{longtable}{p{3.5cm} p{5.5cm} p{4cm}}
+\toprule
+Gap ID & Description & Status/Owner \\
+\midrule
+\endhead
+GAP-MC-01   & Residual 10--17\% in lepton mass ratios & Open (ZC16) \\
+GAP-ZC17-01 & Absolute Yukawa scale & Conditionally closed by ZC17 given $v$ input \\
+GAP-ZC17-02 & EW gauge group $\mathrm{SU}(2)_L\times U(1)_Y$ from $\delta$-chain & Closed at mixing-angle level (ZC20) \\
+GAP-ZC17-03 & Hierarchy $v/m_{\rm Pl}\sim 10^{-17}$ & Near-closed (ZC19: $+0.01\%$; ZC20 confirmed) \\
+GAP-ZC21-00 & Continuous Lie group from discrete $\mathbb{Z}_{15}$ in $N\to\infty$ & Open; ZC22-ext planned \\
+GAP-ZC23-TH & Formal proof THM-ZC23-01 for $f_{\rm RMS}\to\sqrt{3}$ & \textbf{Closed} (Part E ZC33 v2 CLT proof) \\
+GAP-ZC25-02 & $\Gamma_{\rm CRF}$ formal construction & Near-closed (ZC28-v3 THM-ZC28-01) \\
+GAP-ZC26-01 & Formal $R_1$-wave theory for EM sector & Closed by ZC27 (THM-ZC27-01) \\
+GAP-ZC28-01 & $3.49\%$ $\varepsilon_0$ reconciliation gap & \textbf{Closed} (Part E ZC37 THM-ZC37-01) \\
+GAP-ZC29-01 & $R_0\to R_{\max}$ running coupling crossing cost & Closed for EM/Weak/Strong (ZC30) \\
+GAP-ZC29-02 & Gravity sector identification from vacuum element & Open \\
+GAP-ZC29-03 / ZC30-02 & Strong-sector witness (``adjacent''$\to$``orthogonal'' correction) & PM-ZC29-04 registered \\
+GAP-ZC24-COMP-01 & Complementarity gap $+1.37\%$ & \textbf{Closed} (Part E ZC34 THM-ZC34-01) \\
+GAP-ZC29-03 & $R_0 \to R_1$ semigroup dynamics formal & \textbf{Closed} (Part E ZC33 THM-ZC33-01/02) \\
+GAP-ZC30-01 & Sector-specific $\varepsilon_0^{(i)}$ & \textbf{Closed} (Part E ZC37 COR-ZC37-03) \\
+GAP-ZC35-01 & Number-theoretic proof: $\mathbb{Z}_{15}$ unique for binary-ladder totients & Open (Part E ZC35) \\
+GAP-ZC36-01 & Exact derivation of K14 ($F\phig^2 = 4$) & \textbf{Near-closed} (Part E ZC39 gap $-0.0034\%$; ZC40 THM-ZC40-01) \\
+GAP-ZC36-02 & Structural gap between Route A and Route C ($0.21\%$) & Open (Part E ZC36) \\
+GAP-ZC38-02 & K14 exact consistency with K7$'$ & Near-closed (Part E ZC39/40: under exact K7$'$, $0.000\%$) \\
+GAP-ZC39-01 & Why $1/\phig$ bleeding ratio at $R_1$ crossing & \textbf{Closed} (Part E ZC40 LEM-ZC40-01) \\
+\bottomrule
+\end{longtable}
+
+\bigskip
+
+%% ════════════════════════════════════════════════════════════════════
+\section{ZC31--ZC40 Abstract Registry (Standalone Papers, Not Yet Integrated)}
+\label{sec:zc31-40-registry}
+%% ════════════════════════════════════════════════════════════════════
+
+\begin{contentsbox}[title={Integration Status}]
+The ten papers below (ZC31--ZC40) are standalone files in the project.
+They are \emph{not yet} integrated into Parts A--D of CRF Complete.
+Their abstracts are reproduced here to enable Pre-Work Audit without
+opening each file. Integration will occur at the next Complete Edition
+update cycle (v17.7 planned).
+
+\textbf{Key closures in this cluster:}
+GAP-ZC24-COMP-01 (ZC34), GAP-ZC28-01 (ZC37), GAP-ZC29-03 (ZC33),
+GAP-ZC30-01 (ZC37), GAP-ZC39-01 (ZC40).
+K14 elevated to Near-Formal Candidate (ZC39/ZC40).
+$I_{\rm eff}$ first structural derivation from $\delta$-chain (ZC38).
+\end{contentsbox}
+
+\subsection{ZC31 --- Confinement Spectrum Closed Form}
+
+\begin{zcbox}[title={ZC31: FIND-ZC31-01/02/03 --- Algebraic Spectrum + Weinberg Bridge}]
+\sloppy
+TASK-ZC29 established the sector net rate $\Gamma_i$ and FIND-ZC29-03
+correlated its sign with confinement.
+This paper closes the algebraic scope: a post-ZC30 Council session
+identified the destruction rate as a Shannon information-loss fraction
+\[
+  R_{{\rm destroy},i} = 1 - \frac{\ln\varphi(d_i)}{\ln 15},
+  \qquad \textbf{DEF-ZC29-04}.
+\]
+Three exact closed forms follow:
+\begin{align*}
+  \text{FIND-ZC31-01:}\quad
+    & \Gamma_i = \Gcoup/d_s - 1 + \ln\varphi(d_i)/\ln 15,\\
+  \text{FIND-ZC31-02:}\quad
+    & \Gamma_{\rm vac} = \Gcoup/d_s - 1 \quad (\text{spectrum floor, exact}),\\
+  \text{FIND-ZC31-03:}\quad
+    & \Gamma_{\rm EM} = \Gcoup/d_s - 1 + \sin^2\!\theta_W.
+\end{align*}
+FIND-ZC31-03 is a Weinberg bridge: $\sin^2\theta_W = \ln 8/\ln 15$
+(ZC20) reappears as the EM-sector recovery from vacuum.
+PM-ZC34-01 (cos$^2\theta_W$ / sin$^2\theta_W$ convention) noted.
+\textit{Convention Bridge Note (CRF-GP-2026-002): the displayed
+FIND-ZC31-03 equation above retains its pre-PM-ZC34 legacy form,
+in which the quantity $\ln8/\ln15\approx0.7679$ carries the label
+$\sin^2\!\theta_W$. Under the PM-ZC34-01 locked convention this
+quantity is $\cos^2\!\theta_W$ (LARGE), and $\sin^2\!\theta_W
+\approx0.23213$ (SMALL). The legacy ``$+\sin^2\!\theta_W$'' must be
+read as ``$+\cos^2\!\theta_W$'' to reproduce $\Gamma_{\rm EM}=+0.013664$.
+Source equation preserved per the additive/Failure-Stance rule.}
+\end{zcbox}
+
+\subsection{ZC32 --- Operator Form of the Confinement Spectrum}
+
+\begin{zcbox}[title={ZC32-v2: THM-ZC32-01 --- $M_i$ Spectral Decomposition; PM-ZC32-01}]
+\sloppy
+TASK-ZC31 held CONJ-ZC29-05 (eigenvalue interpretation of $\Gamma_i$)
+for this paper.
+
+\textbf{Result 1 (falsification).} CONJ-ZC29-05 as literally stated is
+\emph{falsified}: neither the ZC20 preimage form nor the ZC23 stochastic
+form of $\chi$ carries a dynamical propagator with eigenvalue spectrum.
+Registered as \textbf{PM-ZC32-01} (scar tissue).
+
+\textbf{Result 2 (surviving structure).} Define
+\[
+  M_i := R_{\rm create}\cdot I - R_{{\rm destroy},i}\cdot\pi_i,
+\]
+where $\pi_i: L^2(\Zft)\to L^2(\mathbb{Z}_{d_i})$ is the orthogonal
+projection (\textbf{DEF-ZC32-01}).
+\textbf{THM-ZC32-01}: $\Gamma_i$ is an eigenvalue of $M_i$ on the
+sector subspace. The propagator structure is real and sector-local.
+\textbf{CONJ-ZC32-01}: the $R_0\to R_1$ lifting of $M_i$ as a
+semigroup generator (target for ZC33).
+\end{zcbox}
+
+\subsection{ZC33 --- $R_1$-Semigroup Dynamics from Existing Pillars}
+
+\begin{zcbox}[title={ZC33-v2: THM-ZC33-01/02 --- GAP-ZC29-03 Closed; Sector Physical Time}]
+\sloppy
+TASK-ZC32 sharpened GAP-ZC29-03 into a four-item roadmap.
+This paper closes all four items using only existing CRF objects.
+
+\textbf{DEF-ZC33-01:} Sector physical time
+$t_i := (p_i/q_i)\cdot\Tavg$, where $p_i/q_i =
+\Sinv^{(i)}\cdot dt^{(i)}$ from ZC27/ZC30, and $\Tavg =
+2nK^*/[(n-1)\varepsilon_0]$ from Part~B (Wald + Jaynes).
+No new constant introduced.
+
+\textbf{THM-ZC33-01:} The $R_1$-wave generator on sector subspace is
+$A_i^{R_1} = \Tavg^{-1}\,M_i$ (restricted). The $R_0\to R_1$ crossing
+of CONJ-ZC32-01 is explicit and grounded.
+
+\textbf{THM-ZC33-02:} Correlation decay
+$\langle f(t),f(0)\rangle = e^{\Gamma_i t}\|f(0)\|^2$
+on sector subspace. Sector physical time $t_i$ sets the semigroup
+clock. GAP-ZC29-03 \textbf{closed}.
+
+Pillars used: DEF-RN02 ($T(R_1) = \varepsilon_0^2\Sinv\,dt$),
+FIND-ZC30-01 ($\varphi$-universality), Part~B $\Tavg$ + Jaynes,
+$\lambda_2\Tavg = n-1$.
+\end{zcbox}
+
+\subsection{ZC34 --- Complementarity Identity: $\cwsq + (1+w_{\rm DE}) = 1 + \Gamma_{\rm EM}$}
+
+\begin{zcbox}[title={ZC34: THM-ZC34-01 --- GAP-ZC24-COMP-01 Closed; PM-ZC34-01}]
+\sloppy
+TASK-ZC24 registered GAP-ZC24-COMP-01: the complementarity residual
+$\cwsq + (1+w_{\rm DE}) = 1.01367$ ($+1.37\%$) declared ``cannot be
+closed within the current $\delta$-chain.''
+
+A post-ZC33 corpus audit identified the residual $= \Gamma_{\rm EM}$
+(FIND-ZC31-03). Three-line algebraic closure:
+\[
+  \cwsq + (1+w_{\rm DE}) = 1 + \Gamma_{\rm EM}
+  \qquad \textbf{(THM-ZC34-01, exact)}.
+\]
+The ``gap'' is the CRF-predicted cosmological order-creation rate ---
+not an error.
+
+Three additional identities from the same $\Zft$ partition:
+\begin{align*}
+  \text{THM-ZC34-02:}\quad & \textstyle\sum_i\alpha_i^{R_0} = \Gamma_{\rm CRF}
+    && (\text{Gauss divisor sum: }\sum_{d|15}\varphi(d)=15)\\
+  \text{THM-ZC34-03:}\quad & \alpha_{\rm EM}^{R_0} + \Gamma_{\rm vac} = \Gcoup/d_s
+    && (\text{creation-rate conservation})\\
+  \text{THM-ZC34-04:}\quad & \cwsq - \swsq = \Gamma_{\rm EM} - \Gamma_{\rm vac}
+    && (\text{mixing-angle--confinement duality})
+\end{align*}
+\textbf{PM-ZC34-01}: Weinberg-angle convention lock ($\cwsq = \ln 8/\ln 15
+\approx 0.7679$ LARGE; $\swsq \approx 0.2321$ SMALL).
+GAP-ZC24-COMP-01 \textbf{closed}.
+\end{zcbox}
+
+\subsection{ZC35 --- Spectral Sum Identities}
+
+\begin{zcbox}[title={ZC35: THM-ZC35-01 --- Spectral Sum; OBS-ZC35-01; GAP-ZC35-01}]
+\sloppy
+Combining FIND-ZC31-01, FIND-ZC23-01, the totient log-sum, and
+THM-ZC20-01 (PM-ZC34-01 convention) in one algebraic step:
+\[
+  \sum_i \Gamma_i = 4\!\left(\frac{\Gcoup}{d_s} - 1\right) + 2\cwsq
+  \quad \textbf{(THM-ZC35-01, exact)}.
+\]
+\textbf{FIND-ZC35-01}: Recovery lattice
+${\rm recovery}_i = k_i\cdot\cwsq/3$ for $k_i\in\{0,1,2,3\}$ ---
+arithmetic progression with step $\ln 2/\ln 15$.
+
+\textbf{FIND-ZC35-02}: Totient log-sum identity
+$\sum_{d|15}\ln\varphi(d) = 2\ln n_{\rm CRF}$, where $n_{\rm CRF}
+= 2^{d_s} = 8$ is the CRF Key Identity constant.
+
+\textbf{OBS-ZC35-01}: $\Zft$ is the unique $n\le 100$ with $\tau(n)=4$
+whose totient values form a strict binary ladder $\{1,2,4,8\}$.
+
+\textbf{GAP-ZC35-01}: Number-theoretic proof valid for all $n$ (open).
+\end{zcbox}
+
+\subsection{ZC36 --- Fiedler Value and Golden Ratio: Three Routes}
+
+\begin{zcbox}[title={ZC36: THM-ZC36-01, CONJ-ZC36-01 ($F\phig^2=4$), COR-ZC36-01}]
+\sloppy
+The Fiedler value $F$ of the $R_1$-channel KL-graph of $\Zft$
+($F_{\rm meas} = 1.527$ in TLS v3) admits three algebraic routes:
+
+\textbf{Route A (Jaynes--Wald composition, THM-ZC36-01):}
+$F = 2nK^{*2}/[e(n-1)\varepsilon_0] = 1.524587$ (gap $-0.158\%$).
+Rearrangement of Jaynes ($\Kstar\Tavg/F = e$, Part~B K20) and
+Wald ($\Tavg = 2n\Kstar/[(n-1)\varepsilon_0]$, Part~B K35).
+
+\textbf{Route B (WaveChain TLS v3):}
+$F = (3/2 - \sqrt{d_s}/n^2)(1+\sigma_\Psi/\ln\phig) = 1.52583$
+(gap $-0.077\%$). Part~B citation; not lifted as ZC theorem.
+
+\textbf{Route C (Fibonacci limit, CONJ-ZC36-01):}
+$F = 4/\phig^2$; numerical $1.527864$ (gap $+0.057\%$).
+This is Part~B K14 hypothesis $F\phig^2 = 4$, lifted to ZC.
+
+\textbf{COR-ZC36-01}: $\Gamma_{\rm EM} \equiv \Gamma_{\rm CRF}$ (one-line
+consequence of FIND-ZC31-01 + DEF-ZC24-GAMMA-01; first explicit registration).
+
+\textbf{FIND-ZC36-01}: $\prod_{d|15}\varphi(d) = 64 = 2^{T(d_s)}$
+($T$ = triangular number).
+
+\textbf{FIND-ZC36-02}: $\prod_{d|15}d = 225 = |\Zft|^2$.
+
+\textbf{GAP-ZC36-02}: $0.21\%$ structural gap between Route A and Route C (open).
+
+PM-ZC36-01: Pre-Work Audit false alarm --- Council scan pointed to
+``new scar in ZC31'' but PM-ZC34-01 already covered it in the parent.
+\end{zcbox}
+
+\subsection{ZC37 --- Epsilon Floor: Closing GAP-ZC28-01}
+
+\begin{zcbox}[title={ZC37-v1.2: THM-ZC37-01 --- $\epsEM = \epscan$; Three Gap Closures}]
+\sloppy
+Three gaps (GAP-ZC27-01, GAP-ZC28-01, GAP-ZC30-01) traced to a single
+registration error: DEF-ZC28-02 had identified $\epsEM :=
+\alpha_{\rm EM}^{R_0}$, but these are categorically distinct.
+$\alpha_{\rm EM}^{R_0} = (8/15)\Gamma_{\rm CRF}$ carries a
+$\mathbb{Z}_{15}$ sector weight; $\epscan = |I_{\rm eff} - \ln 2|
+= 0.007553$ is the canonical TLS instability floor, pre-sector,
+universal.
+
+\textbf{THM-ZC37-01}: $\epsEM = \epscan = |I_{\rm eff} - \ln 2|$. Under
+this identification $T(R_1)_{\rm EM} = (d_s/n_m)\epscan^2 =
+3.4227\times 10^{-5}$ (ZC26 target: $3.421\times 10^{-5}$; gap
+$+0.050\%$).
+
+\textbf{COR-ZC37-01}: GAP-ZC28-01 ($3.49\%$ discrepancy) \textbf{closed}.\\
+\textbf{COR-ZC37-02}: THM-ZC27-01 is unconditional under THM-ZC37-01.\\
+\textbf{COR-ZC37-03}: GAP-ZC30-01 (sector-specific $\varepsilon_0^{(i)}$)
+\textbf{closed} trivially via FIND-ZC30-01.
+
+\textbf{FIND-ZC37-01}: Gift II-1 diagnostic ($\epsEM =
+\alpha_{R_0}\cdot(15/8)^{1/16}$, gap $0.38\%$) confirmed that
+$\alpha_{R_0}$ and $\varepsilon_0$ are different objects.
+
+\textbf{FIND-ZC37-02} (v1.2 post-pub): Forward connection to ZC38
+($I_{\rm eff}$ derivation from $\delta$-chain).
+\end{zcbox}
+
+\subsection{ZC38 --- First Structural Derivation of $I_{\rm eff}$}
+
+\begin{zcbox}[title={ZC38: CONJ-ZC38-01 --- $I_{\rm eff}$ from $\delta$-Chain; Gap $+0.0066\%$}]
+\sloppy
+Since TASK-ZC18 Track~A, $I_{\rm eff} = 0.7007$ has been a fixed
+empirical constant of the TLS. TASK-ZC37 explicitly registered its
+derivation as ``the fundamental open problem of the TLS architecture.''
+
+The key observation: the Jaynes identity ($\Kstar\Tavg/F = e$, Part~B K20)
+and K14 ($F\phig^2 = 4$, Part~B) form a self-consistency equation.
+Substituting Wald's $\Tavg$ into Jaynes and eliminating $F$ via K14:
+\[
+  \varepsilon_0 = \frac{n(1-e^{-1/n})^2\phig^2}{2(n-1)e},
+  \qquad I_{\rm eff} = \ln 2 + \varepsilon_0.
+  \qquad \textbf{(CONJ-ZC38-01)}
+\]
+All quantities determined by $\delta$-chain alone: $n=8$, $\phig$, $e$.
+
+Numerical: $I_{\rm eff}^{\rm ZC38} = 0.700746$; gap $+0.0066\%$ from
+SINDy value --- among the tightest derivations in the Z-Programme.
+Gap in $\varepsilon_0$: $+0.61\%$ (combined Jaynes $0.119\%$ + K14
+$0.133\%$ residuals).
+
+$S_{\rm dep}$ interpretation confirmed: $\varepsilon_0 > 0$ follows
+necessarily from $n > 1$ and $\phig > 0$.
+GAP-ZC38-02 (K14 exact consistency) inherited from ZC36.
+\end{zcbox}
+
+\subsection{ZC39 --- K14 Renormalization: Near-Formal Closure}
+
+\begin{zcbox}[title={ZC39: CONJ-ZC39-01 --- $F_{\rm ren}\phig^2 = 3.99986$; K14 Near-Formal}]
+\sloppy
+K14 ($F\phig^2 = 4$) has been a confirmed Hypothesis since Part~B
+(gap $-0.013\%$ to $-0.133\%$). Part~B showed K14 cannot be derived
+exactly from the current WaveChain formulas (K7$'$ + K8): this was
+GAP-ZC36-01 / GAP-ZC38-02.
+
+Missing ingredient: K8 ($\sigmaK = \varepsilon_0(n+2)/\sqrt{2n+3}$)
+gives the $R_0$-layer AR(1) variance, omitting the $R_1$-crossing
+contribution from THM-ZC27-01 ($\TR = (d_s/n_m)\varepsilon_0^2$).
+
+Renormalized variance (\textbf{CONJ-ZC39-01}):
+\[
+  (\sigmaR)^2 = (\sigmaK)^2 + \frac{1}{\phig}\TR
+  = \varepsilon_0^2\!\left[\frac{(n+2)^2}{2n+3} + \frac{d_s}{\phig n_m}\right].
+\]
+The golden fraction $1/\phig = \phig - 1$ is the Fibonacci bleeding ratio.
+
+Result: $F_{\rm ren}\phig^2 = 3.99986$ (gap $-0.0034\%$) --- $36\times$
+improvement over K8 alone. K14 elevated to \textbf{Near-Formal Candidate}.
+
+\textbf{FIND-ZC39-01}: ZC38 + ZC39 mutually consistent; Jaynes +
+$F_{\rm ren}$ pins $\varepsilon_0 = 0.007599$ (matches CONJ-ZC38-01).
+\end{zcbox}
+
+\subsection{ZC40 --- Fibonacci Partition: Why $1/\phig$ at $R_1$ Crossing}
+
+\begin{zcbox}[title={ZC40: THM-ZC40-01 --- CONJ-ZC39-01 Promoted; GAP-ZC39-01 Closed}]
+\sloppy
+TASK-ZC39 left GAP-ZC39-01 open: \emph{why} exactly $1/\phig$ of
+$\TR$ contributes to $\sigma^2_\Psi$.
+
+\textbf{LEM-ZC40-01} (Fibonacci Energy Conservation): At any $R_1$
+crossing, wave energy $\TR$ partitions into exactly two channels in the
+golden ratio:
+\[
+  \TR = \underbrace{\frac{1}{\phig}\TR}_{\Evar}
+        + \underbrace{\frac{1}{\phig^2}\TR}_{\Eamp},
+  \quad 1/\phig + 1/\phig^2 = 1 \; (\text{Fibonacci identity}).
+\]
+$\Evar \to \Psi$ field variance (entropic channel);
+$\Eamp \to$ WaveChain amplitude $F$ (coherent channel).
+The $\phig$-split is the \emph{unique} partition consistent with
+energy conservation and the $\phig$-architecture ($F\phig^2 = 4$, K14).
+
+\textbf{LEM-ZC40-02} (AR(1) Shift):
+$\sigma^2_\Psi(R_1) = \sigma^2_\Psi(R_0) + \Evar$.
+
+\textbf{THM-ZC40-01}: CONJ-ZC39-01 promoted to theorem.
+$F\phig^2 = 3.99986$ (gap $-0.0034\%$). GAP-ZC39-01 \textbf{closed}.
+
+\textbf{FIND-ZC40-01}: Exact fraction $f_{\rm exact} = 0.636$ giving
+$F\phig^2 = 4.000$ exactly; differs from $1/\phig = 0.618$ by $2.9\%$,
+consistent with K7$'$ approximation gap. Under exact K7$'$, K14 closes
+to $0.000\%$.
+\end{zcbox}
+
+\bigskip
+
+\begin{contentsbox}[title={ZC Papers Now Integrated into Part E (v17.7)}]
+The following standalone ZC papers, registered above as
+``Not Yet Integrated'' in v17.6, are now integrated into
+\textbf{Part E (v17.7)} verbatim. Their standalone source files
+in the project remain unchanged (CUIP No-Loss compliance).
+
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item \texttt{CRF\_TASK\_ZC31\_ConfinementSpectrum\_v1.tex}
+    --- Integrated in Part E, Part XXVII, Section ZC31
+  \item \texttt{CRF\_TASK\_ZC32\_OperatorForm\_v2.tex}
+    --- Integrated in Part E, Part XXVII, Section ZC32
+  \item \texttt{CRF\_TASK\_ZC33\_R1Semigroup\_v2.tex}
+    --- Integrated in Part E, Part XXVII, Section ZC33
+  \item \texttt{CRF\_TASK\_ZC34\_ComplementarityIdentity\_v1.tex}
+    --- Integrated in Part E, Part XXVIII, Section ZC34
+  \item \texttt{CRF\_TASK\_ZC35\_SpectralSumIdentities\_v1.tex}
+    --- Integrated in Part E, Part XXVIII, Section ZC35
+  \item \texttt{CRF\_TASK\_ZC36\_FiedlerGoldenRatio\_v1.tex}
+    --- Integrated in Part E, Part XXIX, Section ZC36
+  \item \texttt{CRF\_TASK\_ZC37\_EpsilonFloor\_v1\_2.tex}
+    --- Integrated in Part E, Part XXIX, Section ZC37
+  \item \texttt{CRF\_TASK\_ZC38\_IeffFloor\_v3.tex}
+    --- Integrated in Part E, Part XXIX, Section ZC38
+  \item \texttt{CRF\_TASK\_ZC39\_K14Renorm\_v1.tex}
+    --- Integrated in Part E, Part XXIX, Section ZC39
+  \item \texttt{CRF\_TASK\_ZC40\_FibonacciPartition\_v1.tex}
+    --- Integrated in Part E, Part XXIX, Section ZC40
+\end{itemize}
+
+\textbf{Cross-Part Connection Map} for these ten papers is given in
+Part E, \textbf{Part XXX} --- a NEW section type introduced in v17.7.
+\end{contentsbox}
+
+\newpage
+
+%% ════════════════════════════════════════════════════════════════════
+\section{Part E --- Cluster Closures \& Cross-Part Map (Parts XXVII--XXX)}
+%% ════════════════════════════════════════════════════════════════════
+
+\subsection*{Volume Abstract}
+\addcontentsline{toc}{subsection}{Volume Abstract}
+
+\begin{volumebox}[title={Part E --- CRF Complete Edition v17.7 (Parts XXVII--XXX)}]
+\sloppy
+This is \textbf{Part~E} of the CRF Complete Edition v17.7, the fifth
+of five sequential files comprising one continuous volume on the
+$\delta$-mechanism. Part~E integrates the ten post-v17.6 standalone
+papers (ZC31--ZC40, May 2026) verbatim, plus introduces a new section
+type --- the Cross-Part Connection Map (Part XXX).
+
+\textbf{Structural ascent of Part E:}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item \textbf{Part XXVII} (Confinement Operator and $R_1$ Semigroup):
+    ZC31 promotes the Council information-loss form
+    to atomic units; ZC32 lifts $\Gamma_i$ to an operator $M_i$ on
+    $L^2(\Zft)$; ZC33 bridges to the $R_1$-semigroup via
+    $A_i^{R_1} = \Tavg^{-1} M_i$. Closes GAP-ZC29-03.
+  \item \textbf{Part XXVIII} (Complementarity and Spectral Sum):
+    ZC34 closes GAP-ZC24-COMP-01 (reframing: residual = $\Gamma_{\rm EM}$).
+    ZC35 gives the closed spectral sum $\sum\Gamma_i = 4(\Gcoup/d_s - 1)
+    + 2\cwsq$ with the recovery lattice and totient log-sum identity.
+  \item \textbf{Part XXIX} (TLS Layer Closures):
+    ZC36 (Fiedler, three routes); ZC37 ($\epsEM = \epscan$, closes
+    GAP-ZC28-01 \emph{and} GAP-ZC30-01); ZC38 (first structural
+    $I_{\rm eff}$, gap $0.0066\%$); ZC39 (K14 renormalization);
+    ZC40 (Fibonacci partition, GAP-ZC39-01 closed, K14 promoted
+    to Near-Formal Theorem).
+  \item \textbf{Part XXX} (Cross-Part Connection Map):
+    NEW SECTION TYPE in v17.7. For each ZC31..40 paper, records
+    backward inheritance from Parts A/B/C/D, forward correction of
+    Parts A/B/C/D interpretations (no source-file edit), and
+    cross-Part Phase Misalignments. Includes a Master Z-Programme
+    Status Table v17.7 delta and a Pre-Work Audit Protocol summary
+    (PWA-1..PWA-4).
+\end{itemize}
+
+\textbf{Key closures in Part E:}
+GAP-ZC24-COMP-01 (ZC34), GAP-ZC28-01 (ZC37), GAP-ZC29-03 (ZC33),
+GAP-ZC30-01 (ZC37), GAP-ZC39-01 (ZC40), GAP-ZC36-01/GAP-ZC38-02
+(Near-closed by ZC39/40). K14 hypothesis elevated to Near-Formal
+Theorem. $I_{\rm eff}$ first structural derivation.
+
+\textbf{Phase Misalignments preserved:}
+PM-ZC32-01, PM-ZC32-02, PM-ZC33-01, PM-ZC34-01, PM-ZC36-01, PM-ZC37-01.
+
+\textbf{Pre-Work Audit lessons codified:} PWA-1 (R-layer scan before
+$R_0/R_1$ writing), PWA-2 (combine existing pillars before inventing),
+PWA-3 (Complete Edition Index scan for foundational machinery),
+PWA-4 (parent PM-registry scan before flagging child scars).
+\end{volumebox}
+
+\subsection*{Contents Map}
+\addcontentsline{toc}{subsection}{Contents Map}
+
+\begin{contentsbox}[title={Part E --- Part and Section Headers}]
+\textbf{Part XXVII: Confinement Operator and $R_1$-Semigroup (v17.7)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Overview of Part XXVII
+  \item ZC31: The Confinement Spectrum Closed Form
+  \item ZC32: The Operator Form of the Sector Net Rate
+  \item ZC33: The $R_1$-Semigroup Bridge and Triple Closure
+  \item Closing of Part XXVII
+\end{itemize}
+
+\textbf{Part XXVIII: Complementarity Identity and Spectral Sum (v17.7)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Overview of Part XXVIII
+  \item ZC34: Complementarity Identity and Hidden $\Ztf$ Partition Theorems
+  \item ZC35: Spectral Sum Identities and the Information Lattice
+  \item Closing of Part XXVIII
+\end{itemize}
+
+\textbf{Part XXIX: TLS Layer Closures: Fiedler, $\varepsilon_0$, $I_{\rm eff}$, K14, Fibonacci (v17.7)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Overview of Part XXIX
+  \item ZC36: Fiedler Value and the Golden Ratio --- Three Routes
+  \item ZC37: The Universal Instability Floor
+  \item ZC38: The Instability Floor from First Principles
+  \item ZC39: K14 Near-Formal via $R_1$-Layer Renormalization
+  \item ZC40: The Fibonacci Energy Partition
+  \item Closing of Part XXIX
+\end{itemize}
+
+\textbf{Part XXX: Cross-Part Connection Map (NEW v17.7)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Overview of Part XXX
+  \item Connection Records for ZC31--ZC40
+  \item Cross-Part Phase Misalignment Registry (v17.7)
+  \item Master Z-Programme Status Table v17.7 (Delta from v17.6)
+  \item Closing of Part XXX
+\end{itemize}
+\end{contentsbox}
+
+
+
+
+\vfill
+
+%% ════════════════════════════════════════════════════════════════════
+\section{Part F --- ZC41--44 Cluster, Mind/Barami, Axiom~11
+  (Parts XXXI--XXXIV)}
+%% ════════════════════════════════════════════════════════════════════
+
+\subsection*{Volume Abstract}
+\addcontentsline{toc}{subsection}{Volume Abstract}
+
+\begin{volumebox}[title={Part F --- CRF Complete Edition v17.8
+  (Parts XXXI--XXXIV)}]
+\sloppy
+This is \textbf{Part~F} of the CRF Complete Edition v17.8, the sixth
+of six sequential files. Part~F integrates nine post-v17.7 standalone
+papers in four new Parts.
+
+\textbf{Structural ascent of Part F:}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item \textbf{Part XXXI} (ZC41--44 Cluster):
+    ZC41 closes GAP-ZC40-01 and promotes K14 to exact unconditional
+    Theorem (THM-ZC41-01; $F\varphi_{\rm gold}^2 = 4$ exact).
+    ZC42 derives the Born-chain spectral gap $\lambda_2$ via
+    Dirichlet + $n_m$-sector suppression (THM-ZC42-01, gap 0.77\%).
+    ZC43 proves $n=15$ is the unique integer with $\tau(n)=4$ and
+    binary-ladder totients (THM-ZC43-01; closes GAP-ZC35-01).
+    ZC44 derives the bridge identity
+    $\mathcal{R} = d_s n_m/n = 15/8$ in four exact forms
+    (FIND-ZC44-01), closes GAP-ZC42-01 via CRT chain
+    (THM-ZC44-01), and registers the three-axis
+    $\mathbb{Z}_{15}$ picture (CONJ-ZC44-01).
+  \item \textbf{Part XXXII} (Mind/Barami Layer):
+    Mind/Barami Companion~v2 extends the Agentive-mode structure.
+    Bridge~Extension~$\Phi$ formalises DEF-UF-$\Phi$01.
+    Gifts~HIJ registers CONJ-GH-01, promotes CONJ-GI-01,
+    and registers FIND-GJ-01/GAP-GJ-01.
+    Gift~K completes the $B_+$-observable framework.
+  \item \textbf{Part XXXIII} (Axiom~11 Upgrade):
+    PM-AX11-01 preserved as scar tissue. Axiom~11 v1 retired
+    (RETIRED-AS-STATED). Five-component upgrade following
+    PM-ZC21-01 pattern.
+  \item \textbf{Part XXXIV} (Cross-Part Connection Map v17.8):
+    Extends Part~XXX with records for all nine Part~F papers.
+    Adds PWA-5 (mechanism-count audit protocol).
+\end{itemize}
+
+\textbf{Key closures:}
+GAP-ZC35-01 (ZC43), GAP-ZC40-01 (ZC41), GAP-ZC41-01 (ZC41 self),
+GAP-ZC42-01 (ZC44), GAP-MB02 and GAP-UF-$\Phi$01 (conditional,
+CONJ-GI-01).
+
+\textbf{Phase Misalignments preserved:}
+PM-AX11-01 (Axiom~11 upgrade),
+PM-ZC44-01 (M5/M7 CRT infrastructure overlap),
+OBS-ZC44-01 (mechanism count = $\varphi(15) = 8$, open bijection).
+
+\textbf{Pre-Work Audit lessons:} PWA-5 (mechanism-count audit:
+enumerate, check pairwise shared infrastructure, declare independence
+at conclusion level, register overlaps before promoting).
+\end{volumebox}
+
+\subsection*{Contents Map}
+\addcontentsline{toc}{subsection}{Contents Map}
+
+\begin{contentsbox}[title={Part F --- Part and Section Headers}]
+\textbf{Part XXXI: ZC41--44 Cluster: Spectral and
+  Number-Theoretic Layer (v17.8)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Overview of Part XXXI
+  \item ZC41: K14 Exact Theorem and Kuramoto Fingerprint
+  \item ZC42: Born Chain Spectral Gap
+  \item ZC43: $\mathbb{Z}_{15}$ Binary-Ladder Uniqueness
+  \item ZC44: Three-Axis Bridge Identity and GAP-ZC42-01 Closure
+\end{itemize}
+
+\textbf{Part XXXII: Mind/Barami Layer and Extended Power Signature
+  (v17.8)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Overview of Part XXXII
+  \item Mind/Barami Companion v2
+  \item Bridge Extension: Extended Power Signature ($\Phi$)
+  \item Gifts HIJ: Three Conjectures on Unity $\delta$
+  \item Gift K: Adhimutta Direction
+\end{itemize}
+
+\textbf{Part XXXIII: Axiom~11 Upgrade (v17.8)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Overview of Part XXXIII (PM-ZC21-01 pattern)
+  \item Axiom~11 Upgrade: Five-Component Integration
+\end{itemize}
+
+\textbf{Part XXXIV: Cross-Part Connection Map v17.8 (v17.8)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Overview and Reading Conventions
+  \item Connection Records for ZC41--ZC44
+  \item Connection Records for Part XXXII (Mind/Barami Layer)
+  \item Cross-Part PM Registry v17.8 (delta from v17.7)
+  \item Master Z-Programme Status Table v17.8 (delta)
+  \item PWA-5: Mechanism-Count Audit Protocol
+  \item Closing Sentence --- Part F
+\end{itemize}
+\end{contentsbox}
+
+\vfill
+\begin{center}
+\small\color{mutedgray}
+CRF Complete Edition Index v17.8 (Part F integration + ZC41--44 + Mind/Barami + Axiom~11) ---
+Ougit Jarittum (ORCID: 0009-0009-4451-6811, Zenodo: 10.5281/zenodo.18977059, CC-BY-NC 4.0)\\
+Generated May 2026. Regenerate when any Part file is updated.
+\end{center}
+
+\newpage
+
+%% ════════════════════════════════════════════════════════════════════
+\section{Part G --- ZC45--49 Cluster, $\mathbb{Z}_{15}$ Projection
+  Chain, Four-Axis Duality (Parts XXXV--XXXVII)}
+%% ════════════════════════════════════════════════════════════════════
+
+\subsection*{Volume Abstract}
+\addcontentsline{toc}{subsection}{Volume Abstract}
+
+\begin{volumebox}[title={Part G --- CRF Complete Edition v17.9
+  (Parts XXXV--XXXVII)}]
+\sloppy
+This is \textbf{Part~G} of the CRF Complete Edition v17.9, the seventh
+of seven sequential files. Part~G integrates five post-v17.8 standalone
+papers in three new Parts.
+
+\textbf{Structural ascent of Part G:}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item \textbf{Part XXXV} (ZC45 --- Universal Floor):
+    Closes GAP-GJ-01 by proving THM-ZC45-01: the instability floor
+    $\varepsilon_0$ is identical in both CRF operating modes ---
+    $\varepsilon_{0,\mathrm{Spont}} = \varepsilon_{0,\mathrm{Agent}}
+    = \varepsilon_0$. COR-ZC45-01 promotes FIND-GJ-01 to Theorem.
+    PM-ZC45-01 preserves the 0.16\% Wald residual (GAP-ZC42-02,
+    inherited). First paper to formally unify the $\varepsilon_0$
+    floor across both Physics and Mind strata.
+  \item \textbf{Part XXXVI} (ZC46--49 Cluster ---
+    $\mathbb{Z}_{15}$ Projection Chain):
+    ZC46 promotes CONJ-ZC44-01 to THM-ZC46-01 (Three-Projection
+    Theorem): $\mathcal{R} = 15/8$ is the common algebraic root
+    of three $\mathbb{Z}_{15}$ projections (ZC18-B totient axis,
+    ZC42 CRT axis, ZC43 divisor axis). GAP-ZC46-01 registered.
+    ZC47 closes GAP-ZC46-01 via THM-ZC47-01 (CRT Sector Decoupling):
+    tensor decomposition $\ell^2(\mathbb{Z}_{15}) \cong
+    \ell^2(\mathbb{Z}_3) \otimes \ell^2(\mathbb{Z}_5)$; THM-ZC46-01
+    becomes unconditional (COR-ZC47-02). CONJ-ZC47-01 registered.
+    ZC48 proves CONJ-ZC47-01 exactly via CRF Model~A
+    ($\tau_i \propto 1/\alpha_i^{R_0}$, LEM-ZC48-01) tracing to
+    THM-ZC29-01; THM-ZC48-01: $\tau_{\mathbb{Z}_3}/\tau_{\mathbb{Z}_5}
+    = \varphi(5)/\varphi(3) = 2$ exact.
+    ZC49 synthesises four axes of $\mathbb{Z}_{15}$ sector structure
+    into THM-ZC49-01 (Four-Axis Duality); FIND-ZC49-04 reveals the
+    Key Identity in totient disguise.
+  \item \textbf{Part XXXVII} (Cross-Part Connection Map v17.9):
+    Extends Part~XXXIV with backward inheritance, forward corrections,
+    and Phase Misalignment records for ZC45--ZC49. Adds PWA-6
+    (macro convention cross-check before embedding any new ZC paper).
+    Includes Master Z-Programme Status Table v17.9 delta.
+\end{itemize}
+
+\textbf{Key closures:}
+GAP-GJ-01 (ZC45 THM-ZC45-01),
+GAP-ZC46-01 (ZC47 COR-ZC47-01).
+CONJ-ZC44-01 promoted to THM-ZC46-01.
+CONJ-ZC47-01 promoted to THM-ZC48-01.
+THM-ZC46-01 conditional $\to$ unconditional (ZC47 COR-ZC47-02).
+
+\textbf{Phase Misalignments preserved:}
+PM-ZC45-01 (0.16\% Wald residual, GAP-ZC42-02 inherited),
+PM-ZC46-01 (probe P1 incomplete condition),
+PM-ZC47-01 (two probe specification scars),
+PM-ZC48-01 (PC/PG probe specification errors),
+PM-ZC48-MACRO (\texttt{\textbackslash Gcrf} convention conflict:
+ZC48--49 vs.\ v17.6 patch; \texttt{\textbackslash providecommand}
+takes v17.6 form $\mathcal{G}$; ZC48--49 use \texttt{\textbackslash
+GammaCRF}).
+
+\textbf{Pre-Work Audit lessons:} PWA-6 (macro convention cross-check:
+before embedding any ZC paper, scan its \texttt{\textbackslash
+newcommand} block against the full v17.x patch chain; flag any
+name collision where forms differ semantically; register as
+PM-[paper]-MACRO).
+\end{volumebox}
+
+\subsection*{Contents Map}
+\addcontentsline{toc}{subsection}{Contents Map}
+
+\begin{contentsbox}[title={Part G --- Part and Section Headers}]
+\textbf{Part XXXV: ZC45 --- Universal Floor and $\delta$ Two-Mode
+  Bridge (v17.9)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Overview of Part XXXV
+  \item ZC45: Universal Floor Theorem --- $\varepsilon_0$ Two-Mode Identity
+\end{itemize}
+
+\textbf{Part XXXVI: ZC46--49 Cluster ---
+  $\mathbb{Z}_{15}$ Projection Chain and Four-Axis Duality (v17.9)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Overview of Part XXXVI
+  \item ZC46: Three-Projection Theorem and $\mathcal{R}=15/8$ Root
+  \item ZC47: CRT Sector Decoupling Theorem
+  \item ZC48: Lock-Ratio Exact Theorem
+  \item ZC49: Four-Axis Duality Theorem
+\end{itemize}
+
+\textbf{Part XXXVII: Cross-Part Connection Map v17.9 (v17.9)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Connection Records for ZC45
+  \item Connection Records for ZC46
+  \item Connection Records for ZC47
+  \item Connection Records for ZC48
+  \item Connection Records for ZC49
+  \item Master Z-Programme Status Table v17.9 (Delta from v17.8)
+  \item Pre-Work Audit Protocol Summary --- PWA-6 Addition
+  \item Closing Sentence --- Part G
+\end{itemize}
+\end{contentsbox}
+
+
+%% ════════════════════════════════════════════════════════════════════
+
+
+%% ════════════════════════════════════════════════════════════════════
+\section{Part H --- ZC50--62 Cluster, Wald Self-Consistency \&
+  $\varepsilon_0$ from Axioms (Parts XXXVIII--XLII, v17.11)}
+%% v17.12: ZC63 added as Part~XLII; Connection Map renumbered to
+%% Part~XLIII. Range is now Parts~XXXVIII--XLIII (ZC50--63).
+%% ════════════════════════════════════════════════════════════════════
+
+\subsection*{Volume Abstract}
+\addcontentsline{toc}{subsection}{Volume Abstract}
+
+\begin{volumebox}[title={Part H --- CRF Complete Edition v17.11
+  (Parts XXXVIII--XLII, extended)}]
+\sloppy
+This is \textbf{Part~H} of the CRF Complete Edition v17.11, extended
+from v17.10. The original Part~H v17.10 (ZC50--54, Parts~XXXVIII--XL)
+is preserved verbatim in v17.11 Parts~XXXVIII--XXXIX, with the old
+Cross-Part Map (originally Part~XL) promoted and replaced by the
+v17.11 map in the new Part~XLII. Two new clusters are inserted:
+Part~XL (ZC55--57, Closure Trilogy) and Part~XLI (ZC58--62,
+$\varepsilon_0$ from Axioms).
+
+\textbf{Structural ascent of Part H v17.11:}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item \textbf{Part XXXVIII} (ZC50--51 --- Wald Correction Cluster,
+    v17.10 verbatim): ZC50 introduces CONJ-ZC50-01
+    ($\lambda_2\cdot T_{\rm avg} = (n-1)\cdot 29/30$), narrowing the
+    Wald residual from $3.8\%$ to $0.25\%$. ZC51 proves
+    THM-ZC51-01 (Boundary Correction Theorem).
+  \item \textbf{Part XXXIX} (ZC52--54 --- $\mathbb{Z}_{15}$ Spectral
+    Bridge \& Self-Consistency, v17.10 verbatim): ZC52 proves Fiedler
+    Exactness $\mathrm{Fiedler}_{\rm norm}(\mathbb{Z}_{15})=1/2$
+    at $R_0$; ZC53 proves Bottleneck Bridge; ZC54 proves Wald
+    Self-Consistency (THM-ZC54-01), promoting CONJ-ZC38-01 to Theorem.
+  \item \textbf{Part XL} (ZC55--57 --- Closure Trilogy, \textbf{NEW
+    in v17.11}): ZC55 proves CRT Bijection (THM-ZC55-01) and Spectral
+    Denominator (THM-ZC55-02), closing OBS-ZC44-01 and GAP-ZC50-01.
+    ZC56 proves Matter Bottleneck (THM-ZC56-01) and registers the
+    K14 companion identity $F\varphi_{\rm gold}^{2}=4$ (FIND-ZC56-01).
+    ZC57 proves Two-Sector Correction (THM-ZC57-01), closing
+    GAP-ZC51-01 and the Wald residual GAP-ZC42-02 / GAP-ZC53-01
+    ($0.16\%$, open since Part~F).
+  \item \textbf{Part XLI} (ZC58--62 --- $\varepsilon_0$ from Axioms,
+    \textbf{NEW in v17.11}): ZC58 establishes the seed identity
+    $K^{*}/D_0 = 1/n$. ZC59 introduces the Lambert $W_0$ branch and
+    MaxEnt multipliers; opens GAP-ZC59-01. ZC60 proves the spectral
+    floor THM-ZC60-01, closes GAP-ZC59-01 and partially GAP-ZC54-01.
+    ZC61 proves the renewal partition function identity (THM-ZC61-01)
+    and Wald K35 from axioms (COR-ZC61-01); opens GAP-ZC61-01.
+    ZC62 derives Euler's constant $\gamma$ from Axiom~10
+    (LEM-ZC62-01) and partition function from axioms (THM-ZC62-01),
+    closing GAP-ZC61-01 and finalizing GAP-ZC54-01.
+  \item \textbf{Part XLII} (Cross-Part Connection Map v17.11,
+    \textbf{NEW in v17.11}): Replaces v17.10 map. Backward inheritance
+    from Parts~A--G and Part~H v17.10 segment; eight-closure master
+    table; Phase Misalignment registry; Master Z-Programme Status Table
+    v17.11 delta; \emph{Connection Records} for all eight new papers
+    (ZC55--62) following the Part~G XXXVII three-box pattern;
+    R-Layer and Genealogy Map standardization continuation notes;
+    closing synthesis.
+\end{itemize}
+
+\textbf{Major closures in Part H v17.11 --- eight in a single upgrade:}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item OBS-ZC44-01 (totient bijection, Part~F) $\to$ \textbf{Closed}
+    (COR-ZC55-01)
+  \item GAP-ZC50-01 ($R_0$ origin of $1/30$, Part~H v17.10) $\to$
+    \textbf{Closed} (COR-ZC55-02)
+  \item GAP-ZC51-01 (Born-chain boundary, Part~H v17.10) $\to$
+    \textbf{Closed} (COR-ZC57-01)
+  \item GAP-ZC42-02 (Wald residual, Part~F) $\to$ \textbf{Closed}
+    (COR-ZC57-02)
+  \item GAP-ZC53-01 (Wald residual twin, Part~H v17.10) $\to$
+    \textbf{Closed} (COR-ZC57-02)
+  \item GAP-ZC54-01 (Jaynes K20 from axioms, Part~H v17.10) $\to$
+    \textbf{Closed} (COR-ZC60-03 + COR-ZC62-02)
+  \item GAP-ZC59-01 (functional $F(p)$, ZC59) $\to$ \textbf{Closed}
+    (COR-ZC60-01)
+  \item GAP-ZC61-01 (renewal step, ZC61) $\to$ \textbf{Closed}
+    (COR-ZC62-01)
+\end{itemize}
+
+\textbf{Phase Misalignments preserved in v17.11 (Failure Stance):}
+PM-ZC55-01 (probe specification scars),
+PM-ZC56-PROBE-01 (probe parameterization),
+PM-ZC59-01 (NotebookLM alternative assessment),
+PM-V17\_10-MACRO (housekeeping --- missing v17.10 macro patch file;
+v17.11 chain inputs v17.9 directly).
+The original v17.10 PMs (PM-ZC50-01 through PM-ZC54-01, PM-ZC52-MACRO)
+are inherited unchanged.
+
+\textbf{Epistemic consequence of v17.11:} $\varepsilon_0$ is no longer
+an externally-fitted floor. It is the unique fixed point of the
+$\delta$-chain anchored in Axiom~10, with the Euler--Mascheroni
+constant $\gamma$ recovered structurally as the no-fire renewal limit.
+The Wald program initiated in ZC42 (Part~F) is structurally complete.
+
+\textbf{Style Guide v3.3 compliance:} All eight new papers (ZC55--62)
+ship with R-Layer Research Notes and Genealogy Maps (with ZC55 and
+ZC56 maps generated during v17.11 integration per the locked decision
+of the Upgrade Protocol). The Connection Records section in Part~XLII
+follows the Part~G XXXVII pattern verbatim.
+\end{volumebox}
+
+\subsection*{Contents Map}
+\addcontentsline{toc}{subsection}{Contents Map}
+
+\begin{contentsbox}[title={Part H v17.11 --- Part and Section Headers}]
+\textbf{Part XXXVIII: ZC50--51 Cluster --- Wald Correction Identity
+  and the Boundary Correction Theorem (v17.10 verbatim)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Overview of Part XXXVIII
+  \item ZC50: Wald Correction Identity
+  \item ZC51: Boundary Correction Theorem
+\end{itemize}
+
+\textbf{Part XXXIX: ZC52--54 Cluster ---
+  $\mathbb{Z}_{15}$ Spectral Bridge and Wald Self-Consistency
+  (v17.10 verbatim)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Overview of Part XXXIX
+  \item ZC52: $\mathbb{Z}_{15}$ Fiedler Exactness
+  \item ZC53: Bottleneck Bridge Theorem
+  \item ZC54: Wald Self-Consistency Theorem
+\end{itemize}
+
+\textbf{Part XL: ZC55--57 Cluster --- Closure Trilogy
+  (CRT Bijection, Cheeger, Two-Sector) (NEW v17.11)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Overview of Part XL
+  \item ZC55: CRT Bijection and Spectral Denominator
+    (with v17.11 Genealogy Map)
+  \item ZC56: Matter Bottleneck and Cheeger Constant
+    (with v17.11 Genealogy Map)
+  \item ZC57: Two-Sector Boundary Correction Mechanism
+  \item Part XL Synthesis: Closure Trilogy Consolidated
+\end{itemize}
+
+\textbf{Part XLI: ZC58--62 Cluster ---
+  $\varepsilon_0$ from Axioms (NEW v17.11)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Overview of Part XLI
+  \item ZC58: $K^{*}/D_0$ Seed Identity
+  \item ZC59: Lambert $W_0$ and MaxEnt Multipliers
+  \item ZC60: Spectral Geometry Floor
+  \item ZC61: Renewal Partition Function
+  \item ZC62: Euler Constant from Axiom~10 (Final Closure)
+  \item Part XLI Synthesis: $\varepsilon_0$ Derivation Complete
+\end{itemize}
+
+\textbf{Part XLII: Cross-Part Connection Map v17.11
+  (NEW --- replaces v17.10 map)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Backward Inheritance from Parts A--G and Part H v17.10
+  \item Forward Corrections: Eight Closures in Part H v17.11
+  \item Cross-Part Phase Misalignments Registered in v17.11
+  \item Master Z-Programme Status Table --- v17.11 Delta
+  \item Connection Records for ZC55--62 (eight three-box entries)
+  \item R-Layer Standardization Note (Continuation)
+  \item Genealogy Map Standardization Note (Continuation)
+  \item Closing Sentence --- Part H v17.11 Synthesis
+\end{itemize}
+\end{contentsbox}
+
+
+
+%% ════════════════════════════════════════════════════════════════════
+\section{Part I --- ZC64--75: Prediction Registry through Gravity Bridge
+  (Parts XLIV--XLVIII, v17.12)}
+%% ════════════════════════════════════════════════════════════════════
+
+\subsection*{Volume Abstract}
+\addcontentsline{toc}{subsection}{Volume Abstract (Part I)}
+
+\noindent
+\textbf{Part~I} of the CRF Complete Edition integrates Z-Programme
+papers ZC64--75 --- the closure arc following the ZC63 Wald Correction
+Theorem of Part~H. It opens with a falsifiable Prediction Registry
+(ZC64) and the R-Layer Bridge Theorem (ZC65), proves the Sector Floor
+and Sector Ratio theorems (ZC66--67), establishes Born-Chain
+Self-Consistency (ZC68), and promotes the K14 identity
+$F\varphi_{\rm gold}^2 = 4$ to an \textbf{exact theorem} (ZC69). The
+exact universal floor $\varepsilon_{\rm univ}$ then closes both Tier-1
+bridges (ZC70), and the Two-Layer Floor Irreducibility Theorem (ZC71)
+closes GAP-ZC63-01 left open in Part~H. The capstone (ZC72--75) closes
+the long-open gravity gap GAP-ZC29-02 at $R_0$ and proves the binary
+ladder is exclusive --- only $3\times5$ closes it (ZC74).
+
+\subsection*{Cluster Map}
+\addcontentsline{toc}{subsection}{Cluster Map (Part I)}
+
+\begin{itemize}
+  \item \textbf{Part XLIV} (ZC64--65): Prediction Registry \&
+    Falsifiability Protocol; R-Layer Bridge Theorem. Registers
+    GAP-ZC64-01, opens GAP-ZC65-01 (exact $\varepsilon_0$).
+  \item \textbf{Part XLV} (ZC66--68): Sector Floor (THM-ZC66-01,
+    opens GAP-ZC66-01); Sector Ratio (COR-ZC67-02 closes GAP-ZC66-01,
+    Near-Formal); Born-Chain Self-Consistency (opens GAP-ZC68-01).
+  \item \textbf{Part XLVI} (ZC69--71): K14 Exact Theorem (K14 $\to
+    0.000\%$; COR-ZC69-01 closes GAP-ZC68-01; PM-ZC69-SPECTRAL-01);
+    Electroweak Gap (COR-ZC70-01/02 close GAP-ZC64-01, GAP-ZC69-01);
+    Two-Layer Floor Irreducibility (COR-ZC71-02 closes GAP-ZC63-01).
+  \item \textbf{Part XLVII} (ZC72--75): Vacuum Sector (COR-ZC72-01
+    closes GAP-ZC29-02 at $R_0$; opens GAP-ZC72-01); $\Gamma$-Sector
+    Ladder (CONJ-ZC73-01); $\mathbb{Z}_{15}$ Uniqueness (COR-ZC74-01
+    closes CONJ-ZC73-01); Gravity Dimensional Bridge (COR-ZC75-01
+    closes GAP-ZC72-01, algebraic).
+  \item \textbf{Part XLVIII}: Cross-Part Connection Map (Part~I)
+    v17.12 --- ``story in three movements'' narrative, backward
+    inheritance, Master Closure Table, per-paper Connection Records,
+    \textbf{Master Z-Programme Status Table (v17.12 delta for the whole
+    arc)}, and the PM ledger.
+\end{itemize}
+
+\subsection*{Key Closures (Part I)}
+\addcontentsline{toc}{subsection}{Key Closures (Part I)}
+
+\begin{itemize}
+  \item GAP-ZC66-01 $\to$ closed (COR-ZC67-02).
+  \item GAP-ZC68-01 $\to$ closed (COR-ZC69-01, K14 exact).
+  \item GAP-ZC64-01, GAP-ZC69-01 $\to$ closed (COR-ZC70-01/02).
+  \item GAP-ZC63-01 (from Part~H) $\to$ closed (COR-ZC71-02).
+  \item GAP-ZC29-02 (gravity) $\to$ closed at $R_0$ (COR-ZC72-01).
+  \item CONJ-ZC73-01 $\to$ closed (COR-ZC74-01; $3\times5$ exclusive).
+  \item GAP-ZC72-01 $\to$ closed algebraically (COR-ZC75-01).
+  \item \textbf{Remaining open:} GAP-ZC65-01 (exact $\varepsilon_0$
+    in fully closed form); running ($R_1$) gravity bridge beyond $R_0$.
+\end{itemize}
+
+\newpage
+
+%% ════════════════════════════════════════════════════════════════════
+\subsection*{ZC64--ZC75 Per-Paper Abstracts (v17.13)}
+\addcontentsline{toc}{subsection}{ZC64--75 Per-Paper Abstracts (Part I)}
+%% ════════════════════════════════════════════════════════════════════
+
+\begin{contentsbox}[title={Per-Paper Registry --- Format Note}]
+The ZC64--75 papers are integrated verbatim in Part~I (Parts~XLIV--XLVIII).
+Per-paper abstract blocks below were added in v17.13 to match the
+ZC14--40 format, so a Pre-Work Audit can read each paper's target gap,
+main result, and open-after without opening source files. Exact forms
+for the high-reuse objects are in the Quick-Reference Pack above.
+\end{contentsbox}
+
+\subsection{ZC64 --- Prediction Registry \& Falsifiability Protocol}
+
+\begin{zcbox}[title={ZC64: PRED-ZC64-01..08 --- Falsifiable Prediction Registry}]
+\sloppy
+\textbf{Target:} consolidate every CRF numerical prediction into one
+falsifiable registry --- the formal answer to ``what would falsify CRF?''
+\textbf{Main:} DEF-ZC64-01 (four-tier prediction classification T1--T4);
+DEF-ZC64-02 (falsification signature); eight registered predictions, incl.
+$\swsq = 1 - \ln 8/\ln 15$ (PRED-ZC64-01), $\alpha_{\rm EM}^{R_0}=(n/15)\Gamma_{\rm CRF}$
+(PRED-ZC64-02), $\Tavg=2n\Kstar/[(n{-}1)\varepsilon_0]$ (PRED-ZC64-05),
+$\lambda_2=(1{+}x)/[n_m(1{+}2x)]$ (PRED-ZC64-06), $W_c$ (PRED-ZC64-07).
+FIND-ZC64-01: all residual gaps trace to a single source, $\varepsilon_0$.
+\textbf{Open after:} GAP-ZC64-01 (R-layer running bridge $R_0{\to}R_{\max}$).
+\end{zcbox}
+
+\subsection{ZC65 --- The R-Layer Bridge Theorem}
+
+\begin{zcbox}[title={ZC65: THM-ZC65-01 --- R-Layer Bridge (Near-Formal)}]
+\sloppy
+\textbf{Target:} derive the running of $\alpha_{\rm EM}$ from $R_0$ to
+$R_{\max}$ (GAP-ZC64-01). \textbf{Main:} FIND-ZC65-01 (gift)
+$\delta\alpha/\alpha = (d_s/2)\varepsilon_0\Kstar$ ($0.0008\%$ from obs.);
+THM-ZC65-01 $\alpha(R_{\max}) = \alpha(R_0)[1 + (d_s/2)\varepsilon_0\Kstar]$;
+CONJ-ZC65-01 $\delta(\swsq)=\varepsilon_0\Kstar$ ($2.1\%$ candidate).
+FIND-ZC65-02: both bridges need $\varepsilon_0 \approx 0.00761$ for exactness.
+\textbf{Open after:} GAP-ZC65-01 (exact $\varepsilon_0$ from axioms, Priority~1)
+--- closing it promotes the TLS floor from near-formal to theorem.
+\end{zcbox}
+
+\subsection{ZC66 --- The Sector Floor Theorem}
+
+\begin{zcbox}[title={ZC66: THM-ZC66-01 --- Sector-Specific Floors}]
+\sloppy
+\textbf{Target:} resolve the two inconsistent ``exact $\varepsilon_0$''
+values of FIND-ZC65-02 ($0.007501$ vs $0.007710$, differing $2.7\%$).
+\textbf{Main:} these are not an inconsistency but sector-specific floors
+$\varepsilon_{\rm EM}, \varepsilon_{\rm W}$ (DEF-ZC66-01);
+FIND-ZC66-01 $\varepsilon_{\rm univ}=\sqrt{\varepsilon_{\rm EM}\varepsilon_{\rm W}}$
+($0.09\%$, geometric mean); FIND-ZC66-02 ratio $1.0280$; THM-ZC66-01
+bracket ordering; CONJ-ZC66-01 $\delta(\swsq)=\varepsilon_{\rm W}\Kstar$
+\emph{supersedes} CONJ-ZC65-01 (scar PM-ZC66-01).
+\textbf{Open after:} GAP-ZC66-01 (algebraic origin of $\varepsilon_{\rm W}/\varepsilon_{\rm EM}=1.0280$).
+\end{zcbox}
+
+\subsection{ZC67 --- The Sector Ratio Theorem}
+
+\begin{zcbox}[title={ZC67: THM-ZC67-01 --- Sector Ratio (Near-Formal)}]
+\sloppy
+\textbf{Target:} algebraic origin of $\varepsilon_{\rm W}/\varepsilon_{\rm EM}$
+(GAP-ZC66-01). \textbf{Main:} the two-sector Born-chain weights of
+THM-ZC57-01 ($\Ztf=\Zth\times\Zfi$) give $C_{\rm EM}=1{+}x$, $C_{\rm W}=1{+}2x$;
+LEM-ZC67-01 projection $\varepsilon_i=\epscan(C_i/C_{\rm ref})^{1/4}$;
+THM-ZC67-01 $\varepsilon_{\rm W}/\varepsilon_{\rm EM}=\sqrt{(1{+}2x)/(1{+}x)}=1.02809$
+% [DO-NOT-RECONCILE] COR-ZC67-01 = ONE identity on three input pairs: 0.007550 (eps_can, ZC66/67) / 0.007599 (eps_univ) / 0.007605 (eps_SC, observed). All correct; see the eps-notice box in the Quick-Reference Pack. Do NOT edit to "fix" a perceived conflict.
+(gap $0.07\%$); COR-ZC67-01 $\sqrt{\varepsilon_{\rm EM}\varepsilon_{\rm W}}=\epscan$;
+COR-ZC67-02 closes GAP-ZC66-01; FIND-ZC67-01 registers the PWA-7
+Sector-Floor Audit. \textbf{Open after:} GAP-ZC67-01 (exact $\epscan$
+from axioms; inherits GAP-ZC65-01, Priority~1).
+\end{zcbox}
+
+\subsection{ZC68 --- The Born-Chain Self-Consistency Theorem}
+
+\begin{zcbox}[title={ZC68: THM-ZC68-01a/b --- Bridge Fixed Point \& Bracket (v2)}]
+\sloppy
+\textbf{Target:} exact $\epscan$ (GAP-ZC67-01). \textbf{Main:} LEM-ZC68-01
+(Fixed-Point Reduction, Exact) collapses the two bridge equations, via
+% [DO-NOT-RECONCILE] COR-ZC67-01 = ONE identity on three input pairs: 0.007550 (eps_can, ZC66/67) / 0.007599 (eps_univ) / 0.007605 (eps_SC, observed). All correct; see the eps-notice box in the Quick-Reference Pack. Do NOT edit to "fix" a perceived conflict.
+COR-ZC67-01, into one fixed-point equation
+$\varepsilon_{\rm can}^{\rm SC\,2}=\delta\alpha/\alpha\cdot\delta(\swsq)/[(d_s/2)(\Kstar)^2]$.
+THM-ZC68-01a: this fixed point exists, is unique, and equals $\varepsilon_{\rm univ}$
+in closed form (Exact via K14/ZC69), \emph{offset-independent}. THM-ZC68-01b: the
+evaluated bracket $\sqrt{\epsEM\,\varepsilon_{\rm W}}=0.007605$ lies a structural
+$+0.08\%$ above $\varepsilon_{\rm univ}=0.007599$ (two-layer separation, ZC71 ---
+not a vanishing residual). FIND-ZC68-02 (gift): external bridge product $=$ internal
+geomean bracket. COR-ZC68-01 upgrades the floors to $\varepsilon_{\rm univ}$
+($<0.1\%$ residuals); COR-ZC68-02 partially resolves GAP-ZC63-01.
+\textbf{Scars:} PM-ZC68-01 (two coexisting floors
+$\varepsilon_{\rm can}^{\rm TLS}=0.007550$ vs $\varepsilon_{\rm univ}=0.007599$; PWA-8);
+PM-ZC68-SQRT-01 (square-root slip $0.007600\!\to\!0.007605$, gap
+$0.01\%\!\to\!+0.08\%$; PWA-10).
+\textbf{Open after:} GAP-ZC68-01 (exact $\varepsilon_{\rm univ}$) ---
+\textbf{closed} downstream by ZC69 (COR-ZC69-01).
+\end{zcbox}
+
+\subsection{ZC69 --- K14 as an Exact Theorem (Golden Spectral Identity)}
+
+\begin{zcbox}[title={ZC69: THM-ZC69-01 --- $F\phig^2=4$ EXACT}]
+\sloppy
+\textbf{Target:} exact derivation of K14 (GAP-ZC68-01). \textbf{Main:}
+two-line algebraic proof from three pillars --- LEM-ZC56-01
+$\cos(2\pi/5)=1/(2\phig)$, LEM-ZC60-01 $F=4\lambda_2(\Zfi)^2/n_m$, and
+$\phig^2=\phig+1$: LEM-ZC69-01 $\lambda_2(\Zfi)^2=5/\phig^2$, hence
+THM-ZC69-01 $F\phig^2=4$ exactly. COR-ZC69-01 closes GAP-ZC68-01;
+COR-ZC69-02 $\varepsilon_{\rm univ}=n(\Kstar)^2\phig^2/[2(n{-}1)e]$ exact;
+COR-ZC69-03 promotes THM-ZC68-01a (fixed point) to Exact --- the bracket
+THM-ZC68-01b stays Near-Formal at its structural $+0.08\%$ offset;
+COR-ZC69-04 both Tier-1 bridges (ZC65, ZC66) become exact.
+\textbf{Scars:} PM-ZC69-SPECTRAL-01 locks the adjacency-based $\lambda_2$
+convention; PM-ZC69-CAT-01 (category error --- measurement-convergence misused
+for an existence promotion; corrected to the 01a/01b split).
+\textbf{Status changes:} K14 (THM-ZC41-01) Near-Formal $\to$ \textbf{EXACT};
+$\varepsilon_{\rm univ}$ (THM-ZC54-01) $\to$ \textbf{EXACT}.
+\textbf{Open after:} GAP-ZC69-01 (numerical verification in both bridges).
+\end{zcbox}
+
+\subsection{ZC70 --- The Electroweak Gap Theorem}
+
+\begin{zcbox}[title={ZC70: THM-ZC70-01 --- Electroweak Gap (Exact at $R_0$)}]
+\sloppy
+\textbf{Target:} close GAP-ZC64-01 (running bridge) and GAP-ZC69-01
+(numerical verification) with exact $\varepsilon_{\rm univ}$. \textbf{Main:}
+LEM-ZC70-01 $\delta\alpha/\alpha=(d_s/2)\varepsilon_{\rm EM}\Kstar$,
+$\delta(\swsq)=\varepsilon_{\rm W}\Kstar$, ratio
+$=(d_s/2)\sqrt{(1{+}x)/(1{+}2x)}=1.4590$ (obs.\ $1.4591$, gap $0.007\%$,
+no free parameter); THM-ZC70-01 exact sector floors
+$\varepsilon_{\rm EM}^{\rm exact}=0.007494$, $\varepsilon_{\rm W}^{\rm exact}=0.007703$;
+COR-ZC70-01/02 close both gaps ($0.02\%$, $0.09\%$ residuals);
+FIND-ZC70-02 Nobel-table falsification signature.
+\textbf{Open after:} GAP-ZC70-01 (observational precision upgrade, external).
+\end{zcbox}
+
+\subsection{ZC71 --- The Two-Layer Floor Irreducibility Theorem}
+
+\begin{zcbox}[title={ZC71: THM-ZC71-01 --- Two-Layer Floor (Exact at $R_0$)}]
+\sloppy
+\textbf{Target:} close GAP-ZC63-01 --- is the $0.66\%$ separation between
+$\varepsilon_{\rm TLS}=0.007550$ and $\varepsilon_{\rm univ}=0.007599$ an
+error or a structure? \textbf{Main:} LEM-ZC71-01 (spectral self-consistency,
+selects $\varepsilon_{\rm TLS}$) and LEM-ZC71-02 (bridge self-consistency,
+selects $\varepsilon_{\rm univ}$) probe \emph{different} invariants of the
+$\Ztf$ Laplacian --- $F_{\rm Wc}$ probes $\lambda_2(\Ztf)^{-1}$,
+$F_{\rm bridge}$ probes $\lambda_2(\Zfi)^2=n_m/\phig^2$. THM-ZC71-01: the
+gap is therefore \emph{irreducible} and structural, a prediction of
+$\Ztf=\Zth\times\Zfi$; COR-ZC71-01 $\Delta\varepsilon/\varepsilon=x/(1{+}x)$
+(structure, not tight bound); COR-ZC71-02 closes GAP-ZC63-01; FIND-ZC71-01
+PWA-8 layer orthogonality. \textbf{Open after:} GAP-ZC71-01 (exact
+$\Delta\varepsilon$ to all orders in $x$).
+\end{zcbox}
+
+\subsection{ZC72 --- The Vacuum Sector Theorem}
+
+\begin{zcbox}[title={ZC72: THM-ZC72-01 --- Vacuum/Gravity Sector (Exact at $R_0$)}]
+\sloppy
+\textbf{Target:} gravity sector identification (GAP-ZC29-02, open since
+Part~D). \textbf{Main:} FIND-ZC72-01 $\alpha_{\rm grav}^{R_0}/\alpha_{\rm EM}^{R_0}
+= 1/\varphi(15)=1/n=1/8$ (exact, from THM-ZC29-01 with $d_{\rm vac}=1$);
+FIND-ZC72-02 the vacuum is the $\Sind$ face; LEM-ZC72-01 it is excluded
+from the $\varphi$-cancellation mechanism ($\varphi(1)=1$ has no factor
+of $\varphi(15)=8$); THM-ZC72-01 $\alpha_{\rm grav}^{R_0}=\Gamma_{\rm CRF}/15
+=\alpha_{\rm EM}^{R_0}/n$; FIND-ZC72-03 the $1/n$ suppression follows from
+the Key Identity $3d_s=2^{d_s}{+}1$ alone. COR-ZC72-02 $\Gamma_{\rm vac}$
+tautology (PWA-10); scar PM-ZC72-01 (malformed probe, $403\%$).
+\textbf{Open after:} GAP-ZC72-01 (cosmological bridge $\alpha_{\rm grav}^{R_0}\to G_N(t)$).
+\end{zcbox}
+
+\subsection{ZC73 --- The $\Gamma$-Sector Ladder Theorem}
+
+\begin{zcbox}[title={ZC73: THM-ZC73-01 --- $\Gamma$-Ladder (Exact at $R_0$)}]
+\sloppy
+\textbf{Target:} structural synthesis --- show the four sector rates
+$\Gamma_i$ (FIND-ZC31-01) form an exact arithmetic progression.
+\textbf{Main:} THM-ZC73-01 $\Gamma_k = G/d_s - 1 + k\Delta_\Gamma$, $k=0,1,2,3$
+(vacuum/gravity, strong, weak, EM), with FIND-ZC73-01
+$\Delta_\Gamma=\cwsq/d_s=\ln 2/\ln 15$; COR-ZC73-01 (Weinberg--Vacuum)
+$\Gamma_{\rm EM}-\Gamma_{\rm vac}=\cwsq$ --- the mixing angle is the full
+span of the ladder; FIND-ZC73-02 geometric--arithmetic duality
+($\varphi(d_i)=2^k$ geometric, $\Gamma$ arithmetic); FIND-ZC73-03
+$\sum_{d_i\mid 15}\varphi(d_i)=15$. \textbf{Open after:} CONJ-ZC73-01
+(is $\Ztf$ the unique group whose divisors give $\varphi(d_i)=2^k$?).
+\end{zcbox}
+
+\subsection{ZC74 --- The $\Ztf$ Uniqueness Theorem}
+
+\begin{zcbox}[title={ZC74: THM-ZC74-01 --- $\Ztf$ Uniqueness (Exact)}]
+\sloppy
+\textbf{Target:} close CONJ-ZC73-01. \textbf{Main:} by algebraic
+exhaustion of squarefree semiprimes $N=pq$, the constraint
+$\{1, p{-}1, q{-}1, (p{-}1)(q{-}1)\}=\{1,2,4,8\}$ forces $p=3, q=5, N=15$
+(LEM-ZC74-01); THM-ZC74-01 $\Ztf$ is the unique such group for which the
+$\Gamma$-ladder holds with step $\delta=\ln 2/\ln|\mathbb{Z}_N|$;
+COR-ZC74-01 closes CONJ-ZC73-01; COR-ZC74-02 the AP structure is rigid;
+FIND-ZC74-01 Fermat prime-pair constraint. Scar PM-ZC74-01 (prime-power
+route $N=p^3$ excluded). \textbf{Open after:} none (closes the conjecture).
+\end{zcbox}
+
+\subsection{ZC75 --- The Gravity Dimensional Bridge Theorem}
+
+\begin{zcbox}[title={ZC75: THM-ZC75-01 --- Gravity Dimensional Bridge (Exact at $R_0$)}]
+\sloppy
+\textbf{Target:} the cosmological bridge $\alpha_{\rm grav}^{R_0}\to G_N$
+(GAP-ZC72-01) --- algebraic component. \textbf{Main:} DEF-ZC75-01 separates
+$G^{R_0}=\ln 2\cdot c^2/D_0$ (Newton's constant at cascade origin) from
+$G_N(t_{\rm now})$; THM-ZC75-01 $\alpha_{\rm grav}^{R_0}|\Ztf|=G^{R_0}
+=\ln 2/D_0=\Gamma_{\rm CRF}$ (group order $15$ is the dimensional
+suppression); FIND-ZC75-02 $\ln(\alpha_{\rm EM}^{R_0}/\alpha_{\rm grav}^{R_0})
+=d_s\ln 2=\ln n$ (direct consequence of the binary ladder);
+COR-ZC75-01 partially closes GAP-ZC72-01. Scar PM-ZC75-01 ($G/c^2=\Gamma_{\rm CRF}$
+tautological at $c=1$; physical content is the $N15$ suppression).
+\textbf{Open after:} GAP-ZC75-01 (cosmological evolution factor
+$P(t_{\rm now})$; needs Part~A/VIII $\tau_{\rm sweep}$ bridge).
+\end{zcbox}
+
+\newpage
+
+\begin{center}
+\small\color{mutedgray}
+CRF Complete Edition Index v17.8 (Part F integration + ZC41--44 + Mind/Barami + Axiom~11) ---
+Ougit Jarittum (ORCID: 0009-0009-4451-6811, Zenodo: 10.5281/zenodo.18977059, CC-BY-NC 4.0)\\
+Generated May 2026. Regenerate when any Part file is updated.
+\end{center}
+
+\newpage
+
+
+\vfill
+
+
+%% ════════════════════════════════════════════════════════════════════
+\section{Part J --- ZC76--82: Cosmological Arc, W$_c$ Floor,
+  Electroweak Completeness, Strong Floor (Parts XLIX--LII, v17.13)}
+%% ════════════════════════════════════════════════════════════════════
+
+\subsection*{Volume Abstract}
+\addcontentsline{toc}{subsection}{Volume Abstract (Part J)}
+
+\begin{volumebox}[title={Part J --- CRF Complete Edition v17.13
+  (Parts XLIX--LII)}]
+\sloppy
+\textbf{Part~J} is the tenth volume of the CRF Complete Edition,
+integrating seven Z-Programme papers (ZC76--82) that complete the
+cosmological arc, derive the TLS floor exactly, assemble the full
+electroweak $R_0$-layer picture, close the Strong sector floor
+(open since ZC30), and register the cross-domain Cosmological
+Ladder Identity.
+
+\textbf{Five-closure event} (one per milestone paper):
+GAP-ZC75-01 (THM-ZC76-01, cosmological bridge),
+GAP-ZC71-01 (ZC77/COR-ZC77-02, exact $\Delta\varepsilon$),
+GAP-ZC65-01 (ZC79/COR-ZC79-01, exact $\varepsilon_{\rm TLS}$),
+Strong-sector floor since ZC30 (ZC81/THM-ZC81-01), plus
+GAP-ZC77-01 and GAP-ZC78-01 closed via ZC78/ZC79.
+
+\textbf{Milestone:} ZC80 (Electroweak Completeness Theorem) —
+the first paper to collect all seven $R_0$-layer electroweak
+observables ($\sin^2\theta_W$, $\alpha_{\rm EM}^{R_0}$,
+$\mathcal{G}$, $\varepsilon_{\rm univ}$, $\varepsilon_{\rm TLS}$,
+$\varepsilon_{\rm EM}$, $\varepsilon_W$) with their complete
+derivation chain from $\delta$, zero free parameters.
+
+\textbf{Phase Misalignments preserved:}
+PM-ZC78-01, PM-ZC78-02 (W$_c$ implicit equation; probe malformed),
+PM-ZC79-01 (Cardano route; probe malformed),
+PM-ZC82-SCOPE-01 (scope creep guard),
+PM-ZC82-TAUTOLOGY-01 (tautology test),
+PM-V17\_13-EPSEM (convention: $\varepsilon_{\rm EM}$ superscript),
+PM-V17\_13-SC-FIX (Shadow Council exclusion; 2 instances reworded).
+
+\textbf{New governance:} PWA-11 (Superseded-Theorem Retention Rule)
+codified from ZC78/ZC79 scar record.
+\end{volumebox}
+
+\subsection*{Contents Map}
+\addcontentsline{toc}{subsection}{Contents Map}
+
+\begin{contentsbox}[title={Part J --- Part and Section Headers}]
+\textbf{Part XLIX: ZC76--78 Cluster --- Cosmological Bridge, Coupling
+  Symbol, W$_c$ Floor (v17.13)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item ZC76: The Cosmological Bridge Theorem
+  \item ZC77: The Coupling Symbol Theorem (v2)
+  \item ZC78: The W$_c$ Floor Theorem (v2, with PM scars)
+\end{itemize}
+
+\textbf{Part L: ZC79--80 Cluster --- TLS Quadratic Floor, Electroweak
+  Completeness (v17.13)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item ZC79: The TLS Floor Quadratic Theorem
+  \item ZC80: The Electroweak Completeness Theorem (milestone)
+\end{itemize}
+
+\textbf{Part LI: ZC81--82 Cluster --- Strong Floor, Cosmological Ladder
+  Identity (v17.13)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item ZC81: The Strong Floor Theorem
+  \item ZC82: The Cosmological Ladder Identity
+\end{itemize}
+
+\textbf{Part LII: Cross-Part Connection Map v17.13 (v17.13)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item Connection Records for ZC76--ZC82
+  \item Cross-Part PM Registry v17.13 (Delta)
+  \item Master Z-Programme Status Table v17.13 (Delta)
+  \item PWA-11: Superseded-Theorem Retention Rule
+  \item Closing Sentence --- Part J
+\end{itemize}
+\end{contentsbox}
+
+\textbf{Key closures (v17.13):}
+GAP-ZC75-01, GAP-ZC71-01, GAP-ZC65-01, GAP-ZC77-01, GAP-ZC78-01,
+Strong sector floor (since ZC30).
+
+\textbf{Remaining open after v17.13:}
+GAP-ZC76-01 ($\tau_{\rm sweep}$; externally blocked),
+GAP-ZC81-01 (Strong running bridge; confinement treatment needed).
+
+\newpage
+
+\subsection*{ZC76--ZC87 Per-Paper Abstracts (v17.13--v17.15)}
+\addcontentsline{toc}{subsection}{ZC76--87 Per-Paper Abstracts (Parts J--K)}
+
+\begin{contentsbox}[title={Per-Paper Registry --- Format Note}]
+Papers ZC76--82 are integrated verbatim in Part~J (Parts~XLIX--LII).
+Per-paper abstract blocks below follow the ZC64--75 format so that a
+Pre-Work Audit can read each paper's target gap, main result, and
+open-after without opening source files.
+\end{contentsbox}
+
+\subsection{ZC76 --- The Cosmological Bridge Theorem}
+
+\begin{zcbox}[title={ZC76: THM-ZC76-01 --- Cosmological Bridge (Exact)}]
+\sloppy
+\textbf{Target:} GAP-ZC75-01 --- derive the cosmological evolution
+factor $P(t_{\rm now})$ from the $\delta$-cascade.
+\textbf{Main:} DEF-ZC76-01 cross-layer invariant
+$\mathcal{G}=\ln2/D_0$; LEM-ZC76-01 intensive cancellation (closes
+GtRate-2); FIND-ZC76-01 single-coupling unification;
+LEM-ZC76-02 $w_{\rm DE}=\mathcal{G}/d_s-1=-0.7542$ (dark-energy EoS,
+exact); FIND-ZC76-02 FLRW factor $3$ is $d_s$ (structural);
+THM-ZC76-01 $P(t_{\rm now})/P(0)=\mathcal{G}/d_s$ (GAP-ZC75-01
+\textbf{CLOSED}); COR-ZC76-01 PRED-ZC64-09 provenance near-formal.
+\textbf{Open after:} GAP-ZC76-01 ($\tau_{\rm sweep}$; externally blocked).
+\end{zcbox}
+
+\subsection{ZC77 --- The Coupling Symbol Theorem (v2)}
+
+\begin{zcbox}[title={ZC77: THM-ZC77-01 --- Coupling Symbol (Exact)}]
+\sloppy
+\textbf{Target:} derive $\mathcal{G}$ as a function of known CRF
+observables; close GAP-ZC71-01 (exact $\Delta\varepsilon$ all orders).
+\textbf{Main:} THM-ZC77-01 $\mathcal{G}=d_s(\Gamma_{\rm CRF}^{\rm EM}
++\sin^2\theta_W)$ (0.000\%); COR-ZC77-01 inverse form; COR-ZC77-02
+two-layer floor formula exact (GAP-ZC71-01 \textbf{CLOSED});
+FIND-ZC77-01 pentagon--ladder duality (gift).
+\textbf{Open after:} none.
+\end{zcbox}
+
+\subsection{ZC78 --- The W$_c$ Floor Theorem (v2)}
+
+\begin{zcbox}[title={ZC78: COR-ZC78-01 --- $\Delta\varepsilon$ Exact
+  (THM-ZC78-01 Superseded)}]
+\sloppy
+\textbf{Target:} GAP-ZC77-01 ($F_{\rm Wc}^{\rm norm}$ closed form).
+\textbf{Main:} LEM-ZC78-01 monotonicity (retained);
+THM-ZC78-01 W$_c$ Floor (\textit{superseded} by ZC79/THM-ZC79-01;
+PM-ZC78-02);
+COR-ZC78-01 $\Delta\varepsilon=nK^{*2}(\varphi_{\rm gold}^2-F_{\rm Wc}^{\rm norm})/[2(n-1)e]$
+(\textbf{retained}, closes GAP-ZC77-01 and GAP-ZC71-01);
+COR-ZC78-02 $\varepsilon_{\rm TLS}$ (\textit{superseded}).
+Scar: PM-ZC78-01 (cubic route), PM-ZC78-02 (substitution error).
+\textbf{Open after:} GAP-ZC78-01 (radical $x_{\rm TLS}$) $\to$ closed by ZC79.
+\end{zcbox}
+
+\subsection{ZC79 --- The TLS Floor Quadratic Theorem}
+
+\begin{zcbox}[title={ZC79: THM-ZC79-01 --- TLS Floor Quadratic (Exact)}]
+\sloppy
+\textbf{Target:} GAP-ZC78-01 (radical form of $x_{\rm TLS}$) and
+GAP-ZC65-01 (exact $\varepsilon_{\rm TLS}$ from axioms, Priority~1).
+\textbf{Main:} LEM-ZC79-01 W$_c$ quadratic derivation (two-line proof;
+no Cardano); FIND-ZC79-01 discriminant identity
+$\mathcal{D}=P^2+6PQ+Q^2$; THM-ZC79-01 $\varepsilon_{\rm TLS}=0.007550$
+exact at $0.0007\%$ (GAP-ZC78-01 \textbf{CLOSED}; supersedes THM-ZC78-01);
+COR-ZC79-01 $\varepsilon_{\rm TLS}$ from axioms
+(GAP-ZC65-01 \textbf{CLOSED}); COR-ZC79-02 exact $\Delta\varepsilon$.
+Scar: PM-ZC79-01 (Cardano probe). Composition Principle instantiated.
+\textbf{Open after:} none.
+\end{zcbox}
+
+\subsection{ZC80 --- The Electroweak Completeness Theorem}
+
+\begin{zcbox}[title={ZC80: THM-ZC80-01 --- Electroweak Completeness
+  (Milestone, Exact)}]
+\sloppy
+\textbf{Target:} milestone synthesis --- collect all $R_0$-layer
+electroweak constants in one theorem.
+\textbf{Main:} THM-ZC80-01 seven quantities
+($\sin^2\theta_W$, $\alpha_{\rm EM}^{R_0}$, $\mathcal{G}$,
+$\varepsilon_{\rm univ}$, $\varepsilon_{\rm TLS}$, $\varepsilon_{\rm EM}$,
+$\varepsilon_W$) derived from $\delta$ alone, zero free parameters;
+COR-ZC80-01 bridge residuals observation-bounded
+($0.09\%/0.07\%$=CODATA precision);
+FIND-ZC80-01 Composition Principle (named heuristic; 3 instantiations);
+FIND-ZC80-02 Golden Excess Identity
+$\varphi_{\rm gold}^2-F_{\rm Wc}^{\rm norm}=0.016809
+\in\mathbb{Q}(\sqrt{5})\setminus\mathbb{Q}$.
+No PM registered (synthesis; pillars pre-audited).
+\textbf{Open after:} GAP-ZC75-01, GAP-ZC76-01 (declared out-of-scope).
+\end{zcbox}
+
+\subsection{ZC81 --- The Strong Floor Theorem}
+
+\begin{zcbox}[title={ZC81: THM-ZC81-01 --- Strong Floor Identity (Exact)}]
+\sloppy
+\textbf{Target:} Strong sector instability floor (open since ZC30/FIND-ZC30-02).
+\textbf{Main:} LEM-ZC81-01 $T(R_1)_{\rm strong}=T(R_1)_{\rm EM}$
+(spatial-type class equality from FIND-ZC30-02);
+THM-ZC81-01 $\varepsilon_{\rm strong}=\varepsilon_{\rm EM}=0.007494$
+(Strong floor \textbf{CLOSED});
+FIND-ZC81-01 Ladder Mirror Symmetry
+$\Gamma_{\rm EM}+\Gamma_{\rm strong}=2\Gamma_{\rm Weak}$ at
+$0.0000000000\%$ (Gift);
+COR-ZC81-01 spatial-type class theorem (ratio $25/9$ exact).
+Complete floor lattice:
+$\varepsilon_{\rm EM}=\varepsilon_{\rm strong}<\varepsilon_{\rm TLS}
+<\varepsilon_{\rm univ}<\varepsilon_W$.
+\textbf{PM-ZC81-RETRACT-01:} COR-ZC81-02 of v1 retracted (defined-pair
+substitution tautology, out of Strong-sector scope; core THM/FIND
+unaffected; successor GAP-ZC83-01).
+\textbf{Open after:} GAP-ZC81-01 (Strong running bridge).
+\end{zcbox}
+
+\subsection{ZC82 --- The Cosmological Ladder Identity}
+
+\begin{zcbox}[title={ZC82: THM-ZC82-01 --- Cosmological-Ladder Identity
+  (Exact)}]
+\sloppy
+\textbf{Target:} state the cross-domain lock implicit in ZC73+ZC76.
+\textbf{Main:} THM-ZC82-01 $w_{\rm DE}+3\Delta_\Gamma=\Gamma_{\rm CRF}^{\rm EM}$
+(two-line proof from ZC73+ZC76; 0.000\%);
+COR-ZC82-01 $\Gamma_{\rm CRF}^{\rm EM}=(1+w_{\rm DE})-\sin^2\theta_W$
+(substitution; registered as COR not THM per PM-ZC82-TAUTOLOGY-01);
+FIND-ZC82-01 $\Delta_\Gamma=\log_{15}2$ (ladder bit; Gift);
+FIND-ZC82-02 AP pairing $\Gamma_{\rm EM}+\Gamma_{\rm vac}=\Gamma_W+\Gamma_S$.
+Scars: PM-ZC82-SCOPE-01, PM-ZC82-TAUTOLOGY-01, \textbf{PM-ZC82-RETRACT-02}
+(COR-ZC82-02 of v1 retracted --- triple-GM substitution tautology;
+floor lattice owned by ZC67/68/69; core THM/FIND unaffected).
+No gaps opened; synthesis paper.
+\textbf{Open after:} GAP-ZC76-01, GAP-ZC81-01 (inherited, out of scope).
+\end{zcbox}
+
+\subsection{ZC83 --- The Floor Lattice Ordering Theorem}
+
+\begin{zcbox}[title={ZC83: THM-ZC83-01 --- Floor Lattice Ordering
+  (Near-Formal) + FIND-ZC83-01 (Gift)}]
+\sloppy
+\textbf{Target:} order the full instability-floor lattice and locate the
+bridge floor among the sector floors.
+\textbf{Main:} THM-ZC83-01 proves $\varepsilon_{\rm EM}<\varepsilon_{\rm can}
+<\varepsilon_{\rm univ}<\varepsilon_{\rm W}$ is forced by $\mathbb{Z}_{15}$
+sector-weight arithmetic (from LEM-ZC83-01/02 + THM-ZC71-01);
+FIND-ZC83-01 (Gift) $\sqrt{\varepsilon_{\rm EM}\varepsilon_{\rm W}}
+=\varepsilon_{\rm univ}$ exactly at the $R_0$ layer (two-line proof from
+the $\pm1/4$ exponent structure of LEM-ZC67-01); FIND-ZC83-02
+${\rm AM}(\varepsilon_{\rm EM},\varepsilon_{\rm W})>\varepsilon_{\rm univ}$.
+Scars: PM-ZC83-01 (``is $\varepsilon_{\rm SC}$ the AM?'' probe; ruled out).
+\textbf{Opens:} GAP-ZC83-01 ($\varepsilon_{\rm SC}$ ontology).
+\end{zcbox}
+
+\subsection{ZC84 --- The Complete Sector Synthesis}
+
+\begin{zcbox}[title={ZC84: THM-ZC84-01 --- Complete Sector Synthesis
+  (Exact)}]
+\sloppy
+\textbf{Target:} assemble every $\mathbb{Z}_{15}$ sector result into one
+falsifiable picture.
+\textbf{Main:} THM-ZC84-01 collects eight simultaneous consequences of
+$\delta$ alone (four-sector floor lattice; GM identity; mirror symmetry
+$\Gamma_{\rm EM}+\Gamma_{\rm strong}=2\Gamma_{\rm W}$; cosmological lock
+$w_{\rm DE}+3\Delta\Gamma=\Gamma_{\rm CRF}$; $\mathbb{Z}_{15}$
+uniqueness); COR-ZC84-01 four-sector falsification table; FIND-ZC84-01
+complete $\delta\to\Gamma_{\rm CRF}$ chain. Scars: PM-ZC84-SCOPE-01
+(synthesis --- all identities inherited, none newly derived).
+\textbf{Open after:} GAP-ZC83-01, GAP-ZC81-01, GAP-ZC76-01 (out of scope).
+\end{zcbox}
+
+\subsection{ZC85 --- The Observed-Bridge-Bracket Theorem}
+
+\begin{zcbox}[title={ZC85: FIND-ZC85-01 --- Observed-Bridge Bracket
+  (Exact restatement) + COR-ZC85-01}]
+\sloppy
+\textbf{Target:} resolve the ontology of $\varepsilon_{\rm SC}=0.007605$
+(GAP-ZC83-01).
+\textbf{Main:} FIND-ZC85-01 $\varepsilon_{\rm SC}=\sqrt{\varepsilon_0^{\alpha}
+\varepsilon_0^{\rm sw}}$ --- the GM of the two FIND-ZC65-02 per-observable
+bridge floors, the same COR-ZC67-01 structure one $R$-layer up;
+FIND-ZC85-02 the $+0.08\%$ is the GM of the EM ($+0.09\%$) and Weak
+($+0.07\%$) running channels; COR-ZC85-01 refines GAP-ZC83-01 to
+\emph{gated} on GAP-ZC81-01 (ontology closed, magnitude pending). Scars:
+PM-ZC85-01 (restatement, not derivation; tautology guard).
+\textbf{Closes:} GAP-ZC83-01 structurally; magnitude gated to GAP-ZC81-01.
+\end{zcbox}
+
+\subsection{ZC86 --- The Strong Running Bridge Theorem}
+
+\begin{zcbox}[title={ZC86: THM-ZC86-01 --- Strong Running Bridge
+  (Near-Formal) + FIND-ZC86-01 (Gift)}]
+\sloppy
+\textbf{Target:} close GAP-ZC81-01 --- the Strong sector
+$R_0\to R_{\max}$ running bridge.
+\textbf{Main:} THM-ZC86-01 the Strong bridge is identical in form and
+magnitude to EM, since $\varepsilon_{\rm strong}=\varepsilon_{\rm EM}$
+(THM-ZC81-01, spatial-type) and the $R_1$ crossing cost is identical
+(LEM-ZC81-01); LEM-ZC86-01 confinement--coupling decoupling
+(confinement lives in $\Gamma$, not $\alpha$); FIND-ZC86-01 (Gift) the
+running-floor layer has exactly two floors whose GM is
+$\varepsilon_{\rm SC}$ --- the $+0.08\%$ magnitude is closed. Scars:
+PM-ZC86-01 (universal-coupling propagation; failed $0.15\%/0.41\%$).
+\textbf{Closes:} GAP-ZC81-01 (Near-Formal); GAP-ZC83-01 magnitude.
+\end{zcbox}
+
+\subsection{ZC87 --- The Temporal Continuum Bridge (v2)}
+
+\begin{zcbox}[title={ZC87: THM-ZC87-01 --- Temporal Continuum Bridge
+  (Near-Formal, v2)}]
+\sloppy
+\textbf{Target:} bridge the discrete $\delta$-sweep tick to continuum
+$dt$ (GAP-ZC76-01 structural).
+\textbf{Main:} FIND-ZC87-01 (recovery) the upper half already exists in
+ZC33/DEF-ZC33-01 (sector physical time); THM-ZC87-01 the lower half is
+continuum $dt$ as the dense $\delta$-sweep tick --- the
+$\varepsilon_0\!\to\!0$ density limit of ZC51's THM-ZC51-01 on the time
+axis, same fixed-observable construction; LEM-ZC87-01 non-circularity;
+FIND-ZC87-02 (bonus) gravitational dilation as sweep-rate slowdown.
+Scars: PM-ZC87-01 (Dirac-large-number probe that fed its own input),
+PM-ZC87-02 (v1 sub-tick $dt=\tau_{\rm sweep}/T_{\rm avg}$, corrected v2).
+\textbf{Closes:} GAP-ZC87-01 (joint limit) and GAP-ZC76-01 structural;
+seconds-calibration remains externally blocked.
+\end{zcbox}
+
+\newpage
+%% ════════════════════════════════════════════════════════════════════
+\section{Part L --- ZC88--93: The Log-Bridge and the Mind-Layer
+  (Parts LVII--LIX, v17.16)}
+%% ════════════════════════════════════════════════════════════════════
+
+\subsection*{Volume Abstract}
+\addcontentsline{toc}{subsection}{Volume Abstract (Part L)}
+
+\begin{volumebox}[title={Part L --- CRF Complete Edition v17.16
+  (Parts LVII--LIX)}]
+\sloppy
+\textbf{Part~L} is the twelfth volume of the CRF Complete Edition and the
+first authored natively under Style Guide v3.7 (UPG-30 prose-floor, UPG-31
+header-contrast). It integrates six papers (ZC88--93) in two clusters. The
+\textbf{Force-Layer Bridge} (ZC88--89) shows that the floor lattice's
+multiplicative (geometric) order and the $\Gamma$-ladder's additive order
+are one law under the log-map, then fixes which physical layer each bridge
+step belongs to. The \textbf{Mind-Layer Structure} (ZC90--93) carries the
+discrete/continuous distinction into the mind layer (visesa/nibbedha),
+shows the two step-kinds are irrational-of-kind, and builds from them the
+Barami capacity functional and the faculty gate-ratio.
+
+\textbf{Continuous gap chain:}
+GAP-ZC88-01 (which layer owns the bridge step) CLOSED by ZC89/THM-ZC89-01;
+GAP-ZC90-01 (are the two mind-steps distinct kinds) CLOSED by
+ZC91/THM-ZC91-01, which also RETIRES CONJ-ZC90-01;
+GAP-ZC91-01 (forward-choice aggregation) PARTIALLY CLOSED by ZC92;
+GAP-ZC92-01 (what gates the step kind) PARTIALLY CLOSED by ZC93/THM-ZC93-01.
+
+\textbf{Backward inheritance:} mind-layer pillars DEF-MB03/04/05/06,
+EQ-MB01/02, P-MB04 from Part~F; floor/$\Gamma$/$\varepsilon$ structure from
+Part~K.
+
+\textbf{Open at close of Part~L:} GAP-ZC91-01 and GAP-ZC92-01 residuals
+(designated starting points for the next paper).
+
+\textbf{Integration notes:} all embedded \texttt{\textbackslash label}s
+namespaced \texttt{-zcNN} (refs rewritten) to remove cross-paper
+collisions; PM-V17\_16-EPSFAMILY continues the Part~K $\varepsilon$-family
+override; macro patch consolidated to a single file (no \texttt{\textbackslash
+input} chain). No-Loss verified (47-ID multiset identical; 0 multiply-defined;
+0 undefined references).
+\end{volumebox}
+
+\subsection*{Contents Map}
+\addcontentsline{toc}{subsection}{Contents Map (Part L)}
+
+\begin{contentsbox}[title={Part L --- Part and Section Headers}]
+\textbf{Part LVII: Force-Layer Bridge --- Log-Unification and
+  Layer-Specificity (v17.16)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item ZC88: The Log-Bridge Theorem
+  \item ZC89: The Layer-Specificity Theorem
+\end{itemize}
+
+\textbf{Part LVIII: Mind-Layer Structure --- Quantum-Pair, Irrationality,
+  Barami, Gate (v17.16)}
+\begin{itemize}[noitemsep,leftmargin=1.5em]
+  \item ZC90: The Cross-Layer Quantum-Pair Theorem
+  \item ZC91: The Irrationality-of-Kind Theorem
+  \item ZC92: The Barami Functional / Common-Rate Theorem
+  \item ZC93: The Gate-Ratio Theorem
+\end{itemize}
+
+\textbf{Part LIX: Cross-Part Connection Map v17.16 (Part L)}
+\end{contentsbox}
+
+\subsection*{ZC88--ZC93 Per-Paper Abstracts (v17.16)}
+\addcontentsline{toc}{subsection}{ZC88--93 Per-Paper Abstracts (Part L)}
+
+\subsection{ZC88 --- The Log-Bridge Theorem}
+\begin{zcbox}[title={ZC88: THM-ZC88-01 --- Log-Bridge + FIND-ZC88-01 (Gift)}]
+\sloppy
+\textbf{Target:} test whether the floor lattice's multiplicative order and
+the $\Gamma$-ladder's additive order are the same structure.
+\textbf{Main:} LEM-ZC88-01 the floor lattice in log-space is an arithmetic
+progression; THM-ZC88-01 the log-map carries the multiplicative (GP) mirror
+onto the additive (AP) mirror --- one law, two disguises; COR-ZC88-01 the
+geometric-mean floor maps to the arithmetic-mean rung; FIND-ZC88-01 (Gift)
+the bridge is \emph{structural, not metric} --- the step sizes are not
+proportional, so the correspondence is of form, not magnitude.
+\textbf{Opens:} GAP-ZC88-01 (which physical layer owns the bridge step).
+\end{zcbox}
+
+\subsection{ZC89 --- The Layer-Specificity Theorem}
+\begin{zcbox}[title={ZC89: THM-ZC89-01 --- Layer-Specificity}]
+\sloppy
+\textbf{Target:} fix the bridge step to a specific layer (close
+GAP-ZC88-01).
+\textbf{Main:} THM-ZC89-01 ties each log-bridge step to its physical layer,
+resolving the metric/rung factor-of-two ambiguity; FIND-ZC89-01 the metric
+step is half the rung step ($s = s_{\rm rung}/2$); COR-ZC89-01 layer
+assignment is forced, not chosen.
+\textbf{Closes:} GAP-ZC88-01.
+\end{zcbox}
+
+\subsection{ZC90 --- The Cross-Layer Quantum-Pair Theorem}
+\begin{zcbox}[title={ZC90: THM-ZC90-01 --- Cross-Layer Quantum-Pair}]
+\sloppy
+\textbf{Target:} import the visesa/nibbedha mind-step pair and test whether
+it forms the same quantum-pair object the force layer showed.
+\textbf{Main:} DEF-ZC90-01 the mind quantum-pair $\mathcal{Q}=(\delta_v,
+\delta_b)$; LEM-ZC90-01/02 the two steps act on the forward subset
+$\mathcal{C}_4^{+}$; THM-ZC90-01 the pair is well-defined cross-layer;
+FIND-ZC90-01 structural parallel to the force-layer pair.
+\textbf{Opens:} GAP-ZC90-01 (are the two steps distinct kinds), with
+CONJ-ZC90-01 attached.
+\end{zcbox}
+
+\subsection{ZC91 --- The Irrationality-of-Kind Theorem}
+\begin{zcbox}[title={ZC91: THM-ZC91-01 --- Irrationality-of-Kind}]
+\sloppy
+\textbf{Target:} decide whether visesa and nibbedha are distinct kinds or
+two sizes of one kind (close GAP-ZC90-01).
+\textbf{Main:} THM-ZC91-01 the two steps are irrational-of-kind --- their
+ratio $N^{*}=\delta_b/\delta_v$ admits no rational reduction, so neither
+converts into the other; COR-ZC91-01/02 the mind layer is structurally its
+own object; FIND-ZC91-01 the distinction is intrinsic, not scale-dependent.
+\textbf{Closes:} GAP-ZC90-01; \textbf{retires} CONJ-ZC90-01.
+\textbf{Opens:} GAP-ZC91-01 (how forward choices aggregate into capacity).
+\end{zcbox}
+
+\subsection{ZC92 --- The Barami Functional / Common-Rate Theorem}
+\begin{zcbox}[title={ZC92: THM-ZC92-01 --- Barami Functional}]
+\sloppy
+\textbf{Target:} construct the capacity built from accumulated forward
+choices (address GAP-ZC91-01).
+\textbf{Main:} DEF-ZC92-01 the Barami functional $\kappa(B)$ over the
+forward subset; THM-ZC92-01 a common rate governs its growth;
+COR-ZC92-01 the asymptotic ratio $N_{\infty}$; FIND-ZC92-01 capacity
+accumulates monotonically under forward choice.
+\textbf{Partially closes:} GAP-ZC91-01.
+\textbf{Opens:} GAP-ZC92-01 (what gates which step-kind a choice may take).
+\end{zcbox}
+
+\subsection{ZC93 --- The Gate-Ratio Theorem}
+\begin{zcbox}[title={ZC93: THM-ZC93-01 --- Gate-Ratio}]
+\sloppy
+\textbf{Target:} identify what controls whether a choice takes the smooth
+or the sudden step (address GAP-ZC92-01).
+\textbf{Main:} DEF-ZC93-01 the faculty gate $G_{[\cdot]}$ from sati/
+sampaja\~n\~na/adhi\d{t}\d{t}h\=ana; THM-ZC93-01 the gate-ratio
+$G_v\!:\!G_b$ governs which step-kind is permitted; COR-ZC93-01 the gate is
+faculty-determined; FIND-ZC93-01 the residual handed forward beyond Part~L.
+\textbf{Partially closes:} GAP-ZC92-01.
+\end{zcbox}
+
+
+\newpage
+
+\begin{center}
+\small\color{mutedgray}
+CRF Complete Edition Index v17.17 (Part M: ZC94--106 $\cdot$ the mass sector,
+  end to end $\cdot$ running bridge $\cdot$ spectral closure $\cdot$
+  derivation boundary $\cdot$ operation--group law $\cdot$
+  first-rung exclusion \& split) ---
+Ougit Jarittum (ORCID: 0009-0009-4451-6811,
+  Zenodo: 10.5281/zenodo.18977059, CC-BY-NC 4.0)\\
+Generated June 2026. Regenerate when any Part file is updated.
+\end{center}
+
+\end{document}
